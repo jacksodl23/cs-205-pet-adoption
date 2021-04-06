@@ -26,11 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    dbtool.cpp
+    dbtool.cpp \
+    pet.cpp \
+    shelter.cpp \
+    petowner.cpp
 
 HEADERS += \
         mainwindow.h \
-    dbtool.h
+    dbtool.h \
+    pet.h \
+    shelter.h \
+    petowner.h
 
 FORMS += \
         mainwindow.ui
