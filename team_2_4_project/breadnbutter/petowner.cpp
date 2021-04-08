@@ -60,11 +60,6 @@ bool petOwner::getAllergy()
     return this->p_allergy;
 }
 
-void petOwner::setUsername(QString u)
-{
-    this->username = u;
-}
-
 void petOwner::setPassword(QString p)
 {
     this->password = p;
