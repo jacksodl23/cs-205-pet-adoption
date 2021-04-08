@@ -2,6 +2,7 @@
 #define PETOWNER_H
 #include <QString>
 #include <QtSql>
+#include <iostream>
 
 class petOwner
 {

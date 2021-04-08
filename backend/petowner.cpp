@@ -118,11 +118,16 @@ void petOwner::setAllergy(bool a)
 bool petOwner::insertIntoDB()
 {
     QSqlQuery query;
-    query.prepare("insert into PetOwner (name)"
+    query.prepare("insert into petowner (name)"
                   "values (?)");
     query.addBindValue(firstName + " " + lastName);
 
-    return query.exec();
+    bool result = query.exec();
+
+    if (!result)
+        std::cerr << query.lastError().text().toStdString() << std::endl;
+
+    return result;
 }
 
 bool petOwner::deleteFromDB()
