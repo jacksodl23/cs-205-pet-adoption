@@ -7,7 +7,7 @@ class petOwner
 {
 public:
     petOwner();
-    petOwner(QString u, QString p, QString f, QString l, QString e){
+    petOwner(QString p, QString f, QString l, QString e){
         this->password = p;
         this->firstName = f;
         this->lastName = l;
