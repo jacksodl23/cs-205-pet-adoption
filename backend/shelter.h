@@ -1,7 +1,7 @@
 #ifndef SHELTER_H
 #define SHELTER_H
 #include <QString>
-#include <QSql>
+#include <QtSql>
 
 class shelter
 {

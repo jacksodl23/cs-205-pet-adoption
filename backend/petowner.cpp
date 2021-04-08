@@ -120,7 +120,7 @@ bool petOwner::insertIntoDB()
     QSqlQuery query;
     query.prepare("insert into PetOwner (name)"
                   "values (?)");
-    query.addBindValue(username);
+    query.addBindValue(firstName + " " + lastName);
 
     return query.exec();
 }
