@@ -2,6 +2,7 @@
 #define CREATEACCOUNT_H
 
 #include <QDialog>
+#include <QMessageBox>
 
 namespace Ui {
 class CreateAccount;
@@ -14,6 +15,9 @@ class CreateAccount : public QDialog
 public:
     explicit CreateAccount(QWidget *parent = nullptr);
     ~CreateAccount();
+
+private slots:
+    void on_createOkay_accepted();
 
 private:
     Ui::CreateAccount *ui;
