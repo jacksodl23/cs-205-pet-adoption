@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,7 +14,9 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     petdisplay.cpp \
-    ../backend/*.cpp
+    ../backend/pet.cpp \
+    ../backend/petowner.cpp \
+    ../backend/shelter.cpp
 
 HEADERS += \
     createaccount.h \
