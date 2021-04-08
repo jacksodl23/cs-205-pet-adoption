@@ -12,17 +12,20 @@ SOURCES += \
     createaccount.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    petdisplay.cpp
 
 HEADERS += \
     createaccount.h \
     login.h \
-    mainwindow.h
+    mainwindow.h \
+    petdisplay.h
 
 FORMS += \
     createaccount.ui \
     login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    petdisplay.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

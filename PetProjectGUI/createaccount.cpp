@@ -31,6 +31,7 @@ void CreateAccount::on_createOkay_accepted()
     welcomeMessage.append(password);
     welcomeMessage.append("\nYour confirmed password: ");
     welcomeMessage.append(confirmPassword);
+    welcomeMessage.append("\nPlease now login\n");
     QMessageBox::information(this, "Login", welcomeMessage);
-
+    // for opening a new window: https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
 }

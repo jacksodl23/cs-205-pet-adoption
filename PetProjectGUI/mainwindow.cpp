@@ -37,7 +37,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_loginButton_clicked()
 {
     // hiding main window - figure out how to show after
-    // hide();
+    //hide();
 
     // on the stack - do we need to put it on the heap?
     // https://www.youtube.com/watch?v=VigUMAfE2q4&t=482s
@@ -48,9 +48,6 @@ void MainWindow::on_loginButton_clicked()
 
 void MainWindow::on_createButton_clicked()
 {
-    // hiding main window
-    //    hide();
-
     // on the stack - do we need to put it on the heap?
     CreateAccount createUI;
     createUI.setModal(true);

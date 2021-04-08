@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <petdisplay.h>
 
 namespace Ui {
 class Login;
@@ -21,6 +22,7 @@ private slots:
 
 private:
     Ui::Login *ui;
+    //PetDisplay *petDisplay;
 };
 
 #endif // LOGIN_H
