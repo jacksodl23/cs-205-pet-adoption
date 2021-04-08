@@ -13,13 +13,15 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    petdisplay.cpp
+    petdisplay.cpp \
+    ../backend/*.cpp
 
 HEADERS += \
     createaccount.h \
     login.h \
     mainwindow.h \
-    petdisplay.h
+    petdisplay.h \
+    ../backend/*.h
 
 FORMS += \
     createaccount.ui \
