@@ -60,11 +60,6 @@ bool petOwner::getAllergy()
     return this->p_allergy;
 }
 
-void petOwner::setUsername(QString u)
-{
-    this->username = u;
-}
-
 void petOwner::setPassword(QString p)
 {
     this->password = p;
@@ -125,7 +120,7 @@ bool petOwner::insertIntoDB()
     QSqlQuery query;
     query.prepare("insert into PetOwner (name)"
                   "values (?)");
-    query.addBindValue(username);
+    query.addBindValue(firstName + " " + lastName);
 
     return query.exec();
 }
