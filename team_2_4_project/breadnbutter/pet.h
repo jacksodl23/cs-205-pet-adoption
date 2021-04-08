@@ -1,13 +1,14 @@
 #ifndef PET_H
 #define PET_H
 
+#include <iostream>
 #include <QString>
 #include <QtSql>
 
 class Pet
 {
 public:
-    Pet();
+    Pet(QString name);
 
     bool insertIntoDB();
     bool deleteFromDB();

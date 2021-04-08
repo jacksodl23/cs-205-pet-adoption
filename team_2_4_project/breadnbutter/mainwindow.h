@@ -21,6 +21,7 @@ private:
     Ui::MainWindow *ui;
 
     void openDB();
+    void buildTable();
 };
 
 #endif // MAINWINDOW_H

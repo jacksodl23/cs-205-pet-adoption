@@ -1,7 +1,7 @@
 #ifndef PETOWNER_H
 #define PETOWNER_H
 #include <QString>
-#include <QSql>
+#include <QtSql>
 
 class petOwner
 {
