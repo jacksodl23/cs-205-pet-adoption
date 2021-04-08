@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWelcomePhoto();
+    openDB();
 }
 
 MainWindow::~MainWindow()
@@ -52,4 +53,16 @@ void MainWindow::on_createButton_clicked()
     CreateAccount createUI;
     createUI.setModal(true);
     createUI.exec();
+}
+
+void MainWindow::openDB()
+{
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("db.sqlite");
+
+    if (db.open()) {
+        qDebug() << "Database opened successfully.\n";
+    } else {
+        std::cerr << "Error opening database: " << db.lastError().text().toStdString() << std::endl;
+    }
 }
