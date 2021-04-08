@@ -7,6 +7,7 @@
 #include <ctime>
 #include <QString>
 #include <QDebug>
+#include <QtSql>
 #include "login.h"
 #include "createaccount.h"
 
@@ -31,5 +32,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QPixmap welcomePic;
+
+    void openDB();
 };
 #endif // MAINWINDOW_H
