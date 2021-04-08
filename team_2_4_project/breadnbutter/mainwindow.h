@@ -1,7 +1,9 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <iostream>
 #include <QMainWindow>
+#include <QtSql>
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,9 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void openDB();
+    void buildTable();
 };
 
 #endif // MAINWINDOW_H
