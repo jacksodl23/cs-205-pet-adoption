@@ -8,12 +8,7 @@ class petOwner
 {
 public:
     petOwner();
-    petOwner(QString p, QString f, QString l, QString e){
-        this->password = p;
-        this->firstName = f;
-        this->lastName = l;
-        this->email = e;
-    }
+    petOwner(QString p, QString f, QString l, QString e);
 
     // accessor methods
     QString getPassword();
@@ -62,6 +57,7 @@ private:
     int p_weight;
     QString p_origin;
     bool p_allergy;
+    void chooseID();
 };
 
 #endif // PETOWNER_H
