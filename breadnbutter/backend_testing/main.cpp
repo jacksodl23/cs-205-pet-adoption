@@ -8,10 +8,10 @@ using namespace std;
 
 class BackendTest : public ::testing::Test {
 protected:
-    petOwner owner;
+    PetOwner owner;
 public:
     BackendTest() {
-        owner = petOwner("hello", "john", "smith", "johnsmith@gmail.com");
+        owner = PetOwner("hello", "john", "smith", "johnsmith@gmail.com");
     }
 
     void SetUp() {
@@ -32,6 +32,10 @@ TEST_F(BackendTest, TestNewAdopter) {
 
 TEST_F(BackendTest, TestAdopterExists) {
     ASSERT_EQ(owner.existsInDB(), true);
+}
+
+TEST_F(BackendTest, TestLogin) {
+    ASSERT_EQ(owner.attemptLogin(), true);
 }
 
 int main(int argc, char **argv)

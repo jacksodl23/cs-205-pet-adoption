@@ -23,7 +23,7 @@ void CreateAccount::on_createOkay_accepted()
     QString confirmPassword = ui->passwordField_2->text();
     QString welcomeMessage = "Welcome ";
 
-    petOwner newOwner(password, firstName, lastName, email);
+    PetOwner newOwner(password, firstName, lastName, email);
 
     if (newOwner.insertIntoDB()) {
         QMessageBox::information(this, "Owner created!", "Huzzah! Welcome new pet owner!");

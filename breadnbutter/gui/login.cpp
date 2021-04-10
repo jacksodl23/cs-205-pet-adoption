@@ -1,5 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
+#include "../backend/petowner.h"
 
 Login::Login(QWidget *parent) :
     QDialog(parent),
@@ -20,13 +21,15 @@ void Login::on_loginOkay_accepted()
     QString password = ui->passwordField->text();
     QString welcomeMessage = "Welcome ";
 
+    PetOwner owner(email, password);
+    if (owner.attemptLogin()) {
+        welcomeMessage.append(email);
+        welcomeMessage.append(" to this amazing app!");
+        welcomeMessage.append("\nYour password is ");
+        welcomeMessage.append(password);
+        QMessageBox::information(this, "Login", welcomeMessage);
+    }
 
-
-    /* welcomeMessage.append(email);
-    welcomeMessage.append(" to this amazing app!");
-    welcomeMessage.append("\nYour password is ");
-    welcomeMessage.append(password);
-    QMessageBox::information(this, "Login", welcomeMessage); */
 
 //	for adding the next window - pet display   https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
     /*

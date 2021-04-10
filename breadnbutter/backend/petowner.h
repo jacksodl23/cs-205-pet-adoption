@@ -4,11 +4,12 @@
 #include <QtSql>
 #include <iostream>
 
-class petOwner
+class PetOwner
 {
 public:
-    petOwner();
-    petOwner(QString p, QString f, QString l, QString e);
+    PetOwner();
+    PetOwner(QString email, QString password);
+    PetOwner(QString p, QString f, QString l, QString e);
 
     // accessor methods
     QString getPassword();
@@ -42,6 +43,7 @@ public:
     bool insertIntoDB();
     bool deleteFromDB();
     bool existsInDB();
+    bool attemptLogin();
 
 private:
     int petOwnerID;
