@@ -8,8 +8,12 @@ using namespace std;
 
 class BackendTest : public ::testing::Test {
 protected:
-
+    petOwner owner;
 public:
+    BackendTest() {
+        owner = petOwner("hello", "john", "smith", "johnsmith@gmail.com");
+    }
+
     void SetUp() {
         QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
         db.setDatabaseName("test_db.sqlite");
@@ -20,14 +24,13 @@ public:
 };
 
 TEST_F(BackendTest, TestNewAdopter) {
-    petOwner owner("hello", "john", "smith", "johnsmith@gmail.com");
-
-    EXPECT_EQ(owner.insertIntoDB(), true);
+    if (!owner.existsInDB())
+        EXPECT_EQ(owner.insertIntoDB(), true);
+    else
+        EXPECT_EQ(owner.insertIntoDB(), false);
 }
 
 TEST_F(BackendTest, TestAdopterExists) {
-    petOwner owner("hello", "john", "smith", "johnsmith@gmail.com");
-
     ASSERT_EQ(owner.existsInDB(), true);
 }
 
