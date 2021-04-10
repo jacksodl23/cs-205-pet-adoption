@@ -41,6 +41,7 @@ public:
     // database methods
     bool insertIntoDB();
     bool deleteFromDB();
+    bool existsInDB();
 
 private:
     int petOwnerID;

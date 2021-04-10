@@ -7,6 +7,8 @@
 using namespace std;
 
 class BackendTest : public ::testing::Test {
+protected:
+
 public:
     void SetUp() {
         QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
@@ -20,7 +22,13 @@ public:
 TEST_F(BackendTest, TestNewAdopter) {
     petOwner owner("hello", "john", "smith", "johnsmith@gmail.com");
 
-    ASSERT_EQ(owner.insertIntoDB(), true);
+    EXPECT_EQ(owner.insertIntoDB(), true);
+}
+
+TEST_F(BackendTest, TestAdopterExists) {
+    petOwner owner("hello", "john", "smith", "johnsmith@gmail.com");
+
+    ASSERT_EQ(owner.existsInDB(), true);
 }
 
 int main(int argc, char **argv)
