@@ -17,6 +17,7 @@ public:
     QString getLastName();
     QString getEmail();
 
+    int getID();
     int getAge();
     QString getBreed();
     QString getColor();

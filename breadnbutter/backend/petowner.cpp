@@ -46,13 +46,10 @@ bool PetOwner::attemptLogin()
     query.addBindValue(email);
     query.addBindValue(password);
 
-    int nameCol = query.record().indexOf("name");
-    int idCol = query.record().indexOf("adopter_id");
-
     if (query.exec()) {
         while (query.next()) {
-            QString dbName = query.value(nameCol).toString();
-            int dbID = query.value(idCol).toInt();
+            QString dbName = query.value(2).toString();
+            int dbID = query.value(0).toInt();
 
             this->petOwnerID = dbID;
 
@@ -104,6 +101,11 @@ QString PetOwner::getLastName()
 QString PetOwner::getEmail()
 {
     return email;
+}
+
+int PetOwner::getID()
+{
+    return petOwnerID;
 }
 
 int PetOwner::getAge()

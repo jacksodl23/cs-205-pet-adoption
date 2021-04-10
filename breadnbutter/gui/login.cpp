@@ -27,7 +27,11 @@ void Login::on_loginOkay_accepted()
         welcomeMessage.append(" to this amazing app!");
         welcomeMessage.append("\nYour password is ");
         welcomeMessage.append(password);
+        welcomeMessage.append("\nYour ID is ");
+        welcomeMessage.append(QString::number(owner.getID()));
         QMessageBox::information(this, "Login", welcomeMessage);
+    } else {
+        QMessageBox::critical(this, "Error Logging In!", "Something went wrong while trying to log you in. Please try again.");
     }
 
 
