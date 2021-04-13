@@ -73,3 +73,24 @@ bool shelter::deleteFromDB()
 
     return query.exec();
 }
+
+bool shelter::existsInDB()
+{
+    QSqlQuery query;
+    query.prepare("select location from Shelter where location = ?");
+    query.addBindValue(location);
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString dbLoc = query.value(0).toString();
+
+            int compare = QString::compare(location, dbLoc, Qt::CaseInsensitive);
+            if (compare == 0)
+                return true;
+        }
+    } else {
+        std::cerr << "Error getting shelters: " << query.lastError().text().toStdString() << std::endl;
+    }
+
+    return false;
+}
