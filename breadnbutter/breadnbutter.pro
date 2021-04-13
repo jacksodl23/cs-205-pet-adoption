@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
         gui \
-        backend
+        backend \
+    backend_testing
