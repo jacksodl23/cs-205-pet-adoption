@@ -27,14 +27,6 @@ void CreateAccount::on_createOkay_accepted()
         return;
     }
 
-    petOwner newOwner(password, firstName, lastName, email);
-
-    if (newOwner.insertIntoDB()) {
-        QMessageBox::information(this, "Owner created!", "Huzzah! Welcome new pet owner! Please now login");
-        accept();
-    } else {
-        QMessageBox::critical(this, "Error!", "Database not linked!");
-
     PetOwner newOwner(password, firstName, lastName, email);
 
     if (newOwner.insertIntoDB()) {

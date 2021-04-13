@@ -2,6 +2,7 @@
 #define SHELTER_H
 #include <QString>
 #include <QtSql>
+#include <iostream>
 
 class shelter
 {
@@ -29,6 +30,7 @@ public:
     // database methods
     bool insertIntoDB();
     bool deleteFromDB();
+    bool existsInDB();
 
 private:
     int shelterID;
