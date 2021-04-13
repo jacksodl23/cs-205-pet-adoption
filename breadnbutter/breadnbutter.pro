@@ -1,5 +1,6 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-        ../backend \
-        ../PetProjectGUI
+        gui \
+        backend \
+    backend_testing
