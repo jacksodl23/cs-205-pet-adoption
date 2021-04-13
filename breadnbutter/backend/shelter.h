@@ -20,6 +20,12 @@ public:
     QString getLocation();
     QString getEmail();
 
+    // mutator methods
+    void setPhoneNumber(int p);
+    void setName(QString n);
+    void setLocation(QString l);
+    void setEmail(QString e);
+
     // database methods
     bool insertIntoDB();
     bool deleteFromDB();
