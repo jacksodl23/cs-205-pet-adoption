@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <QtSql>
+#include <petdisplay.h>
 
 namespace Ui {
 class Login;

@@ -1,5 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
+#include "../backend/petowner.h"
 
 Login::Login(QWidget *parent) :
     QDialog(parent),
@@ -20,11 +21,20 @@ void Login::on_loginOkay_accepted()
     QString email = ui->emailField->text();
     QString password = ui->passwordField->text();
     QString welcomeMessage = "Welcome ";
-    welcomeMessage.append(email);
-    welcomeMessage.append(" to this amazing app!");
-    welcomeMessage.append("\nYour password is ");
-    welcomeMessage.append(password);
-    QMessageBox::information(this, "Login", welcomeMessage);
+
+    PetOwner owner(email, password);
+    if (owner.attemptLogin()) {
+        welcomeMessage.append(email);
+        welcomeMessage.append(" to this amazing app!");
+        welcomeMessage.append("\nYour password is ");
+        welcomeMessage.append(password);
+        welcomeMessage.append("\nYour ID is ");
+        welcomeMessage.append(QString::number(owner.getID()));
+        QMessageBox::information(this, "Login", welcomeMessage);
+    } else {
+        QMessageBox::critical(this, "Error Logging In!", "Something went wrong while trying to log you in. Please try again.");
+    }
+
 
     loginSuccessful = true;
 
