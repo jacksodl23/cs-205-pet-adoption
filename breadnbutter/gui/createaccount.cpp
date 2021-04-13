@@ -21,7 +21,22 @@ void CreateAccount::on_createOkay_accepted()
     QString password = ui->passwordField->text();
     QString confirmPassword = ui->passwordField_2->text();
     QString welcomeMessage = "Welcome ";
-    welcomeMessage.append(firstName);
+
+    if (password != confirmPassword) {
+        QMessageBox::critical(this, "Error!", "Passwords do not match - try again!");
+        return;
+    }
+
+    petOwner newOwner(password, firstName, lastName, email);
+
+    if (newOwner.insertIntoDB()) {
+        QMessageBox::information(this, "Owner created!", "Huzzah! Welcome new pet owner! Please now login");
+        accept();
+    } else {
+        QMessageBox::critical(this, "Error!", "Database not linked!");
+    }
+
+    /* welcomeMessage.append(firstName);
     welcomeMessage.append(" ");
     welcomeMessage.append(lastName);
     welcomeMessage.append(",  ");
@@ -32,6 +47,5 @@ void CreateAccount::on_createOkay_accepted()
     welcomeMessage.append("\nYour confirmed password: ");
     welcomeMessage.append(confirmPassword);
     welcomeMessage.append("\nPlease now login\n");
-    QMessageBox::information(this, "Login", welcomeMessage);
-    // for opening a new window: https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
+    QMessageBox::information(this, "Login", welcomeMessage); */
 }

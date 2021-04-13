@@ -56,7 +56,7 @@
   </action>
   <action name="actionPreferenecs">
    <property name="text">
-    <string>Preferenecs</string>
+    <string>Prefereneces</string>
    </property>
   </action>
   <action name="actionQuit">
