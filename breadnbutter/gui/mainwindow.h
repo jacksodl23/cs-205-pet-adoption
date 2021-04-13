@@ -10,6 +10,7 @@
 #include <QtSql>
 #include "login.h"
 #include "createaccount.h"
+#include "petdisplay.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -34,5 +35,7 @@ private:
     QPixmap welcomePic;
 
     void openDB();
+
+    PetDisplay *petDisplay;
 };
 #endif // MAINWINDOW_H

@@ -1,6 +1,5 @@
 #include "createaccount.h"
 #include "ui_createaccount.h"
-#include "../backend/petowner.h"
 
 CreateAccount::CreateAccount(QWidget *parent) :
     QDialog(parent),
@@ -23,10 +22,18 @@ void CreateAccount::on_createOkay_accepted()
     QString confirmPassword = ui->passwordField_2->text();
     QString welcomeMessage = "Welcome ";
 
+    if (password != confirmPassword) {
+        QMessageBox::critical(this, "Error!", "Passwords do not match - try again!");
+        return;
+    }
+
     petOwner newOwner(password, firstName, lastName, email);
 
     if (newOwner.insertIntoDB()) {
-        QMessageBox::information(this, "Owner created!", "Huzzah! Welcome new pet owner!");
+        QMessageBox::information(this, "Owner created!", "Huzzah! Welcome new pet owner! Please now login");
+        accept();
+    } else {
+        QMessageBox::critical(this, "Error!", "Database not linked!");
     }
 
     /* welcomeMessage.append(firstName);
@@ -41,5 +48,4 @@ void CreateAccount::on_createOkay_accepted()
     welcomeMessage.append(confirmPassword);
     welcomeMessage.append("\nPlease now login\n");
     QMessageBox::information(this, "Login", welcomeMessage); */
-    // for opening a new window: https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
 }

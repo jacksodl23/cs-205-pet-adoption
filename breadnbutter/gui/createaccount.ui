@@ -108,7 +108,7 @@
    <sender>createOkay</sender>
    <signal>accepted()</signal>
    <receiver>CreateAccount</receiver>
-   <slot>accept()</slot>
+   <slot>exec()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>257</x>

@@ -45,6 +45,13 @@ void MainWindow::on_loginButton_clicked()
     Login loginUI;
     loginUI.setModal(true);
     loginUI.exec();
+
+    if (loginUI.loginSuccessful) {
+        hide();
+        petDisplay = new PetDisplay(this);
+        petDisplay->show();
+    }
+
 }
 
 void MainWindow::on_createButton_clicked()
