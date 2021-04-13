@@ -7,6 +7,7 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    loginSuccessful = false;
 }
 
 Login::~Login()
@@ -35,10 +36,7 @@ void Login::on_loginOkay_accepted()
     }
 
 
-//	for adding the next window - pet display   https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
-    /*
-     * hide()
-    petDisplay = new PetDisplay(this);
-    petDisplay->show();
-    */
+    loginSuccessful = true;
+
+    // for adding the next window - pet display   https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
 }

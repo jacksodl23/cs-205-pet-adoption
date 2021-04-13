@@ -7,10 +7,8 @@
 #include <ctime>
 #include <QString>
 #include <QDebug>
-#include <QtSql>
 #include "login.h"
 #include "createaccount.h"
-#include "petdisplay.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,9 +31,5 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QPixmap welcomePic;
-
-    void openDB();
-
-    PetDisplay *petDisplay;
 };
 #endif // MAINWINDOW_H

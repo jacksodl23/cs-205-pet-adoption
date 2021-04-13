@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <QMessageBox>
-#include <QtSql>
 #include <petdisplay.h>
 
 namespace Ui {
@@ -18,13 +17,12 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
-    bool loginSuccessful;
-
 private slots:
     void on_loginOkay_accepted();
 
 private:
     Ui::Login *ui;
+    //PetDisplay *petDisplay;
 };
 
 #endif // LOGIN_H

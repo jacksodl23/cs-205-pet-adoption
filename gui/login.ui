@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CreateAccount</class>
- <widget class="QDialog" name="CreateAccount">
+ <class>Login</class>
+ <widget class="QDialog" name="Login">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -13,80 +13,50 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="createLabel">
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="loginLabel">
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <pointsize>30</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>CREATE ACCOUNT</string>
+      <string>LOGIN</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item>
+   <item row="1" column="0">
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="firstNameLabel">
-       <property name="text">
-        <string>First Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="firstNameField"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="lastNameLabel">
-       <property name="text">
-        <string>Last Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="lastNameField"/>
-     </item>
-     <item row="2" column="0">
       <widget class="QLabel" name="emailLabel">
        <property name="text">
         <string>Email</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
+     <item row="0" column="1">
       <widget class="QLineEdit" name="emailField"/>
      </item>
-     <item row="3" column="0">
+     <item row="1" column="0">
       <widget class="QLabel" name="passwordLabel">
        <property name="text">
         <string>Password</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="1" column="1">
       <widget class="QLineEdit" name="passwordField"/>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="passwordLabel_2">
-       <property name="text">
-        <string>Confirm Password</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="passwordField_2"/>
      </item>
     </layout>
    </item>
-   <item>
-    <widget class="QDialogButtonBox" name="createOkay">
+   <item row="2" column="0">
+    <widget class="QDialogButtonBox" name="loginOkay">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -97,22 +67,17 @@
    </item>
   </layout>
  </widget>
- <tabstops>
-  <tabstop>emailField</tabstop>
-  <tabstop>passwordField</tabstop>
-  <tabstop>passwordField_2</tabstop>
- </tabstops>
  <resources/>
  <connections>
   <connection>
-   <sender>createOkay</sender>
+   <sender>loginOkay</sender>
    <signal>accepted()</signal>
-   <receiver>CreateAccount</receiver>
-   <slot>exec()</slot>
+   <receiver>Login</receiver>
+   <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>257</x>
-     <y>290</y>
+     <x>248</x>
+     <y>254</y>
     </hint>
     <hint type="destinationlabel">
      <x>157</x>
@@ -121,14 +86,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>createOkay</sender>
+   <sender>loginOkay</sender>
    <signal>rejected()</signal>
-   <receiver>CreateAccount</receiver>
+   <receiver>Login</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>325</x>
-     <y>290</y>
+     <x>316</x>
+     <y>260</y>
     </hint>
     <hint type="destinationlabel">
      <x>286</x>

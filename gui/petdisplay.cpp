@@ -6,7 +6,6 @@ PetDisplay::PetDisplay(QWidget *parent) :
     ui(new Ui::PetDisplay)
 {
     ui->setupUi(this);
-    ui->statusbar->showMessage("page number here");
 }
 
 PetDisplay::~PetDisplay()
