@@ -1,2 +1,16 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/resources">
+        <file>imgs/petPhoto8.jpg</file>
+        <file>imgs/petPhoto7.jpg</file>
+        <file>imgs/petPhoto6.jpg</file>
+        <file>imgs/petPhoto5.jpg</file>
+        <file>imgs/petPhoto4.jpg</file>
+        <file>imgs/petPhoto3.jpg</file>
+        <file>imgs/petPhoto2.jpg</file>
+        <file>imgs/petPhoto11.jpg</file>
+        <file>imgs/petPhoto10.jpg</file>
+        <file>imgs/petPhoto1.jpg</file>
+        <file>imgs/petPhoto0.jpg</file>
+        <file>imgs/petPhoto9.jpg</file>
+    </qresource>
+</RCC>
