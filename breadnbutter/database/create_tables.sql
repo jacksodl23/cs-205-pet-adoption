@@ -29,7 +29,6 @@ CREATE TABLE Pet (
 
 CREATE TABLE Adopter (
   adopter_id INTEGER UNIQUE NOT NULL PRIMARY KEY,
-  is_current_user INTEGER DEFAULT 0,
   name TEXT NOT NULL,
   email TEXT,
   password TEXT NOT NULL,

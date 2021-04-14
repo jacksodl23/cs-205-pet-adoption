@@ -70,6 +70,6 @@ void MainWindow::openDB()
     if (db.open()) {
         qDebug() << "Database opened successfully.\n";
     } else {
-        std::cerr << "Error opening database: " << db.lastError().text().toStdString() << std::endl;
+        qFatal("Error opening database.");
     }
 }
