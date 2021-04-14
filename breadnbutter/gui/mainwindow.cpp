@@ -9,7 +9,7 @@ void MainWindow::setWelcomePhoto() {
 
     QString photoString = QString::number(photoNum);
 
-    QString tempPath("../../../../CoverPhoto");
+    QString tempPath(":/resources/imgs/petPhoto");
     tempPath.append(photoString);
     QString filePath = tempPath.append(".jpg");
     qDebug() << filePath;
