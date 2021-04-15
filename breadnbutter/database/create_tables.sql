@@ -35,3 +35,5 @@ CREATE TABLE Adopter (
   adopter_preferences_id INTEGER,
   FOREIGN KEY(adopter_preferences_id) REFERENCES Pet_Attributes(Pet_Attribute_id)
   );
+
+--CREATE TABLE LikedBy ();
