@@ -38,6 +38,10 @@ TEST_F(BackendTest, TestLogin) {
     ASSERT_EQ(owner.attemptLogin(), true);
 }
 
+TEST_F(BackendTest, TestDeleteAdopter) {
+    ASSERT_EQ(owner.deleteFromDB(), true);
+}
+
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);

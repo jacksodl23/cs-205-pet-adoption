@@ -224,9 +224,16 @@ bool PetOwner::insertIntoDB()
 
 bool PetOwner::deleteFromDB()
 {
+    bool result;
+
     QSqlQuery query;
-    query.prepare("delete from PetOwner where pet_id = ?");
+    query.prepare("delete from Adopter where adopter_id = ?");
     query.addBindValue(petOwnerID);
 
-    return query.exec();
+    result = query.exec();
+
+    if (!result)
+        std::cerr << query.lastError().text().toStdString() << std::endl;
+
+    return result;
 }
