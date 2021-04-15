@@ -1,5 +1,10 @@
 #include "pet.h"
 
+Pet::Pet(int id)
+{
+    this->pet_id = id;
+}
+
 Pet::Pet(QString name)
 {
     this->name = name;

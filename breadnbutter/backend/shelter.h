@@ -4,16 +4,11 @@
 #include <QtSql>
 #include <iostream>
 
-class shelter
+class Shelter
 {
 public:
-    shelter();
-    shelter(QString n, QString l, int p, QString e){
-        this->name = n;
-        this->location = l;
-        this->phoneNumber = p;
-        this->email = e;
-    }
+    Shelter(int id);
+    Shelter(QString n, QString l, int p, QString e);
 
     // accessor methods
     int getPhoneNumber();

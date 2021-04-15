@@ -8,6 +8,7 @@
 class Pet
 {
 public:
+    Pet(int id);
     Pet(QString name);
 
     bool insertIntoDB();
