@@ -20,10 +20,9 @@ CREATE TABLE Pet_Attributes (
 CREATE TABLE Pet (
   pet_id INTEGER UNIQUE NOT NULL PRIMARY KEY, 
   name TEXT, 
-  location TEXT,  
-  pet_attribute_id INTEGER NOT NULL,
   shelter_id INTEGER NOT NULL,
-  Image BLOB,
+  pet_attribute_id INTEGER,
+  --Image BLOB,
   FOREIGN KEY(pet_attribute_id) REFERENCES Pet_Attributes(Pet_Attribute_id),
   FOREIGN KEY(shelter_id) REFERENCES Shelter(shelter_id)
   );
@@ -31,7 +30,7 @@ CREATE TABLE Pet (
 CREATE TABLE Adopter (
   adopter_id INTEGER UNIQUE NOT NULL PRIMARY KEY,
   name TEXT NOT NULL,
-  email TEXT,
+  email TEXT NOT NULL,
   password TEXT NOT NULL,
   adopter_preferences_id INTEGER,
   FOREIGN KEY(adopter_preferences_id) REFERENCES Pet_Attributes(Pet_Attribute_id)
