@@ -1,5 +1,10 @@
 #include "pet.h"
 
+Pet::Pet()
+{
+
+}
+
 Pet::Pet(int id)
 {
     this->pet_id = id;
@@ -32,4 +37,9 @@ bool Pet::deleteFromDB()
     query.addBindValue(pet_id);
 
     return query.exec();
+}
+
+void Pet::chooseID()
+{
+
 }
