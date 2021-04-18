@@ -7,6 +7,7 @@
 class Shelter
 {
 public:
+    Shelter();
     Shelter(int id);
     Shelter(QString n, QString l, int p, QString e);
 

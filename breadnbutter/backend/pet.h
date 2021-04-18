@@ -8,6 +8,7 @@
 class Pet
 {
 public:
+    Pet();
     Pet(int id);
     Pet(QString name);
 
@@ -27,6 +28,8 @@ private:
     QString origin;
     bool hypoallergenic;
     QString description;
+
+    void chooseID();
 };
 
 #endif // PET_H

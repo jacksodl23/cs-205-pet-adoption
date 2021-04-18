@@ -1,5 +1,10 @@
 #include "shelter.h"
 
+Shelter::Shelter()
+{
+
+}
+
 Shelter::Shelter(int id)
 {
     this->shelterID = id;
