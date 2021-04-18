@@ -30,6 +30,8 @@ private slots:
 
     void on_createButton_clicked();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::MainWindow *ui;
     QPixmap welcomePic;

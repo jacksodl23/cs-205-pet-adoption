@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <QPushButton>
 #include "../backend/petowner.h"
 
 namespace Ui {

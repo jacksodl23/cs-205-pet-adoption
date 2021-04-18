@@ -7,6 +7,7 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    ui->loginOkay->button(QDialogButtonBox::Ok)->setText("Login");
     loginSuccessful = false;
 }
 
@@ -30,13 +31,20 @@ void Login::on_loginOkay_accepted()
         welcomeMessage.append(password);
         welcomeMessage.append("\nYour ID is ");
         welcomeMessage.append(QString::number(owner.getID()));
-        QMessageBox::information(this, "Login", welcomeMessage);
+        //QMessageBox::setTextFormat(QColor(255,255,255,127));
+        QMessageBox::information(this, "Welcome!", welcomeMessage);
+        //QMessageBox welcomeBox;
+        //welcomeBox.setText(welcomeMessage);
+        //welcomeBox.exec();
+
     } else {
-        QMessageBox::critical(this, "Error Logging In!", "Something went wrong while trying to log you in. Please try again.");
+        QMessageBox::critical(this, "Error Logging In", "Something went wrong while trying to log you in. Please try again.");
+        //QMessageBox errorBox;
+        //errorBox.setText("Error Logging In!\nSomething went wrong while trying to log you in. Please try again.");
+        //errorBox.exec();
     }
 
 
     loginSuccessful = true;
 
-    // for adding the next window - pet display   https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
 }

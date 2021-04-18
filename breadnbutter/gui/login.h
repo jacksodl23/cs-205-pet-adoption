@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <QtSql>
-#include <petdisplay.h>
+#include <QPushButton>
+#include "petdisplay.h"
 
 namespace Ui {
 class Login;
