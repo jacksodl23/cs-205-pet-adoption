@@ -25,6 +25,7 @@ class MainWindow : public QMainWindow
 
 public:
     void setWelcomePhoto();
+    void showPetDisplay();
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -42,7 +43,5 @@ private:
     void openDB();
 
     PetDisplay *petDisplay;
-    void showPetDisplay();
-    void getCurrentUser();
 };
 #endif // MAINWINDOW_H

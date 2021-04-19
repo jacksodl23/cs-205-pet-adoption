@@ -4,9 +4,10 @@
 #include <QApplication>
 #include <fstream>
 
-/* int getCurrentUser() {
+int getCurrentUser() {
     std::string line;
     std::ifstream config("currentuser.config");
+
     if (config.is_open()) {
         while (getline(config, line)) {
             SimpleCrypt crypto(CRYPTO_KEY);
@@ -21,12 +22,16 @@
     }
 
     return -1;
-} */
+}
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    w.show();
+
+    if(getCurrentUser() == -1)
+        w.show();
+    else
+        w.showPetDisplay();
     return a.exec();
 }

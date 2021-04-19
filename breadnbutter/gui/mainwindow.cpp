@@ -27,7 +27,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWelcomePhoto();
     openDB();
-    getCurrentUser();
 }
 
 MainWindow::~MainWindow()
@@ -41,25 +40,6 @@ void MainWindow::showPetDisplay()
     hide();
     petDisplay = new PetDisplay(this);
     petDisplay->show();
-}
-
-void MainWindow::getCurrentUser()
-{
-    std::string line;
-    std::ifstream config("currentuser.config");
-    if (config.is_open()) {
-        while (getline(config, line)) {
-            SimpleCrypt crypto(CRYPTO_KEY);
-
-            QString lineString = QString::fromStdString(line);
-            QString decrypted = crypto.decryptToString(lineString);
-            int theID = decrypted.toInt();
-            currentUserID = theID;
-
-            break;
-        }
-        showPetDisplay();
-    }
 }
 
 void MainWindow::on_loginButton_clicked()
