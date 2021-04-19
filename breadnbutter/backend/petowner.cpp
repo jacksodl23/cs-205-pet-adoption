@@ -3,11 +3,10 @@
 void PetOwner::chooseID()
 {
     QSqlQuery query;
-    int fieldNo = query.record().indexOf("adopter_id");
 
     if (query.exec("select max(adopter_id) from Adopter")) {
         if (query.next()) {
-            int lastID = query.value(fieldNo).toInt();
+            int lastID = query.value(0).toInt();
 
             petOwnerID = lastID + 1;
         } else {
@@ -224,9 +223,16 @@ bool PetOwner::insertIntoDB()
 
 bool PetOwner::deleteFromDB()
 {
+    bool result;
+
     QSqlQuery query;
-    query.prepare("delete from PetOwner where pet_id = ?");
+    query.prepare("delete from Adopter where adopter_id = ?");
     query.addBindValue(petOwnerID);
 
-    return query.exec();
+    result = query.exec();
+
+    if (!result)
+        std::cerr << query.lastError().text().toStdString() << std::endl;
+
+    return result;
 }

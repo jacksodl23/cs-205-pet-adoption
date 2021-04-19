@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <iostream>
+#include <fstream>
 #include <QMainWindow>
 #include <QPixmap>
 #include <ctime>
@@ -10,6 +11,9 @@
 #include <QtSql>
 #include "login.h"
 #include "createaccount.h"
+#include "petdisplay.h"
+#include "../backend/simplecrypt.h"
+#include "../backend/globals.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,6 +25,7 @@ class MainWindow : public QMainWindow
 
 public:
     void setWelcomePhoto();
+    void showPetDisplay();
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -29,10 +34,14 @@ private slots:
 
     void on_createButton_clicked();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::MainWindow *ui;
     QPixmap welcomePic;
 
     void openDB();
+
+    PetDisplay *petDisplay;
 };
 #endif // MAINWINDOW_H

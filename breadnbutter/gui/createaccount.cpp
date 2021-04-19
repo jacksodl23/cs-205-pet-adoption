@@ -1,12 +1,12 @@
 #include "createaccount.h"
 #include "ui_createaccount.h"
-#include "../backend/petowner.h"
 
 CreateAccount::CreateAccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateAccount)
 {
     ui->setupUi(this);
+    ui->createOkay->button(QDialogButtonBox::Ok)->setText("Sign up!");
 }
 
 CreateAccount::~CreateAccount()
@@ -21,15 +21,28 @@ void CreateAccount::on_createOkay_accepted()
     QString email = ui->emailField->text();
     QString password = ui->passwordField->text();
     QString confirmPassword = ui->passwordField_2->text();
-    QString welcomeMessage = "Welcome ";
+//    QString welcomeMessage = "Welcome ";
+
+    if (password != confirmPassword) {
+        QMessageBox::critical(this, "Error!", "Passwords do not match - try again!");
+        //QMessageBox passwordErrorBox;
+        //passwordErrorBox.setText("Error!\nPasswords do not match - try again!");
+        //passwordErrorBox.exec();
+        return;
+    }
+
+    // what about shelter owner?
 
     PetOwner newOwner(password, firstName, lastName, email);
 
     if (newOwner.insertIntoDB()) {
-        QMessageBox::information(this, "Owner created!", "Huzzah! Welcome new pet owner!");
+        signUpSuccessful = true;
     } else {
         if (newOwner.existsInDB()) {
             QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");
+            //QMessageBox databaseErrorBox;
+            //databaseErrorBox.setText("Email taken!\nThis email is already taken. Please try again.");
+            //databaseErrorBox.exec();
         }
     }
 
@@ -45,5 +58,4 @@ void CreateAccount::on_createOkay_accepted()
     welcomeMessage.append(confirmPassword);
     welcomeMessage.append("\nPlease now login\n");
     QMessageBox::information(this, "Login", welcomeMessage); */
-    // for opening a new window: https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
 }

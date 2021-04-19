@@ -7,6 +7,8 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    ui->loginOkay->button(QDialogButtonBox::Ok)->setText("Login");
+    loginSuccessful = false;
 }
 
 Login::~Login()
@@ -22,23 +24,16 @@ void Login::on_loginOkay_accepted()
     QString welcomeMessage = "Welcome ";
 
     PetOwner owner(email, password);
-    if (owner.attemptLogin()) {
-        welcomeMessage.append(email);
-        welcomeMessage.append(" to this amazing app!");
-        welcomeMessage.append("\nYour password is ");
-        welcomeMessage.append(password);
-        welcomeMessage.append("\nYour ID is ");
-        welcomeMessage.append(QString::number(owner.getID()));
-        QMessageBox::information(this, "Login", welcomeMessage);
-    } else {
-        QMessageBox::critical(this, "Error Logging In!", "Something went wrong while trying to log you in. Please try again.");
+    loginSuccessful = owner.attemptLogin();
+
+    if (loginSuccessful) {
+        std::ofstream config("currentuser.config");
+
+        SimpleCrypt crypto(CRYPTO_KEY);
+        QString id = QString::number(owner.getID());
+        QString encoded = crypto.encryptToString(id);
+
+        config << encoded.toStdString();
+        config.close();
     }
-
-
-//	for adding the next window - pet display   https://www.youtube.com/watch?v=6_elY8O20I8&list=PLS1QulWo1RIZiBcTr5urECberTITj7gjA&index=10
-    /*
-     * hide()
-    petDisplay = new PetDisplay(this);
-    petDisplay->show();
-    */
 }

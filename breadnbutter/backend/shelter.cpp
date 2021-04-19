@@ -1,46 +1,63 @@
 #include "shelter.h"
 
-int shelter::getPhoneNumber()
+Shelter::Shelter()
+{
+
+}
+
+Shelter::Shelter(int id)
+{
+    this->shelterID = id;
+}
+
+Shelter::Shelter(QString n, QString l, int p, QString e) {
+    this->name = n;
+    this->location = l;
+    this->phoneNumber = p;
+    this->email = e;
+}
+
+int Shelter::getPhoneNumber()
 {
     return phoneNumber;
 }
 
-QString shelter::getName()
+QString Shelter::getName()
 {
     return name;
 }
 
-QString shelter::getLocation()
+QString Shelter::getLocation()
 {
     return location;
 }
 
-QString shelter::getEmail()
+QString Shelter::getEmail()
 {
     return email;
 }
 
-void shelter::setPhoneNumber(int p)
+void Shelter::setPhoneNumber(int p)
 {
     this->phoneNumber = p;
 }
 
-void shelter::setName(QString n)
+void Shelter::setName(QString n)
 {
     this->name = n;
 }
 
-void shelter::setLocation(QString l)
+void Shelter::setLocation(QString l)
 {
     this->location = l;
 }
 
-void shelter::setEmail(QString e)
+void Shelter::setEmail(QString e)
 {
     this->email = e;
 }
 
-bool shelter::insertIntoDB()
+bool Shelter::insertIntoDB()
 {
     bool result;
 
@@ -65,11 +82,32 @@ bool shelter::insertIntoDB()
     return result;
 }
 
-bool shelter::deleteFromDB()
+bool Shelter::deleteFromDB()
 {
     QSqlQuery query;
-    query.prepare("delete from Shelter where shelterID = ?");
+    query.prepare("delete from Shelter where shelter_id = ?");
     query.addBindValue(shelterID);
 
     return query.exec();
+}
+
+bool Shelter::existsInDB()
+{
+    QSqlQuery query;
+    query.prepare("select location from Shelter where location = ?");
+    query.addBindValue(location);
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString dbLoc = query.value(0).toString();
+
+            int compare = QString::compare(location, dbLoc, Qt::CaseInsensitive);
+            if (compare == 0)
+                return true;
+        }
+    } else {
+        std::cerr << "Error getting shelters: " << query.lastError().text().toStdString() << std::endl;
+    }
+
+    return false;
 }

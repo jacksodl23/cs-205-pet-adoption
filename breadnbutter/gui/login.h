@@ -1,10 +1,14 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
+#include <fstream>
 #include <QDialog>
 #include <QMessageBox>
 #include <QtSql>
-#include <petdisplay.h>
+#include <QPushButton>
+#include "petdisplay.h"
+#include "../backend/simplecrypt.h"
+#include "../backend/globals.h"
 
 namespace Ui {
 class Login;
@@ -18,12 +22,13 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
+    bool loginSuccessful;
+
 private slots:
     void on_loginOkay_accepted();
 
 private:
     Ui::Login *ui;
-    //PetDisplay *petDisplay;
 };
 
 #endif // LOGIN_H

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(70, 70, 70);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="createLabel">
@@ -24,7 +27,7 @@
       </font>
      </property>
      <property name="text">
-      <string>CREATE ACCOUNT</string>
+      <string>&lt;b&gt;&lt;font color=red&gt;CREATE ACCOUNT&lt;font&gt;&lt;/b&gt;</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -35,58 +38,130 @@
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
       <widget class="QLabel" name="firstNameLabel">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(176, 175, 177);</string>
+       </property>
        <property name="text">
         <string>First Name</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="firstNameField"/>
+      <widget class="QLineEdit" name="firstNameField">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(90, 90, 90);</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="lastNameLabel">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(176, 175, 177);</string>
+       </property>
        <property name="text">
         <string>Last Name</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lastNameField"/>
+      <widget class="QLineEdit" name="lastNameField">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(90, 90, 90);</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="emailLabel">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(176, 175, 177);</string>
+       </property>
        <property name="text">
         <string>Email</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="emailField"/>
+      <widget class="QLineEdit" name="emailField">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(90, 90, 90);</string>
+       </property>
+      </widget>
      </item>
      <item row="3" column="0">
+      <widget class="QLabel" name="emailLabel_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(176, 175, 177);</string>
+       </property>
+       <property name="text">
+        <string>Role</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QComboBox" name="roleBox">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(90, 90, 90);
+color: rgb(0, 0, 0);</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>Adopter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Provider</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="4" column="0">
       <widget class="QLabel" name="passwordLabel">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(176, 175, 177);</string>
+       </property>
        <property name="text">
         <string>Password</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="passwordField"/>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="passwordField">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(90, 90, 90);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
      </item>
-     <item row="4" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="passwordLabel_2">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(176, 175, 177);</string>
+       </property>
        <property name="text">
         <string>Confirm Password</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="passwordField_2"/>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="passwordField_2">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(90, 90, 90);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="createOkay">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(90, 90, 90);</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -108,7 +183,7 @@
    <sender>createOkay</sender>
    <signal>accepted()</signal>
    <receiver>CreateAccount</receiver>
-   <slot>accept()</slot>
+   <slot>exec()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>257</x>

@@ -9,7 +9,7 @@ void MainWindow::setWelcomePhoto() {
 
     QString photoString = QString::number(photoNum);
 
-    QString tempPath("../../../../CoverPhoto");
+    QString tempPath(":/resources/imgs/petPhoto");
     tempPath.append(photoString);
     QString filePath = tempPath.append(".jpg");
     qDebug() << filePath;
@@ -35,6 +35,13 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::showPetDisplay()
+{
+    hide();
+    petDisplay = new PetDisplay(this);
+    petDisplay->show();
+}
+
 void MainWindow::on_loginButton_clicked()
 {
     // hiding main window - figure out how to show after
@@ -45,6 +52,13 @@ void MainWindow::on_loginButton_clicked()
     Login loginUI;
     loginUI.setModal(true);
     loginUI.exec();
+
+    if (loginUI.loginSuccessful) {
+        showPetDisplay();
+    } else {
+        QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
+    }
+
 }
 
 void MainWindow::on_createButton_clicked()
@@ -53,6 +67,10 @@ void MainWindow::on_createButton_clicked()
     CreateAccount createUI;
     createUI.setModal(true);
     createUI.exec();
+
+    if (createUI.signUpSuccessful) {
+       showPetDisplay();
+    }
 }
 
 void MainWindow::openDB()
@@ -63,6 +81,11 @@ void MainWindow::openDB()
     if (db.open()) {
         qDebug() << "Database opened successfully.\n";
     } else {
-        std::cerr << "Error opening database: " << db.lastError().text().toStdString() << std::endl;
+        qFatal("Error opening database.");
     }
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    QApplication::quit();
 }
