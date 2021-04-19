@@ -69,13 +69,20 @@ void PetDisplay::displayPet()
             int displayID = rand() % maxID + 1;
 
             QSqlQuery q2;
-            q2.prepare("select * from Pet where pet_id = ?");
+            q2.prepare("select * from Pet "
+                       "inner join Shelter on Shelter.shelter_id = Pet.shelter_id "
+                       "where Pet.pet_id = ?");
             q2.addBindValue(displayID);
             if (q2.exec()) {
                 if (q2.next()) {
-                    QString name = q2.value(1).toString();
-                    ui->label_name->setText(name);
+                    QString pName = q2.value(1).toString();
+                    ui->label_name->setText(pName);
+
+                    QString sName = q2.value(5).toString();
+                    ui->label_shelter_name->setText(sName);
                 }
+            } else {
+                qDebug() << "Error getting pet:" << q2.lastError().text();
             }
         }
     }
