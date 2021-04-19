@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include <QtSql>
 
 #include "gtest/gtest.h"
@@ -49,6 +50,7 @@ TEST(TestRead, TestReadShelter) {
         int maxID = query.value(0).toInt();
         EXPECT_EQ(maxID, 100);
 
+        srand(time(0));
         int id = rand() % maxID + 1;
 
         QSqlQuery q2;
@@ -70,7 +72,9 @@ TEST(TestRead,TestReadPet) {
 
     while (query.next()) {
         int maxID = query.value(0).toInt();
+        EXPECT_EQ(maxID, 100);
 
+        srand(time(0));
         int id = rand() % maxID + 1;
 
         QSqlQuery q2;

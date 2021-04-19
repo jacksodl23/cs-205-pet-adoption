@@ -1,26 +1,27 @@
 #include "mainwindow.h"
-
+#include "petdisplay.h"
+#include "../backend/globals.h"
 #include <QApplication>
 #include <fstream>
-#include <string>
 
-int getCurrentUserID() {
-    std::ifstream configStream("currentuserid");
-
-    if (!configStream.is_open()) {
-        std::cerr << "Error opening config file." << std::endl;
-    }
-
+/* int getCurrentUser() {
     std::string line;
+    std::ifstream config("currentuser.config");
+    if (config.is_open()) {
+        while (getline(config, line)) {
+            SimpleCrypt crypto(CRYPTO_KEY);
 
-    while (getline(configStream, line)) {
-        int id = std::stoi(line);
+            QString lineString = QString::fromStdString(line);
+            QString decrypted = crypto.decryptToString(lineString);
+            int theID = decrypted.toInt();
+            currentUserID = theID;
 
-        return id;
+            return theID;
+        }
     }
 
     return -1;
-}
+} */
 
 int main(int argc, char *argv[])
 {

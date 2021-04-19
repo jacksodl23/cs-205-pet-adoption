@@ -36,10 +36,7 @@ void CreateAccount::on_createOkay_accepted()
     PetOwner newOwner(password, firstName, lastName, email);
 
     if (newOwner.insertIntoDB()) {
-        QMessageBox::information(this, "Huzzah!", "Welcome new pet owner!");
-        //QMessageBox ownerBox;
-        //ownerBox.setText("Owner created!\nHuzzah! Welcome new pet owner!");
-        //ownerBox.exec();
+        signUpSuccessful = true;
     } else {
         if (newOwner.existsInDB()) {
             QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");

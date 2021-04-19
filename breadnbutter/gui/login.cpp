@@ -24,27 +24,16 @@ void Login::on_loginOkay_accepted()
     QString welcomeMessage = "Welcome ";
 
     PetOwner owner(email, password);
-    if (owner.attemptLogin()) {
-        welcomeMessage.append(email);
-        welcomeMessage.append(" to this amazing app!");
-        welcomeMessage.append("\nYour password is ");
-        welcomeMessage.append(password);
-        welcomeMessage.append("\nYour ID is ");
-        welcomeMessage.append(QString::number(owner.getID()));
-        //QMessageBox::setTextFormat(QColor(255,255,255,127));
-        QMessageBox::information(this, "Welcome!", welcomeMessage);
-        //QMessageBox welcomeBox;
-        //welcomeBox.setText(welcomeMessage);
-        //welcomeBox.exec();
+    loginSuccessful = owner.attemptLogin();
 
-    } else {
-        QMessageBox::critical(this, "Error Logging In", "Something went wrong while trying to log you in. Please try again.");
-        //QMessageBox errorBox;
-        //errorBox.setText("Error Logging In!\nSomething went wrong while trying to log you in. Please try again.");
-        //errorBox.exec();
+    if (loginSuccessful) {
+        std::ofstream config("currentuser.config");
+
+        SimpleCrypt crypto(CRYPTO_KEY);
+        QString id = QString::number(owner.getID());
+        QString encoded = crypto.encryptToString(id);
+
+        config << encoded.toStdString();
+        config.close();
     }
-
-
-    loginSuccessful = true;
-
 }

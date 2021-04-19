@@ -3,11 +3,10 @@
 void PetOwner::chooseID()
 {
     QSqlQuery query;
-    int fieldNo = query.record().indexOf("adopter_id");
 
     if (query.exec("select max(adopter_id) from Adopter")) {
         if (query.next()) {
-            int lastID = query.value(fieldNo).toInt();
+            int lastID = query.value(0).toInt();
 
             petOwnerID = lastID + 1;
         } else {

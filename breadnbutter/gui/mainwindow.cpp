@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWelcomePhoto();
     openDB();
+    getCurrentUser();
 }
 
 MainWindow::~MainWindow()
@@ -34,6 +35,32 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::showPetDisplay()
+{
+    hide();
+    petDisplay = new PetDisplay(this);
+    petDisplay->show();
+}
+
+void MainWindow::getCurrentUser()
+{
+    std::string line;
+    std::ifstream config("currentuser.config");
+    if (config.is_open()) {
+        while (getline(config, line)) {
+            SimpleCrypt crypto(CRYPTO_KEY);
+
+            QString lineString = QString::fromStdString(line);
+            QString decrypted = crypto.decryptToString(lineString);
+            int theID = decrypted.toInt();
+            currentUserID = theID;
+
+            break;
+        }
+        showPetDisplay();
+    }
+}
 
 void MainWindow::on_loginButton_clicked()
 {
@@ -47,9 +74,9 @@ void MainWindow::on_loginButton_clicked()
     loginUI.exec();
 
     if (loginUI.loginSuccessful) {
-        hide();
-        petDisplay = new PetDisplay(this);
-        petDisplay->show();
+        showPetDisplay();
+    } else {
+        QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
     }
 
 }
@@ -60,6 +87,10 @@ void MainWindow::on_createButton_clicked()
     CreateAccount createUI;
     createUI.setModal(true);
     createUI.exec();
+
+    if (createUI.signUpSuccessful) {
+       showPetDisplay();
+    }
 }
 
 void MainWindow::openDB()

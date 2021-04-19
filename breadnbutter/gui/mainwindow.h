@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <iostream>
+#include <fstream>
 #include <QMainWindow>
 #include <QPixmap>
 #include <ctime>
@@ -11,6 +12,8 @@
 #include "login.h"
 #include "createaccount.h"
 #include "petdisplay.h"
+#include "../backend/simplecrypt.h"
+#include "../backend/globals.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -39,5 +42,7 @@ private:
     void openDB();
 
     PetDisplay *petDisplay;
+    void showPetDisplay();
+    void getCurrentUser();
 };
 #endif // MAINWINDOW_H

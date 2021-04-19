@@ -1,11 +1,14 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
+#include <fstream>
 #include <QDialog>
 #include <QMessageBox>
 #include <QtSql>
 #include <QPushButton>
 #include "petdisplay.h"
+#include "../backend/simplecrypt.h"
+#include "../backend/globals.h"
 
 namespace Ui {
 class Login;

@@ -5,9 +5,14 @@
 #include <QDebug>
 #include <vector>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include <QMessageBox>
 #include <QColor>
 #include <QColorDialog>
+#include <QtSql>
+#include "../backend/globals.h"
+#include "../backend/petowner.h"
 
 namespace Ui {
 class PetDisplay;
@@ -31,6 +36,10 @@ private slots:
 private:
     Ui::PetDisplay *ui;
     QPixmap petPic;
+    PetOwner currentUser;
+
+    void displayPet();
+    void getCurrentUser();
 };
 
 #endif // PETDISPLAY_H

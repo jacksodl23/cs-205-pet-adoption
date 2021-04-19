@@ -18,6 +18,8 @@ public:
     explicit CreateAccount(QWidget *parent = nullptr);
     ~CreateAccount();
 
+    bool signUpSuccessful;
+
 private slots:
     void on_createOkay_accepted();
 

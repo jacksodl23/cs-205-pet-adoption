@@ -13,6 +13,8 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+    displayPet();
+    getCurrentUser();
 }
 
 PetDisplay::~PetDisplay()
@@ -54,4 +56,41 @@ void PetDisplay::on_pushButton_clicked()
     //QMessageBox searchBox;
     //searchBox.setText("Hurray!\nSearch button clicked!");
     //searchBox.exec();
+}
+
+void PetDisplay::displayPet()
+{
+    QSqlQuery query;
+    if (query.exec("select max(pet_id) from Pet")) {
+        if (query.next()) {
+            int maxID = query.value(0).toInt();
+
+            srand(time(0));
+            int displayID = rand() % maxID + 1;
+
+            QSqlQuery q2;
+            q2.prepare("select * from Pet where pet_id = ?");
+            q2.addBindValue(displayID);
+            if (q2.exec()) {
+                if (q2.next()) {
+                    QString name = q2.value(1).toString();
+                    ui->label_name->setText(name);
+                }
+            }
+        }
+    }
+}
+
+void PetDisplay::getCurrentUser()
+{
+    QSqlQuery query;
+    query.prepare("select * from Adopter where adopter_id = ?");
+    query.addBindValue(currentUserID);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString name = query.value(1).toString();
+            ui->label_user_name->setText("Welcome " + name);
+        }
+    }
 }
