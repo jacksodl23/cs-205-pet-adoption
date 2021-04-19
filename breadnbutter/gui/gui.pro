@@ -14,6 +14,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     petdisplay.cpp \
+    ../backend/globals.cpp \
+    ../backend/simplecrypt.cpp \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
     ../backend/shelter.cpp
@@ -35,3 +37,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    petPhotos.qrc

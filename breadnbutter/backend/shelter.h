@@ -2,17 +2,14 @@
 #define SHELTER_H
 #include <QString>
 #include <QtSql>
+#include <iostream>
 
-class shelter
+class Shelter
 {
 public:
-    shelter();
-    shelter(QString n, QString l, int p, QString e){
-        this->name = n;
-        this->location = l;
-        this->phoneNumber = p;
-        this->email = e;
-    }
+    Shelter();
+    Shelter(int id);
+    Shelter(QString n, QString l, int p, QString e);
 
     // accessor methods
     int getPhoneNumber();
@@ -29,6 +26,7 @@ public:
     // database methods
     bool insertIntoDB();
     bool deleteFromDB();
+    bool existsInDB();
 
 private:
     int shelterID;

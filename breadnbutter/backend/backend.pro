@@ -7,10 +7,14 @@ QT += sql
 
 HEADERS += pet.h \
            petowner.h \
-shelter.h
+shelter.h \
+    simplecrypt.h \
+    globals.h
 
 SOURCES += main.cpp \
            pet.cpp \
            petowner.cpp \
-shelter.cpp
+shelter.cpp \
+    simplecrypt.cpp \
+    globals.cpp
 

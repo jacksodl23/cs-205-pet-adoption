@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <QPushButton>
+#include "../backend/petowner.h"
 
 namespace Ui {
 class CreateAccount;
@@ -15,6 +17,8 @@ class CreateAccount : public QDialog
 public:
     explicit CreateAccount(QWidget *parent = nullptr);
     ~CreateAccount();
+
+    bool signUpSuccessful;
 
 private slots:
     void on_createOkay_accepted();

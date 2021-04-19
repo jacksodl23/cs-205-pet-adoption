@@ -13,12 +13,21 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(70, 70, 70);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
     <size>
      <width>800</width>
      <height>557</height>
     </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -35,7 +44,7 @@
        </font>
       </property>
       <property name="text">
-       <string>WELCOME TO BREAD AND BUTTER</string>
+       <string>&lt;b&gt;&lt;font color=red&gt;WELCOME TO BREADNBUTTER&lt;font&gt;&lt;/b&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -62,6 +71,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QPushButton" name="loginButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(90, 90, 90);</string>
+        </property>
         <property name="text">
          <string>Login</string>
         </property>
@@ -69,6 +81,9 @@
       </item>
       <item>
        <widget class="QPushButton" name="createButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(90, 90, 90);</string>
+        </property>
         <property name="text">
          <string>Create Account</string>
         </property>
@@ -87,7 +102,13 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(176, 175, 177);</string>
+   </property>
    <widget class="QMenu" name="menuBread_and_Butter">
+    <property name="styleSheet">
+     <string notr="true">color: rgb(176, 175, 177);</string>
+    </property>
     <property name="title">
      <string>Bread and Butter</string>
     </property>
