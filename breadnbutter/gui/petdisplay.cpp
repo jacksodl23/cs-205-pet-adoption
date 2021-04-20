@@ -31,7 +31,15 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
     std::vector<std::string> dogBreedList = {"Affenpinscher", "Curly-Coated Retriever",
                                "Foxhound", "Lakeland Terrier"};
     if (arg1 == "Dog") {
+
+        // clearing all of the drop down menus
         ui->breedBox->clear();
+        ui->colorBox->clear();
+        ui->ageBox->clear();
+        ui->hairLenBox->clear();
+        ui->weightBox->clear();
+        ui->hypoBox->clear();
+
         for (unsigned long i = 0; i < dogBreedList.size(); i++) {
             ui->breedBox->addItem(dogBreedList[i].data());
         }
@@ -41,16 +49,128 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
     std::vector<std::string> catBreedList = {"Abyssinian", "Manx",
                                "Russian Blue", "Sphynx"};
     if (arg1 == "Cat") {
+
+        // clearing all of the drop down menus
         ui->breedBox->clear();
+        ui->colorBox->clear();
+        ui->ageBox->clear();
+        ui->hairLenBox->clear();
+        ui->weightBox->clear();
+        ui->hypoBox->clear();
+
         for (unsigned long j = 0; j < catBreedList.size(); j++) {
             ui->breedBox->addItem(catBreedList[j].data());
         }
     }
 }
 
+void PetDisplay::on_breedBox_activated(const QString &arg1)
+{
+    std::vector<std::string> affenpinscherColors = {"Black", "Grey", "Red", "Tan",
+                                                   "Silver", "Beige"};
+
+    // handle dog breeds colors and hair length -- maybe use a map with key val pairs
+    // loaded from the database?
+    if (arg1 == "Affenpinscher") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long k = 0; k < affenpinscherColors.size(); k++) {
+            ui->colorBox->addItem(affenpinscherColors[k].data());
+        }
+        ui->hairLenBox->addItem("Long");
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> curlyCoatedRetrieverColors = {"Black", "Liver"};
+    if (arg1 == "Curly-Coated Retriever") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long i = 0; i < curlyCoatedRetrieverColors.size(); i++) {
+            ui->colorBox->addItem(curlyCoatedRetrieverColors[i].data());
+        }
+        ui->hairLenBox->addItem("Medium");
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> foxhoundColors = {"White", "Tan", "Blue", "Tri-color",
+                                              "White & Cream", "Red"};
+    if (arg1 == "Foxhound") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long i = 0; i < foxhoundColors.size(); i++) {
+            ui->colorBox->addItem(foxhoundColors[i].data());
+        }
+        ui->hairLenBox->addItem("Medium");
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> lakelandTerrierColors = {"Black", "Wheaten", "Black and Tan",
+                                                      "Blue", "Grizzle & Tan", "Red"};
+    if (arg1 == "Lakeland Terrier") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long i = 0; i < lakelandTerrierColors.size(); i++) {
+            ui->colorBox->addItem(lakelandTerrierColors[i].data());
+        }
+        ui->hairLenBox->addItem("Long");
+        ui->hairLenBox->addItem("Medium");
+    }
+
+
+
+    std::vector<std::string> abyssinianColors = {"Ruddy", "Sorrel", "Blue", "Fawn",
+                                                "Chocolate", "Silver", "Lilac"};
+    // handle cat breeds colors and hair length -- maybe use a map with key val pairs
+    // loaded from the database?
+    if (arg1 == "Abyssinian") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < abyssinianColors.size(); i++) {
+            ui->colorBox->addItem(abyssinianColors[i].data());
+        }
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> manxColors = {"White", "Blue", "Black", "Red",
+                                                "Cream", "Silver", "Tortoiseshell",
+                                          "Bluecream", "Brown"};
+    if (arg1 == "Manx") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < manxColors.size(); i++) {
+            ui->colorBox->addItem(manxColors[i].data());
+        }
+        ui->hairLenBox->addItem("Long");
+        ui->hairLenBox->addItem("Medium");
+    }
+
+    std::vector<std::string> russianBlueColors = {"Silver", "Dark Grey"};
+    if (arg1 == "Russian Blue") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < russianBlueColors.size(); i++) {
+            ui->colorBox->addItem(russianBlueColors[i].data());
+        }
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> sphynxColors = {"White", "Black", "Red", "Brown",
+                                            "Lavender"};
+    if (arg1 == "Sphynx") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < sphynxColors.size(); i++) {
+            ui->colorBox->addItem(sphynxColors[i].data());
+        }
+        ui->hairLenBox->addItem("Hairless");
+    }
+}
+
 void PetDisplay::on_pushButton_clicked()
 {
-    QMessageBox::information(this, "Hurray!", "Search button clicked!");
+    QString noticeString = "Search button clicked! Your pet type is ";
+    noticeString.append(ui->typeBox->currentText());
+    QMessageBox::information(this, "Hurray!", noticeString);
     //QMessageBox searchBox;
     //searchBox.setText("Hurray!\nSearch button clicked!");
     //searchBox.exec();
