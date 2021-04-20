@@ -31,6 +31,8 @@ private slots:
 
     void on_typeBox_activated(const QString &arg1);
 
+    void on_breedBox_activated(const QString &arg1);
+
     void on_pushButton_clicked();
 
 private:
