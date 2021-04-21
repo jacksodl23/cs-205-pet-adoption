@@ -34,9 +34,10 @@ void CreateAccount::on_createOkay_accepted()
     // what about shelter owner?
 
     PetOwner newOwner(password, firstName, lastName, email);
+    signUpSuccessful = newOwner.insertIntoDB();
 
-    if (newOwner.insertIntoDB()) {
-        signUpSuccessful = true;
+    if (signUpSuccessful) {
+        currentUserID = newOwner.getID();
 
         std::ofstream config("currentuser.config");
 

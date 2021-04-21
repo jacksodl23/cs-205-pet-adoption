@@ -1,6 +1,5 @@
 #include "login.h"
 #include "ui_login.h"
-#include "../backend/petowner.h"
 
 Login::Login(QWidget *parent) :
     QDialog(parent),
@@ -27,6 +26,8 @@ void Login::on_loginOkay_accepted()
     loginSuccessful = owner.attemptLogin();
 
     if (loginSuccessful) {
+        currentUserID = owner.getID();
+
         std::ofstream config("currentuser.config");
 
         SimpleCrypt crypto(CRYPTO_KEY);
