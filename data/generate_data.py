@@ -60,6 +60,11 @@ class Adopter:
 		line += "\n"
 		return line
 
+	def changeInfo(self, name, email, password):
+		self.name = name
+		self.email = email
+		self.password = password
+
 class Pet_Attributes:
 	def __init__(self, pet_attribute_id, is_cat):
 		self.pet_attribute_id = pet_attribute_id
@@ -119,7 +124,6 @@ csv.close()
 
 # Pets
 numPets = 100
-# csv.setFile("Pet_data.csv")
 pets = []
 csv = open("table_data/Pet_data.csv" ,"w")
 for i in range(numPets):
@@ -132,10 +136,18 @@ csv.close()
 numAdopters = 100
 adopters = []
 csv = open("table_data/Adopter_data.csv", "w")
+
 for i in range(numAdopters):
 	a = Adopter(i+1, numPets+i+1) # to ensure that adopter_preferences_id is unique from pet_preferences_id
 	adopters.append(a)
 	csv.write(a.toCSV())
+
+# default account to login
+default = Adopter(numAdopters+1, numAdopters+numPets+1)
+default.changeInfo("John Smith", "johnsmith@gmail.com", "hello")
+adopters.append(default)
+csv.write(default.toCSV())
+
 csv.close()
 
 # Pet Attributes
