@@ -36,5 +36,7 @@ void Login::on_loginOkay_accepted()
 
         config << encoded.toStdString();
         config.close();
+    } else {
+        QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
     }
 }

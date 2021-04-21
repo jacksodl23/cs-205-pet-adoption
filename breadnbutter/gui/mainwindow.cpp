@@ -55,8 +55,6 @@ void MainWindow::on_loginButton_clicked()
 
     if (loginUI.loginSuccessful) {
         showPetDisplay();
-    } else {
-        QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
     }
 
 }
