@@ -37,6 +37,15 @@ void CreateAccount::on_createOkay_accepted()
 
     if (newOwner.insertIntoDB()) {
         signUpSuccessful = true;
+
+        std::ofstream config("currentuser.config");
+
+        SimpleCrypt crypto(CRYPTO_KEY);
+        QString id = QString::number(newOwner.getID());
+        QString encoded = crypto.encryptToString(id);
+
+        config << encoded.toStdString();
+        config.close();
     } else {
         if (newOwner.existsInDB()) {
             QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");
