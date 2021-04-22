@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::PetProfile *ui;
+
+    QPixmap petPic;
 };
 
 #endif // PETPROFILE_H
