@@ -21,7 +21,7 @@
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>481</width>
+     <width>521</width>
      <height>451</height>
     </rect>
    </property>
@@ -38,7 +38,7 @@ border: 2px solid  grey;
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>461</width>
+      <width>501</width>
       <height>421</height>
      </rect>
     </property>
@@ -50,9 +50,9 @@ border: 2px solid  grey;
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>550</x>
      <y>10</y>
-     <width>321</width>
+     <width>281</width>
      <height>691</height>
     </rect>
    </property>
@@ -64,13 +64,64 @@ border: 2px solid  grey;
    <property name="title">
     <string>Info</string>
    </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Age</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Color</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Hypallergenic</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Location</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Shelter Owner</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Phone</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QGroupBox" name="groupBox_3">
    <property name="geometry">
     <rect>
      <x>20</x>
      <y>470</y>
-     <width>481</width>
+     <width>521</width>
      <height>231</height>
     </rect>
    </property>
@@ -99,7 +150,7 @@ border: 2px solid  grey;
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="comboBox"/>
+       <widget class="QComboBox" name="dayComboBox"/>
       </item>
      </layout>
     </item>
@@ -119,7 +170,7 @@ border: 2px solid  grey;
        </widget>
       </item>
       <item>
-       <widget class="QSlider" name="horizontalSlider">
+       <widget class="QSlider" name="timeSlider">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -128,21 +179,21 @@ border: 2px solid  grey;
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="makeApptButton">
       <property name="text">
        <string>Make or Update Appointment</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="deleteApptButton">
       <property name="text">
        <string>Delete Appointment</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="backToSearchButton">
       <property name="text">
        <string>Go Back to Search!</string>
       </property>
