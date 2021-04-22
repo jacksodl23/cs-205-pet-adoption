@@ -38,7 +38,7 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
-        ui->hypoBox->clear();
+//        ui->hypoBox->clear();
 
         for (unsigned long i = 0; i < dogBreedList.size(); i++) {
             ui->breedBox->addItem(dogBreedList[i].data());
@@ -54,7 +54,7 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
-        ui->hypoBox->clear();
+//        ui->hypoBox->clear();
 
         for (unsigned long j = 0; j < catBreedList.size(); j++) {
             ui->breedBox->addItem(catBreedList[j].data());
