@@ -74,7 +74,7 @@ void shelterUpload::on_pushButton_clicked()
     this->age = ui->lineEdit->text().toInt();
     this->weight = ui->lineEdit_2->text().toFloat();
     this->origin = ui->lineEdit_3->text();
-    this->description = ui->textEdit->text();
+    this->description = "description";
 
     Pet newPet(name, age, breed, color, hairLength, weight, origin, allergy, description);
 

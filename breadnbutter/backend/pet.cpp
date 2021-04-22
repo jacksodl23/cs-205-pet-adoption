@@ -41,11 +41,6 @@ Pet::Pet(QString name, int age, QString breed, QString color, QString hairType, 
     chooseID();
 }
 
-Pet::Pet(QString name)
-{
-    this->name = name;
-}
-
 bool Pet::insertIntoDB()
 {
     QSqlQuery query;
