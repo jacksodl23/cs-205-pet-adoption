@@ -46,7 +46,7 @@ TEST_F(BackendTest, TestDeleteAdopter) {
 TEST(TestRead, TestReadShelter) {
     QSqlQuery query("select max(shelter_id) from Shelter");
 
-    while (query.next()) {
+    if (query.next()) {
         int maxID = query.value(0).toInt();
         EXPECT_EQ(maxID, 100);
 
@@ -88,6 +88,39 @@ TEST(TestRead,TestReadPet) {
                 ASSERT_EQ(name.isEmpty(), false);
             }
         }
+    }
+}
+
+TEST(TestRead, GetPetsFromShelter) {
+    QSqlQuery query("select max(shelter_id) from Shelter");
+
+    if (query.next()) {
+        int maxID = query.value(0).toInt();
+        EXPECT_EQ(maxID, 100);
+
+        srand(time(0));
+        int id = rand() % maxID + 1;
+
+        QSqlQuery q2;
+        q2.prepare("select * from Pet "
+                   "inner join Shelter on shelter.shelter_id = pet.shelter_id "
+                   "where pet.shelter_id = ?");
+        q2.addBindValue(id);
+
+        bool result = q2.exec();
+
+        if (result) {
+            while (q2.next()) {
+                QString pName = q2.value(1).toString();
+                QString sName = q2.value(5).toString();
+
+                qDebug() << "Found pet named" << pName << "in shelter named" << sName;
+            }
+        } else {
+            qDebug() << "Error getting pets from shelter:" << q2.lastError().text();
+        }
+
+        ASSERT_EQ(result, true);
     }
 }
 

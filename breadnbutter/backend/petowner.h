@@ -3,6 +3,7 @@
 #include <QString>
 #include <QtSql>
 #include <iostream>
+#include <vector>
 
 class PetOwner
 {
@@ -45,6 +46,8 @@ public:
     bool deleteFromDB();
     bool existsInDB();
     bool attemptLogin();
+
+    std::vector getLikedPets();
 
 private:
     int petOwnerID;
