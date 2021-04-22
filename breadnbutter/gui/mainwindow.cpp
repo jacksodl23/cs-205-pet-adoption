@@ -42,6 +42,13 @@ void MainWindow::showPetDisplay()
     petDisplay->show();
 }
 
+void MainWindow::showShelterDisplay()
+{
+    hide();
+    shelterDisplay = new shelterUpload(this);
+    shelterDisplay->show();
+}
+
 void MainWindow::on_loginButton_clicked()
 {
     // hiding main window - figure out how to show after

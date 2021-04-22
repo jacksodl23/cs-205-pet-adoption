@@ -18,20 +18,23 @@ SOURCES += \
     ../backend/simplecrypt.cpp \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
-    ../backend/shelter.cpp
+    ../backend/shelter.cpp \
+    shelterupload.cpp
 
 HEADERS += \
     createaccount.h \
     login.h \
     mainwindow.h \
     petdisplay.h \
-    ../backend/*.h
+    ../backend/*.h \
+    shelterupload.h
 
 FORMS += \
     createaccount.ui \
     login.ui \
     mainwindow.ui \
-    petdisplay.ui
+    petdisplay.ui \
+    shelterupload.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
