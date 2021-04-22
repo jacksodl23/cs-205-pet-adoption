@@ -262,8 +262,8 @@ border: 2px solid  grey;
           <widget class="QLabel" name="animalDisplay">
            <property name="minimumSize">
             <size>
-             <width>480</width>
-             <height>410</height>
+             <width>515</width>
+             <height>425</height>
             </size>
            </property>
            <property name="maximumSize">
@@ -308,7 +308,7 @@ border: 2px solid  grey;
           </layout>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="profileButton">
            <property name="text">
             <string>Check my profile!</string>
            </property>

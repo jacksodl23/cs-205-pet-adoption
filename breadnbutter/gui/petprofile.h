@@ -2,6 +2,12 @@
 #define PETPROFILE_H
 
 #include <QWidget>
+#include <QDialog>
+#include <QMessageBox>
+#include <QPushButton>
+
+#include "petdisplay.h"
+#include "ui_petdisplay.h"
 
 namespace Ui {
 class PetProfile;
@@ -17,6 +23,7 @@ public:
 
 private:
     Ui::PetProfile *ui;
+    QPixmap petPic;
 };
 
 #endif // PETPROFILE_H

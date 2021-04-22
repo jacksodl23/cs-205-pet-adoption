@@ -224,3 +224,9 @@ void PetDisplay::getCurrentUser()
         qDebug() << "Error getting current user: " << query.lastError().text();
     }
 }
+
+void PetDisplay::on_profileButton_clicked()
+{
+   PetProfile profileUI;
+   profileUI.show();
+}
