@@ -46,7 +46,6 @@ CREATE TABLE Adopter_Preferences (
   adopter_id INTEGER NOT NULL,
   age_min INTEGER,
   age_max INTEGER,
-  breed_pref_id INTEGER UNIQUE,
   weight_min INTEGER,
   weight_max INTEGER,
   origin TEXT,
@@ -65,10 +64,10 @@ CREATE TABLE Liked_By (
 
 CREATE TABLE Breed_Pref (
   breed_pref_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
+  adopter_pref_id INTEGER NOT NULL,
   breed_id INTEGER NOT NULL,
-  adopter_id INTEGER NOT NULL,
   FOREIGN KEY(breed_id) REFERENCES Breeds(breed_id),
-  FOREIGN KEY(adopter_id) REFERENCES Adopter(adopter_id)
+  FOREIGN KEY(adopter_pref_id) REFERENCES Adopter_Preferences(adopter_pref_id)
   );
 
 CREATE TABLE Breeds (
