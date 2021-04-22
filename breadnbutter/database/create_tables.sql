@@ -9,9 +9,11 @@ CREATE TABLE User (
 
 CREATE TABLE Shelter (
   shelter_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT, 
+  owner_id INTEGER,
   name TEXT, 
   location TEXT, 
-  email TEXT
+  email TEXT,
+  FOREIGN KEY(owner_id) REFERENCES User(user_id)
   );
 
 CREATE TABLE Pet (
