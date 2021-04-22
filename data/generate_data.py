@@ -22,12 +22,12 @@ avg_adopt_likes = 10
 
 
 class ID_ctr:
-	__init__(self):
-		id_ctr = 0
+	def __init__(self):
+		self.id_ctr = 0
 
-	nextID():
-		id_ctr += 1
-		return id_ctr
+	def nextID(self):
+		self.id_ctr += 1
+		return self.id_ctr
 
 _user_id = ID_ctr()
 _shelter_id = ID_ctr()
@@ -78,7 +78,7 @@ class Pet_Attributes:
 		self.pet_id = pet_id
 		self.is_cat = r.choice([1, 0])
 		self.age = r.randint(0, 20)
-		if is_cat:
+		if self.is_cat:
 			self.breed = randLine("sample_data/CatBreeds.txt") if (r.random() < 0.5) else "Unknown"
 			self.weight = r.randint(5, 18)
 		else: 
@@ -124,11 +124,11 @@ class Pet:
 class Adopter_Preferences:
 	def __init__(self, adopter_id):
 		self.adopter_pref_id = _adopt_pref_id.nextID()
-		self.adopter_id
+		self.adopter_id = adopter_id
 		self.age_min = r.randint(0, 20)
-		self.age_max = r.randint(age_min, 20)
+		self.age_max = r.randint(self.age_min, 20)
 		self.weight_min = r.randint(0, 50)
-		self.weigh_max = r.randint(weight_min, 50)
+		self.weigh_max = r.randint(self.weight_min, 50)
 		self.origin = r.choice(["Shelter", "Rescue", "Either"])
 		self.hypoallergenic = 1 if (r.random() < 0.05) else 0
 		self.wants_cat = r.choice([1, 0])
@@ -147,7 +147,7 @@ class Adopter_Preferences:
 
 class Adopter:
 	def __init__(self):
-		self.user_id = user_id
+		self.user_id = _user_id.nextID()
 		self.name = genName()
 		self.location = randLine("sample_data/Locations.txt")
 		self.email = genEmail()
@@ -198,7 +198,7 @@ csv2.close()
 pets = []
 csv = open("table_data/Pet_data.csv" ,"w")
 for s in shelters:
-	for _ in avg_pets_shelter:
+	for _ in range(avg_pets_shelter):
 		p = Pet(s.shelter_id)
 		pets.append(p)
 		csv.write(p.toCSV())
