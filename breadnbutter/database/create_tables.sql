@@ -31,12 +31,14 @@ CREATE TABLE Pet (
 
 CREATE TABLE Pet_Attributes ( -- ANYTHING WE WANT TO SEARCH BY
   pet_att_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
+  pet_id INTEGER UNIQUE NOT NULL,
   is_cat INTEGER,
   age INTEGER,
   breed TEXT,
   weight INTEGER,
   origin TEXT,
-  hypoallergenic INTEGER
+  hypoallergenic INTEGER,
+  FOREIGN KEY(pet_id) REFERENCES Pet(Pet_id)
   );
 
 CREATE TABLE Adopter_Preferences (
