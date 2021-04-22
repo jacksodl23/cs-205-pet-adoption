@@ -19,8 +19,8 @@ SOURCES += \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
     ../backend/shelter.cpp \
-    petprofile.cpp \
-    shelterupload.cpp
+    shelterupload.cpp \
+    petprofile.cpp
 
 HEADERS += \
     createaccount.h \
@@ -28,16 +28,16 @@ HEADERS += \
     mainwindow.h \
     petdisplay.h \
     ../backend/*.h \
-    petprofile.h \
-    shelterupload.h
+    shelterupload.h \
+    petprofile.h
 
 FORMS += \
     createaccount.ui \
     login.ui \
     mainwindow.ui \
     petdisplay.ui \
-    petprofile.ui \
-    shelterupload.ui
+    shelterupload.ui \
+    petprofile.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
