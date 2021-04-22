@@ -228,5 +228,6 @@ void PetDisplay::getCurrentUser()
 void PetDisplay::on_profileButton_clicked()
 {
    PetProfile profileUI;
-   profileUI.show();
+   profileUI.setModal(true);
+   profileUI.exec();
 }
