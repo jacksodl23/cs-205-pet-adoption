@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>914</width>
+    <width>967</width>
     <height>695</height>
    </rect>
   </property>
@@ -62,13 +62,13 @@ border: 2px solid  grey;
        <string>Search Attributes</string>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="6" column="0">
-        <widget class="QLabel" name="label_9">
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_8">
          <property name="styleSheet">
           <string notr="true">color: rgb(176, 175, 177);</string>
          </property>
          <property name="text">
-          <string>Hypoallergenic</string>
+          <string>Weight</string>
          </property>
         </widget>
        </item>
@@ -79,7 +79,127 @@ border: 2px solid  grey;
          </property>
         </widget>
        </item>
-       <item row="7" column="0" colspan="2">
+       <item row="7" column="1">
+        <widget class="QSlider" name="horizontalSlider_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QSlider" name="horizontalSlider">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="typeBox">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(90, 90, 90);</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Dog</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Cat</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(176, 175, 177);</string>
+         </property>
+         <property name="text">
+          <string>Breed</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(176, 175, 177);</string>
+         </property>
+         <property name="text">
+          <string>Age</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(176, 175, 177);</string>
+         </property>
+         <property name="text">
+          <string>Type of pet</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">color: rgb(176, 175, 177);</string>
+         </property>
+         <property name="text">
+          <string>Hair Length</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="breedBox">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(90, 90, 90);</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Any</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Affenpinscher</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Curly-Coated Retriever</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Foxhound</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Lakeland Terrier</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QComboBox" name="hypoBox">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(90, 90, 90);</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Yes</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>No</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="9" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton">
          <property name="styleSheet">
           <string notr="true">color: rgb(176, 175, 177);</string>
@@ -106,118 +226,13 @@ border: 2px solid  grey;
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
-         </property>
-         <property name="text">
-          <string>Type of pet</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QComboBox" name="typeBox">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Dog</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Cat</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QComboBox" name="weightBox">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
-         </property>
-         <property name="text">
-          <string>Hair Length</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QComboBox" name="hypoBox">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
-         </property>
-        </widget>
-       </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="label_9">
          <property name="styleSheet">
           <string notr="true">color: rgb(176, 175, 177);</string>
          </property>
          <property name="text">
-          <string>Weight</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QComboBox" name="breedBox">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Affenpinscher</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Curly-Coated Retriever</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Foxhound</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Lakeland Terrier</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
-         </property>
-         <property name="text">
-          <string>Breed</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="ageBox">
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
-         </property>
-         <property name="text">
-          <string>Age</string>
+          <string>Hypoallergenic</string>
          </property>
         </widget>
        </item>
@@ -226,6 +241,12 @@ border: 2px solid  grey;
     </item>
     <item row="1" column="1">
      <widget class="QGroupBox" name="groupBox_2">
+      <property name="maximumSize">
+       <size>
+        <width>550</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(176, 175, 177);
 border: 2px solid  grey; 
@@ -300,9 +321,15 @@ border: 2px solid  grey;
     </item>
     <item row="1" column="2">
      <widget class="QGroupBox" name="groupBox_3">
+      <property name="minimumSize">
+       <size>
+        <width>170</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>150</width>
+        <width>170</width>
         <height>16777215</height>
        </size>
       </property>
@@ -372,7 +399,7 @@ border: 2px solid  grey;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>914</width>
+     <width>967</width>
      <height>21</height>
     </rect>
    </property>

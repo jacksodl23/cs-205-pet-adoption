@@ -19,6 +19,7 @@ SOURCES += \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
     ../backend/shelter.cpp \
+    petprofile.cpp \
     shelterupload.cpp
 
 HEADERS += \
@@ -27,6 +28,7 @@ HEADERS += \
     mainwindow.h \
     petdisplay.h \
     ../backend/*.h \
+    petprofile.h \
     shelterupload.h
 
 FORMS += \
@@ -34,6 +36,7 @@ FORMS += \
     login.ui \
     mainwindow.ui \
     petdisplay.ui \
+    petprofile.ui \
     shelterupload.ui
 
 # Default rules for deployment.
