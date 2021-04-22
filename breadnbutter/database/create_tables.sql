@@ -20,7 +20,7 @@ CREATE TABLE Pet (
   pet_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT, 
   name TEXT NOT NULL, 
   shelter_id INTEGER NOT NULL,
-  pet_attribute_id INTEGER,
+  pet_attribute_id INTEGER UNIQUE,
   color TEXT,
   hair_length TEXT,
   description TEXT,
