@@ -12,6 +12,7 @@
 #include "login.h"
 #include "createaccount.h"
 #include "petdisplay.h"
+#include "shelterupload.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 
@@ -26,6 +27,7 @@ class MainWindow : public QMainWindow
 public:
     void setWelcomePhoto();
     void showPetDisplay();
+    void showShelterDisplay();
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -43,5 +45,6 @@ private:
     void openDB();
 
     PetDisplay *petDisplay;
+    shelterUpload *shelterDisplay;
 };
 #endif // MAINWINDOW_H
