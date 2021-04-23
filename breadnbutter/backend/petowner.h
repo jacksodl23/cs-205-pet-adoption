@@ -4,6 +4,7 @@
 #include <QtSql>
 #include <iostream>
 #include <vector>
+#include "pet.h"
 
 class PetOwner
 {
@@ -47,7 +48,7 @@ public:
     bool existsInDB();
     bool attemptLogin();
 
-    std::vector getLikedPets();
+    std::vector<Pet> getLikedPets();
 
 private:
     int petOwnerID;
@@ -65,6 +66,7 @@ private:
     QString p_origin;
     bool p_allergy;
     void chooseID();
+    std::vector<Pet> likedPets;
 };
 
 #endif // PETOWNER_H

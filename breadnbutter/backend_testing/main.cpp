@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 #include <QtSql>
 
 #include "gtest/gtest.h"
@@ -72,7 +73,7 @@ TEST(TestRead,TestReadPet) {
 
     while (query.next()) {
         int maxID = query.value(0).toInt();
-        EXPECT_EQ(maxID, 100);
+        EXPECT_EQ(maxID, 1000);
 
         srand(time(0));
         int id = rand() % maxID + 1;
@@ -93,6 +94,7 @@ TEST(TestRead,TestReadPet) {
 
 TEST(TestRead, GetPetsFromShelter) {
     QSqlQuery query("select max(shelter_id) from Shelter");
+    std::vector<Pet> petsFromShelter;
 
     if (query.next()) {
         int maxID = query.value(0).toInt();
@@ -107,20 +109,24 @@ TEST(TestRead, GetPetsFromShelter) {
                    "where pet.shelter_id = ?");
         q2.addBindValue(id);
 
-        bool result = q2.exec();
-
-        if (result) {
+        if (q2.exec()) {
             while (q2.next()) {
-                QString pName = q2.value(1).toString();
-                QString sName = q2.value(5).toString();
+                int pID = q2.value(0).toInt();
+                Pet p(pID);
 
+                QString pName = q2.value(1).toString();
+
+
+                QString sName = q2.value(9).toString();
+
+                petsFromShelter.push_back(p);
                 qDebug() << "Found pet named" << pName << "in shelter named" << sName;
             }
         } else {
             qDebug() << "Error getting pets from shelter:" << q2.lastError().text();
         }
 
-        ASSERT_EQ(result, true);
+        ASSERT_EQ(petsFromShelter.size() > 0, true);
     }
 }
 

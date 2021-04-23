@@ -17,4 +17,5 @@ INCLUDEPATH += ../../gtest \
 HEADERS += ../backend/*.h
 
 SOURCES += main.cpp \
-           ../backend/petowner.cpp
+           ../backend/petowner.cpp \
+           ../backend/pet.cpp

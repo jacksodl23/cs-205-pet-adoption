@@ -76,6 +76,6 @@ void shelterUpload::on_pushButton_clicked()
     this->origin = ui->lineEdit_3->text();
     this->description = "description";
 
-    Pet newPet(name, age, breed, color, hairLength, weight, origin, allergy, description);
+    // Pet newPet(name, age, breed, color, hairLength, weight, origin, allergy, description);
 
 }
