@@ -60,8 +60,8 @@ TEST(TestRead, TestReadShelter) {
 
         if (q2.exec()) {
             while (q2.next()) {
-                QString name = q2.value(1).toString();
-                std::cout << "Found shelter named " << name.toStdString() << std::endl;
+                QString name = q2.value(2).toString();
+                qDebug() << "Found shelter named" << name;
                 ASSERT_EQ(name.isEmpty(), false);
             }
         }
@@ -85,7 +85,7 @@ TEST(TestRead,TestReadPet) {
         if (q2.exec()) {
             while (q2.next()) {
                 QString name = q2.value(1).toString();
-                std::cout << "Found pet named " << name.toStdString() << std::endl;
+                qDebug() << "Found pet named" << name;
                 ASSERT_EQ(name.isEmpty(), false);
             }
         }
@@ -122,6 +122,7 @@ TEST(TestRead, GetPetsFromShelter) {
                 petsFromShelter.push_back(p);
                 qDebug() << "Found pet named" << pName << "in shelter named" << sName;
             }
+            qDebug() << "This shelter has" << petsFromShelter.size() << "pets.";
         } else {
             qDebug() << "Error getting pets from shelter:" << q2.lastError().text();
         }
