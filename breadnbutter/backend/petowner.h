@@ -10,6 +10,7 @@ class PetOwner
 {
 public:
     PetOwner();
+    PetOwner(int id);
     PetOwner(QString email, QString password);
     PetOwner(QString p, QString f, QString l, QString e);
 

@@ -37,7 +37,7 @@ void CreateAccount::on_createOkay_accepted()
     signUpSuccessful = newOwner.insertIntoDB();
 
     if (signUpSuccessful) {
-        currentUserID = newOwner.getID();
+        currentUser = newOwner;
 
         std::ofstream config("currentuser.config");
 

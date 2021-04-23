@@ -66,6 +66,28 @@ PetOwner::PetOwner()
 
 }
 
+PetOwner::PetOwner(int id)
+{
+    this->petOwnerID = id;
+
+    QSqlQuery query;
+    query.prepare("select * from User where user_id = ?");
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString aName = query.value(0).toString();
+            QString aEmail = query.value(3).toString();
+            QString aPassword = query.value(4).toString();
+
+            this->email = aEmail;
+            this->password = aPassword;
+        }
+    } else {
+        qDebug() << "Error creating adopter:" << query.lastError().text();
+    }
+}
+
 PetOwner::PetOwner(QString email, QString password)
 {
     this->email = email;

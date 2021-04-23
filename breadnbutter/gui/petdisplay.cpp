@@ -213,7 +213,7 @@ void PetDisplay::getCurrentUser()
 {
     QSqlQuery query;
     query.prepare("select * from Adopter where adopter_id = ?");
-    query.addBindValue(currentUserID);
+    query.addBindValue(currentUser.getID());
 
     if (query.exec()) {
         if (query.next()) {
@@ -230,4 +230,14 @@ void PetDisplay::on_profileButton_clicked()
    PetProfile profileUI;
    profileUI.setModal(true);
    profileUI.exec();
+}
+
+void PetDisplay::on_button_like_clicked()
+{
+
+}
+
+void PetDisplay::on_button_dislike_clicked()
+{
+
 }

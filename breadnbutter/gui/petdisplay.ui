@@ -80,7 +80,7 @@ border: 2px solid  grey;
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="button_like">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -93,7 +93,7 @@ border: 2px solid  grey;
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
+            <widget class="QPushButton" name="button_dislike">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -428,7 +428,7 @@ border: 2px solid  grey;
      <x>0</x>
      <y>0</y>
      <width>1046</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuBread_and_Butter">
