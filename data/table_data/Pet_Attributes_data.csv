@@ -1,200 +1,1000 @@
-1,13,Dalmatian,black,medium,22,Rescue,False,Porro consectetur eius dolorem modi voluptatem.
-2,0,Japanese Spitz,black,medium,10,Rescue,False,Adipisci magnam quisquam dolorem velit.
-3,8,Mutt,spotted,short,22,Rescue,False,Porro dolore quaerat quiquia non numquam est neque.
-4,16,Unknown,black,long,12,Rescue,False,Quisquam non dolore modi.
-5,19,Mutt,brown,short,17,Shelter,False,Labore dolore consectetur consectetur.
-6,7,Siamese,orange,long,6,Rescue,False,Sed consectetur velit consectetur ipsum ut est.
-7,9,Unknown,white,long,17,Rescue,False,Amet non adipisci etincidunt aliquam etincidunt.
-8,8,Unknown,brown,long,18,Rescue,False,Voluptatem quiquia magnam dolorem porro consectetur.
-9,17,Devon Rex,white,medium,8,Rescue,False,Numquam sed est dolorem.
-10,0,Unknown,orange,medium,5,Rescue,False,Adipisci non neque sed.
-11,0,Unknown,brown,long,18,Shelter,False,Adipisci dolor neque dolorem amet aliquam.
-12,0,Boston Terrier,brown,medium,16,Rescue,False,Porro modi ut magnam magnam.
-13,13,Burmese,black,short,18,Rescue,False,Quaerat dolore quiquia non sed etincidunt.
-14,6,Unknown,white,long,8,Rescue,False,Amet etincidunt labore ut eius numquam ut voluptatem.
-15,9,Maremma Sheepdog,spotted,long,7,Rescue,False,Ut quisquam velit neque quisquam sit.
-16,9,Basset Fauve de Bretagne,white,long,5,Rescue,False,Aliquam dolor velit quiquia amet consectetur dolor.
-17,8,Leonberger,brown,long,21,Rescue,False,Est sed porro dolorem.
-18,9,Mutt,spotted,medium,5,Rescue,False,Labore aliquam etincidunt amet.
-19,10,Mutt,black,long,12,Rescue,False,Modi ut quaerat sed.
-20,8,Burmese,white,short,12,Rescue,False,Ut porro consectetur neque quiquia.
-21,10,Devon Rex,black,long,6,Shelter,False,Neque magnam dolor modi sed.
-22,0,Mutt,white,short,18,Rescue,False,Adipisci dolorem dolorem ipsum sed quaerat dolore.
-23,18,Unknown,black,medium,13,Rescue,False,Eius non numquam est velit adipisci numquam.
-24,2,Unknown,black,short,8,Shelter,False,Velit aliquam amet non neque ipsum.
-25,7,Mutt,orange,short,19,Shelter,False,Sit quaerat numquam ut ipsum voluptatem tempora dolor.
-26,11,Unknown,orange,medium,13,Shelter,True,Tempora est dolore aliquam.
-27,6,Abyssinian,orange,medium,13,Rescue,False,Quisquam quaerat quaerat quiquia dolorem.
-28,17,Mutt,black,medium,14,Shelter,False,Non quisquam sed labore modi ipsum.
-29,16,Border Terrier,white,long,25,Rescue,False,Tempora amet quisquam dolor.
-30,18,Scottish Fold,white,short,18,Rescue,False,Est porro magnam ipsum labore non.
-31,0,Unknown,white,short,5,Shelter,False,Magnam quisquam tempora numquam sit.
-32,0,Poodle Toy,white,medium,11,Rescue,False,Dolore etincidunt dolorem etincidunt modi dolore.
-33,6,Mutt,orange,long,12,Rescue,False,Magnam dolorem velit aliquam.
-34,14,Flat-Coated Retriever,white,short,8,Rescue,False,Quiquia dolore labore etincidunt velit dolore.
-35,13,Mutt,spotted,long,18,Rescue,False,Aliquam voluptatem dolore amet ipsum labore ipsum.
-36,14,Greyhound,white,short,6,Rescue,False,Est magnam consectetur porro aliquam etincidunt quaerat.
-37,4,Mutt,white,medium,7,Shelter,False,Quiquia dolorem adipisci ut quisquam.
-38,16,Bouvier des Flandres,spotted,long,24,Shelter,False,Dolorem ut eius consectetur consectetur.
-39,1,Bearded Collie,black,long,13,Rescue,False,Quisquam sed voluptatem magnam eius voluptatem labore consectetur.
-40,2,Abyssinian,spotted,short,10,Shelter,False,Porro consectetur est neque tempora voluptatem porro sit.
-41,5,Unknown,white,medium,18,Shelter,False,Voluptatem sed non numquam velit adipisci est.
-42,17,Unknown,spotted,long,12,Rescue,False,Aliquam ipsum numquam est velit neque dolor non.
-43,5,Unknown,white,short,14,Shelter,False,Amet velit consectetur quisquam ut.
-44,10,Unknown,white,medium,15,Rescue,False,Velit quisquam non ut consectetur.
-45,13,Mutt,white,short,23,Shelter,False,Neque non quaerat velit dolore.
-46,3,Manx,black,long,11,Shelter,False,Modi porro tempora adipisci quiquia.
-47,3,Golden Retriever,spotted,short,17,Rescue,False,Adipisci dolore est dolor ut.
-48,7,Mutt,brown,medium,23,Shelter,False,Ut sit sed etincidunt consectetur consectetur.
-49,11,Mutt,brown,short,19,Shelter,False,Est eius non quiquia est est ut.
-50,14,Mutt,spotted,long,16,Rescue,False,Adipisci etincidunt dolorem est voluptatem.
-51,12,Mutt,spotted,short,12,Shelter,False,Adipisci porro tempora quiquia labore.
-52,15,Persian,spotted,long,12,Rescue,False,Sed tempora eius est numquam neque voluptatem.
-53,14,Mutt,black,medium,23,Shelter,False,Adipisci est numquam dolore neque.
-54,18,Manx,brown,medium,6,Rescue,False,Tempora etincidunt porro ut dolorem.
-55,3,Fox Terrier Smooth Coat,orange,long,6,Rescue,False,Labore adipisci amet consectetur magnam neque.
-56,17,Persian,brown,medium,10,Rescue,False,Modi porro non voluptatem porro.
-57,4,Mutt,orange,long,15,Shelter,False,Voluptatem numquam amet etincidunt numquam porro.
-58,9,Old English Sheepdog,brown,short,15,Shelter,False,Velit quaerat est adipisci neque labore.
-59,19,Mutt,brown,long,22,Rescue,False,Numquam velit voluptatem eius porro eius non.
-60,11,Unknown,black,short,16,Shelter,False,Numquam amet amet magnam est.
-61,13,Maine Coon,brown,long,11,Shelter,False,Ut ut adipisci sed numquam ipsum sit magnam.
-62,2,Mutt,orange,long,20,Rescue,False,Dolorem sed velit velit velit.
-63,14,Mutt,white,long,9,Rescue,False,Non est etincidunt amet ut eius quisquam.
-64,13,Burmese,black,short,12,Rescue,False,Sed neque dolor porro quaerat.
-65,6,Mutt,white,long,22,Rescue,False,Velit porro consectetur tempora.
-66,17,Field Spaniel,orange,medium,13,Rescue,False,Tempora non est quisquam non non labore aliquam.
-67,11,Sphynx,white,long,9,Shelter,False,Est dolor velit velit non.
-68,1,Unknown,orange,long,13,Rescue,False,Ipsum voluptatem quisquam neque sed.
-69,1,Mutt,black,medium,20,Shelter,False,Labore velit est dolor porro modi quisquam voluptatem.
-70,13,Mutt,orange,medium,24,Rescue,False,Magnam eius tempora quiquia.
-71,5,Mutt,spotted,medium,11,Rescue,False,Ut dolorem etincidunt ut velit quiquia dolore.
-72,7,Finnish Lapphund,black,medium,13,Shelter,False,Tempora velit etincidunt sit voluptatem amet.
-73,20,Great Dane,spotted,medium,25,Shelter,False,Consectetur magnam eius numquam dolorem consectetur velit.
-74,10,Dalmatian,spotted,long,25,Rescue,False,Aliquam quisquam ipsum adipisci ut etincidunt quisquam.
-75,17,Welsh Springer Spaniel,spotted,short,10,Rescue,False,Dolor quisquam ut quiquia.
-76,7,Mutt,black,short,21,Rescue,False,Modi dolore sed quiquia.
-77,3,Unknown,brown,medium,6,Shelter,False,Est dolore sed neque adipisci neque velit dolore.
-78,0,Unknown,spotted,medium,18,Shelter,False,Adipisci quaerat amet labore.
-79,15,Maltese,brown,medium,23,Rescue,False,Modi sit porro quiquia modi ut adipisci.
-80,9,Cornish Rex,black,long,17,Shelter,False,Dolorem dolore quaerat dolorem.
-81,14,Shih Tzu,spotted,long,20,Shelter,False,Consectetur est dolore consectetur quisquam quiquia quisquam dolorem.
-82,15,King Charles Spaniel,white,short,22,Shelter,False,Etincidunt ipsum quisquam ipsum sed modi.
-83,1,Manx,spotted,short,18,Shelter,False,Aliquam amet neque est tempora.
-84,11,Unknown,spotted,long,11,Shelter,False,Neque quiquia velit numquam eius.
-85,1,Russian Blue,brown,medium,12,Shelter,False,Tempora sit eius adipisci modi.
-86,15,Unknown,white,short,7,Shelter,False,Adipisci non aliquam quaerat.
-87,10,Mutt,white,long,17,Rescue,False,Etincidunt ipsum non consectetur velit porro.
-88,6,Unknown,white,long,13,Rescue,False,Eius tempora ut dolore.
-89,9,Siamese,orange,short,11,Rescue,False,Tempora tempora dolorem adipisci amet ipsum amet non.
-90,19,Mutt,spotted,medium,14,Shelter,False,Amet voluptatem modi quiquia.
-91,3,Manx,white,medium,13,Shelter,False,Etincidunt velit magnam numquam.
-92,14,English Toy Terrier (Black & Tan),spotted,short,15,Rescue,False,Quiquia labore consectetur porro dolorem sit.
-93,20,Dobermann,black,long,16,Shelter,False,Eius dolore voluptatem modi adipisci sit non non.
-94,6,Scottish Fold,orange,short,9,Rescue,False,Tempora neque neque velit.
-95,15,Unknown,white,short,8,Rescue,False,Aliquam consectetur adipisci labore labore etincidunt sed sit.
-96,13,Unknown,white,short,12,Rescue,False,Numquam velit voluptatem eius dolore est tempora velit.
-97,12,Mutt,black,short,6,Rescue,False,Etincidunt voluptatem dolor tempora neque.
-98,1,Fox Terrier Wire Coat,white,medium,25,Shelter,False,Etincidunt eius sit porro.
-99,4,Turkish Van,spotted,long,10,Rescue,False,Modi velit amet etincidunt est voluptatem.
-100,8,Finnish Lapphund,orange,long,9,Rescue,False,Ipsum amet neque quiquia.
-101,1,Belgian Shepherd Dog Groenendael,white,long,18,Shelter,True,Sit dolorem quisquam quiquia ut.
-102,13,Turkish Van,black,long,7,Rescue,False,Numquam dolore sit amet etincidunt porro.
-103,19,Unknown,white,short,12,Shelter,True,Dolor porro ipsum quisquam.
-104,16,Burmese,orange,medium,7,Shelter,False,Sit eius dolorem modi adipisci dolorem quisquam dolor.
-105,7,Scottish Fold,spotted,long,15,Rescue,False,Velit dolor tempora labore eius dolorem.
-106,2,Unknown,brown,short,17,Rescue,False,Eius adipisci sed labore.
-107,9,British Shorthair,orange,long,13,Rescue,False,Adipisci numquam ipsum quaerat dolor porro quiquia sit.
-108,2,Mutt,spotted,short,18,Rescue,False,Aliquam voluptatem est quaerat ut porro sed adipisci.
-109,6,Border Collie,spotted,medium,11,Shelter,False,Etincidunt amet etincidunt eius.
-110,15,Mutt,orange,long,24,Shelter,False,Etincidunt adipisci velit consectetur quaerat.
-111,10,Lakeland Terrier,black,medium,23,Rescue,False,Dolore eius aliquam neque labore ut.
-112,1,Manx,spotted,short,12,Rescue,False,Neque eius dolor porro neque porro tempora amet.
-113,8,British Shorthair,orange,short,5,Rescue,True,Amet dolor sed non.
-114,16,Mutt,black,medium,11,Shelter,False,Numquam adipisci ipsum velit dolorem ipsum dolore.
-115,1,Papillon,spotted,short,25,Shelter,False,Modi etincidunt sed etincidunt quiquia non.
-116,13,Unknown,orange,short,6,Rescue,False,Dolore ipsum est dolorem etincidunt.
-117,14,Maine Coon,black,long,8,Rescue,False,Eius etincidunt non est porro.
-118,1,Russian Blue,white,medium,8,Rescue,False,Dolore est consectetur aliquam magnam.
-119,10,Persian,white,long,12,Shelter,False,Non etincidunt consectetur dolor.
-120,6,Collie (Smooth),orange,medium,22,Rescue,False,Ipsum ipsum dolorem magnam magnam sed.
-121,0,Newfoundland,brown,medium,10,Shelter,False,Porro ut eius consectetur quiquia ut tempora sed.
-122,7,Devon Rex,black,long,6,Rescue,False,Numquam porro dolor quisquam.
-123,15,Unknown,white,short,7,Shelter,False,Dolor neque eius etincidunt quiquia dolorem non.
-124,11,Unknown,orange,short,6,Shelter,False,Porro est dolorem velit dolore.
-125,8,Dalmatian,spotted,short,15,Shelter,False,Aliquam non adipisci etincidunt quaerat.
-126,0,Unknown,white,short,9,Shelter,False,Dolor sit sed amet dolor neque ut dolorem.
-127,11,Pointer,black,long,5,Shelter,False,Dolorem sed quisquam velit numquam.
-128,1,Japanese Spitz,orange,short,7,Rescue,True,Magnam tempora ut porro.
-129,11,Turkish Van,orange,short,5,Shelter,False,Dolorem dolorem amet aliquam adipisci non eius.
-130,10,Cornish Rex,brown,medium,15,Shelter,False,Eius magnam adipisci quiquia consectetur voluptatem dolor tempora.
-131,9,Unknown,orange,short,15,Rescue,False,Quisquam dolore numquam dolore.
-132,1,Dachshund (Miniature Long Haired),white,long,5,Shelter,False,Amet dolore numquam aliquam dolorem sed.
-133,4,Gordon Setter,orange,long,24,Rescue,False,Porro porro eius non porro aliquam adipisci dolor.
-134,7,Unknown,orange,short,5,Shelter,False,Voluptatem etincidunt ut consectetur ut sit etincidunt dolorem.
-135,6,Unknown,black,short,12,Shelter,False,Modi amet modi modi ipsum sed aliquam.
-136,5,Unknown,spotted,short,11,Shelter,False,Sit magnam est neque.
-137,4,Unknown,brown,short,9,Shelter,False,Magnam ipsum neque dolor quiquia neque quiquia consectetur.
-138,1,Unknown,orange,short,14,Rescue,False,Modi dolorem amet labore.
-139,4,Sphynx,spotted,long,6,Rescue,False,Voluptatem tempora dolorem amet aliquam.
-140,13,Tibetan Terrier,brown,long,7,Shelter,False,Consectetur non neque eius.
-141,11,Himalayan,orange,long,6,Shelter,False,Porro numquam magnam sit.
-142,1,Siamese,orange,long,7,Shelter,True,Consectetur dolorem est dolor amet.
-143,14,Dogue de Bordeaux,brown,medium,16,Rescue,False,Sed sed porro sed quiquia amet dolore sit.
-144,7,Portuguese Water Dog,white,long,22,Rescue,False,Voluptatem ut porro dolorem ipsum adipisci tempora.
-145,0,Mutt,spotted,short,18,Shelter,False,Quisquam sed est adipisci voluptatem.
-146,11,Mutt,white,medium,22,Shelter,False,Amet dolore amet amet numquam porro sed.
-147,0,Belgian Shepherd Dog Tervueren,brown,medium,14,Rescue,False,Aliquam quisquam adipisci modi.
-148,6,Unknown,orange,medium,14,Rescue,False,Dolore consectetur est labore non.
-149,15,Siamese,black,long,10,Rescue,False,Sed eius velit dolorem sed magnam modi.
-150,12,Bulldog,spotted,short,5,Shelter,False,Modi adipisci tempora labore dolorem.
-151,13,Mutt,brown,long,19,Shelter,False,Voluptatem numquam amet sed tempora non tempora aliquam.
-152,12,Maine Coon,spotted,short,13,Shelter,False,Numquam non eius dolor ut consectetur.
-153,14,Devon Rex,white,long,18,Shelter,False,Magnam aliquam voluptatem quisquam porro sed tempora numquam.
-154,16,Japanese Spitz,white,short,10,Shelter,False,Quiquia velit eius voluptatem eius dolorem non.
-155,17,Bouvier des Flandres,black,short,11,Rescue,True,Labore etincidunt sed neque amet labore.
-156,17,Unknown,spotted,long,13,Shelter,False,Dolorem magnam est quisquam porro.
-157,7,Unknown,orange,medium,5,Shelter,False,Eius porro aliquam dolore sit quaerat dolorem ut.
-158,15,British Shorthair,white,long,16,Rescue,False,Magnam sit voluptatem ipsum ut ut.
-159,10,Scottish Fold,brown,long,5,Rescue,False,Modi modi porro voluptatem.
-160,12,Unknown,white,long,18,Shelter,False,Numquam non sit ipsum magnam etincidunt quaerat.
-161,7,Turkish Van,orange,short,14,Rescue,False,Labore ipsum quiquia quaerat.
-162,3,Siamese,spotted,short,5,Shelter,False,Dolor ut neque aliquam.
-163,8,Weimaraner,orange,short,25,Shelter,False,Quiquia ipsum porro consectetur.
-164,8,Dachshund (Miniature Long Haired),black,long,17,Shelter,False,Numquam dolor neque quiquia non.
-165,11,Mutt,white,medium,10,Rescue,False,Tempora adipisci aliquam sit adipisci.
-166,0,Yorkshire Terrier,orange,long,14,Rescue,False,Labore ut dolore quiquia est non magnam tempora.
-167,4,Unknown,black,short,11,Rescue,False,Eius amet adipisci magnam modi adipisci ut.
-168,16,Unknown,white,medium,11,Rescue,False,Dolor numquam dolore quisquam dolor.
-169,7,Unknown,black,short,8,Rescue,False,Labore adipisci dolorem numquam quaerat voluptatem tempora dolore.
-170,6,Shar Pei,orange,short,24,Shelter,False,Consectetur porro quiquia magnam est non dolor.
-171,20,Sphynx,orange,short,17,Shelter,False,Ut sit tempora modi dolor quisquam quiquia eius.
-172,0,Newfoundland,spotted,short,22,Shelter,False,Adipisci neque voluptatem dolorem.
-173,14,Norwich Terrier,orange,medium,19,Shelter,False,Voluptatem quisquam quaerat sit tempora magnam.
-174,4,Mutt,white,short,23,Shelter,False,Sed sed velit dolor neque porro consectetur consectetur.
-175,18,Siamese,orange,short,5,Shelter,False,Adipisci neque consectetur consectetur ut consectetur.
-176,10,Mutt,spotted,short,16,Rescue,False,Etincidunt sit labore quaerat amet.
-177,15,Unknown,black,long,16,Shelter,False,Porro est tempora velit sit adipisci tempora.
-178,10,Unknown,brown,short,13,Shelter,False,Dolorem voluptatem dolor sed sit modi.
-179,15,Parson Jack Russell Terrier,white,short,19,Rescue,False,Velit dolorem neque consectetur.
-180,1,Mutt,orange,medium,10,Shelter,False,Porro quaerat modi magnam etincidunt labore sit ut.
-181,8,Unknown,brown,short,13,Shelter,False,Quaerat dolor dolore porro ut porro numquam amet.
-182,17,Mutt,orange,medium,8,Shelter,False,Numquam magnam quiquia quiquia amet porro.
-183,2,Unknown,white,short,18,Shelter,False,Quiquia dolor dolorem quaerat sed magnam.
-184,7,Mutt,black,short,24,Rescue,False,Velit dolor voluptatem porro voluptatem.
-185,20,Siamese,orange,long,17,Shelter,False,Numquam sit non labore.
-186,20,Unknown,white,medium,8,Rescue,False,Ipsum aliquam dolore est velit consectetur.
-187,15,British Shorthair,black,medium,5,Rescue,False,Modi dolorem magnam quisquam sed quiquia quisquam dolor.
-188,6,Burmese,spotted,medium,15,Shelter,False,Ut quiquia aliquam sed.
-189,2,Mutt,spotted,long,6,Rescue,False,Sit velit est modi sit est labore.
-190,3,Bernese Mountain Dog,brown,long,16,Rescue,False,Numquam neque amet eius dolorem labore dolorem.
-191,16,Belgian Shepherd Dog Malinois,brown,long,19,Shelter,False,Dolore ut non ut sit.
-192,12,Mutt,spotted,short,25,Shelter,False,Modi sit ut neque dolorem quiquia.
-193,19,Cornish Rex,brown,short,12,Shelter,False,Non etincidunt sit porro est non.
-194,10,Scottish Fold,brown,short,14,Shelter,False,Dolorem etincidunt velit est modi.
-195,18,Mutt,orange,medium,24,Rescue,False,Porro sit quiquia modi adipisci amet non sit.
-196,10,British Shorthair,orange,medium,6,Rescue,False,Ut quisquam numquam dolorem sit dolor tempora.
-197,16,Unknown,brown,long,16,Rescue,False,Labore non sed etincidunt non velit modi ut.
-198,0,Greyhound,brown,short,11,Rescue,False,Neque porro adipisci aliquam eius.
-199,14,Unknown,spotted,short,9,Rescue,False,Ut amet velit numquam.
-200,15,Persian,white,short,7,Rescue,False,Neque porro quisquam voluptatem voluptatem est quaerat.
+1,1,0,11,Fox Terrier Wire Coat,9,Rescue,0
+2,2,0,19,Mutt,16,Shelter,0
+3,3,0,3,Mutt,24,Shelter,0
+4,4,1,12,Unknown,15,Shelter,0
+5,5,0,0,Mutt,13,Shelter,0
+6,6,0,18,Australian Cattle Dog,15,Breeder,0
+7,7,1,0,Unknown,7,Rescue,0
+8,8,1,7,Unknown,11,Breeder,0
+9,9,0,6,Mutt,19,Shelter,0
+10,10,1,0,Unknown,8,Breeder,0
+11,11,1,1,Scottish Fold,15,Rescue,0
+12,12,0,5,Mutt,5,Rescue,0
+13,13,1,7,Unknown,5,Rescue,0
+14,14,1,0,Unknown,11,Rescue,0
+15,15,0,7,Shar Pei,5,Breeder,0
+16,16,0,19,Mutt,13,Breeder,0
+17,17,0,13,Mutt,14,Rescue,0
+18,18,0,11,Mutt,9,Rescue,0
+19,19,1,3,Unknown,18,Breeder,0
+20,20,0,6,Mutt,17,Shelter,0
+21,21,1,14,Russian Blue,8,Breeder,0
+22,22,1,12,Unknown,12,Shelter,0
+23,23,0,9,English Setter,16,Rescue,0
+24,24,0,5,Airedale Terrier,14,Rescue,0
+25,25,0,0,Pointer,17,Breeder,0
+26,26,0,6,Poodle Miniature,23,Breeder,0
+27,27,0,2,Mutt,7,Breeder,0
+28,28,1,11,British Shorthair,12,Breeder,0
+29,29,1,19,Unknown,7,Shelter,0
+30,30,0,1,Bedlington Terrier,20,Shelter,0
+31,31,0,5,Irish Setter,11,Shelter,0
+32,32,0,7,Mutt,5,Rescue,0
+33,33,0,12,Australian Silky Terrier,25,Shelter,0
+34,34,1,9,Unknown,11,Rescue,0
+35,35,1,8,Siamese,14,Rescue,0
+36,36,1,0,Burmese,11,Rescue,0
+37,37,0,13,Belgian Shepherd Dog Malinois,5,Breeder,0
+38,38,0,2,Mutt,22,Breeder,0
+39,39,1,5,Maine Coon,13,Shelter,0
+40,40,0,14,Fox Terrier Smooth Coat,12,Rescue,0
+41,41,0,5,Mutt,13,Shelter,0
+42,42,1,14,Turkish Van,10,Rescue,0
+43,43,1,16,Himalayan,5,Rescue,0
+44,44,0,16,Mutt,10,Shelter,0
+45,45,1,10,Himalayan,17,Rescue,0
+46,46,1,12,Unknown,14,Breeder,0
+47,47,0,20,Mutt,11,Shelter,0
+48,48,1,15,Unknown,16,Breeder,0
+49,49,1,4,British Shorthair,6,Breeder,0
+50,50,0,17,Mutt,16,Shelter,0
+51,51,0,15,Mutt,19,Rescue,0
+52,52,0,3,Chow Chow (Smooth),10,Shelter,0
+53,53,1,0,Turkish Van,15,Shelter,0
+54,54,1,13,Burmese,7,Shelter,0
+55,55,0,8,Yorkshire Terrier,5,Rescue,0
+56,56,1,6,Sphynx,7,Rescue,0
+57,57,0,3,Mutt,16,Breeder,0
+58,58,1,20,Sphynx,10,Shelter,0
+59,59,1,19,Unknown,8,Shelter,0
+60,60,0,0,Mutt,15,Rescue,0
+61,61,0,18,Pointer,5,Breeder,0
+62,62,0,7,Mutt,14,Breeder,0
+63,63,1,14,Scottish Fold,10,Breeder,0
+64,64,1,13,Unknown,12,Breeder,0
+65,65,0,14,Mutt,15,Shelter,0
+66,66,0,4,Mutt,13,Rescue,0
+67,67,1,0,Unknown,18,Rescue,0
+68,68,0,9,Mutt,25,Rescue,0
+69,69,0,0,Mutt,9,Shelter,0
+70,70,1,13,Unknown,11,Breeder,0
+71,71,1,15,Unknown,14,Breeder,0
+72,72,0,16,Lakeland Terrier,7,Breeder,0
+73,73,0,19,Poodle Toy,7,Rescue,0
+74,74,1,5,Unknown,8,Shelter,0
+75,75,0,6,Mutt,5,Breeder,0
+76,76,0,6,Mutt,6,Breeder,0
+77,77,1,18,Russian Blue,13,Shelter,0
+78,78,0,7,Basset Hound,21,Rescue,0
+79,79,1,11,Turkish Angora,6,Breeder,0
+80,80,0,20,Tenterfield Terrier,16,Shelter,0
+81,81,0,8,Mutt,16,Rescue,0
+82,82,1,20,Manx,17,Shelter,0
+83,83,1,4,Unknown,15,Breeder,0
+84,84,1,12,Unknown,11,Breeder,0
+85,85,0,12,Mutt,5,Rescue,0
+86,86,1,16,Siamese,7,Breeder,0
+87,87,1,0,Turkish Van,9,Rescue,0
+88,88,0,11,Mutt,5,Rescue,0
+89,89,0,6,Rhodesian Ridgeback,10,Shelter,0
+90,90,1,0,Unknown,6,Shelter,0
+91,91,1,11,Unknown,11,Rescue,0
+92,92,0,18,Mutt,20,Rescue,0
+93,93,0,13,Tibetan Spaniel,8,Shelter,0
+94,94,0,17,Mutt,14,Rescue,0
+95,95,1,12,Sphynx,13,Rescue,0
+96,96,1,14,Unknown,6,Shelter,0
+97,97,0,9,Welsh Corgi (Cardigan),24,Breeder,0
+98,98,1,12,Unknown,17,Rescue,0
+99,99,1,18,Devon Rex,14,Rescue,0
+100,100,0,15,Mutt,13,Breeder,0
+101,101,0,4,Great Dane,19,Rescue,0
+102,102,0,13,Alaskan Malamute,15,Shelter,0
+103,103,0,7,Sussex Spaniel,5,Breeder,0
+104,104,0,14,Mutt,8,Rescue,0
+105,105,0,5,Mutt,23,Breeder,1
+106,106,0,0,Mutt,23,Shelter,0
+107,107,1,12,Unknown,15,Rescue,0
+108,108,1,1,Abyssinian,9,Rescue,0
+109,109,0,20,Mutt,25,Breeder,0
+110,110,0,18,Alaskan Malamute,7,Rescue,0
+111,111,1,20,Unknown,14,Rescue,0
+112,112,0,11,Manchester Terrier,21,Shelter,0
+113,113,0,14,Mutt,16,Breeder,0
+114,114,0,16,Mutt,5,Breeder,0
+115,115,0,1,Mutt,12,Breeder,0
+116,116,1,3,Unknown,13,Shelter,0
+117,117,0,0,Mutt,14,Rescue,0
+118,118,0,5,Mutt,20,Breeder,0
+119,119,0,10,Bearded Collie,18,Breeder,0
+120,120,0,18,Mutt,13,Rescue,0
+121,121,1,2,Maine Coon,6,Shelter,0
+122,122,0,0,Field Spaniel,12,Shelter,0
+123,123,1,2,Unknown,9,Rescue,0
+124,124,0,15,Mutt,16,Rescue,0
+125,125,0,17,Mutt,17,Rescue,0
+126,126,1,20,Persian,16,Breeder,0
+127,127,1,8,Unknown,5,Shelter,0
+128,128,1,4,Russian Blue,16,Breeder,0
+129,129,0,17,West Highland White Terrier,23,Breeder,0
+130,130,1,16,Unknown,18,Shelter,0
+131,131,0,0,Mutt,8,Shelter,0
+132,132,1,10,Siamese,8,Shelter,0
+133,133,0,13,Mutt,7,Rescue,0
+134,134,1,6,Burmese,13,Shelter,0
+135,135,0,20,Mutt,19,Rescue,0
+136,136,0,15,Mutt,12,Shelter,0
+137,137,0,19,Papillon,13,Rescue,0
+138,138,0,18,Basset Fauve de Bretagne,14,Shelter,0
+139,139,1,16,Turkish Van,10,Breeder,0
+140,140,0,4,Mutt,22,Rescue,0
+141,141,0,3,Mutt,6,Breeder,0
+142,142,0,1,Mutt,21,Breeder,0
+143,143,0,7,Schnauzer Giant,13,Shelter,0
+144,144,1,10,Sphynx,8,Shelter,0
+145,145,1,20,Unknown,17,Rescue,0
+146,146,0,13,Boston Terrier,7,Breeder,0
+147,147,1,12,Siamese,15,Shelter,0
+148,148,1,17,Unknown,15,Rescue,1
+149,149,1,1,Himalayan,12,Rescue,0
+150,150,1,13,Unknown,5,Shelter,0
+151,151,1,13,Persian,7,Breeder,1
+152,152,0,20,Saluki,14,Breeder,0
+153,153,1,6,Unknown,16,Shelter,1
+154,154,0,17,Mutt,25,Breeder,1
+155,155,0,10,Chow Chow (Smooth),17,Shelter,0
+156,156,0,13,Borzoi,5,Breeder,0
+157,157,1,3,Turkish Van,17,Rescue,0
+158,158,1,0,Unknown,17,Shelter,0
+159,159,1,14,Unknown,17,Shelter,0
+160,160,0,3,Tibetan Terrier,19,Breeder,0
+161,161,1,9,Unknown,8,Breeder,0
+162,162,0,0,Mutt,7,Breeder,0
+163,163,1,15,British Shorthair,10,Breeder,0
+164,164,1,4,Unknown,16,Shelter,0
+165,165,0,7,Mutt,22,Rescue,0
+166,166,1,19,Abyssinian,17,Shelter,0
+167,167,0,9,Mutt,16,Shelter,1
+168,168,0,17,Mutt,11,Shelter,0
+169,169,0,14,Poodle Miniature,23,Shelter,0
+170,170,1,12,Unknown,6,Shelter,0
+171,171,0,2,Australian Kelpie,21,Shelter,0
+172,172,0,12,Japanese Chin,21,Shelter,0
+173,173,1,13,Devon Rex,8,Breeder,0
+174,174,1,19,Devon Rex,9,Shelter,0
+175,175,1,17,Russian Blue,18,Rescue,0
+176,176,0,2,Mutt,19,Breeder,0
+177,177,0,14,Border Collie,15,Rescue,0
+178,178,0,14,Siberian Husky,11,Breeder,0
+179,179,0,5,Mutt,13,Breeder,0
+180,180,0,14,Mutt,11,Rescue,0
+181,181,1,8,Devon Rex,12,Breeder,1
+182,182,1,9,Abyssinian,13,Rescue,0
+183,183,1,17,British Shorthair,9,Breeder,0
+184,184,1,16,Unknown,8,Breeder,0
+185,185,0,18,Mutt,16,Rescue,0
+186,186,0,5,Mutt,14,Rescue,0
+187,187,0,15,Lhaso Apso,18,Breeder,0
+188,188,1,4,Siamese,13,Shelter,0
+189,189,1,18,Burmese,14,Shelter,1
+190,190,1,13,Unknown,14,Breeder,0
+191,191,0,6,Mutt,9,Breeder,0
+192,192,1,0,Abyssinian,12,Rescue,0
+193,193,1,16,Sphynx,14,Breeder,0
+194,194,1,20,Unknown,6,Rescue,0
+195,195,1,16,Unknown,10,Rescue,0
+196,196,0,16,Mutt,17,Rescue,0
+197,197,0,15,Mutt,10,Rescue,0
+198,198,0,16,Hungarian Vizsla,9,Breeder,0
+199,199,0,6,Shih Tzu,12,Breeder,1
+200,200,0,10,Mutt,13,Breeder,0
+201,201,1,17,Cornish Rex,6,Breeder,0
+202,202,1,2,Turkish Angora,13,Breeder,0
+203,203,1,3,Devon Rex,8,Breeder,0
+204,204,0,4,Mutt,6,Rescue,0
+205,205,0,16,Dogue de Bordeaux,15,Breeder,0
+206,206,1,14,Manx,16,Shelter,0
+207,207,1,4,Cornish Rex,8,Breeder,0
+208,208,0,3,Mutt,17,Shelter,0
+209,209,1,2,British Shorthair,16,Rescue,0
+210,210,1,17,Unknown,13,Shelter,0
+211,211,0,13,Irish Terrier,11,Breeder,0
+212,212,0,7,Saluki,18,Shelter,0
+213,213,0,6,Mutt,21,Breeder,0
+214,214,1,8,Devon Rex,6,Breeder,0
+215,215,0,6,Chow Chow (Smooth),12,Rescue,0
+216,216,1,10,Manx,12,Shelter,0
+217,217,1,13,Unknown,8,Rescue,0
+218,218,1,2,Turkish Angora,18,Rescue,0
+219,219,0,11,Ibizan Hound,18,Shelter,0
+220,220,1,6,Unknown,18,Shelter,0
+221,221,0,0,Mutt,17,Breeder,0
+222,222,1,17,Unknown,6,Breeder,0
+223,223,0,6,Mutt,17,Shelter,0
+224,224,0,17,Bull Terrier,14,Rescue,0
+225,225,1,10,Unknown,12,Shelter,0
+226,226,0,3,Schipperke,12,Breeder,0
+227,227,0,5,Belgian Shepherd Dog Laekenois,17,Shelter,0
+228,228,0,6,Mutt,16,Breeder,0
+229,229,1,9,Unknown,17,Breeder,0
+230,230,1,9,Sphynx,6,Shelter,1
+231,231,0,0,Mutt,14,Breeder,0
+232,232,1,5,Siamese,8,Rescue,0
+233,233,1,6,Sphynx,12,Shelter,0
+234,234,0,0,Bull Terrier,5,Rescue,0
+235,235,0,7,Dalmatian,23,Shelter,0
+236,236,1,20,Unknown,16,Shelter,0
+237,237,0,1,Mutt,24,Breeder,0
+238,238,0,17,Mutt,23,Rescue,0
+239,239,1,10,Persian,8,Breeder,0
+240,240,0,18,Skye Terrier,8,Rescue,0
+241,241,1,19,Siamese,6,Shelter,0
+242,242,0,16,Bouvier des Flandres,23,Breeder,0
+243,243,0,4,Mutt,13,Rescue,0
+244,244,0,19,Leonberger,16,Breeder,0
+245,245,1,15,Devon Rex,13,Shelter,0
+246,246,1,15,Unknown,10,Rescue,0
+247,247,1,6,Abyssinian,6,Shelter,0
+248,248,0,17,Mutt,8,Breeder,0
+249,249,0,3,Whippet,12,Rescue,0
+250,250,0,9,Fox Terrier Wire Coat,10,Breeder,0
+251,251,0,8,Mutt,22,Breeder,0
+252,252,1,8,Sphynx,15,Breeder,0
+253,253,0,11,Rottweiler,7,Rescue,0
+254,254,0,12,Mutt,5,Rescue,0
+255,255,1,14,Unknown,16,Rescue,0
+256,256,0,7,Mutt,19,Shelter,0
+257,257,1,4,Sphynx,11,Rescue,0
+258,258,1,12,Unknown,14,Breeder,0
+259,259,0,4,Mutt,19,Breeder,0
+260,260,0,17,Mutt,7,Breeder,0
+261,261,0,8,Mutt,5,Rescue,1
+262,262,0,0,Mutt,14,Breeder,0
+263,263,0,7,Mutt,24,Rescue,0
+264,264,0,19,Mutt,16,Breeder,0
+265,265,0,6,Australian Kelpie,6,Breeder,1
+266,266,0,20,Bull Terrier,8,Rescue,0
+267,267,0,15,Mutt,20,Breeder,0
+268,268,0,5,Mutt,25,Breeder,0
+269,269,0,11,Mutt,14,Breeder,0
+270,270,0,0,Mutt,8,Rescue,0
+271,271,0,15,Mutt,24,Breeder,0
+272,272,1,13,Unknown,5,Breeder,0
+273,273,1,4,Unknown,8,Shelter,0
+274,274,1,14,Scottish Fold,12,Rescue,0
+275,275,1,15,Burmese,11,Breeder,1
+276,276,0,6,Mutt,25,Shelter,0
+277,277,0,7,Basset Fauve de Bretagne,11,Rescue,1
+278,278,1,3,Unknown,15,Shelter,0
+279,279,1,3,Unknown,9,Shelter,0
+280,280,1,16,Unknown,13,Rescue,0
+281,281,0,4,Chihuahua (Smooth Coat),6,Rescue,0
+282,282,0,13,Japanese Akita,23,Rescue,0
+283,283,0,12,Mutt,8,Rescue,0
+284,284,1,17,Turkish Van,9,Shelter,0
+285,285,0,4,Mutt,14,Breeder,0
+286,286,1,6,Unknown,9,Breeder,0
+287,287,0,20,Pomeranian,23,Breeder,0
+288,288,0,12,Mutt,25,Breeder,0
+289,289,0,5,Welsh Corgi (Pembroke),20,Rescue,0
+290,290,1,16,Unknown,11,Breeder,0
+291,291,1,6,Siamese,18,Breeder,0
+292,292,0,15,Bedlington Terrier,22,Shelter,0
+293,293,0,12,Samoyed,5,Rescue,0
+294,294,1,19,Unknown,8,Rescue,0
+295,295,0,6,Mutt,17,Rescue,0
+296,296,1,10,Russian Blue,17,Shelter,0
+297,297,0,19,Bernese Mountain Dog,23,Rescue,0
+298,298,1,15,Unknown,17,Shelter,0
+299,299,0,5,Mutt,22,Breeder,0
+300,300,0,0,Irish Terrier,8,Rescue,0
+301,301,1,18,Turkish Van,7,Rescue,0
+302,302,0,1,West Highland White Terrier,5,Breeder,0
+303,303,0,3,Finnish Lapphund,19,Shelter,0
+304,304,1,19,British Shorthair,18,Shelter,0
+305,305,1,19,Sphynx,16,Breeder,0
+306,306,1,9,Unknown,11,Shelter,0
+307,307,0,3,Mutt,19,Rescue,0
+308,308,0,2,Mutt,20,Shelter,0
+309,309,0,11,Dobermann,16,Breeder,0
+310,310,1,17,Unknown,13,Breeder,0
+311,311,1,10,Unknown,5,Shelter,0
+312,312,1,14,Burmese,5,Rescue,1
+313,313,1,11,Unknown,13,Shelter,0
+314,314,1,14,Unknown,15,Breeder,0
+315,315,0,10,Mutt,25,Shelter,0
+316,316,1,9,Manx,15,Shelter,0
+317,317,0,1,Dachshund (Miniature Smooth Haired),19,Rescue,0
+318,318,1,18,Siamese,11,Breeder,0
+319,319,0,19,Mutt,16,Shelter,0
+320,320,1,15,Turkish Angora,16,Rescue,0
+321,321,0,13,Samoyed,13,Breeder,1
+322,322,0,12,Mutt,22,Shelter,0
+323,323,1,0,Manx,7,Rescue,0
+324,324,0,9,Mutt,23,Rescue,0
+325,325,1,5,Unknown,15,Breeder,0
+326,326,1,20,Turkish Angora,12,Rescue,0
+327,327,1,13,Siamese,9,Breeder,0
+328,328,0,9,Mutt,8,Rescue,0
+329,329,1,20,Unknown,7,Shelter,0
+330,330,1,13,Unknown,9,Breeder,0
+331,331,1,11,Sphynx,5,Breeder,0
+332,332,0,0,Bearded Collie,23,Breeder,0
+333,333,0,8,West Highland White Terrier,5,Rescue,0
+334,334,0,10,German Wire-Haired Pointer,20,Shelter,0
+335,335,0,12,Mutt,25,Rescue,0
+336,336,1,1,Unknown,18,Breeder,0
+337,337,1,7,Turkish Van,7,Breeder,0
+338,338,0,14,Basenji,14,Shelter,0
+339,339,0,1,Mutt,7,Rescue,0
+340,340,1,4,Turkish Angora,5,Breeder,0
+341,341,1,19,Unknown,7,Rescue,0
+342,342,0,9,Schnauzer Giant,7,Rescue,0
+343,343,1,2,Unknown,15,Breeder,0
+344,344,1,0,Unknown,5,Rescue,0
+345,345,0,15,Australian Cattle Dog,7,Breeder,0
+346,346,0,13,Borzoi,18,Shelter,0
+347,347,1,14,Cornish Rex,17,Shelter,0
+348,348,0,11,German Shepherd Dog,15,Rescue,0
+349,349,1,15,Maine Coon,10,Shelter,0
+350,350,0,19,Mutt,12,Rescue,0
+351,351,0,13,Mutt,17,Breeder,0
+352,352,1,9,Sphynx,7,Breeder,0
+353,353,0,12,Tenterfield Terrier,9,Breeder,0
+354,354,1,8,British Shorthair,18,Breeder,0
+355,355,1,15,Unknown,15,Shelter,0
+356,356,0,15,Cavalier King Charles Spaniel,17,Breeder,0
+357,357,1,0,Unknown,15,Rescue,1
+358,358,1,13,Unknown,12,Breeder,0
+359,359,0,5,Gordon Setter,18,Rescue,0
+360,360,0,1,Mutt,12,Shelter,0
+361,361,0,2,Leonberger,8,Rescue,0
+362,362,1,8,Unknown,9,Breeder,0
+363,363,0,14,Collie (Smooth),14,Rescue,0
+364,364,0,4,Mutt,22,Rescue,0
+365,365,0,7,Rhodesian Ridgeback,5,Breeder,0
+366,366,1,18,Maine Coon,8,Rescue,0
+367,367,0,10,Mutt,25,Breeder,0
+368,368,0,17,Mutt,18,Breeder,0
+369,369,1,4,Maine Coon,10,Rescue,0
+370,370,0,13,Mutt,16,Breeder,0
+371,371,0,3,Poodle Miniature,20,Breeder,0
+372,372,0,6,Bulldog,7,Shelter,0
+373,373,0,8,Mutt,9,Breeder,0
+374,374,1,17,Unknown,6,Shelter,0
+375,375,1,10,Sphynx,7,Breeder,0
+376,376,0,18,Finnish Lapphund,5,Breeder,1
+377,377,1,16,Unknown,16,Rescue,0
+378,378,0,4,Mutt,21,Shelter,0
+379,379,0,0,Mutt,21,Shelter,0
+380,380,0,3,Manchester Terrier,10,Rescue,0
+381,381,1,3,Burmese,14,Rescue,0
+382,382,0,7,Australian Terrier,14,Breeder,0
+383,383,1,19,Unknown,7,Shelter,0
+384,384,0,8,Collie (Rough),7,Shelter,0
+385,385,0,16,Mutt,7,Shelter,0
+386,386,0,20,Mutt,13,Rescue,0
+387,387,1,7,Unknown,6,Breeder,0
+388,388,0,10,Australian Cattle Dog,8,Rescue,0
+389,389,0,19,Scottish Terrier,5,Shelter,0
+390,390,1,5,Unknown,11,Rescue,0
+391,391,1,4,Persian,15,Breeder,0
+392,392,0,0,Mutt,12,Breeder,0
+393,393,0,15,Mutt,23,Breeder,0
+394,394,1,17,Unknown,14,Breeder,0
+395,395,1,15,Abyssinian,11,Breeder,0
+396,396,1,9,Burmese,10,Rescue,0
+397,397,0,7,Mutt,7,Breeder,0
+398,398,1,15,Russian Blue,10,Breeder,0
+399,399,1,15,Persian,5,Breeder,1
+400,400,1,6,Unknown,16,Shelter,0
+401,401,0,3,Shetland Sheepdog,22,Shelter,0
+402,402,1,14,Unknown,17,Rescue,0
+403,403,0,1,Australian Silky Terrier,15,Shelter,1
+404,404,1,9,Turkish Angora,10,Shelter,0
+405,405,0,16,Chihuahua (Smooth Coat),19,Shelter,0
+406,406,1,0,Unknown,14,Shelter,1
+407,407,0,14,Mastiff,8,Shelter,0
+408,408,0,1,Mutt,23,Breeder,0
+409,409,0,3,Maltese,5,Rescue,0
+410,410,0,5,Mutt,11,Rescue,0
+411,411,0,11,Maremma Sheepdog,14,Breeder,0
+412,412,0,11,Kerry Blue Terrier,24,Shelter,0
+413,413,1,11,Unknown,13,Breeder,0
+414,414,0,11,Mutt,9,Shelter,0
+415,415,0,16,Belgian Shepherd Dog Groenendael,24,Rescue,0
+416,416,1,15,Unknown,7,Breeder,0
+417,417,1,3,Unknown,12,Shelter,0
+418,418,0,18,Cesky Terrier,17,Breeder,0
+419,419,0,3,Mutt,13,Rescue,0
+420,420,1,18,Unknown,9,Breeder,0
+421,421,0,16,Mutt,17,Rescue,0
+422,422,0,11,Harrier Hound,15,Breeder,0
+423,423,0,11,Finnish Lapphund,14,Rescue,0
+424,424,1,10,Unknown,8,Shelter,0
+425,425,0,2,Australian Cattle Dog,24,Shelter,0
+426,426,0,19,Dachshund (Wire Haired),23,Shelter,0
+427,427,1,12,Manx,10,Shelter,0
+428,428,0,5,Keeshond,20,Breeder,0
+429,429,0,18,Mutt,10,Breeder,0
+430,430,1,8,British Shorthair,15,Rescue,0
+431,431,1,19,Burmese,15,Breeder,0
+432,432,1,15,Cornish Rex,8,Breeder,0
+433,433,1,10,British Shorthair,7,Breeder,0
+434,434,1,2,Unknown,18,Rescue,0
+435,435,1,18,Sphynx,6,Breeder,0
+436,436,0,8,Mutt,6,Shelter,0
+437,437,0,17,Australian Silky Terrier,12,Shelter,0
+438,438,1,8,Unknown,16,Rescue,0
+439,439,1,20,Unknown,12,Breeder,0
+440,440,0,20,Mutt,11,Rescue,0
+441,441,0,9,Mutt,8,Shelter,0
+442,442,0,6,Mutt,6,Breeder,0
+443,443,1,2,Unknown,16,Breeder,0
+444,444,1,11,Unknown,13,Breeder,1
+445,445,1,4,Cornish Rex,13,Shelter,0
+446,446,0,14,Mutt,25,Shelter,0
+447,447,1,14,Unknown,11,Breeder,0
+448,448,1,12,British Shorthair,9,Breeder,0
+449,449,0,2,Mutt,14,Rescue,0
+450,450,0,4,Swedish Vallhund,23,Breeder,0
+451,451,0,6,Japanese Chin,8,Shelter,0
+452,452,1,15,Unknown,18,Breeder,0
+453,453,1,10,Russian Blue,8,Breeder,0
+454,454,0,11,Mutt,23,Rescue,0
+455,455,1,16,Unknown,12,Breeder,0
+456,456,1,0,Unknown,11,Shelter,0
+457,457,1,18,Unknown,5,Shelter,0
+458,458,1,8,British Shorthair,12,Rescue,0
+459,459,0,9,Norwich Terrier,5,Breeder,0
+460,460,0,13,Mutt,6,Shelter,0
+461,461,0,16,Mutt,13,Shelter,0
+462,462,0,9,Fox Terrier Smooth Coat,8,Shelter,0
+463,463,0,17,Finnish Lapphund,8,Rescue,0
+464,464,1,11,Unknown,6,Breeder,0
+465,465,0,15,Mutt,20,Shelter,0
+466,466,1,5,Unknown,15,Shelter,0
+467,467,1,12,Sphynx,16,Breeder,1
+468,468,1,1,Unknown,15,Rescue,0
+469,469,1,5,Manx,10,Rescue,0
+470,470,0,19,Keeshond,10,Breeder,0
+471,471,0,15,Bull Terrier Miniature,14,Rescue,0
+472,472,1,6,Unknown,9,Rescue,0
+473,473,1,15,Maine Coon,14,Shelter,1
+474,474,0,8,Mutt,9,Shelter,0
+475,475,1,16,Devon Rex,11,Breeder,0
+476,476,1,19,British Shorthair,16,Rescue,0
+477,477,0,12,Swedish Vallhund,14,Rescue,0
+478,478,1,1,Sphynx,10,Shelter,0
+479,479,1,19,British Shorthair,5,Breeder,0
+480,480,1,7,Unknown,17,Shelter,0
+481,481,1,7,Unknown,14,Breeder,0
+482,482,1,12,Abyssinian,11,Rescue,0
+483,483,1,10,Unknown,16,Breeder,0
+484,484,1,10,Unknown,15,Shelter,0
+485,485,1,0,Unknown,11,Rescue,1
+486,486,1,14,Turkish Van,13,Rescue,0
+487,487,1,1,Unknown,16,Shelter,0
+488,488,1,7,Abyssinian,10,Shelter,0
+489,489,0,4,Manchester Terrier,21,Breeder,0
+490,490,1,15,Unknown,10,Rescue,0
+491,491,1,0,Unknown,13,Shelter,0
+492,492,1,3,Unknown,14,Breeder,0
+493,493,1,14,Maine Coon,13,Breeder,0
+494,494,0,14,Australian Cattle Dog,18,Shelter,0
+495,495,1,7,Turkish Angora,12,Rescue,0
+496,496,0,11,Poodle Standard,8,Shelter,0
+497,497,1,20,Scottish Fold,13,Rescue,0
+498,498,1,14,Devon Rex,10,Breeder,0
+499,499,0,7,Mutt,13,Breeder,0
+500,500,1,4,Manx,15,Shelter,0
+501,501,0,0,Welsh Terrier,7,Breeder,0
+502,502,1,1,Siamese,7,Rescue,0
+503,503,0,12,Mutt,15,Rescue,0
+504,504,0,5,Mutt,10,Rescue,0
+505,505,0,0,Mutt,22,Rescue,0
+506,506,1,12,Unknown,15,Shelter,0
+507,507,0,4,German Short-Haired Pointer,19,Breeder,0
+508,508,0,20,Mutt,11,Rescue,0
+509,509,0,16,Dobermann,24,Rescue,0
+510,510,0,18,Mutt,15,Breeder,0
+511,511,0,18,Parson Jack Russell Terrier,16,Breeder,0
+512,512,0,18,Labrador Retriever,23,Rescue,1
+513,513,0,1,Parson Jack Russell Terrier,8,Rescue,0
+514,514,1,16,Burmese,13,Rescue,0
+515,515,1,15,Unknown,13,Shelter,0
+516,516,1,3,Sphynx,17,Shelter,0
+517,517,1,7,Unknown,14,Shelter,0
+518,518,0,13,Mutt,21,Shelter,0
+519,519,1,9,Unknown,10,Breeder,0
+520,520,1,17,Sphynx,6,Rescue,0
+521,521,1,18,Unknown,17,Rescue,0
+522,522,1,10,Unknown,15,Shelter,0
+523,523,0,15,Papillon,5,Shelter,0
+524,524,1,15,Burmese,10,Breeder,1
+525,525,0,18,Golden Retriever,15,Rescue,0
+526,526,1,14,Unknown,5,Breeder,0
+527,527,0,5,Dogue de Bordeaux,9,Breeder,0
+528,528,1,8,Unknown,13,Breeder,0
+529,529,0,15,Mutt,23,Breeder,0
+530,530,1,18,Siamese,11,Breeder,0
+531,531,1,6,Turkish Van,12,Rescue,0
+532,532,0,8,Border Terrier,7,Breeder,0
+533,533,1,6,Cornish Rex,14,Rescue,0
+534,534,0,0,Chow Chow (Smooth),13,Breeder,1
+535,535,1,18,Unknown,9,Rescue,0
+536,536,0,14,Schnauzer Giant,16,Breeder,0
+537,537,1,18,Unknown,5,Breeder,0
+538,538,0,5,Scottish Terrier,25,Shelter,0
+539,539,0,18,Belgian Shepherd Dog Malinois,9,Rescue,0
+540,540,1,4,Unknown,9,Shelter,0
+541,541,0,4,Mutt,11,Rescue,0
+542,542,1,4,Unknown,17,Shelter,0
+543,543,0,5,Mutt,21,Breeder,0
+544,544,1,19,Unknown,10,Shelter,0
+545,545,1,13,Sphynx,13,Breeder,0
+546,546,1,3,Unknown,13,Shelter,0
+547,547,1,9,Unknown,15,Rescue,1
+548,548,0,18,Mutt,21,Rescue,1
+549,549,0,5,Basset Hound,16,Rescue,0
+550,550,1,0,Unknown,7,Rescue,0
+551,551,0,6,Lakeland Terrier,16,Breeder,0
+552,552,0,5,Basset Fauve de Bretagne,8,Shelter,0
+553,553,0,10,Tibetan Mastiff,10,Breeder,0
+554,554,0,18,Mutt,8,Shelter,0
+555,555,1,6,Unknown,14,Shelter,0
+556,556,1,0,Unknown,14,Rescue,0
+557,557,0,17,Chesapeake Bay Retriever,24,Breeder,0
+558,558,1,9,Unknown,6,Shelter,0
+559,559,1,16,British Shorthair,17,Breeder,0
+560,560,1,0,Unknown,5,Shelter,0
+561,561,0,12,Mutt,14,Shelter,0
+562,562,0,3,Mutt,15,Rescue,0
+563,563,0,12,Soft Coated Wheaten Terrier,17,Rescue,0
+564,564,0,11,American Staffordshire Bull Terrier,21,Rescue,0
+565,565,0,12,Bearded Collie,20,Shelter,0
+566,566,0,6,Mutt,12,Rescue,0
+567,567,0,15,Mutt,12,Shelter,0
+568,568,0,16,Mutt,25,Breeder,0
+569,569,1,16,Unknown,10,Breeder,0
+570,570,0,12,Field Spaniel,22,Breeder,0
+571,571,1,15,Russian Blue,13,Shelter,0
+572,572,0,1,Fox Terrier Wire Coat,15,Rescue,0
+573,573,0,17,Mutt,9,Shelter,0
+574,574,0,3,Parson Jack Russell Terrier,22,Shelter,0
+575,575,0,18,Border Collie,11,Shelter,0
+576,576,1,20,Russian Blue,18,Shelter,0
+577,577,1,13,Unknown,7,Rescue,0
+578,578,1,9,Unknown,7,Breeder,0
+579,579,1,15,Unknown,18,Shelter,0
+580,580,1,9,Turkish Angora,12,Breeder,0
+581,581,1,0,Maine Coon,18,Rescue,0
+582,582,0,14,Mutt,24,Rescue,0
+583,583,0,17,Japanese Chin,14,Breeder,0
+584,584,1,3,Sphynx,12,Shelter,0
+585,585,1,8,Unknown,16,Breeder,0
+586,586,1,16,Unknown,6,Shelter,0
+587,587,0,19,Mutt,23,Rescue,0
+588,588,0,2,Ibizan Hound,20,Breeder,0
+589,589,0,8,Newfoundland,5,Rescue,1
+590,590,1,5,Burmese,14,Rescue,0
+591,591,1,2,Persian,14,Breeder,1
+592,592,0,14,Dobermann,5,Shelter,0
+593,593,0,19,Chesapeake Bay Retriever,12,Breeder,0
+594,594,0,20,Airedale Terrier,5,Shelter,0
+595,595,1,16,Unknown,6,Rescue,0
+596,596,1,7,Unknown,12,Rescue,0
+597,597,1,11,Unknown,11,Shelter,0
+598,598,0,2,Mutt,19,Breeder,1
+599,599,1,1,Manx,6,Rescue,0
+600,600,1,17,Devon Rex,17,Rescue,0
+601,601,0,0,Mutt,19,Breeder,0
+602,602,0,12,Belgian Shepherd Dog Malinois,11,Rescue,0
+603,603,1,2,Unknown,14,Breeder,1
+604,604,1,12,Unknown,12,Rescue,0
+605,605,1,17,Unknown,14,Breeder,0
+606,606,1,3,Devon Rex,8,Rescue,0
+607,607,0,14,Mutt,10,Rescue,0
+608,608,1,11,Unknown,10,Breeder,0
+609,609,0,7,Mutt,7,Shelter,0
+610,610,0,9,Briard,19,Breeder,0
+611,611,1,19,Turkish Van,11,Breeder,0
+612,612,0,7,Australian Terrier,13,Rescue,0
+613,613,1,17,Unknown,15,Breeder,0
+614,614,1,20,Unknown,16,Rescue,0
+615,615,0,0,Mutt,7,Rescue,0
+616,616,1,10,Persian,8,Shelter,0
+617,617,0,6,Mutt,25,Shelter,1
+618,618,0,16,Dobermann,19,Breeder,0
+619,619,1,0,Unknown,18,Shelter,0
+620,620,0,1,Basenji,12,Rescue,0
+621,621,1,18,British Shorthair,17,Shelter,0
+622,622,1,6,Siamese,8,Shelter,0
+623,623,0,14,Shetland Sheepdog,9,Rescue,0
+624,624,0,17,French Bulldog,13,Breeder,0
+625,625,1,16,Unknown,10,Breeder,0
+626,626,0,7,Mutt,6,Shelter,0
+627,627,1,19,British Shorthair,17,Shelter,0
+628,628,1,17,Siamese,18,Rescue,1
+629,629,1,19,Unknown,5,Rescue,0
+630,630,1,17,Scottish Fold,9,Breeder,0
+631,631,1,15,Unknown,17,Breeder,0
+632,632,1,8,Abyssinian,10,Breeder,0
+633,633,0,0,Rottweiler,8,Rescue,0
+634,634,1,7,Unknown,13,Rescue,0
+635,635,0,13,Mutt,20,Shelter,0
+636,636,1,2,Turkish Van,16,Rescue,0
+637,637,0,8,Mutt,5,Breeder,0
+638,638,1,7,Unknown,9,Shelter,0
+639,639,1,20,Unknown,7,Rescue,0
+640,640,0,12,Flat-Coated Retriever,20,Rescue,0
+641,641,0,8,Mutt,12,Rescue,0
+642,642,1,20,Unknown,8,Rescue,0
+643,643,1,12,Unknown,13,Rescue,1
+644,644,1,1,Unknown,12,Breeder,0
+645,645,0,7,Bearded Collie,19,Shelter,0
+646,646,0,4,Samoyed,23,Rescue,0
+647,647,1,3,Sphynx,9,Breeder,0
+648,648,0,14,Australian Silky Terrier,7,Shelter,0
+649,649,1,14,Turkish Angora,8,Rescue,0
+650,650,1,16,Russian Blue,15,Shelter,0
+651,651,1,20,British Shorthair,16,Breeder,0
+652,652,1,6,Turkish Angora,8,Breeder,0
+653,653,0,10,Mutt,5,Breeder,0
+654,654,0,8,Mutt,14,Shelter,0
+655,655,0,13,Mutt,17,Rescue,0
+656,656,1,18,Siamese,10,Breeder,0
+657,657,0,13,Pomeranian,12,Breeder,0
+658,658,1,12,Unknown,5,Rescue,0
+659,659,0,5,Scottish Terrier,6,Rescue,0
+660,660,0,1,Mutt,10,Breeder,0
+661,661,0,13,Pomeranian,17,Breeder,0
+662,662,0,18,Mutt,6,Shelter,0
+663,663,1,17,Unknown,7,Breeder,0
+664,664,0,13,Siberian Husky,18,Breeder,0
+665,665,0,6,Mutt,19,Rescue,0
+666,666,0,10,Portuguese Water Dog,16,Breeder,0
+667,667,1,0,Manx,17,Rescue,0
+668,668,1,12,Unknown,17,Breeder,0
+669,669,1,19,Turkish Angora,15,Breeder,0
+670,670,1,0,Himalayan,10,Shelter,0
+671,671,0,8,Mutt,24,Rescue,0
+672,672,0,3,Dachshund (Miniature Smooth Haired),6,Rescue,0
+673,673,0,18,Fox Terrier Wire Coat,8,Shelter,0
+674,674,1,12,Unknown,15,Shelter,0
+675,675,0,1,Mutt,6,Breeder,0
+676,676,1,2,Abyssinian,5,Rescue,0
+677,677,1,1,British Shorthair,10,Rescue,0
+678,678,1,11,Persian,16,Breeder,0
+679,679,0,14,Mutt,19,Breeder,0
+680,680,1,20,Cornish Rex,14,Shelter,0
+681,681,1,18,Unknown,17,Rescue,1
+682,682,0,3,Mutt,16,Breeder,0
+683,683,0,7,Yorkshire Terrier,7,Breeder,0
+684,684,1,7,Unknown,11,Shelter,0
+685,685,1,18,Siamese,5,Breeder,0
+686,686,0,7,Chinese Crested,19,Shelter,0
+687,687,1,4,Burmese,13,Rescue,1
+688,688,1,19,Unknown,6,Rescue,0
+689,689,1,11,Unknown,11,Rescue,0
+690,690,0,20,Australian Shepherd Dog,10,Shelter,0
+691,691,0,12,Mutt,12,Shelter,0
+692,692,0,15,Mutt,12,Shelter,0
+693,693,0,19,Basset Fauve de Bretagne,7,Rescue,0
+694,694,0,5,Mutt,22,Shelter,0
+695,695,1,6,Cornish Rex,14,Breeder,0
+696,696,1,12,Sphynx,8,Shelter,0
+697,697,1,13,Maine Coon,5,Breeder,0
+698,698,1,18,Unknown,15,Shelter,0
+699,699,1,16,Unknown,10,Breeder,0
+700,700,0,10,Mutt,7,Shelter,0
+701,701,1,13,Himalayan,8,Rescue,0
+702,702,1,6,Unknown,8,Rescue,0
+703,703,1,16,Russian Blue,9,Breeder,0
+704,704,1,6,Unknown,12,Shelter,0
+705,705,0,3,English Setter,7,Shelter,0
+706,706,1,6,Persian,13,Breeder,0
+707,707,0,0,Mutt,21,Shelter,0
+708,708,1,1,Unknown,15,Shelter,0
+709,709,1,17,Unknown,13,Breeder,0
+710,710,1,5,British Shorthair,11,Shelter,0
+711,711,0,0,Chow Chow (Smooth),5,Rescue,0
+712,712,0,15,Mutt,16,Rescue,0
+713,713,0,9,Dachshund (Miniature Smooth Haired),13,Rescue,0
+714,714,1,0,Persian,16,Rescue,0
+715,715,1,1,Unknown,6,Rescue,0
+716,716,0,4,Whippet,5,Shelter,0
+717,717,0,9,Finnish Lapphund,9,Shelter,0
+718,718,0,4,Welsh Corgi (Pembroke),8,Breeder,0
+719,719,0,14,Whippet,13,Shelter,0
+720,720,1,17,Unknown,8,Rescue,0
+721,721,0,9,Mutt,6,Shelter,0
+722,722,0,12,Siberian Husky,23,Breeder,0
+723,723,0,11,Lowchen,19,Rescue,0
+724,724,1,5,Cornish Rex,7,Rescue,0
+725,725,1,3,Scottish Fold,9,Rescue,0
+726,726,1,2,Russian Blue,8,Shelter,0
+727,727,0,5,Dachshund (Miniature Wire Haired),15,Shelter,0
+728,728,1,12,Unknown,6,Rescue,0
+729,729,0,14,Collie (Rough),10,Rescue,0
+730,730,0,0,Mutt,11,Breeder,1
+731,731,1,15,Unknown,18,Breeder,0
+732,732,1,3,Unknown,10,Rescue,0
+733,733,1,16,Turkish Angora,7,Shelter,0
+734,734,1,1,Devon Rex,17,Breeder,0
+735,735,0,6,Mutt,25,Rescue,0
+736,736,1,20,Maine Coon,12,Shelter,0
+737,737,1,6,Unknown,13,Breeder,0
+738,738,0,11,Mutt,5,Breeder,0
+739,739,1,0,Unknown,9,Rescue,0
+740,740,1,6,Abyssinian,17,Shelter,0
+741,741,0,16,Belgian Shepherd Dog Groenendael,12,Shelter,1
+742,742,0,10,Mutt,16,Breeder,0
+743,743,1,8,Turkish Van,12,Shelter,0
+744,744,0,8,Dandie Dinmont Terrier,13,Rescue,0
+745,745,0,13,Dachshund (Smooth Haired),11,Shelter,0
+746,746,1,17,Unknown,18,Shelter,0
+747,747,1,4,Turkish Angora,7,Breeder,0
+748,748,1,4,Sphynx,7,Rescue,0
+749,749,1,1,Manx,8,Shelter,0
+750,750,0,14,Ibizan Hound,23,Shelter,0
+751,751,0,2,German Wire-Haired Pointer,13,Shelter,0
+752,752,1,1,Unknown,5,Shelter,0
+753,753,0,16,Belgian Shepherd Dog Malinois,22,Breeder,0
+754,754,0,6,Deerhound,14,Breeder,0
+755,755,0,9,Nova Scotia Duck Tolling Retriever,24,Shelter,0
+756,756,0,3,Basset Fauve de Bretagne,6,Rescue,0
+757,757,0,18,Mutt,20,Rescue,0
+758,758,0,19,Bullmastiff,7,Rescue,0
+759,759,1,17,Sphynx,15,Breeder,0
+760,760,0,19,Newfoundland,25,Shelter,0
+761,761,1,17,Unknown,10,Breeder,0
+762,762,0,8,Mutt,10,Breeder,0
+763,763,1,9,Maine Coon,11,Shelter,0
+764,764,1,20,Unknown,17,Rescue,0
+765,765,0,6,Mutt,16,Breeder,0
+766,766,0,8,Mutt,21,Rescue,0
+767,767,1,6,British Shorthair,12,Rescue,0
+768,768,0,9,Mutt,5,Shelter,0
+769,769,1,15,Maine Coon,17,Shelter,0
+770,770,1,8,Unknown,6,Breeder,0
+771,771,0,18,Saluki,7,Shelter,0
+772,772,0,5,Mutt,17,Breeder,0
+773,773,1,1,Sphynx,11,Breeder,0
+774,774,0,18,Mutt,24,Shelter,0
+775,775,1,18,Russian Blue,15,Rescue,0
+776,776,0,7,Mutt,9,Rescue,0
+777,777,1,18,Unknown,5,Rescue,0
+778,778,1,14,Burmese,11,Rescue,0
+779,779,1,6,Abyssinian,6,Rescue,0
+780,780,1,2,Unknown,14,Rescue,0
+781,781,0,2,Mutt,12,Shelter,0
+782,782,1,7,Unknown,18,Shelter,0
+783,783,0,0,Mutt,17,Shelter,0
+784,784,0,1,Fox Terrier Smooth Coat,5,Shelter,0
+785,785,1,9,Unknown,7,Shelter,0
+786,786,1,2,Unknown,16,Rescue,0
+787,787,1,7,Unknown,7,Breeder,0
+788,788,0,7,Border Collie,14,Breeder,0
+789,789,0,1,English Toy Terrier (Black & Tan),24,Rescue,0
+790,790,1,9,Unknown,11,Breeder,0
+791,791,1,17,British Shorthair,11,Shelter,0
+792,792,1,6,Unknown,9,Rescue,0
+793,793,1,20,Unknown,13,Shelter,0
+794,794,1,15,Unknown,18,Rescue,1
+795,795,1,20,Unknown,16,Breeder,0
+796,796,0,17,Dalmatian,21,Rescue,0
+797,797,0,17,Scottish Terrier,9,Shelter,0
+798,798,0,12,Mutt,13,Rescue,0
+799,799,0,13,Mutt,7,Breeder,0
+800,800,1,12,Sphynx,8,Breeder,0
+801,801,1,8,Maine Coon,9,Breeder,0
+802,802,1,2,Turkish Angora,13,Shelter,0
+803,803,0,1,Mutt,20,Shelter,0
+804,804,1,7,Maine Coon,9,Breeder,0
+805,805,0,15,Mutt,11,Breeder,0
+806,806,1,10,Devon Rex,15,Shelter,1
+807,807,0,13,Mutt,12,Rescue,0
+808,808,0,0,Sussex Spaniel,16,Rescue,0
+809,809,0,6,Field Spaniel,5,Breeder,0
+810,810,1,3,Scottish Fold,11,Shelter,0
+811,811,1,18,Unknown,12,Shelter,0
+812,812,0,4,Japanese Chin,20,Shelter,0
+813,813,1,5,Cornish Rex,10,Breeder,0
+814,814,1,0,Unknown,13,Shelter,1
+815,815,0,17,Shih Tzu,13,Shelter,0
+816,816,0,9,Mutt,10,Breeder,0
+817,817,1,2,Unknown,18,Shelter,0
+818,818,1,9,Turkish Angora,17,Rescue,0
+819,819,0,0,Welsh Terrier,13,Shelter,0
+820,820,1,5,Cornish Rex,13,Shelter,0
+821,821,0,0,Dobermann,6,Breeder,0
+822,822,0,12,Irish Setter,10,Rescue,0
+823,823,0,17,Mutt,10,Breeder,0
+824,824,1,9,Unknown,15,Breeder,1
+825,825,1,4,Unknown,18,Breeder,0
+826,826,1,3,Unknown,5,Rescue,0
+827,827,0,9,Mutt,14,Breeder,0
+828,828,0,0,Mutt,12,Breeder,0
+829,829,1,19,Abyssinian,12,Breeder,0
+830,830,1,15,Unknown,13,Shelter,1
+831,831,0,15,Japanese Akita,14,Rescue,0
+832,832,1,11,Siamese,9,Rescue,0
+833,833,0,19,Mutt,21,Breeder,0
+834,834,0,2,Mutt,18,Shelter,1
+835,835,0,7,Australian Silky Terrier,12,Shelter,0
+836,836,1,8,Unknown,6,Breeder,0
+837,837,1,8,Unknown,10,Breeder,0
+838,838,0,19,Mutt,8,Rescue,0
+839,839,1,8,Unknown,6,Shelter,0
+840,840,0,7,Mutt,22,Shelter,0
+841,841,0,12,Mutt,17,Rescue,0
+842,842,1,0,Cornish Rex,15,Rescue,0
+843,843,1,4,Unknown,12,Shelter,0
+844,844,1,11,Burmese,7,Breeder,0
+845,845,0,19,Mutt,5,Shelter,0
+846,846,0,0,Mutt,14,Shelter,0
+847,847,0,4,Great Dane,8,Breeder,0
+848,848,1,9,Abyssinian,17,Breeder,1
+849,849,1,10,Scottish Fold,17,Shelter,0
+850,850,1,4,Scottish Fold,10,Rescue,0
+851,851,1,0,Russian Blue,8,Shelter,0
+852,852,0,16,Mutt,21,Rescue,0
+853,853,1,12,Unknown,11,Rescue,0
+854,854,0,16,Mutt,25,Breeder,0
+855,855,0,8,Tibetan Mastiff,23,Breeder,0
+856,856,0,5,Golden Retriever,23,Breeder,0
+857,857,1,13,Unknown,18,Breeder,0
+858,858,0,16,Mutt,21,Shelter,0
+859,859,0,0,Mutt,6,Rescue,0
+860,860,0,17,Lhaso Apso,22,Shelter,0
+861,861,0,11,Fox Terrier Wire Coat,21,Rescue,0
+862,862,0,18,Welsh Springer Spaniel,21,Rescue,0
+863,863,1,0,Russian Blue,17,Breeder,0
+864,864,1,15,Unknown,11,Breeder,0
+865,865,0,17,German Shepherd Dog,13,Shelter,0
+866,866,1,11,Devon Rex,6,Rescue,0
+867,867,1,18,Russian Blue,12,Shelter,0
+868,868,1,10,Unknown,6,Shelter,0
+869,869,1,14,Russian Blue,10,Breeder,0
+870,870,1,5,Unknown,12,Shelter,0
+871,871,1,19,Unknown,7,Breeder,0
+872,872,1,18,Unknown,16,Breeder,0
+873,873,1,15,Unknown,5,Breeder,1
+874,874,0,17,Australian Silky Terrier,20,Rescue,0
+875,875,1,13,Abyssinian,16,Breeder,0
+876,876,0,19,Mutt,6,Breeder,0
+877,877,1,9,Unknown,13,Shelter,0
+878,878,1,5,Unknown,17,Rescue,0
+879,879,0,4,Mutt,18,Rescue,0
+880,880,0,17,Mutt,24,Breeder,0
+881,881,1,0,Unknown,11,Shelter,1
+882,882,0,10,Welsh Corgi (Pembroke),14,Rescue,0
+883,883,0,14,Bullmastiff,6,Shelter,0
+884,884,1,1,Himalayan,8,Rescue,0
+885,885,0,8,Kerry Blue Terrier,9,Shelter,0
+886,886,0,6,French Bulldog,17,Rescue,0
+887,887,0,10,Pharaoh Hound,7,Shelter,0
+888,888,1,20,Abyssinian,9,Shelter,1
+889,889,1,0,Unknown,11,Rescue,0
+890,890,1,15,Burmese,11,Rescue,0
+891,891,0,16,Maremma Sheepdog,14,Rescue,0
+892,892,1,15,Siamese,10,Shelter,0
+893,893,0,9,Mutt,18,Shelter,1
+894,894,0,19,Mutt,23,Rescue,0
+895,895,0,19,Mutt,11,Breeder,0
+896,896,0,1,Mutt,7,Rescue,0
+897,897,0,15,Mutt,16,Rescue,0
+898,898,1,4,Unknown,5,Breeder,0
+899,899,0,8,Nova Scotia Duck Tolling Retriever,6,Rescue,0
+900,900,1,10,Unknown,10,Breeder,0
+901,901,0,17,Nova Scotia Duck Tolling Retriever,24,Rescue,0
+902,902,1,18,Unknown,17,Rescue,0
+903,903,1,3,Himalayan,8,Shelter,0
+904,904,0,2,Mutt,17,Breeder,0
+905,905,0,12,Afghan Hound,10,Breeder,0
+906,906,0,19,Fox Terrier Smooth Coat,24,Shelter,0
+907,907,1,15,Turkish Angora,18,Rescue,1
+908,908,1,19,Russian Blue,8,Breeder,0
+909,909,0,13,Mutt,13,Breeder,0
+910,910,0,7,Bernese Mountain Dog,20,Rescue,0
+911,911,1,3,Persian,9,Breeder,0
+912,912,0,20,Finnish Spitz,17,Rescue,0
+913,913,1,18,Russian Blue,18,Shelter,0
+914,914,0,5,Australian Cattle Dog,13,Shelter,0
+915,915,1,11,Turkish Van,9,Rescue,0
+916,916,1,18,Devon Rex,12,Shelter,0
+917,917,1,8,Unknown,11,Shelter,0
+918,918,1,16,Siamese,11,Shelter,0
+919,919,0,12,Irish Water Spaniel,14,Shelter,0
+920,920,1,15,Unknown,13,Rescue,0
+921,921,1,3,Devon Rex,13,Shelter,0
+922,922,1,8,Unknown,12,Rescue,0
+923,923,0,11,Mutt,17,Breeder,0
+924,924,1,8,Unknown,6,Rescue,0
+925,925,0,15,Mutt,21,Rescue,0
+926,926,1,9,Turkish Van,18,Rescue,0
+927,927,0,12,Leonberger,24,Shelter,0
+928,928,1,16,Unknown,12,Shelter,0
+929,929,0,12,Mutt,16,Shelter,0
+930,930,1,3,Turkish Van,5,Rescue,0
+931,931,1,9,Unknown,10,Rescue,0
+932,932,1,10,Unknown,9,Shelter,0
+933,933,0,4,Mutt,22,Shelter,0
+934,934,1,14,Unknown,14,Breeder,0
+935,935,0,11,Great Dane,11,Breeder,0
+936,936,1,19,British Shorthair,17,Shelter,0
+937,937,1,17,Maine Coon,14,Breeder,0
+938,938,1,15,Maine Coon,17,Rescue,0
+939,939,0,7,Mutt,11,Breeder,0
+940,940,0,3,Mutt,15,Breeder,0
+941,941,0,4,Mutt,7,Breeder,0
+942,942,1,12,British Shorthair,14,Rescue,0
+943,943,0,11,Papillon,8,Breeder,0
+944,944,1,17,Scottish Fold,18,Shelter,0
+945,945,1,7,Unknown,18,Shelter,0
+946,946,0,9,Schipperke,9,Shelter,0
+947,947,1,3,Unknown,9,Rescue,0
+948,948,0,14,Mutt,15,Shelter,0
+949,949,1,11,Unknown,9,Rescue,0
+950,950,0,15,Samoyed,15,Rescue,0
+951,951,0,11,Mutt,21,Rescue,0
+952,952,0,6,Mutt,20,Shelter,0
+953,953,1,2,Unknown,9,Breeder,0
+954,954,0,8,Japanese Spitz,18,Breeder,1
+955,955,1,10,Unknown,5,Breeder,0
+956,956,0,3,Basset Fauve de Bretagne,24,Shelter,0
+957,957,1,20,Turkish Angora,9,Breeder,0
+958,958,0,12,Mutt,14,Shelter,0
+959,959,0,8,Mutt,8,Shelter,0
+960,960,0,19,Mutt,20,Rescue,0
+961,961,1,9,Devon Rex,16,Rescue,0
+962,962,1,4,Unknown,10,Rescue,0
+963,963,1,18,Unknown,18,Rescue,0
+964,964,0,8,Australian Silky Terrier,13,Shelter,0
+965,965,1,19,Unknown,10,Rescue,0
+966,966,0,1,Whippet,19,Rescue,0
+967,967,0,16,Mutt,12,Rescue,0
+968,968,1,10,Unknown,14,Shelter,0
+969,969,0,3,Welsh Corgi (Pembroke),14,Rescue,0
+970,970,0,16,Mutt,5,Rescue,0
+971,971,0,10,Mutt,23,Breeder,0
+972,972,0,20,Cairn Terrier,25,Shelter,0
+973,973,1,17,Burmese,17,Breeder,0
+974,974,1,15,Unknown,11,Rescue,0
+975,975,1,8,Unknown,8,Rescue,0
+976,976,0,18,Harrier Hound,11,Breeder,0
+977,977,0,17,Cavalier King Charles Spaniel,17,Breeder,0
+978,978,1,13,Unknown,6,Rescue,0
+979,979,0,16,Chesapeake Bay Retriever,10,Breeder,0
+980,980,0,7,Mutt,7,Breeder,0
+981,981,1,5,Unknown,10,Rescue,0
+982,982,1,19,Unknown,8,Breeder,0
+983,983,1,6,Turkish Van,12,Rescue,1
+984,984,1,20,Unknown,17,Breeder,0
+985,985,1,13,Russian Blue,5,Shelter,0
+986,986,1,4,Cornish Rex,12,Breeder,1
+987,987,1,18,Unknown,14,Shelter,0
+988,988,1,5,Himalayan,6,Rescue,0
+989,989,1,20,Unknown,5,Shelter,0
+990,990,1,3,Turkish Van,15,Rescue,0
+991,991,1,4,Sphynx,6,Shelter,0
+992,992,1,17,Unknown,11,Rescue,0
+993,993,1,11,Unknown,9,Rescue,0
+994,994,0,7,Australian Shepherd Dog,11,Rescue,0
+995,995,1,4,Himalayan,6,Breeder,0
+996,996,1,11,Cornish Rex,10,Rescue,0
+997,997,1,14,Siamese,8,Rescue,0
+998,998,1,9,Unknown,14,Breeder,0
+999,999,0,1,Afghan Hound,9,Rescue,0
+1000,1000,1,13,Unknown,17,Shelter,0
