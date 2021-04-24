@@ -6,22 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>419</height>
+    <width>692</width>
+    <height>431</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 138, 216);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="createLabel">
      <property name="font">
       <font>
-       <family>Chalkboard SE</family>
+       <family>Dyuthi</family>
        <pointsize>55</pointsize>
        <weight>50</weight>
        <bold>false</bold>
@@ -44,7 +44,7 @@
       <widget class="QLabel" name="firstNameLabel">
        <property name="font">
         <font>
-         <family>Chalkboard</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -60,7 +60,7 @@
       <widget class="QLineEdit" name="firstNameField">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -73,7 +73,7 @@
       <widget class="QLabel" name="lastNameLabel">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -89,7 +89,7 @@
       <widget class="QLineEdit" name="lastNameField">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -102,7 +102,7 @@
       <widget class="QLabel" name="emailLabel">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -118,7 +118,7 @@
       <widget class="QLineEdit" name="emailField">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -131,7 +131,7 @@
       <widget class="QLabel" name="emailLabel_2">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -147,7 +147,7 @@
       <widget class="QComboBox" name="roleBox">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -171,7 +171,7 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="passwordLabel">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -187,7 +187,7 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="passwordField">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -203,7 +203,7 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLabel" name="passwordLabel_2">
        <property name="font">
         <font>
-         <family>Chalkboard</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -219,7 +219,7 @@ color: rgb(0, 0, 0);</string>
       <widget class="QLineEdit" name="passwordField_2">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -237,7 +237,7 @@ color: rgb(0, 0, 0);</string>
     <widget class="QDialogButtonBox" name="createOkay">
      <property name="font">
       <font>
-       <family>Chalkboard SE</family>
+       <family>Dyuthi</family>
        <pointsize>18</pointsize>
       </font>
      </property>

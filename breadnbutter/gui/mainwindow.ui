@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>617</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 138, 216);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
@@ -40,8 +40,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Chalkboard SE</family>
-        <pointsize>55</pointsize>
+        <family>Dyuthi</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -83,7 +83,7 @@
        <widget class="QPushButton" name="loginButton">
         <property name="font">
          <font>
-          <family>Chalkboard SE</family>
+          <family>Dyuthi</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -100,7 +100,7 @@ color: rgb(0, 0, 0);</string>
        <widget class="QPushButton" name="createButton">
         <property name="font">
          <font>
-          <family>Chalkboard SE</family>
+          <family>Dyuthi</family>
           <pointsize>18</pointsize>
          </font>
         </property>
@@ -123,12 +123,12 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>31</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Chalkboard SE</family>
+     <family>Dyuthi</family>
      <pointsize>18</pointsize>
     </font>
    </property>
@@ -136,8 +136,15 @@ color: rgb(0, 0, 0);</string>
     <string notr="true">color: rgb(239, 207, 187);</string>
    </property>
    <widget class="QMenu" name="menuBread_and_Butter">
+    <property name="font">
+     <font>
+      <family>Dyuthi</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(176, 175, 177);</string>
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(239, 207, 187);</string>
     </property>
     <property name="title">
      <string>Bread and Butter</string>
@@ -149,15 +156,25 @@ color: rgb(0, 0, 0);</string>
    </widget>
    <addaction name="menuBread_and_Butter"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(239, 207, 187);</string>
+   </property>
+  </widget>
   <action name="actionAbout_Bread_and_Butter">
    <property name="text">
     <string>About Bread and Butter</string>
    </property>
    <property name="font">
     <font>
-     <family>Chalkboard SE</family>
-     <pointsize>18</pointsize>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
     </font>
    </property>
   </action>
@@ -165,10 +182,22 @@ color: rgb(0, 0, 0);</string>
    <property name="text">
     <string>Preferences</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
   </action>
  </widget>

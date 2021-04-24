@@ -218,7 +218,7 @@ void PetDisplay::getCurrentUser()
     if (query.exec()) {
         if (query.next()) {
             QString name = query.value(1).toString();
-            ui->label_user_name->setText("<b><FONT COLOR=red>Welcome " + name + "!<FONT></b>");
+            ui->label_user_name->setText("Welcome " + name + "!");
         }
     } else {
         qDebug() << "Error getting current user: " << query.lastError().text();

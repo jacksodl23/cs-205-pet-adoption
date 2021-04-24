@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(204, 124, 169);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -30,6 +33,9 @@
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>Here you can add a new pet !</string>
@@ -49,6 +55,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>Type of pet:</string>
     </property>
@@ -66,6 +75,9 @@
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>Breed:</string>
@@ -85,6 +97,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>Color:</string>
     </property>
@@ -102,6 +117,9 @@
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>Allergy:</string>
@@ -121,6 +139,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>Hair length:</string>
     </property>
@@ -138,6 +159,9 @@
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>Age:</string>
@@ -157,6 +181,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>Weight:</string>
     </property>
@@ -174,6 +201,9 @@
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>Origin:</string>
@@ -193,6 +223,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>Description:</string>
     </property>
@@ -206,6 +239,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
@@ -215,6 +251,9 @@
       <width>151</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_3">
@@ -226,6 +265,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
@@ -235,6 +277,9 @@
       <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <item>
      <property name="text">
@@ -271,6 +316,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="comboBox_3">
     <property name="geometry">
@@ -280,6 +328,9 @@
       <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox_4">
@@ -291,6 +342,9 @@
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
    </widget>
    <widget class="QComboBox" name="comboBox_5">
     <property name="geometry">
@@ -300,6 +354,9 @@
       <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -316,6 +373,9 @@
       <pointsize>20</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>Add</string>
     </property>
@@ -328,6 +388,9 @@
       <width>231</width>
       <height>70</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_11">
@@ -343,6 +406,9 @@
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>years</string>
@@ -362,6 +428,9 @@
       <pointsize>14</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
+    </property>
     <property name="text">
      <string>lbs</string>
     </property>
@@ -374,6 +443,9 @@
       <width>141</width>
       <height>23</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -389,6 +461,9 @@
      <font>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(239, 207, 187);</string>
     </property>
     <property name="text">
      <string>Name:</string>

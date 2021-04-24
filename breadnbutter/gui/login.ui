@@ -14,14 +14,14 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 138, 216);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QLabel" name="loginLabel">
      <property name="font">
       <font>
-       <family>Chalkboard SE</family>
+       <family>Dyuthi</family>
        <pointsize>64</pointsize>
        <weight>50</weight>
        <bold>false</bold>
@@ -44,7 +44,7 @@
       <widget class="QLabel" name="emailLabel">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -60,6 +60,7 @@
       <widget class="QLineEdit" name="emailField">
        <property name="font">
         <font>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -72,7 +73,7 @@
       <widget class="QLabel" name="passwordLabel">
        <property name="font">
         <font>
-         <family>Chalkboard SE</family>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -88,6 +89,7 @@
       <widget class="QLineEdit" name="passwordField">
        <property name="font">
         <font>
+         <family>Dyuthi</family>
          <pointsize>18</pointsize>
         </font>
        </property>
@@ -105,7 +107,7 @@
     <widget class="QDialogButtonBox" name="loginOkay">
      <property name="font">
       <font>
-       <family>Chalkboard SE</family>
+       <family>Dyuthi</family>
        <pointsize>18</pointsize>
       </font>
      </property>
