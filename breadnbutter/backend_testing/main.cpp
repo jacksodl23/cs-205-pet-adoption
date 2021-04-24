@@ -11,36 +11,32 @@
 
 using namespace std;
 
-class BackendTest : public ::testing::Test {
+class AdopterTest : public ::testing::Test {
 protected:
     PetOwner owner;
 
 public:
-    BackendTest() {
-        owner = PetOwner("hello", "john", "smith", "johnsmith@gmail.com");
-    }
-
-    void SetUp() {
-
+    AdopterTest() {
+        owner = PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "Seattle");
     }
 };
 
-TEST_F(BackendTest, TestNewAdopter) {
+TEST_F(AdopterTest, TestNewAdopter) {
     if (!owner.existsInDB())
         EXPECT_EQ(owner.insertIntoDB(), true);
     else
         EXPECT_EQ(owner.insertIntoDB(), false);
 }
 
-TEST_F(BackendTest, TestAdopterExists) {
+TEST_F(AdopterTest, TestAdopterExists) {
     ASSERT_EQ(owner.existsInDB(), true);
 }
 
-TEST_F(BackendTest, TestLogin) {
+TEST_F(AdopterTest, TestLogin) {
     ASSERT_EQ(owner.attemptLogin(), true);
 }
 
-TEST_F(BackendTest, TestDeleteAdopter) {
+TEST_F(AdopterTest, TestDeleteAdopter) {
     ASSERT_EQ(owner.deleteFromDB(), true);
 }
 
