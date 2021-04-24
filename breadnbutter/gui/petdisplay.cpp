@@ -207,7 +207,8 @@ void PetDisplay::on_button_like_clicked()
 
 void PetDisplay::on_button_dislike_clicked()
 {
-
+    currentPos++;
+    displayPet(pets.at(currentPos));
 }
 
 void PetDisplay::fetchPets()

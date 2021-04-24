@@ -47,6 +47,7 @@ private:
     Ui::PetDisplay *ui;
     QPixmap petPic;
     std::vector<Pet> pets;
+    int currentPos;
 
     void fetchPets();
     void displayPet(Pet p);
