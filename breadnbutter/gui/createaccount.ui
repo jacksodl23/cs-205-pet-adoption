@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgba(255, 138, 216, 100);</string>
+   <string notr="true">background-color: rgb(255, 138, 216);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -22,7 +22,7 @@
      <property name="font">
       <font>
        <family>Chalkboard SE</family>
-       <pointsize>48</pointsize>
+       <pointsize>55</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
@@ -31,7 +31,7 @@
       <string notr="true">color: rgb(239, 207, 187);</string>
      </property>
      <property name="text">
-      <string>&lt;b&gt;CREATE ACCOUNT&lt;/b&gt;</string>
+      <string>CREATE ACCOUNT</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -45,6 +45,7 @@
        <property name="font">
         <font>
          <family>Chalkboard</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -57,6 +58,12 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="firstNameField">
+       <property name="font">
+        <font>
+         <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color:rgb(239, 207, 187);</string>
        </property>
@@ -67,6 +74,7 @@
        <property name="font">
         <font>
          <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -79,6 +87,12 @@
      </item>
      <item row="1" column="1">
       <widget class="QLineEdit" name="lastNameField">
+       <property name="font">
+        <font>
+         <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color:rgb(239, 207, 187);</string>
        </property>
@@ -89,6 +103,7 @@
        <property name="font">
         <font>
          <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -101,6 +116,12 @@
      </item>
      <item row="2" column="1">
       <widget class="QLineEdit" name="emailField">
+       <property name="font">
+        <font>
+         <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color:rgb(239, 207, 187);</string>
        </property>
@@ -111,6 +132,7 @@
        <property name="font">
         <font>
          <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -126,6 +148,7 @@
        <property name="font">
         <font>
          <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -149,6 +172,7 @@ color: rgb(0, 0, 0);</string>
        <property name="font">
         <font>
          <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -161,6 +185,12 @@ color: rgb(0, 0, 0);</string>
      </item>
      <item row="4" column="1">
       <widget class="QLineEdit" name="passwordField">
+       <property name="font">
+        <font>
+         <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color:rgb(239, 207, 187);</string>
        </property>
@@ -174,6 +204,7 @@ color: rgb(0, 0, 0);</string>
        <property name="font">
         <font>
          <family>Chalkboard</family>
+         <pointsize>18</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -186,6 +217,12 @@ color: rgb(0, 0, 0);</string>
      </item>
      <item row="5" column="1">
       <widget class="QLineEdit" name="passwordField_2">
+       <property name="font">
+        <font>
+         <family>Chalkboard SE</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color:rgb(239, 207, 187);</string>
        </property>
@@ -201,6 +238,7 @@ color: rgb(0, 0, 0);</string>
      <property name="font">
       <font>
        <family>Chalkboard SE</family>
+       <pointsize>18</pointsize>
       </font>
      </property>
      <property name="styleSheet">

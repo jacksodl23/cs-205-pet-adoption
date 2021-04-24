@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(70, 70, 70);</string>
+   <string notr="true">background-color: rgb(255, 138, 216);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -23,16 +23,20 @@
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>50</height>
+        <height>60</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <pointsize>30</pointsize>
+        <family>Chalkboard SE</family>
+        <pointsize>64</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(239, 207, 187);</string>
+      </property>
       <property name="text">
-       <string>&lt;b&gt;&lt;font color=red&gt;WELCOME First Name!&lt;font&gt;&lt;/b&gt;</string>
+       <string>WELCOME First Name!</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -48,8 +52,8 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(176, 175, 177);
-border: 2px solid  grey; 
+       <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
      border-radius: 3px;</string>
       </property>
       <property name="title">
@@ -87,6 +91,9 @@ border: 2px solid  grey;
                <height>70</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">color:rgb(239, 207, 187);</string>
+             </property>
              <property name="text">
               <string>Like</string>
              </property>
@@ -100,6 +107,9 @@ border: 2px solid  grey;
                <height>70</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">color:rgb(239, 207, 187);</string>
+             </property>
              <property name="text">
               <string>Dislike</string>
              </property>
@@ -109,6 +119,9 @@ border: 2px solid  grey;
          </item>
          <item>
           <widget class="QPushButton" name="profileButton">
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
            <property name="text">
             <string>Check my profile!</string>
            </property>
@@ -134,8 +147,8 @@ border: 2px solid  grey;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(176, 175, 177);
-border: 2px solid  grey; 
+       <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
      border-radius: 3px;</string>
       </property>
       <property name="title">
@@ -151,6 +164,9 @@ border: 2px solid  grey;
              <pointsize>30</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
            <property name="text">
             <string>Name</string>
            </property>
@@ -161,6 +177,9 @@ border: 2px solid  grey;
          </item>
          <item>
           <widget class="QLabel" name="label_breed">
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
            <property name="text">
             <string>Breed</string>
            </property>
@@ -168,6 +187,9 @@ border: 2px solid  grey;
          </item>
          <item>
           <widget class="QLabel" name="label_type">
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
            <property name="text">
             <string>Type</string>
            </property>
@@ -175,6 +197,9 @@ border: 2px solid  grey;
          </item>
          <item>
           <widget class="QLabel" name="label_shelter_name">
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
            <property name="text">
             <string>Shelter</string>
            </property>
@@ -182,6 +207,9 @@ border: 2px solid  grey;
          </item>
          <item>
           <widget class="QLabel" name="label_location">
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
            <property name="text">
             <string>Approx location</string>
            </property>
@@ -207,8 +235,8 @@ border: 2px solid  grey;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(176, 175, 177);
-border: 2px solid  grey; 
+       <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
      border-radius: 3px;</string>
       </property>
       <property name="title">
@@ -218,7 +246,7 @@ border: 2px solid  grey;
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Type of pet</string>
@@ -228,7 +256,7 @@ border: 2px solid  grey;
        <item row="6" column="0">
         <widget class="QLabel" name="label_7">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Minimum Age</string>
@@ -238,7 +266,7 @@ border: 2px solid  grey;
        <item row="1" column="0">
         <widget class="QLabel" name="label_2">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Breed</string>
@@ -247,6 +275,10 @@ border: 2px solid  grey;
        </item>
        <item row="6" column="1">
         <widget class="QSlider" name="horizontalSlider">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -255,7 +287,8 @@ border: 2px solid  grey;
        <item row="5" column="1">
         <widget class="QComboBox" name="hypoBox">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
          </property>
          <item>
           <property name="text">
@@ -272,12 +305,16 @@ border: 2px solid  grey;
        <item row="2" column="1">
         <widget class="QComboBox" name="colorBox">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
        <item row="8" column="0">
         <widget class="QLabel" name="label_4">
+         <property name="styleSheet">
+          <string>color: rgb(239, 207, 187);</string>
+         </property>
          <property name="text">
           <string>Minimum Weight</string>
          </property>
@@ -286,12 +323,16 @@ border: 2px solid  grey;
        <item row="3" column="1">
         <widget class="QComboBox" name="hairLenBox">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
          </property>
         </widget>
        </item>
        <item row="7" column="0">
         <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string>color: rgb(239, 207, 187);</string>
+         </property>
          <property name="text">
           <string>Maximum Age</string>
          </property>
@@ -299,6 +340,10 @@ border: 2px solid  grey;
        </item>
        <item row="7" column="1">
         <widget class="QSlider" name="horizontalSlider_3">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -307,7 +352,8 @@ border: 2px solid  grey;
        <item row="1" column="1">
         <widget class="QComboBox" name="breedBox">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
          </property>
          <item>
           <property name="text">
@@ -338,6 +384,10 @@ border: 2px solid  grey;
        </item>
        <item row="9" column="1">
         <widget class="QSlider" name="horizontalSlider_2">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -346,7 +396,7 @@ border: 2px solid  grey;
        <item row="3" column="0">
         <widget class="QLabel" name="label_6">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Hair Length</string>
@@ -356,7 +406,8 @@ border: 2px solid  grey;
        <item row="0" column="1">
         <widget class="QComboBox" name="typeBox">
          <property name="styleSheet">
-          <string notr="true">background-color: rgb(90, 90, 90);</string>
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
          </property>
          <item>
           <property name="text">
@@ -373,7 +424,7 @@ border: 2px solid  grey;
        <item row="5" column="0">
         <widget class="QLabel" name="label_9">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Hypoallergenic</string>
@@ -383,7 +434,7 @@ border: 2px solid  grey;
        <item row="11" column="0" colspan="2">
         <widget class="QPushButton" name="pushButton">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color:rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Search</string>
@@ -393,7 +444,7 @@ border: 2px solid  grey;
        <item row="2" column="0">
         <widget class="QLabel" name="label_5">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Color</string>
@@ -403,7 +454,7 @@ border: 2px solid  grey;
        <item row="9" column="0">
         <widget class="QLabel" name="label_8">
          <property name="styleSheet">
-          <string notr="true">color: rgb(176, 175, 177);</string>
+          <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
          <property name="text">
           <string>Maximum Weight</string>
@@ -412,6 +463,10 @@ border: 2px solid  grey;
        </item>
        <item row="8" column="1">
         <widget class="QSlider" name="horizontalSlider_4">
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
+         </property>
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
@@ -428,8 +483,17 @@ border: 2px solid  grey;
      <x>0</x>
      <y>0</y>
      <width>1046</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Chalkboard SE</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(239, 207, 187);</string>
    </property>
    <widget class="QMenu" name="menuBread_and_Butter">
     <property name="title">
