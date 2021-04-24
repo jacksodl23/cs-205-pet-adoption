@@ -46,10 +46,10 @@ private slots:
 private:
     Ui::PetDisplay *ui;
     QPixmap petPic;
-    PetOwner currentUser;
     std::vector<Pet> pets;
 
-    void displayPet();
+    void fetchPets();
+    void displayPet(Pet p);
     void getCurrentUser();
 };
 

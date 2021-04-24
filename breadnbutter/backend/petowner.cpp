@@ -48,8 +48,18 @@ bool PetOwner::attemptLogin()
     if (query.exec()) {
         while (query.next()) {
             int dbID = query.value(0).toInt();
+            QString dbName = query.value(1).toString();
 
             this->petOwnerID = dbID;
+            qDebug() << "Found owner with ID" << dbID;
+
+            QStringList pieces = dbName.split(" ");
+            for (int i = 0; i < pieces.size(); i++) {
+                if (i == 0)
+                    this->firstName = pieces.at(i);
+                else if (i == 1)
+                    this->lastName = pieces.at(i);
+            }
 
             return true;
         }
@@ -85,7 +95,7 @@ PetOwner::PetOwner(int id)
 
     if (query.exec()) {
         if (query.next()) {
-            QString aName = query.value(0).toString();
+            QString aName = query.value(1).toString();
             QString aEmail = query.value(3).toString();
             QString aPassword = query.value(4).toString();
 

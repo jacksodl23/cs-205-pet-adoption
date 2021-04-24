@@ -50,12 +50,12 @@ bool ShelterOwner::deleteFromDB()
 
     QSqlQuery query;
     query.prepare("delete from User where user_id = ?");
-    query.addBindValue(petOwnerID);
+    query.addBindValue(ownerID);
 
     result = query.exec();
 
     if (!result)
-        std::cerr << query.lastError().text().toStdString() << std::endl;
+        qDebug() << "Error deleting shelter owner:" << query.lastError().text();
 
     return result;
 }

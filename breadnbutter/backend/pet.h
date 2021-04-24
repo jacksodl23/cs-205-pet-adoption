@@ -14,6 +14,8 @@ public:
 
     bool insertIntoDB();
     bool deleteFromDB();
+    QString getName();
+
 private:
     int pet_id;
     bool is_cat;

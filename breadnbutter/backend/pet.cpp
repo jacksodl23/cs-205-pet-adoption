@@ -97,3 +97,8 @@ bool Pet::deleteFromDB()
 
     return query.exec();
 }
+
+QString Pet::getName()
+{
+    return name;
+}
