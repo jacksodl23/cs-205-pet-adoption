@@ -47,7 +47,6 @@ bool PetOwner::attemptLogin()
 
     if (query.exec()) {
         while (query.next()) {
-            QString dbName = query.value(2).toString();
             int dbID = query.value(0).toInt();
 
             this->petOwnerID = dbID;
@@ -250,7 +249,7 @@ bool PetOwner::insertIntoDB()
         query.addBindValue(location);
         query.addBindValue(email);
         query.addBindValue(password);
-        query.addBindValue(0);
+        query.addBindValue(1);
 
         result = query.exec();
 
