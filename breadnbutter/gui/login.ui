@@ -14,7 +14,8 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(204, 124, 169);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);
+color: rgb(239, 207, 187);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -108,6 +109,12 @@
          <width>200</width>
          <height>16777215</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="layoutDirection">
         <enum>Qt::RightToLeft</enum>
