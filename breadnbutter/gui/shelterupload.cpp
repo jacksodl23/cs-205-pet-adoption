@@ -77,5 +77,9 @@ void shelterUpload::on_pushButton_clicked()
     this->description = ui->lineEdit_5->text();
 
     Pet newPet(name, age, breed, color, hairLength, weight, origin, allergy, description);
-    bool = newPet.insertIntoDB();
+    bool check = newPet.insertIntoDB();
+
+    if(check){
+        QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
+    }
 }

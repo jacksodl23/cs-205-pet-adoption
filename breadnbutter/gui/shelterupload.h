@@ -2,6 +2,7 @@
 #define SHELTERUPLOAD_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include "../backend/pet.h"
 
 namespace Ui {

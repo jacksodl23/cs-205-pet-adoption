@@ -30,6 +30,7 @@ private:
     QString description;
 
     void chooseID();
+    bool existsInDB();
 };
 
 #endif // PET_H

@@ -16,6 +16,27 @@ void Pet::chooseID()
     }
 }
 
+bool Pet::existsInDB()
+{
+    QSqlQuery query;
+    query.prepare("select name from Pet where name = ?");
+    query.addBindValue(name);
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString dbName = query.value(0).toString();
+
+            int compare = QString::compare(name, dbName, Qt::CaseInsensitive);
+            if (compare == 0)
+                return true;
+        }
+    } else {
+        std::cerr << "Error getting pets: " << query.lastError().text().toStdString() << std::endl;
+    }
+
+    return false;
+}
+
 Pet::Pet()
 {
 
@@ -43,15 +64,24 @@ Pet::Pet(QString name, int age, QString breed, QString color, QString hairType, 
 
 bool Pet::insertIntoDB()
 {
-    QSqlQuery query;
-    query.prepare("insert into pet (name) "
-                  "values (?)");
-    query.addBindValue(name);
+    bool result;
 
-    bool result = query.exec();
+    if (!existsInDB()) {
+        QSqlQuery query;
+        query.prepare("insert into Pet (pet_id, name)"
+                      "values (?, ?)");
+        query.addBindValue(pet_id);
+        query.addBindValue(name);
 
-    if (!result)
-        std::cerr << "Query error: " << query.lastError().text().toStdString() << std::endl;
+        result = query.exec();
+
+        if (!result){
+            std::cerr << query.lastError().text().toStdString() << std::endl;
+        }
+    }
+    else {
+        result = false;
+    }
 
     return result;
 }
