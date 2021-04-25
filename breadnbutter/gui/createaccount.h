@@ -8,6 +8,8 @@
 #include "../backend/petowner.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
+#include "../backend/shelterowner.h"
+#include "../backend/user.h"
 
 namespace Ui {
 class CreateAccount;
@@ -24,10 +26,13 @@ public:
     bool signUpSuccessful;
 
 private slots:
-    void on_createOkay_accepted();
+    // void on_createOkay_accepted();
+
+    void on_createOkay_clicked(QAbstractButton *button);
 
 private:
     Ui::CreateAccount *ui;
+    void writeUserToFile(User newUser);
 };
 
 #endif // CREATEACCOUNT_H

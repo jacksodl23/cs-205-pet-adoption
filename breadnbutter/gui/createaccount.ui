@@ -129,7 +129,7 @@ color: rgb(239, 207, 187);</string>
       </widget>
      </item>
      <item row="3" column="0">
-      <widget class="QLabel" name="emailLabel_2">
+      <widget class="QLabel" name="roleLabel">
        <property name="font">
         <font>
          <family>Dyuthi</family>
@@ -144,31 +144,7 @@ color: rgb(239, 207, 187);</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
-      <widget class="QComboBox" name="roleBox">
-       <property name="font">
-        <font>
-         <family>Dyuthi</family>
-         <pointsize>18</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color:rgb(239, 207, 187);
-color: rgb(0, 0, 0);</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>Adopter</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Provider</string>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item row="4" column="0">
+     <item row="5" column="0">
       <widget class="QLabel" name="passwordLabel">
        <property name="font">
         <font>
@@ -184,7 +160,7 @@ color: rgb(0, 0, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1">
+     <item row="5" column="1">
       <widget class="QLineEdit" name="passwordField">
        <property name="font">
         <font>
@@ -200,7 +176,50 @@ color: rgb(0, 0, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="0">
+     <item row="3" column="1">
+      <widget class="QComboBox" name="roleBox">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(239, 207, 187);
+color: rgb(0, 0, 0);</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Adopter</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Provider</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="passwordField_2">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color:rgb(239, 207, 187);</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
       <widget class="QLabel" name="passwordLabel_2">
        <property name="font">
         <font>
@@ -216,8 +235,24 @@ color: rgb(0, 0, 0);</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="passwordField_2">
+     <item row="4" column="0">
+      <widget class="QLabel" name="locationLabel">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(239, 207, 187);</string>
+       </property>
+       <property name="text">
+        <string>Location</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="locationField">
        <property name="font">
         <font>
          <family>Dyuthi</family>
@@ -226,9 +261,6 @@ color: rgb(0, 0, 0);</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color:rgb(239, 207, 187);</string>
-       </property>
-       <property name="echoMode">
-        <enum>QLineEdit::Password</enum>
        </property>
       </widget>
      </item>
@@ -259,7 +291,6 @@ color: rgb(0, 0, 0);</string>
  <tabstops>
   <tabstop>emailField</tabstop>
   <tabstop>passwordField</tabstop>
-  <tabstop>passwordField_2</tabstop>
  </tabstops>
  <resources/>
  <connections>

@@ -14,7 +14,10 @@ INCLUDEPATH += ../../gtest \
  ../../gtest/googletest/include \
  ../../gtest/googletest/include/gtest
 
-HEADERS += ../backend/*.h
+HEADERS += ../backend/*.h \
+           ../backend/user.h
 
 SOURCES += main.cpp \
-           ../backend/petowner.cpp
+           ../backend/petowner.cpp \
+           ../backend/pet.cpp \
+           ../backend/user.cpp

@@ -98,6 +98,11 @@ border: 2px solid  white;
             </property>
             <item>
              <property name="text">
+              <string>Any</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
               <string>Monday</string>
              </property>
             </item>
@@ -236,6 +241,13 @@ border: 2px solid  white;
         </property>
         <property name="text">
          <string>Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Breed</string>
         </property>
        </widget>
       </item>

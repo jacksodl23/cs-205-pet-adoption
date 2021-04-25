@@ -18,17 +18,17 @@ public:
     ~shelterUpload();
 
 private slots:
-    void on_comboBox_currentTextChanged(const QString &arg1);
-
-    void on_comboBox_2_activated(const QString &arg1);
-
-    void on_comboBox_3_activated(const QString &arg1);
-
-    void on_comboBox_4_activated(const QString &arg1);
-
-    void on_comboBox_5_activated(const QString &arg1);
-
     void on_pushButton_clicked();
+
+    void on_typeBox_currentTextChanged(const QString &arg1);
+
+    void on_colorBox_activated(const QString &arg1);
+
+    void on_hypoBox_activated(const QString &arg1);
+
+    void on_hairLenBox_activated(const QString &arg1);
+
+    void on_breedBox_activated(const QString &arg1);
 
 private:
     Ui::shelterUpload *ui;
@@ -38,7 +38,7 @@ private:
     int age;
     QString hairLength;
     QString color;
-    QString allergy;
+    bool hypoallergenic;
     QString origin;
     QString description;
     QString name;

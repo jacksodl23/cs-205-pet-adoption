@@ -1,8 +1,12 @@
 #include "mainwindow.h"
-#include "petdisplay.h"
 #include "../backend/globals.h"
+#include "../backend/petowner.h"
+#include "../backend/shelterowner.h"
 #include <QApplication>
+#include <QtSql>
 #include <fstream>
+#include <typeinfo>
+#include <cstring>
 
 int getCurrentUser() {
     std::string line;
@@ -15,7 +19,24 @@ int getCurrentUser() {
             QString lineString = QString::fromStdString(line);
             QString decrypted = crypto.decryptToString(lineString);
             int theID = decrypted.toInt();
-            currentUserID = theID;
+
+            QSqlQuery query;
+            query.prepare("select is_adopter from User where user_id = ?");
+            query.addBindValue(theID);
+
+            if (query.exec()) {
+                if (query.next()) {
+                    int is_adopter = query.value(0).toInt();
+
+                    if (is_adopter == 1)
+                        currentUser = PetOwner(theID);
+                    else if (is_adopter == 0)
+                        currentUser = ShelterOwner(theID);
+                }
+            } else {
+                qDebug() << "Error getting user:" << query.lastError().text();
+                return -1;
+            }
 
             return theID;
         }
@@ -31,7 +52,12 @@ int main(int argc, char *argv[])
 
     if(getCurrentUser() == -1)
         w.show();
-    else
-        w.showPetDisplay();
+    else {
+        const char *typeName = typeid(currentUser).name();
+        if (strcmp(typeName, "4User") == 0)
+            w.showShelterDisplay();
+        else
+            w.showPetDisplay();
+    }
     return a.exec();
 }

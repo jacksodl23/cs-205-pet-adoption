@@ -1,23 +1,27 @@
 #ifndef PETOWNER_H
 #define PETOWNER_H
 #include <QString>
+#include <QStringList>
 #include <QtSql>
 #include <iostream>
+#include <vector>
+#include "pet.h"
+#include "user.h"
 
-class PetOwner
+class PetOwner : public User
 {
 public:
-    PetOwner();
+    ~PetOwner();
     PetOwner(QString email, QString password);
-    PetOwner(QString p, QString f, QString l, QString e);
+    PetOwner(int id);
+    PetOwner(QString p, QString fn, QString ln, QString e, QString loc);
 
     // accessor methods
     QString getPassword();
-    QString getFirstName();
     QString getLastName();
     QString getEmail();
+    QString getLocation();
 
-    int getID();
     int getAge();
     QString getBreed();
     QString getColor();
@@ -31,6 +35,7 @@ public:
     void setFirstName(QString fn);
     void setLastName(QString ln);
     void setEmail(QString e);
+    void setLocation(QString loc);
 
     void setAge(int age);
     void setBreed(QString breed);
@@ -41,18 +46,18 @@ public:
     void setAllergy(bool a);
 
     // database methods
-    bool insertIntoDB();
+    bool insertInDB();
     bool deleteFromDB();
     bool existsInDB();
     bool attemptLogin();
 
-private:
-    int petOwnerID;
-    QString password;
-    QString firstName;
-    QString lastName;
-    QString email;
+    std::vector<Pet> getLikedPets();
 
+
+
+
+
+private:
     // preferences
     int p_age;
     QString p_breed;
@@ -62,6 +67,7 @@ private:
     QString p_origin;
     bool p_allergy;
     void chooseID();
+    std::vector<Pet> likedPets;
 };
 
 #endif // PETOWNER_H

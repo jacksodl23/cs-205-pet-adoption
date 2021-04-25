@@ -3,6 +3,8 @@
 #include <QString>
 #include <QtSql>
 #include <iostream>
+#include <vector>
+#include "pet.h"
 
 class Shelter
 {
@@ -34,6 +36,7 @@ private:
     QString location;
     QString email;
     int phoneNumber;
+    std::vector<Pet> pets;
 };
 
 #endif // SHELTER_H

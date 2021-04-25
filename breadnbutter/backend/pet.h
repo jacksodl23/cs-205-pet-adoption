@@ -10,23 +10,26 @@ class Pet
 public:
     Pet();
     Pet(int id);
-    Pet(QString name, int age, QString breed, QString color, QString hairType, float weight, QString origin, QString allergy,  QString description);
+    Pet(bool is_cat, QString name, int age, QString breed, QString color, QString hairLength, float weight, QString origin, bool hypoallergenic, QString description);
 
     bool insertIntoDB();
     bool deleteFromDB();
+    QString getName();
+
 private:
     int pet_id;
+    bool is_cat;
 
     QString name;
     int age;
     QString breed;
 
     QString color;
-    QString hairType;
+    QString hairLength;
 
     float weight;
     QString origin;
-    QString allergy;
+    bool hypoallergenic;
     QString description;
 
     void chooseID();
