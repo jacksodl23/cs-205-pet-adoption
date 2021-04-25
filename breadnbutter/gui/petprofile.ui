@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(70, 70, 70);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -26,12 +26,12 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(176, 175, 177);
-border: 2px solid  grey; 
+    <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
      border-radius: 3px;</string>
    </property>
    <property name="title">
-    <string>Picture</string>
+    <string/>
    </property>
    <widget class="QLabel" name="animalDisplay">
     <property name="geometry">
@@ -56,17 +56,29 @@ border: 2px solid  grey;
      <height>691</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(176, 175, 177);
-border: 2px solid  grey; 
+    <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
      border-radius: 3px;</string>
    </property>
    <property name="title">
-    <string>Info</string>
+    <string/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Name</string>
       </property>
@@ -74,6 +86,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Age</string>
       </property>
@@ -81,6 +99,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Color</string>
       </property>
@@ -88,6 +112,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QLabel" name="label_6">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Hypallergenic</string>
       </property>
@@ -95,6 +125,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QLabel" name="label_7">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Location</string>
       </property>
@@ -102,6 +138,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QLabel" name="label_8">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Shelter Owner</string>
       </property>
@@ -109,6 +151,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QLabel" name="label_9">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Phone</string>
       </property>
@@ -126,12 +174,12 @@ border: 2px solid  grey;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(176, 175, 177);
-border: 2px solid  grey; 
+    <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
      border-radius: 3px;</string>
    </property>
    <property name="title">
-    <string>Info</string>
+    <string/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -144,13 +192,26 @@ border: 2px solid  grey;
           <height>30</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Dyuthi</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Choose Day</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QComboBox" name="dayComboBox"/>
+       <widget class="QComboBox" name="dayComboBox">
+        <property name="font">
+         <font>
+          <family>Dyuthi</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -163,6 +224,12 @@ border: 2px solid  grey;
           <width>16777215</width>
           <height>30</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Dyuthi</family>
+          <pointsize>12</pointsize>
+         </font>
         </property>
         <property name="text">
          <string>Choose Time</string>
@@ -180,6 +247,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QPushButton" name="makeApptButton">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Make or Update Appointment</string>
       </property>
@@ -187,6 +260,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QPushButton" name="deleteApptButton">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Delete Appointment</string>
       </property>
@@ -194,6 +273,12 @@ border: 2px solid  grey;
     </item>
     <item>
      <widget class="QPushButton" name="backToSearchButton">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string>Go Back to Search!</string>
       </property>

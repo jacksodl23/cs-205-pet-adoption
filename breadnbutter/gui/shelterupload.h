@@ -41,6 +41,8 @@ private:
     QString origin;
     QString description;
     QString name;
+
+    bool upload;
 };
 
 #endif // SHELTERUPLOAD_H
