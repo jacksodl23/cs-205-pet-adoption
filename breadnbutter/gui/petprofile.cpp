@@ -6,7 +6,6 @@ PetProfile::PetProfile(QWidget *parent) :
     ui(new Ui::PetProfile)
 {
     ui->setupUi(this);
-    ui->statusbar->showMessage("current appointment info here");
 
     QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
     petPic.load(photoFilePath);
