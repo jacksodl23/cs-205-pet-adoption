@@ -14,7 +14,7 @@
 #include "login.h"
 #include "createaccount.h"
 #include "petdisplay.h"
-#include "shelterupload.h"
+#include "shelterprofile.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 
@@ -47,6 +47,6 @@ private:
     void openDB();
 
     PetDisplay *petDisplay;
-    shelterUpload *shelterDisplay;
+    shelterProfile *shelterDisplay;
 };
 #endif // MAINWINDOW_H

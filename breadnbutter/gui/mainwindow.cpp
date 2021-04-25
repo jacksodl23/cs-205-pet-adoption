@@ -45,7 +45,7 @@ void MainWindow::showPetDisplay()
 void MainWindow::showShelterDisplay()
 {
     hide();
-    shelterDisplay = new shelterUpload(this);
+    shelterDisplay = new shelterProfile(this);
     shelterDisplay->show();
 }
 
