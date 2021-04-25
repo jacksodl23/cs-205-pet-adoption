@@ -5,6 +5,12 @@ User::User()
 
 }
 
+User::User(QString email, QString password)
+{
+    this->email = email;
+    this->password = password;
+}
+
 User::~User()
 {
 
@@ -27,6 +33,23 @@ bool User::existsInDB()
 
 bool User::attemptLogin()
 {
+    QSqlQuery query;
+    query.prepare("select * from User where email = ? and password = ?");
+    query.addBindValue(email);
+    query.addBindValue(password);
+
+    if (query.exec()) {
+        while (query.next()) {
+            int dbID = query.value(0).toInt();
+
+            this->id = dbID;
+
+            return true;
+        }
+    } else {
+        qDebug() << "Error logging in:" << query.lastError().text();
+    }
+
     return false;
 }
 

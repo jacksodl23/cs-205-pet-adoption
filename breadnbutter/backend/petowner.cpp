@@ -85,6 +85,12 @@ PetOwner::~PetOwner()
 
 }
 
+PetOwner::PetOwner(QString email, QString password)
+{
+    this->email = email;
+    this->password = password;
+}
+
 PetOwner::PetOwner(int id)
 {
     this->id = id;
@@ -113,12 +119,6 @@ PetOwner::PetOwner(int id)
     } else {
         qDebug() << "Error creating adopter:" << query.lastError().text();
     }
-}
-
-PetOwner::PetOwner(QString email, QString password)
-{
-    this->email = email;
-    this->password = password;
 }
 
 PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)

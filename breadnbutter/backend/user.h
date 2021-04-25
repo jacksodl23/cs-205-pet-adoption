@@ -2,22 +2,25 @@
 #define USER_H
 
 #include <QString>
+#include <QtSql>
 #include <iostream>
 
 class User
 {
 public:
     User();
+    User(QString email, QString password);
     virtual ~User();
 
    virtual bool insertInDB();
    virtual bool deleteFromDB();
    virtual bool existsInDB();
-   virtual bool attemptLogin();
 
-    int getID();
+   bool attemptLogin();
 
-    QString getFirstName();
+   int getID();
+
+   QString getFirstName();
 
 protected:
     int id;

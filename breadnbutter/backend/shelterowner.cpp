@@ -5,6 +5,12 @@ ShelterOwner::~ShelterOwner()
 
 }
 
+ShelterOwner::ShelterOwner(QString email, QString password)
+{
+    this->email = email;
+    this->password = password;
+}
+
 ShelterOwner::ShelterOwner(int id)
 {
     this->id = id;

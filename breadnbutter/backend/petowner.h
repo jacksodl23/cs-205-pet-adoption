@@ -12,8 +12,8 @@ class PetOwner : public User
 {
 public:
     ~PetOwner();
-    PetOwner(int id);
     PetOwner(QString email, QString password);
+    PetOwner(int id);
     PetOwner(QString p, QString fn, QString ln, QString e, QString loc);
 
     // accessor methods

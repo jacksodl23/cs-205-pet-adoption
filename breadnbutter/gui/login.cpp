@@ -20,23 +20,44 @@ void Login::on_loginOkay_accepted()
     // where should we store user information?
     QString email = ui->emailField->text();
     QString password = ui->passwordField->text();
-    QString welcomeMessage = "Welcome ";
 
-    PetOwner owner(email, password);
-    loginSuccessful = owner.attemptLogin();
+    User user(email, password);
+    loginSuccessful = user.attemptLogin();
 
     if (loginSuccessful) {
-        currentUser = owner;
+        QSqlQuery query;
+        query.prepare("select is_adopter from User where user_id = ?");
+        query.addBindValue(user.getID());
 
-        std::ofstream config("currentuser.config");
+        if (query.exec()) {
+            if (query.next()) {
+                int is_adopter = query.value(0).toInt();
 
-        SimpleCrypt crypto(CRYPTO_KEY);
-        QString id = QString::number(owner.getID());
-        QString encoded = crypto.encryptToString(id);
-
-        config << encoded.toStdString();
-        config.close();
+                if (is_adopter == 1) {
+                    currentUser = PetOwner(email, password);
+                    writeUserToFile(currentUser);
+                }
+                else if (is_adopter == 0) {
+                    currentUser = ShelterOwner(email, password);
+                    writeUserToFile(currentUser);
+                }
+            }
+        } else {
+            qDebug() << "Error determining if user is adopter:" << query.lastError().text();
+        }
     } else {
         QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
     }
+}
+
+void Login::writeUserToFile(User user)
+{
+    std::ofstream config("currentuser.config");
+
+    SimpleCrypt crypto(CRYPTO_KEY);
+    QString id = QString::number(user.getID());
+    QString encoded = crypto.encryptToString(id);
+
+    config << encoded.toStdString();
+    config.close();
 }
