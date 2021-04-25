@@ -13,8 +13,11 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
-    displayPet();
+    fetchPets();
     getCurrentUser();
+
+    if (pets.size() > 0)
+        displayPet(pets.front());
 }
 
 PetDisplay::~PetDisplay()
@@ -179,50 +182,15 @@ void PetDisplay::on_pushButton_clicked()
     //searchBox.exec();
 }
 
-void PetDisplay::displayPet()
+void PetDisplay::displayPet(Pet p)
 {
-    QSqlQuery query;
-    if (query.exec("select max(pet_id) from Pet")) {
-        if (query.next()) {
-            int maxID = query.value(0).toInt();
-
-            srand(time(0));
-            int displayID = rand() % maxID + 1;
-
-            QSqlQuery q2;
-            q2.prepare("select * from Pet "
-                       "inner join Shelter on Shelter.shelter_id = Pet.shelter_id "
-                       "where Pet.pet_id = ?");
-            q2.addBindValue(displayID);
-            if (q2.exec()) {
-                if (q2.next()) {
-                    QString pName = q2.value(1).toString();
-                    ui->label_name->setText(pName);
-
-                    QString sName = q2.value(5).toString();
-                    ui->label_shelter_name->setText(sName);
-                }
-            } else {
-                qDebug() << "Error getting pet:" << q2.lastError().text();
-            }
-        }
-    }
+    ui->label_name->setText(p.getName());
 }
 
 void PetDisplay::getCurrentUser()
 {
-    QSqlQuery query;
-    query.prepare("select * from Adopter where adopter_id = ?");
-    query.addBindValue(currentUserID);
-
-    if (query.exec()) {
-        if (query.next()) {
-            QString name = query.value(1).toString();
-            ui->label_user_name->setText("Welcome " + name + "!");
-        }
-    } else {
-        qDebug() << "Error getting current user: " << query.lastError().text();
-    }
+    QString name = currentUser.getFirstName();
+    ui->label_user_name->setText("<b><FONT COLOR=red>Welcome " + name + "!<FONT></b>");
 }
 
 void PetDisplay::on_profileButton_clicked()
@@ -230,4 +198,30 @@ void PetDisplay::on_profileButton_clicked()
    PetProfile profileUI;
    profileUI.setModal(true);
    profileUI.exec();
+}
+
+void PetDisplay::on_button_like_clicked()
+{
+
+}
+
+void PetDisplay::on_button_dislike_clicked()
+{
+    currentPos++;
+    displayPet(pets.at(currentPos));
+}
+
+void PetDisplay::fetchPets()
+{
+    QSqlQuery query;
+    if (query.exec("select pet_id from Pet")) {
+        while (query.next()) {
+            int pID = query.value(0).toInt();
+
+            Pet p(pID);
+            pets.push_back(p);
+        }
+    } else {
+        qDebug() << "Error fetching pets:" << query.lastError().text();
+    }
 }

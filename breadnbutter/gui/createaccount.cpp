@@ -20,7 +20,8 @@ void CreateAccount::on_createOkay_accepted()
     QString lastName = ui->lastNameField->text();
     QString email = ui->emailField->text();
     QString password = ui->passwordField->text();
-    QString confirmPassword = ui->passwordField_2->text();
+    QString confirmPassword = ui->confirmField->text();
+    QString location = ui->locationField->text();
 //    QString welcomeMessage = "Welcome ";
 
     if (password != confirmPassword) {
@@ -33,11 +34,11 @@ void CreateAccount::on_createOkay_accepted()
 
     // what about shelter owner?
 
-    PetOwner newOwner(password, firstName, lastName, email);
+    PetOwner newOwner(password, firstName, lastName, email, location);
     signUpSuccessful = newOwner.insertIntoDB();
 
     if (signUpSuccessful) {
-        currentUserID = newOwner.getID();
+        currentUser = newOwner;
 
         std::ofstream config("currentuser.config");
 

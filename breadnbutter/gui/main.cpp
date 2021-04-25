@@ -15,7 +15,7 @@ int getCurrentUser() {
             QString lineString = QString::fromStdString(line);
             QString decrypted = crypto.decryptToString(lineString);
             int theID = decrypted.toInt();
-            currentUserID = theID;
+            currentUser = PetOwner(theID);
 
             return theID;
         }

@@ -13,6 +13,7 @@
 #include <QtSql>
 #include "../backend/globals.h"
 #include "../backend/petowner.h"
+#include "../backend/pet.h"
 #include "petprofile.h"
 
 namespace Ui {
@@ -38,12 +39,18 @@ private slots:
 
     void on_profileButton_clicked();
 
+    void on_button_like_clicked();
+
+    void on_button_dislike_clicked();
+
 private:
     Ui::PetDisplay *ui;
     QPixmap petPic;
-    PetOwner currentUser;
+    std::vector<Pet> pets;
+    int currentPos;
 
-    void displayPet();
+    void fetchPets();
+    void displayPet(Pet p);
     void getCurrentUser();
 };
 

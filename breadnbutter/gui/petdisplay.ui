@@ -90,7 +90,7 @@ border: 2px solid  white;
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="button_like">
              <property name="minimumSize">
               <size>
                <width>0</width>
@@ -112,7 +112,7 @@ border: 2px solid  white;
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
+            <widget class="QPushButton" name="button_dislike">
              <property name="minimumSize">
               <size>
                <width>0</width>

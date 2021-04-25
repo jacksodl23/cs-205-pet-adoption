@@ -26,7 +26,7 @@ void Login::on_loginOkay_accepted()
     loginSuccessful = owner.attemptLogin();
 
     if (loginSuccessful) {
-        currentUserID = owner.getID();
+        currentUser = owner;
 
         std::ofstream config("currentuser.config");
 

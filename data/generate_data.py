@@ -5,8 +5,8 @@ import lorem
 class Shelter:
 	def __init__(self, shelter_id):
 		self.shelter_id = shelter_id
-		self.name = randLine("sample_data/ShelterNames.txt")
-		self.location = randLine("sample_data/Locations.txt")
+		self.name = randLine("samples/ShelterNames.txt")
+		self.location = randLine("samples/Locations.txt")
 		self.email = genEmail()
 
 	def toCSV(self):
@@ -24,7 +24,7 @@ class Pet:
 	def __init__(self, pet_id, shelter_id, pet_attribute_id):
 		self.pet_id = pet_id
 		self.is_cat = r.choice([True, False])
-		self.name = randLine("sample_data/PetNames.txt")
+		self.name = randLine("samples/PetNames.txt")
 		self.shelter_id = shelter_id
 		self.pet_attribute_id = pet_attribute_id
 
@@ -42,7 +42,7 @@ class Pet:
 class Adopter:
 	def __init__(self, adopter_id, adopter_preferences_id):
 		self.adopter_id = adopter_id
-		self.name = randLine("sample_data/FirstNames.txt") + " " + randLine("sample_data/LastNames.txt")
+		self.name = randLine("samples/FirstNames.txt") + " " + randLine("samples/LastNames.txt")
 		self.email = genEmail()
 		self.password = genPassword()
 		self.adopter_preferences_id = adopter_preferences_id
@@ -60,20 +60,15 @@ class Adopter:
 		line += "\n"
 		return line
 
-	def changeInfo(self, name, email, password):
-		self.name = name
-		self.email = email
-		self.password = password
-
 class Pet_Attributes:
 	def __init__(self, pet_attribute_id, is_cat):
 		self.pet_attribute_id = pet_attribute_id
 		self.age = r.randint(0, 20)
 		if is_cat:
-			self.breed = randLine("sample_data/CatBreeds.txt") if (r.random() < 0.5) else "Unknown"
+			self.breed = randLine("samples/CatBreeds.txt") if (r.random() < 0.5) else "Unknown"
 			self.weight = r.randint(5, 18)
 		else: 
-			self.breed = randLine("sample_data/DogBreeds.txt") if (r.random() < 0.5) else "Mutt"
+			self.breed = randLine("samples/DogBreeds.txt") if (r.random() < 0.5) else "Mutt"
 			self.weight = r.randint(5, 25)
 		self.color = r.choice(["black", "white", "orange", "spotted", "brown"])
 		self.hair_length = r.choice(["short", "medium", "long"])
@@ -114,7 +109,7 @@ def genPassword():
 # Shelters
 numShelters = 100
 #csv = CsvWriter("Shelter_data.csv")
-csv = open("table_data/Shelter_data.csv" ,"w")
+csv = open("Shelter_data.csv" ,"w")
 shelters = []
 for i in range(numShelters):
 	s = Shelter(i+1)
@@ -124,8 +119,9 @@ csv.close()
 
 # Pets
 numPets = 100
+# csv.setFile("Pet_data.csv")
 pets = []
-csv = open("table_data/Pet_data.csv" ,"w")
+csv = open("Pet_data.csv" ,"w")
 for i in range(numPets):
 	p = Pet(i+1, r.randint(1, 100), i+1)
 	pets.append(p)
@@ -135,24 +131,16 @@ csv.close()
 # Adopters
 numAdopters = 100
 adopters = []
-csv = open("table_data/Adopter_data.csv", "w")
-
+csv = open("Adopter_data.csv", "w")
 for i in range(numAdopters):
 	a = Adopter(i+1, numPets+i+1) # to ensure that adopter_preferences_id is unique from pet_preferences_id
 	adopters.append(a)
 	csv.write(a.toCSV())
-
-# default account to login
-default = Adopter(numAdopters+1, numAdopters+numPets+1)
-default.changeInfo("John Smith", "johnsmith@gmail.com", "hello")
-adopters.append(default)
-csv.write(default.toCSV())
-
 csv.close()
 
 # Pet Attributes
 petAttributes = []
-csv = open("table_data/Pet_Attributes_data.csv", "w")
+csv = open("Pet_Attributes_data.csv", "w")
 for i in range(numPets):
 	pa = Pet_Attributes(pets[i].pet_attribute_id, pets[i].is_cat)
 	petAttributes.append(pa)
