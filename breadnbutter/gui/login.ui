@@ -101,6 +101,22 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="checkBox">
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::RightToLeft</enum>
+       </property>
+       <property name="text">
+        <string>Stay Logged In</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="2" column="0">
