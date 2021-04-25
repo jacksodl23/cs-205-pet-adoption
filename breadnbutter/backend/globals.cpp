@@ -1,3 +1,3 @@
 #include "globals.h"
 
-PetOwner currentUser;
+User currentUser;

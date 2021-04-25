@@ -1,13 +1,38 @@
 #include "shelterowner.h"
 
-ShelterOwner::ShelterOwner()
+ShelterOwner::~ShelterOwner()
 {
 
 }
 
 ShelterOwner::ShelterOwner(int id)
 {
+    this->id = id;
 
+    QSqlQuery query;
+    query.prepare("select * from User where user_id = ?");
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString aName = query.value(1).toString();
+            QString aEmail = query.value(3).toString();
+            QString aPassword = query.value(4).toString();
+
+            QStringList pieces = aName.split(" ");
+            for (int i = 0; i < pieces.size(); i++) {
+                if (i == 0)
+                    this->firstName = pieces.at(i);
+                else if (i == 1)
+                    this->lastName = pieces.at(i);
+            }
+
+            this->email = aEmail;
+            this->password = aPassword;
+        }
+    } else {
+        qDebug() << "Error creating adopter:" << query.lastError().text();
+    }
 }
 
 ShelterOwner::ShelterOwner(QString fn, QString ln, QString loc, QString e, QString p)
@@ -50,7 +75,7 @@ bool ShelterOwner::deleteFromDB()
 
     QSqlQuery query;
     query.prepare("delete from User where user_id = ?");
-    query.addBindValue(ownerID);
+    query.addBindValue(id);
 
     result = query.exec();
 
@@ -92,7 +117,7 @@ bool ShelterOwner::attemptLogin()
         while (query.next()) {
             int dbID = query.value(0).toInt();
 
-            this->ownerID = dbID;
+            this->id = dbID;
 
             return true;
         }
@@ -111,9 +136,9 @@ void ShelterOwner::chooseID()
         if (query.next()) {
             int lastID = query.value(0).toInt();
 
-            ownerID = lastID + 1;
+            id = lastID + 1;
         } else {
-            ownerID = 1;
+            id = 1;
         }
     } else {
         qDebug() << "Error getting highest adopter ID:" << query.lastError().text();

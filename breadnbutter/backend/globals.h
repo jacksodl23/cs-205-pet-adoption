@@ -1,10 +1,10 @@
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
-#include "petowner.h"
+#include "user.h"
 
 #define CRYPTO_KEY Q_UINT64_C(0xbfd0da17cd79b3a4)
 
-extern PetOwner currentUser;
+extern User currentUser;
 
 #endif // GLOBALS_H
