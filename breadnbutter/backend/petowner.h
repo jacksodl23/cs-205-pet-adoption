@@ -6,23 +6,22 @@
 #include <iostream>
 #include <vector>
 #include "pet.h"
+#include "user.h"
 
-class PetOwner
+class PetOwner : public User
 {
 public:
-    PetOwner();
-    PetOwner(int id);
+    ~PetOwner();
     PetOwner(QString email, QString password);
+    PetOwner(int id);
     PetOwner(QString p, QString fn, QString ln, QString e, QString loc);
 
     // accessor methods
     QString getPassword();
-    QString getFirstName();
     QString getLastName();
     QString getEmail();
     QString getLocation();
 
-    int getID();
     int getAge();
     QString getBreed();
     QString getColor();
@@ -47,7 +46,7 @@ public:
     void setAllergy(bool a);
 
     // database methods
-    bool insertIntoDB();
+    bool insertInDB();
     bool deleteFromDB();
     bool existsInDB();
     bool attemptLogin();
@@ -59,13 +58,6 @@ public:
 
 
 private:
-    int petOwnerID;
-    QString password;
-    QString firstName;
-    QString lastName;
-    QString email;
-    QString location;
-
     // preferences
     int p_age;
     QString p_breed;

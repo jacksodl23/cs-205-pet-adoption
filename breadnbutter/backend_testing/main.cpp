@@ -8,36 +8,37 @@
 #include "../backend/petowner.h"
 #include "../backend/shelter.h"
 #include "../backend/pet.h"
+#include "../backend/user.h"
 
 using namespace std;
 
 class AdopterTest : public ::testing::Test {
 protected:
-    PetOwner owner;
+    PetOwner *owner;
 
 public:
     AdopterTest() {
-        owner = PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "Seattle");
+        owner = new PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "Seattle");
     }
 };
 
 TEST_F(AdopterTest, TestNewAdopter) {
-    if (!owner.existsInDB())
-        EXPECT_EQ(owner.insertIntoDB(), true);
+    if (!owner->existsInDB())
+        EXPECT_EQ(owner->insertInDB(), true);
     else
-        EXPECT_EQ(owner.insertIntoDB(), false);
+        EXPECT_EQ(owner->insertInDB(), false);
 }
 
 TEST_F(AdopterTest, TestAdopterExists) {
-    ASSERT_EQ(owner.existsInDB(), true);
+    ASSERT_EQ(owner->existsInDB(), true);
 }
 
 TEST_F(AdopterTest, TestLogin) {
-    ASSERT_EQ(owner.attemptLogin(), true);
+    ASSERT_EQ(owner->attemptLogin(), true);
 }
 
 TEST_F(AdopterTest, TestDeleteAdopter) {
-    ASSERT_EQ(owner.deleteFromDB(), true);
+    ASSERT_EQ(owner->attemptLogin(), true);
 }
 
 TEST(TestRead, TestReadShelter) {

@@ -19,6 +19,8 @@ SOURCES += \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
     ../backend/shelter.cpp \
+    ../backend/shelterowner.cpp \
+    ../backend/user.cpp \
     shelterupload.cpp \
     petprofile.cpp
 
@@ -28,6 +30,8 @@ HEADERS += \
     mainwindow.h \
     petdisplay.h \
     ../backend/*.h \
+    ../backend/shelterowner.h \
+    ../backend/user.h \
     shelterupload.h \
     petprofile.h
 

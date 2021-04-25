@@ -8,9 +8,9 @@ void PetOwner::chooseID()
         if (query.next()) {
             int lastID = query.value(0).toInt();
 
-            petOwnerID = lastID + 1;
+            id = lastID + 1;
         } else {
-            petOwnerID = 1;
+            id = 1;
         }
     } else {
         qDebug() << "Error getting highest adopter ID:" << query.lastError().text();
@@ -50,7 +50,7 @@ bool PetOwner::attemptLogin()
             int dbID = query.value(0).toInt();
             QString dbName = query.value(1).toString();
 
-            this->petOwnerID = dbID;
+            this->id = dbID;
             qDebug() << "Found owner with ID" << dbID;
 
             QStringList pieces = dbName.split(" ");
@@ -80,14 +80,20 @@ QString PetOwner::getLocation()
     return location;
 }
 
-PetOwner::PetOwner()
+PetOwner::~PetOwner()
 {
 
 }
 
+PetOwner::PetOwner(QString email, QString password)
+{
+    this->email = email;
+    this->password = password;
+}
+
 PetOwner::PetOwner(int id)
 {
-    this->petOwnerID = id;
+    this->id = id;
 
     QSqlQuery query;
     query.prepare("select * from User where user_id = ?");
@@ -115,12 +121,6 @@ PetOwner::PetOwner(int id)
     }
 }
 
-PetOwner::PetOwner(QString email, QString password)
-{
-    this->email = email;
-    this->password = password;
-}
-
 PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)
 {
     this->password = p;
@@ -137,11 +137,6 @@ QString PetOwner::getPassword()
     return password;
 }
 
-QString PetOwner::getFirstName()
-{
-    return firstName;
-}
-
 QString PetOwner::getLastName()
 {
     return lastName;
@@ -150,11 +145,6 @@ QString PetOwner::getLastName()
 QString PetOwner::getEmail()
 {
     return email;
-}
-
-int PetOwner::getID()
-{
-    return petOwnerID;
 }
 
 int PetOwner::getAge()
@@ -247,7 +237,7 @@ void PetOwner::setAllergy(bool a)
     this->p_allergy = a;
 }
 
-bool PetOwner::insertIntoDB()
+bool PetOwner::insertInDB()
 {
     bool result;
 
@@ -276,7 +266,7 @@ bool PetOwner::deleteFromDB()
 
     QSqlQuery query;
     query.prepare("delete from User where user_id = ?");
-    query.addBindValue(petOwnerID);
+    query.addBindValue(id);
 
     result = query.exec();
 

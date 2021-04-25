@@ -10,7 +10,8 @@ HEADERS += pet.h \
 shelter.h \
     simplecrypt.h \
     globals.h \
-    shelterowner.h
+    shelterowner.h \
+    user.h
 
 SOURCES += main.cpp \
            pet.cpp \
@@ -18,5 +19,6 @@ SOURCES += main.cpp \
 shelter.cpp \
     simplecrypt.cpp \
     globals.cpp \
-    shelterowner.cpp
+    shelterowner.cpp \
+    user.cpp
 

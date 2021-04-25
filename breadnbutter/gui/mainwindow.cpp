@@ -60,8 +60,12 @@ void MainWindow::on_loginButton_clicked()
     loginUI.setModal(true);
     loginUI.exec();
 
+    const char *typeName = typeid(currentUser).name();
     if (loginUI.loginSuccessful) {
-        showPetDisplay();
+        if (strcmp(typeName, "4User") == 0)
+            showShelterDisplay();
+        else
+            showPetDisplay();
     }
 
 }
@@ -73,8 +77,12 @@ void MainWindow::on_createButton_clicked()
     createUI.setModal(true);
     createUI.exec();
 
+    const char *typeName = typeid(currentUser).name();
     if (createUI.signUpSuccessful) {
-       showPetDisplay();
+       if (strcmp(typeName, "4User") == 0)
+           showShelterDisplay();
+       else
+           showPetDisplay();
     }
 }
 

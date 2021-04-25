@@ -10,6 +10,8 @@
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 #include "../backend/petowner.h"
+#include "../backend/shelterowner.h"
+#include "../backend/user.h"
 
 namespace Ui {
 class Login;
@@ -30,6 +32,8 @@ private slots:
 
 private:
     Ui::Login *ui;
+
+    void writeUserToFile(User user);
 };
 
 #endif // LOGIN_H
