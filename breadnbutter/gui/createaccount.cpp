@@ -34,9 +34,19 @@ void CreateAccount::on_createOkay_accepted()
     // what about shelter owner?
 
     PetOwner newOwner(password, firstName, lastName, email);
+    signUpSuccessful = newOwner.insertIntoDB();
 
-    if (newOwner.insertIntoDB()) {
-        signUpSuccessful = true;
+    if (signUpSuccessful) {
+        currentUserID = newOwner.getID();
+
+        std::ofstream config("currentuser.config");
+
+        SimpleCrypt crypto(CRYPTO_KEY);
+        QString id = QString::number(newOwner.getID());
+        QString encoded = crypto.encryptToString(id);
+
+        config << encoded.toStdString();
+        config.close();
     } else {
         if (newOwner.existsInDB()) {
             QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");

@@ -42,6 +42,13 @@ void MainWindow::showPetDisplay()
     petDisplay->show();
 }
 
+void MainWindow::showShelterDisplay()
+{
+    hide();
+    shelterDisplay = new shelterUpload(this);
+    shelterDisplay->show();
+}
+
 void MainWindow::on_loginButton_clicked()
 {
     // hiding main window - figure out how to show after
@@ -55,8 +62,6 @@ void MainWindow::on_loginButton_clicked()
 
     if (loginUI.loginSuccessful) {
         showPetDisplay();
-    } else {
-        QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
     }
 
 }

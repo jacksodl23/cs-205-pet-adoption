@@ -4,7 +4,10 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <QPushButton>
+#include <fstream>
 #include "../backend/petowner.h"
+#include "../backend/simplecrypt.h"
+#include "../backend/globals.h"
 
 namespace Ui {
 class CreateAccount;

@@ -13,6 +13,7 @@
 #include <QtSql>
 #include "../backend/globals.h"
 #include "../backend/petowner.h"
+#include "petprofile.h"
 
 namespace Ui {
 class PetDisplay;
@@ -31,7 +32,11 @@ private slots:
 
     void on_typeBox_activated(const QString &arg1);
 
+    void on_breedBox_activated(const QString &arg1);
+
     void on_pushButton_clicked();
+
+    void on_profileButton_clicked();
 
 private:
     Ui::PetDisplay *ui;

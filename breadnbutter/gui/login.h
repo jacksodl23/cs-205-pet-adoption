@@ -9,6 +9,7 @@
 #include "petdisplay.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
+#include "../backend/petowner.h"
 
 namespace Ui {
 class Login;
