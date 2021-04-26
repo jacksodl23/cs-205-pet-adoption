@@ -69,7 +69,7 @@ bool ShelterOwner::insertInDB()
         result = query.exec();
 
         if (!result)
-            qDebug() << "Error inserting adopter:" << query.lastError().text();
+            qDebug() << "Error inserting shelter owner:" << query.lastError().text();
     }
 
     return result;
