@@ -15,6 +15,8 @@ public:
     bool insertIntoDB();
     bool deleteFromDB();
     QString getName();
+    void chooseID();
+    bool existsInDB();
 
 private:
     int pet_id;
@@ -32,8 +34,6 @@ private:
     bool hypoallergenic;
     QString description;
 
-    void chooseID();
-    bool existsInDB();
 };
 
 #endif // PET_H

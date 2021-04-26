@@ -21,17 +21,19 @@ void shelterUpload::on_pushButton_clicked()
     this->origin = ui->originField->text();
     this->description = ui->descriptionTextEdit->toPlainText();
 
+    Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
 
-    /* bool check = newPet.insertIntoDB();
+    bool check = newPet.insertIntoDB();
 
     if(check){
         QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
-    } */
+    }
 }
 
 void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
 {
     if(arg1 == "Dog"){
+        this->is_cat = false;
         ui->breedBox->clear();
         ui->breedBox->addItem("German Shepherd");
         ui->breedBox->addItem("Golden Retriever");
@@ -40,6 +42,7 @@ void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
         ui->breedBox->addItem("Chihuahua");
     }
     else if(arg1 == "Cat"){
+        this->is_cat = true;
         ui->breedBox->clear();
         ui->breedBox->addItem("Persian cat");
         ui->breedBox->addItem("Bengal cat");
@@ -48,12 +51,14 @@ void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
         ui->breedBox->addItem("Siberian cat");
     }
     else if(arg1 == "Snake"){
+        this->is_cat = false;
         ui->breedBox->clear();
         ui->breedBox->addItem("Cobra");
         ui->breedBox->addItem("Python");
         ui->breedBox->addItem("Copperhead");
     }
     else if(arg1 == "Hamster"){
+        this->is_cat = false;
         ui->breedBox->clear();
         ui->breedBox->addItem("Syrian hamster");
         ui->breedBox->addItem("Winter White hamster");
@@ -68,11 +73,6 @@ void shelterUpload::on_colorBox_activated(const QString &arg1)
     this->color = arg1;
 }
 
-void shelterUpload::on_hypoBox_activated(const QString &arg1)
-{
-
-}
-
 void shelterUpload::on_hairLenBox_activated(const QString &arg1)
 {
     this->hairLength = arg1;
@@ -81,4 +81,14 @@ void shelterUpload::on_hairLenBox_activated(const QString &arg1)
 void shelterUpload::on_breedBox_activated(const QString &arg1)
 {
     this->breed = arg1;
+}
+
+void shelterUpload::on_hypoBox_currentTextChanged(const QString &arg1)
+{
+    if(arg1 == "Yes"){
+        this->hypoallergenic = true;
+    }
+    else{
+        this->hypoallergenic = false;
+    }
 }
