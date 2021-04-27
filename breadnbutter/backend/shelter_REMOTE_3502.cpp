@@ -18,8 +18,6 @@ Shelter::Shelter(int id)
             this->location = query.value(locIndex).toString();
             this->email = query.value(emailIndex).toString();
         }
-
-        fetchPets();
     } else {
         qDebug() << "Error getting shelter info:" << query.lastError().text();
     }
@@ -115,30 +113,6 @@ bool Shelter::existsInDB()
     return false;
 }
 
-std::vector<Pet> Shelter::getPets()
-{
-    return pets;
-}
-
-void Shelter::fetchPets()
-{
-    QSqlQuery query;
-    query.prepare("select * from Pet "
-                  "inner join Shelter on shelter.shelter_id = pet.shelter_id "
-                  "where pet.shelter_id = ?");
-    query.addBindValue(shelterID);
-
-    if (query.exec()) {
-        while (query.next()) {
-            int pID = query.value(0).toInt();
-            Pet p(pID);
-
-            pets.push_back(p);
-        }
-    } else {
-        qDebug() << "Error getting shelter's pets:" << query.lastError().text();
-    }
-}
 ShelterOwner *Shelter::getOwner() const
 {
     return owner;

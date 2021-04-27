@@ -49,7 +49,6 @@ public:
     bool insertInDB();
     bool deleteFromDB();
     bool existsInDB();
-    bool attemptLogin();
 
     std::vector<Pet> getLikedPets();
 

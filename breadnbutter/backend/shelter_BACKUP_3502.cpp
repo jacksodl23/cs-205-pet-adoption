@@ -3,6 +3,9 @@
 Shelter::Shelter(int id)
 {
     this->shelterID = id;
+<<<<<<< HEAD
+    fetchPets();
+=======
 
     QSqlQuery query;
     query.prepare("select * from shelter where shelter_id = ?");
@@ -18,11 +21,10 @@ Shelter::Shelter(int id)
             this->location = query.value(locIndex).toString();
             this->email = query.value(emailIndex).toString();
         }
-
-        fetchPets();
     } else {
         qDebug() << "Error getting shelter info:" << query.lastError().text();
     }
+>>>>>>> refs/heads/gui
 }
 
 Shelter::Shelter(QString n, QString l, QString e) {
@@ -115,6 +117,7 @@ bool Shelter::existsInDB()
     return false;
 }
 
+<<<<<<< HEAD
 std::vector<Pet> Shelter::getPets()
 {
     return pets;
@@ -138,7 +141,7 @@ void Shelter::fetchPets()
     } else {
         qDebug() << "Error getting shelter's pets:" << query.lastError().text();
     }
-}
+=======
 ShelterOwner *Shelter::getOwner() const
 {
     return owner;
@@ -147,4 +150,5 @@ ShelterOwner *Shelter::getOwner() const
 void Shelter::setOwner(ShelterOwner *value)
 {
     owner = value;
+>>>>>>> refs/heads/gui
 }

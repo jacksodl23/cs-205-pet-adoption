@@ -2,6 +2,10 @@
 #define SHELTERPROFILE_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QMessageBox>
+#include "../backend/globals.h"
+#include "../backend/shelter.h"
 
 namespace Ui {
 class shelterProfile;
@@ -17,6 +21,9 @@ public:
 
 private:
     Ui::shelterProfile *ui;
+    Shelter *currentShelter;
+
+    void fetchShelter();
 };
 
 #endif // SHELTERPROFILE_H
