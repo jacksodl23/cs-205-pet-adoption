@@ -34,11 +34,11 @@ void Login::on_loginOkay_accepted()
                 int is_adopter = query.value(0).toInt();
 
                 if (is_adopter == 1) {
-                    currentUser = PetOwner(email, password);
+                    currentUser = PetOwner(user.getID());
                     writeUserToFile(currentUser);
                 }
                 else if (is_adopter == 0) {
-                    currentUser = ShelterOwner(email, password);
+                    currentUser = ShelterOwner(user.getID());
                     writeUserToFile(currentUser);
                 }
             }

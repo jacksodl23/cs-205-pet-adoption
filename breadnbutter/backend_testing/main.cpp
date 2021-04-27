@@ -33,13 +33,13 @@ TEST_F(AdopterTest, TestAdopterExists) {
     ASSERT_EQ(owner->existsInDB(), true);
 }
 
-TEST_F(AdopterTest, TestLogin) {
+/* TEST_F(AdopterTest, TestLogin) {
     ASSERT_EQ(owner->attemptLogin(), true);
 }
 
 TEST_F(AdopterTest, TestDeleteAdopter) {
     ASSERT_EQ(owner->attemptLogin(), true);
-}
+} */
 
 TEST(TestRead, TestReadShelter) {
     QSqlQuery query("select max(shelter_id) from Shelter");

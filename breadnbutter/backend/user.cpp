@@ -43,6 +43,7 @@ bool User::attemptLogin()
             int dbID = query.value(0).toInt();
 
             this->id = dbID;
+            qDebug() << "Found user with ID" << dbID;
 
             return true;
         }
