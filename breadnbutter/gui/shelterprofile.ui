@@ -474,7 +474,7 @@ color: rgb(239, 207, 187);</string>
      <string>You are the owner of</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -502,7 +502,7 @@ color: rgb(239, 207, 187);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -526,7 +526,13 @@ color: rgb(239, 207, 187);</string>
       </widget>
      </item>
      <item>
-      <widget class="QTableView" name="tableView"/>
+      <widget class="QTableView" name="tableView">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+        </font>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

@@ -19,7 +19,6 @@ int getCurrentUser() {
             QString lineString = QString::fromStdString(line);
             QString decrypted = crypto.decryptToString(lineString);
             int theID = decrypted.toInt();
-            qDebug() << "Decrypted ID:" << theID;
 
             QSqlQuery query;
             query.prepare("select is_adopter from User where user_id = ?");

@@ -33,6 +33,8 @@ public:
     ShelterOwner *getOwner() const;
     void setOwner(ShelterOwner *value);
 
+    int getShelterID() const;
+
 private:
     int shelterID;
     QString name;

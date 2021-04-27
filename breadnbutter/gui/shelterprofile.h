@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QMessageBox>
+#include <QSqlQueryModel>
 #include "../backend/globals.h"
 #include "../backend/shelter.h"
 
@@ -24,6 +25,7 @@ private:
     Shelter *currentShelter;
 
     void fetchShelter();
+    void populatePetsTable();
 };
 
 #endif // SHELTERPROFILE_H

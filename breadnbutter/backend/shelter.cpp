@@ -148,3 +148,8 @@ void Shelter::setOwner(ShelterOwner *value)
 {
     owner = value;
 }
+
+int Shelter::getShelterID() const
+{
+    return shelterID;
+}

@@ -11,6 +11,8 @@ shelterProfile::shelterProfile(QWidget *parent) :
     fetchShelter();
     if (currentShelter == nullptr)
         QMessageBox::warning(this, "No Shelter Linked!", "Please indicate which shelter you own.", QMessageBox::Ok);
+
+    populatePetsTable();
 }
 
 shelterProfile::~shelterProfile()
@@ -38,4 +40,17 @@ void shelterProfile::fetchShelter()
     } else {
         qDebug() << "Error finding owner's shelter:" << query.lastError().text();
     }
+}
+
+void shelterProfile::populatePetsTable()
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+
+    QSqlQuery query;
+    query.prepare("select * from Pet where shelter_id = ?");
+    query.addBindValue(currentShelter->getShelterID());
+
+    query.exec();
+    model->setQuery(query);
+    ui->tableView->setModel(model);
 }
