@@ -33,6 +33,7 @@ void shelterProfile::fetchShelter()
             s->setOwner(owner);
 
             currentShelter = s;
+            ui->shelterNameLabel->setText("You are the owner of " + currentShelter->getName());
         }
     } else {
         qDebug() << "Error finding owner's shelter:" << query.lastError().text();
