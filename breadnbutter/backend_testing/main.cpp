@@ -91,7 +91,6 @@ TEST(TestRead,TestReadPet) {
 
 TEST(TestRead, GetPetsFromShelter) {
     QSqlQuery query("select max(shelter_id) from Shelter");
-    std::vector<Pet> petsFromShelter;
 
     if (query.next()) {
         int maxID = query.value(0).toInt();
