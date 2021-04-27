@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>849</width>
-    <height>719</height>
+    <height>805</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -246,6 +246,12 @@ border: 2px solid  white;
       </item>
       <item>
        <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Dyuthi</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Breed</string>
         </property>

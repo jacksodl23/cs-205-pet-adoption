@@ -24,11 +24,11 @@ private slots:
 
     void on_colorBox_activated(const QString &arg1);
 
-    void on_hypoBox_activated(const QString &arg1);
-
     void on_hairLenBox_activated(const QString &arg1);
 
     void on_breedBox_activated(const QString &arg1);
+
+    void on_hypoBox_currentTextChanged(const QString &arg1);
 
 private:
     Ui::shelterUpload *ui;
@@ -42,8 +42,10 @@ private:
     QString origin;
     QString description;
     QString name;
+    bool is_cat;
 
     bool upload;
+
 };
 
 #endif // SHELTERUPLOAD_H
