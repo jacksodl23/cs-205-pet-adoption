@@ -8,6 +8,7 @@ Shelter::Shelter()
 Shelter::Shelter(int id)
 {
     this->shelterID = id;
+    fetchPets();
 }
 
 Shelter::Shelter(QString n, QString l, int p, QString e) {
@@ -110,4 +111,29 @@ bool Shelter::existsInDB()
     }
 
     return false;
+}
+
+std::vector<Pet> Shelter::getPets()
+{
+    return pets;
+}
+
+void Shelter::fetchPets()
+{
+    QSqlQuery query;
+    query.prepare("select * from Pet "
+                  "inner join Shelter on shelter.shelter_id = pet.shelter_id "
+                  "where pet.shelter_id = ?");
+    query.addBindValue(shelterID);
+
+    if (query.exec()) {
+        while (query.next()) {
+            int pID = query.value(0).toInt();
+            Pet p(pID);
+
+            pets.push_back(p);
+        }
+    } else {
+        qDebug() << "Error getting shelter's pets:" << query.lastError().text();
+    }
 }

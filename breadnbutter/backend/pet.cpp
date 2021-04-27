@@ -54,15 +54,25 @@ Pet::Pet(int id)
 
     if (query.exec()) {
         if (query.next()) {
-            QString pName = query.value(1).toString();
-            QString pColor = query.value(4).toString();
-            QString pHairLength = query.value(5).toString();
-            QString pDescription = query.value(6).toString();
-            int pIsCat = query.value(9).toInt();
-            int pAge = query.value(10).toInt();
-            int pWeight = query.value(12).toFloat();
-            QString pOrigin = query.value(13).toString();
-            int pAller = query.value(14).toInt();
+            int nameIndex = query.record().indexOf("name");
+            int colorIndex = query.record().indexOf("color");
+            int hairLenIndex = query.record().indexOf("hair_length");
+            int descIndex = query.record().indexOf("description");
+            int isCatIndex = query.record().indexOf("is_cat");
+            int ageIndex = query.record().indexOf("age");
+            int weightIndex = query.record().indexOf("weight");
+            int origIndex = query.record().indexOf("origin");
+            int allerIndex = query.record().indexOf("hypoallergenic");
+
+            QString pName = query.value(nameIndex).toString();
+            QString pColor = query.value(colorIndex).toString();
+            QString pHairLength = query.value(hairLenIndex).toString();
+            QString pDescription = query.value(descIndex).toString();
+            int pIsCat = query.value(isCatIndex).toInt();
+            int pAge = query.value(ageIndex).toInt();
+            int pWeight = query.value(weightIndex).toFloat();
+            QString pOrigin = query.value(origIndex).toString();
+            int pAller = query.value(allerIndex).toInt();
 
             this->name = pName;
             this->color = pColor;

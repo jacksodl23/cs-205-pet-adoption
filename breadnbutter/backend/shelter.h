@@ -30,6 +30,8 @@ public:
     bool deleteFromDB();
     bool existsInDB();
 
+    std::vector<Pet> getPets();
+
 private:
     int shelterID;
     QString name;
@@ -37,6 +39,8 @@ private:
     QString email;
     int phoneNumber;
     std::vector<Pet> pets;
+
+    void fetchPets();
 };
 
 #endif // SHELTER_H
