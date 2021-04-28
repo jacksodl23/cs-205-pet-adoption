@@ -17,6 +17,16 @@ public:
     QString getName();
     bool existsInDB();
 
+    int getAge() const;
+
+    QString getBreed() const;
+
+    QString getColor() const;
+
+    bool getHypoallergenic() const;
+
+    int getPet_id() const;
+
 private:
     int pet_id;
     bool is_cat;

@@ -245,7 +245,7 @@ border: 2px solid  white;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_breed">
         <property name="font">
          <font>
           <family>Dyuthi</family>
@@ -319,19 +319,6 @@ border: 2px solid  white;
         </property>
         <property name="text">
          <string>Shelter Owner</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_phone">
-        <property name="font">
-         <font>
-          <family>Dyuthi</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Phone</string>
         </property>
        </widget>
       </item>

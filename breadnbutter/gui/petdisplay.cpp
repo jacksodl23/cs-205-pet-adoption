@@ -13,6 +13,8 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
+    currentPos = 0;
     fetchPets();
     getCurrentUser();
 
@@ -195,9 +197,10 @@ void PetDisplay::getCurrentUser()
 
 void PetDisplay::on_profileButton_clicked()
 {
-   PetProfile profileUI;
-   profileUI.setModal(true);
-   profileUI.exec();
+   profileUI = new PetProfile(this);
+   profileUI->setPDisplay(pets.at(currentPos));
+   profileUI->setModal(true);
+   profileUI->exec();
 }
 
 void PetDisplay::on_button_like_clicked()

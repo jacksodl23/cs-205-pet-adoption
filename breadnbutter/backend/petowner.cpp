@@ -62,6 +62,7 @@ PetOwner::PetOwner(QString email, QString password)
 PetOwner::PetOwner(int id)
 {
     this->id = id;
+    this->is_adopter = true;
 
     QSqlQuery query;
     query.prepare("select * from User where user_id = ?");

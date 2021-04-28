@@ -12,15 +12,19 @@ public:
     User(QString email, QString password);
     virtual ~User();
 
-   virtual bool insertInDB();
-   virtual bool deleteFromDB();
-   virtual bool existsInDB();
+    virtual bool insertInDB();
+    virtual bool deleteFromDB();
+    virtual bool existsInDB();
 
-   bool attemptLogin();
+    bool attemptLogin();
 
-   int getID();
+    int getID();
 
-   QString getFirstName();
+    QString getFirstName();
+
+    bool getIs_adopter() const;
+
+    QString getLastName() const;
 
 protected:
     int id;
@@ -29,6 +33,8 @@ protected:
     QString location;
     QString email;
     QString password;
+
+    bool is_adopter;
 
     virtual void chooseID();
 };

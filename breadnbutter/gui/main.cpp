@@ -53,8 +53,7 @@ int main(int argc, char *argv[])
     if(getCurrentUser() == -1)
         w.show();
     else {
-        const char *typeName = typeid(currentUser).name();
-        if (strcmp(typeName, "4User") == 0)
+        if (!currentUser.getIs_adopter())
             w.showShelterDisplay();
         else
             w.showPetDisplay();

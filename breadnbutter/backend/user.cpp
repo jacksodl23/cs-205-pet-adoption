@@ -109,6 +109,16 @@ QString User::getFirstName()
     return firstName;
 }
 
+bool User::getIs_adopter() const
+{
+    return is_adopter;
+}
+
+QString User::getLastName() const
+{
+    return lastName;
+}
+
 void User::chooseID()
 {
     std::cerr << "Choosing ID..." << std::endl;

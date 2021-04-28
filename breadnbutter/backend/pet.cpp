@@ -37,6 +37,31 @@ bool Pet::existsInDB()
     return false;
 }
 
+int Pet::getAge() const
+{
+    return age;
+}
+
+QString Pet::getBreed() const
+{
+    return breed;
+}
+
+QString Pet::getColor() const
+{
+    return color;
+}
+
+bool Pet::getHypoallergenic() const
+{
+    return hypoallergenic;
+}
+
+int Pet::getPet_id() const
+{
+    return pet_id;
+}
+
 Pet::Pet()
 {
 
@@ -55,6 +80,7 @@ Pet::Pet(int id)
     if (query.exec()) {
         if (query.next()) {
             int nameIndex = query.record().indexOf("name");
+            int breedIndex = query.record().indexOf("breed");
             int colorIndex = query.record().indexOf("color");
             int hairLenIndex = query.record().indexOf("hair_length");
             int descIndex = query.record().indexOf("description");
@@ -65,6 +91,7 @@ Pet::Pet(int id)
             int allerIndex = query.record().indexOf("hypoallergenic");
 
             QString pName = query.value(nameIndex).toString();
+            QString pBreed = query.value(breedIndex).toString();
             QString pColor = query.value(colorIndex).toString();
             QString pHairLength = query.value(hairLenIndex).toString();
             QString pDescription = query.value(descIndex).toString();
@@ -75,6 +102,7 @@ Pet::Pet(int id)
             int pAller = query.value(allerIndex).toInt();
 
             this->name = pName;
+            this->breed = pBreed;
             this->color = pColor;
             this->hairLength = pHairLength;
             this->description = pDescription;
