@@ -5,7 +5,6 @@
 #include <QApplication>
 #include <QtSql>
 #include <fstream>
-#include <typeinfo>
 #include <cstring>
 
 int getCurrentUser() {
