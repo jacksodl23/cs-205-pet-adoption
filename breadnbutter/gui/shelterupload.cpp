@@ -23,10 +23,13 @@ void shelterUpload::on_pushButton_clicked()
 
     Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
 
-    bool check = newPet.insertIntoDB();
+    bool check = newPet.insertIntoDB(shelter->getShelterID());
 
     if(check){
         QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
+
+        hide();
+        parentWidget()->show();
     }
 }
 
@@ -91,4 +94,9 @@ void shelterUpload::on_hypoBox_currentTextChanged(const QString &arg1)
     else{
         this->hypoallergenic = false;
     }
+}
+
+void shelterUpload::setShelter(Shelter *value)
+{
+    shelter = value;
 }

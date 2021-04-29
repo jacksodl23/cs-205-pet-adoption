@@ -12,7 +12,7 @@ public:
     Pet(int id);
     Pet(bool is_cat, QString name, int age, QString breed, QString color, QString hairLength, float weight, QString origin, bool hypoallergenic, QString description);
 
-    bool insertIntoDB();
+    bool insertIntoDB(int shelterID);
     bool deleteFromDB();
     QString getName();
     bool existsInDB();

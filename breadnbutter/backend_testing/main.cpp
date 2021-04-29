@@ -22,6 +22,16 @@ public:
     }
 };
 
+class PetTest : public ::testing::Test {
+protected:
+    Pet *pet;
+
+public:
+    PetTest() {
+        pet = new Pet(true, "Fuzzy Wuzzy", 4, "Turkish Van", "brown", "medium", 8, "Shelter", true, "Lorem Ipsum");
+    }
+};
+
 TEST_F(AdopterTest, TestNewAdopter) {
     if (!owner->existsInDB())
         EXPECT_EQ(owner->insertInDB(), true);
@@ -40,6 +50,13 @@ TEST_F(AdopterTest, TestAdopterExists) {
 TEST_F(AdopterTest, TestDeleteAdopter) {
     ASSERT_EQ(owner->attemptLogin(), true);
 } */
+
+TEST_F(PetTest, TestInsertPet) {
+    if (pet->existsInDB())
+        ASSERT_EQ(pet->insertIntoDB(100), false);
+    else
+        ASSERT_EQ(pet->insertIntoDB(100), true);
+}
 
 TEST(TestRead, TestReadShelter) {
     QSqlQuery query("select max(shelter_id) from Shelter");
@@ -70,7 +87,6 @@ TEST(TestRead,TestReadPet) {
 
     if (query.next()) {
         int maxID = query.value(0).toInt();
-        EXPECT_EQ(maxID, 1000);
 
         srand(time(0));
         int id = rand() % maxID + 1;

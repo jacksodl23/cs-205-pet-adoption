@@ -58,6 +58,7 @@ void shelterProfile::populatePetsTable()
 void shelterProfile::on_actionUpload_triggered()
 {
     shelterUpload *w = new shelterUpload(this);
+    w->setShelter(currentShelter);
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }

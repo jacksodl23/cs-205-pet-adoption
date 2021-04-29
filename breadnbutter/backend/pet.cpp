@@ -148,24 +148,52 @@ Pet::Pet(bool is_cat, QString name, int age, QString breed, QString color, QStri
     chooseID();
 }
 
-bool Pet::insertIntoDB()
+bool Pet::insertIntoDB(int shelterID)
 {
     bool result;
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into Pet (pet_id, name)"
-                      "values (?, ?)");
-        query.addBindValue(pet_id);
+        query.prepare("insert into Pet (name, shelter_id, color, hair_length, description)"
+                      "values (?, ?, ?, ?, ?)");
         query.addBindValue(name);
+        query.addBindValue(shelterID);
+        query.addBindValue(color);
+        query.addBindValue(hairLength);
+        query.addBindValue(description);
 
-        result = query.exec();
+        if (query.exec()) {
+            QSqlQuery q2;
+            q2.prepare("insert into Pet_Attributes (pet_id, is_cat, age, breed, weight, origin, hypoallergenic)"
+                       "values (?, ?, ?, ?, ?, ?, ?)");
+            q2.addBindValue(pet_id);
+            q2.addBindValue(int(is_cat));
+            q2.addBindValue(age);
+            q2.addBindValue(breed);
+            q2.addBindValue(weight);
+            q2.addBindValue(origin);
+            q2.addBindValue(int(hypoallergenic));
 
-        if (!result){
-            std::cerr << query.lastError().text().toStdString() << std::endl;
+            if (q2.exec()) {
+                QSqlQuery q3;
+                q3.prepare("update pet set pet_attribute_id = ? where pet_id = ?");
+                q3.addBindValue(q2.lastInsertId());
+                q3.addBindValue(pet_id);
+
+                result = q3.exec();
+
+                if (!result) {
+                    qDebug() << "Error linking pet attribute to pet:" << q3.lastError().text();
+                }
+            } else {
+                qDebug() << "Error inserting pet attributes:" << q2.lastError().text();
+                result = false;
+            }
+        } else {
+            qDebug() << "Error inserting pet:" << query.lastError().text();
+            result = false;
         }
-    }
-    else {
+    } else {
         result = false;
     }
 
