@@ -13,7 +13,6 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    moreshelterinfo.cpp \
     petdisplay.cpp \
     ../backend/globals.cpp \
     ../backend/simplecrypt.cpp \
@@ -27,14 +26,12 @@ SOURCES += \
     shelterprofile.cpp \
     petliked.cpp \
     petownerhelp.cpp \
-    shelterhelp.cpp \
-    moreshelterinfo.cpp
+    shelterhelp.cpp
 
 HEADERS += \
     createaccount.h \
     login.h \
     mainwindow.h \
-    moreshelterinfo.h \
     petdisplay.h \
     ../backend/*.h \
     ../backend/shelterowner.h \
@@ -44,22 +41,19 @@ HEADERS += \
     shelterprofile.h \
     petliked.h \
     petownerhelp.h \
-    shelterhelp.h \
-    moreshelterinfo.h
+    shelterhelp.h
 
 FORMS += \
     createaccount.ui \
     login.ui \
     mainwindow.ui \
-    moreshelterinfo.ui \
     petdisplay.ui \
     shelterupload.ui \
     petprofile.ui \
     shelterprofile.ui \
     petliked.ui \
     petownerhelp.ui \
-    shelterhelp.ui \
-    moreshelterinfo.ui
+    shelterhelp.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
