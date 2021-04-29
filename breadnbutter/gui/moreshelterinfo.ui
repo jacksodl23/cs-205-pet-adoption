@@ -6,16 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>449</width>
-    <height>351</height>
+    <width>624</width>
+    <height>372</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Dyuthi</family>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(204, 124, 169);
+color: rgb(239, 207, 187);</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Dyuthi</family>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
      <property name="text">
       <string>PLEASE ADD SHELTER INFORMATION</string>
      </property>
@@ -28,38 +43,98 @@
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
       <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Shelter Name</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: black; 
+background-color:rgb(239, 207, 187);</string>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Phone Number</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: black; 
+background-color:rgb(239, 207, 187);</string>
+       </property>
+      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Location</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_3"/>
+      <widget class="QLineEdit" name="lineEdit_3">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: black; 
+background-color:rgb(239, 207, 187);</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="font">
+      <font>
+       <family>Dyuthi</family>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: black; 
+background-color:rgb(239, 207, 187);</string>
+     </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>

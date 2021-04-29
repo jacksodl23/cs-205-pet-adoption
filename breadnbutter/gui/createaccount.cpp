@@ -112,6 +112,8 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
 
 
                 // adding more shelter profile information
+                // TODO CANNOT TEST until we fix the signup issue
+                // "recursive call"
                 MoreShelterInfo moreShelterInfoUI;
                 moreShelterInfoUI.setModal(true);
                 moreShelterInfoUI.exec();
