@@ -27,6 +27,12 @@ public:
 
     int getPet_id() const;
 
+    bool getIs_cat() const;
+
+    QString getOrigin() const;
+
+    QString getDescription() const;
+
 private:
     int pet_id;
     bool is_cat;

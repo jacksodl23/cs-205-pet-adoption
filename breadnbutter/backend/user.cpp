@@ -84,7 +84,7 @@ bool User::attemptLogin()
     query.addBindValue(password);
 
     if (query.exec()) {
-        while (query.next()) {
+        if (query.next()) {
             int dbID = query.value(0).toInt();
 
             this->id = dbID;

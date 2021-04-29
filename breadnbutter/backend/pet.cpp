@@ -62,9 +62,24 @@ int Pet::getPet_id() const
     return pet_id;
 }
 
+bool Pet::getIs_cat() const
+{
+    return is_cat;
+}
+
+QString Pet::getOrigin() const
+{
+    return origin;
+}
+
+QString Pet::getDescription() const
+{
+    return description;
+}
+
 Pet::Pet()
 {
-
+    
 }
 
 Pet::Pet(int id)

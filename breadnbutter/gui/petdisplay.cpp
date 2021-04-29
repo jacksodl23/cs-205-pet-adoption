@@ -186,10 +186,47 @@ void PetDisplay::on_pushButton_clicked()
 
 void PetDisplay::displayPet(Pet p)
 {
+    int numberOfPhotos = 8;
+
+    srand(time(0));
+    int photoNum = rand() % numberOfPhotos;
+
+    QString photoString = QString::number(photoNum);
+
+    QString tempPath(":/resources/imgs/petPhoto");
+    tempPath.append(photoString);
+    QString filePath = tempPath.append(".jpg");
+    qDebug() << filePath;
+
+    petPic.load(filePath);
+    int width = ui->animalDisplay->width();
+    int height = ui->animalDisplay->height();
+    ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
     ui->label_name->setText(p.getName());
     ui->label_breed->setText(p.getBreed());
 
+    if (!p.getIs_cat())
+        ui->label_type->setText("Dog");
+    else
+        ui->label_type->setText("Cat");
 
+    QSqlQuery query;
+    query.prepare("select shelter_id from pet where pet_id = ?");
+    query.addBindValue(p.getPet_id());
+
+    // This does not update the label text when the dislike button is selected.
+    if (query.exec()) {
+        if (query.next()) {
+            int shelterID = query.value(0).toInt();
+
+            Shelter s(shelterID);
+            ui->label_shelter_name->setText(s.getName());
+            ui->label_location->setText(s.getLocation());
+        }
+    } else {
+        qDebug() << "Error getting pet's shelter:" << query.lastError().text();
+    }
 }
 
 void PetDisplay::getCurrentUser()
@@ -208,7 +245,20 @@ void PetDisplay::on_profileButton_clicked()
 
 void PetDisplay::on_button_like_clicked()
 {
+    Pet currPet = pets.at(currentPos);
 
+    QSqlQuery query;
+    query.prepare("insert into Liked_By (adopter_id, pet_id)"
+                  "values (?, ?)");
+    query.addBindValue(currentUser.getID());
+    query.addBindValue(currPet.getPet_id());
+
+    if (query.exec()) {
+        currentPos++;
+        displayPet(pets.at(currentPos));
+    } else {
+        qDebug() << "Error liking pet:" << query.lastError().text();
+    }
 }
 
 void PetDisplay::on_button_dislike_clicked()
@@ -238,4 +288,11 @@ void PetDisplay::on_actionLogout_triggered()
 
     currentUser.logOut();
     parentWidget()->show();
+}
+
+void PetDisplay::on_actionLiked_triggered()
+{
+    hide();
+    likedUI = new PetLiked(this);
+    likedUI->show();
 }

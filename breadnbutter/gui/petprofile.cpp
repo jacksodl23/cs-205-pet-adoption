@@ -7,8 +7,19 @@ PetProfile::PetProfile(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
-    petPic.load(photoFilePath);
+    int numberOfPhotos = 8;
+
+    srand(time(0));
+    int photoNum = rand() % numberOfPhotos;
+
+    QString photoString = QString::number(photoNum);
+
+    QString tempPath(":/resources/imgs/petPhoto");
+    tempPath.append(photoString);
+    QString filePath = tempPath.append(".jpg");
+    qDebug() << filePath;
+
+    petPic.load(filePath);
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
@@ -38,6 +49,7 @@ void PetProfile::fetchPet()
     else
         ui->label_hypo->setText("No");
 
+    // Note for the future: see if inner joins can be used to cut down on the amount of queries.
     QSqlQuery query;
     query.prepare("select shelter_id from pet where pet_id = ?");
     query.addBindValue(pDisplay.getPet_id());
