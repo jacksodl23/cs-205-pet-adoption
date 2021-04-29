@@ -74,9 +74,8 @@ class Shelter:
 		return line
 
 class Pet_Attributes:
-	def __init__(self, pet_id):
+	def __init__(self):
 		self.pet_attribute_id = _pet_attr_id.nextID()
-		self.pet_id = pet_id
 		self.is_cat = r.choice([1, 0])
 		self.age = r.randint(0, 20)
 		if self.is_cat:
@@ -90,7 +89,6 @@ class Pet_Attributes:
 
 	def toCSV(self):
 		line = str(self.pet_attribute_id) + ","
-		line += str(self.pet_id) + ","
 		line += str(self.is_cat) + ","
 		line += str(self.age) + ","
 		line += self.breed + ","
@@ -105,7 +103,7 @@ class Pet:
 		self.pet_id = _pet_id.nextID()
 		self.name = randLine("sample_data/PetNames.txt")
 		self.shelter_id = shelter_id
-		self.attributes = Pet_Attributes(self.pet_id)
+		self.attributes = Pet_Attributes()
 		self.pet_attribute_id = self.attributes.pet_attribute_id
 		self.color = r.choice(["black", "white", "orange", "spotted", "brown"])
 		self.hair_length = r.choice(["short", "medium", "long"])
