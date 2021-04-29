@@ -43,6 +43,8 @@ private slots:
 
     void on_button_dislike_clicked();
 
+    void on_actionLogout_triggered();
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

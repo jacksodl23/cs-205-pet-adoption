@@ -187,6 +187,9 @@ void PetDisplay::on_pushButton_clicked()
 void PetDisplay::displayPet(Pet p)
 {
     ui->label_name->setText(p.getName());
+    ui->label_breed->setText(p.getBreed());
+
+
 }
 
 void PetDisplay::getCurrentUser()
@@ -227,4 +230,12 @@ void PetDisplay::fetchPets()
     } else {
         qDebug() << "Error fetching pets:" << query.lastError().text();
     }
+}
+
+void PetDisplay::on_actionLogout_triggered()
+{
+    hide();
+
+    currentUser.logOut();
+    parentWidget()->show();
 }

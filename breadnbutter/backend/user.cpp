@@ -99,6 +99,12 @@ bool User::attemptLogin()
     return false;
 }
 
+void User::logOut()
+{
+    std::ofstream config("currentuser.config");
+    config.close();
+}
+
 int User::getID()
 {
     return id;

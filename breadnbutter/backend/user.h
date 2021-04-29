@@ -4,6 +4,7 @@
 #include <QString>
 #include <QtSql>
 #include <iostream>
+#include <fstream>
 
 class User
 {
@@ -17,6 +18,7 @@ public:
     virtual bool existsInDB();
 
     bool attemptLogin();
+    void logOut();
 
     int getID();
 
