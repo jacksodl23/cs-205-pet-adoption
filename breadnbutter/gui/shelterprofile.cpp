@@ -11,8 +11,8 @@ shelterProfile::shelterProfile(QWidget *parent) :
     fetchShelter();
     if (currentShelter == nullptr)
         QMessageBox::warning(this, "No Shelter Linked!", "Please indicate which shelter you own.", QMessageBox::Ok);
-
-    populatePetsTable();
+    else
+        populatePetsTable();
 }
 
 shelterProfile::~shelterProfile()
@@ -53,4 +53,19 @@ void shelterProfile::populatePetsTable()
     query.exec();
     model->setQuery(query);
     ui->tableView->setModel(model);
+}
+
+void shelterProfile::on_actionUpload_triggered()
+{
+    shelterUpload *w = new shelterUpload(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+}
+
+void shelterProfile::on_actionLog_out_triggered()
+{
+    hide();
+
+    currentUser.logOut();
+    parentWidget()->show();
 }
