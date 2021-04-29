@@ -34,8 +34,6 @@ private slots:
 private:
     Ui::CreateAccount *ui;
     void writeUserToFile(User newUser);
-
-    MoreShelterInfo *moreShelterInfo;
 };
 
 #endif // CREATEACCOUNT_H

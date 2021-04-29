@@ -112,10 +112,9 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
 
 
                 // adding more shelter profile information
-                hide();
-                moreShelterInfo = new MoreShelterInfo(this);
-                moreShelterInfo->show();
-
+                MoreShelterInfo moreShelterInfoUI;
+                moreShelterInfoUI.setModal(true);
+                moreShelterInfoUI.exec();
 
 
                 writeUserToFile(newOwner);
