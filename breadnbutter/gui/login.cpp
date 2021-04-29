@@ -17,7 +17,6 @@ Login::~Login()
 
 void Login::on_loginOkay_accepted()
 {
-    // where should we store user information?
     QString email = ui->emailField->text();
     QString password = ui->passwordField->text();
 
@@ -34,11 +33,11 @@ void Login::on_loginOkay_accepted()
                 int is_adopter = query.value(0).toInt();
 
                 if (is_adopter == 1) {
-                    currentUser = PetOwner(email, password);
+                    currentUser = PetOwner(user.getID());
                     writeUserToFile(currentUser);
                 }
                 else if (is_adopter == 0) {
-                    currentUser = ShelterOwner(email, password);
+                    currentUser = ShelterOwner(user.getID());
                     writeUserToFile(currentUser);
                 }
             }

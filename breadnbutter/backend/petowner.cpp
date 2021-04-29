@@ -38,38 +38,6 @@ bool PetOwner::existsInDB()
     return false;
 }
 
-bool PetOwner::attemptLogin()
-{
-    QSqlQuery query;
-    query.prepare("select * from User where email = ? and password = ?");
-    query.addBindValue(email);
-    query.addBindValue(password);
-
-    if (query.exec()) {
-        while (query.next()) {
-            int dbID = query.value(0).toInt();
-            QString dbName = query.value(1).toString();
-
-            this->id = dbID;
-            qDebug() << "Found owner with ID" << dbID;
-
-            QStringList pieces = dbName.split(" ");
-            for (int i = 0; i < pieces.size(); i++) {
-                if (i == 0)
-                    this->firstName = pieces.at(i);
-                else if (i == 1)
-                    this->lastName = pieces.at(i);
-            }
-
-            return true;
-        }
-    } else {
-        qDebug() << "Error logging in:" << query.lastError().text();
-    }
-
-    return false;
-}
-
 void PetOwner::setLocation(QString loc)
 {
     location = loc;
@@ -94,6 +62,7 @@ PetOwner::PetOwner(QString email, QString password)
 PetOwner::PetOwner(int id)
 {
     this->id = id;
+    this->is_adopter = true;
 
     QSqlQuery query;
     query.prepare("select * from User where user_id = ?");

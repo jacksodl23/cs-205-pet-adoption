@@ -14,7 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(204, 124, 169);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);
+color: rgb(239, 207, 187);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
@@ -62,7 +63,7 @@
      <string>Add</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -197,6 +198,31 @@
          <property name="styleSheet">
           <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
+         <item>
+          <property name="text">
+           <string>White</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Brown</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Black</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Green</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Golden</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
@@ -223,6 +249,16 @@
          <property name="styleSheet">
           <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
+         <item>
+          <property name="text">
+           <string>Yes</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>No</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
@@ -249,13 +285,28 @@
          <property name="styleSheet">
           <string notr="true">color: rgb(239, 207, 187);</string>
          </property>
+         <item>
+          <property name="text">
+           <string>Long</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Medium</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Short</string>
+          </property>
+         </item>
         </widget>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -375,7 +426,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>410</x>
@@ -444,6 +495,12 @@
      <string>Log out</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuBread_and_Butter">
+    <property name="title">
+     <string>Bread and Butter</string>
+    </property>
+   </widget>
+   <addaction name="menuBread_and_Butter"/>
    <addaction name="menuProfile"/>
    <addaction name="menuUpload"/>
    <addaction name="menuDashboard"/>

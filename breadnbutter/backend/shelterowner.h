@@ -16,7 +16,6 @@ public:
     bool insertInDB();
     bool deleteFromDB();
     bool existsInDB();
-    bool attemptLogin();
 private:
     void chooseID();
 };

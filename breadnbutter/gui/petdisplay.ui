@@ -14,7 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(204, 124, 169);</string>
+   <string notr="true">background-color: rgb(204, 124, 169);
+color: rgb(239, 207, 187);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -758,17 +759,6 @@ background-color: rgb(239, 207, 187);</string>
     </font>
    </property>
   </action>
-  <action name="actionLiked">
-   <property name="text">
-    <string>Liked</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
   <action name="actionLogout">
    <property name="text">
     <string>Logout</string>
@@ -790,6 +780,17 @@ background-color: rgb(239, 207, 187);</string>
      <pointsize>14</pointsize>
      <weight>50</weight>
      <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionLiked">
+   <property name="text">
+    <string>Liked</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
     </font>
    </property>
   </action>

@@ -69,7 +69,7 @@ bool ShelterOwner::insertInDB()
         result = query.exec();
 
         if (!result)
-            qDebug() << "Error inserting adopter:" << query.lastError().text();
+            qDebug() << "Error inserting shelter owner:" << query.lastError().text();
     }
 
     return result;
@@ -107,28 +107,6 @@ bool ShelterOwner::existsInDB()
         }
     } else {
         qDebug() << "Error searching for adopter in DB:" << query.lastError().text();
-    }
-
-    return false;
-}
-
-bool ShelterOwner::attemptLogin()
-{
-    QSqlQuery query;
-    query.prepare("select * from User where email = ? and password = ?");
-    query.addBindValue(email);
-    query.addBindValue(password);
-
-    if (query.exec()) {
-        while (query.next()) {
-            int dbID = query.value(0).toInt();
-
-            this->id = dbID;
-
-            return true;
-        }
-    } else {
-        qDebug() << "Error logging in:" << query.lastError().text();
     }
 
     return false;

@@ -16,9 +16,70 @@ void Pet::chooseID()
     }
 }
 
+bool Pet::existsInDB()
+{
+    QSqlQuery query;
+    query.prepare("select name from Pet where name = ?");
+    query.addBindValue(name);
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString dbName = query.value(0).toString();
+
+            int compare = QString::compare(name, dbName, Qt::CaseInsensitive);
+            if (compare == 0)
+                return true;
+        }
+    } else {
+        std::cerr << "Error getting pets: " << query.lastError().text().toStdString() << std::endl;
+    }
+
+    return false;
+}
+
+int Pet::getAge() const
+{
+    return age;
+}
+
+QString Pet::getBreed() const
+{
+    return breed;
+}
+
+QString Pet::getColor() const
+{
+    return color;
+}
+
+bool Pet::getHypoallergenic() const
+{
+    return hypoallergenic;
+}
+
+int Pet::getPet_id() const
+{
+    return pet_id;
+}
+
+bool Pet::getIs_cat() const
+{
+    return is_cat;
+}
+
+QString Pet::getOrigin() const
+{
+    return origin;
+}
+
+QString Pet::getDescription() const
+{
+    return description;
+}
+
 Pet::Pet()
 {
-
+    
 }
 
 Pet::Pet(int id)
@@ -33,17 +94,30 @@ Pet::Pet(int id)
 
     if (query.exec()) {
         if (query.next()) {
-            QString pName = query.value(1).toString();
-            QString pColor = query.value(4).toString();
-            QString pHairLength = query.value(5).toString();
-            QString pDescription = query.value(6).toString();
-            int pIsCat = query.value(9).toInt();
-            int pAge = query.value(10).toInt();
-            int pWeight = query.value(12).toFloat();
-            QString pOrigin = query.value(13).toString();
-            int pAller = query.value(14).toInt();
+            int nameIndex = query.record().indexOf("name");
+            int breedIndex = query.record().indexOf("breed");
+            int colorIndex = query.record().indexOf("color");
+            int hairLenIndex = query.record().indexOf("hair_length");
+            int descIndex = query.record().indexOf("description");
+            int isCatIndex = query.record().indexOf("is_cat");
+            int ageIndex = query.record().indexOf("age");
+            int weightIndex = query.record().indexOf("weight");
+            int origIndex = query.record().indexOf("origin");
+            int allerIndex = query.record().indexOf("hypoallergenic");
+
+            QString pName = query.value(nameIndex).toString();
+            QString pBreed = query.value(breedIndex).toString();
+            QString pColor = query.value(colorIndex).toString();
+            QString pHairLength = query.value(hairLenIndex).toString();
+            QString pDescription = query.value(descIndex).toString();
+            int pIsCat = query.value(isCatIndex).toInt();
+            int pAge = query.value(ageIndex).toInt();
+            int pWeight = query.value(weightIndex).toFloat();
+            QString pOrigin = query.value(origIndex).toString();
+            int pAller = query.value(allerIndex).toInt();
 
             this->name = pName;
+            this->breed = pBreed;
             this->color = pColor;
             this->hairLength = pHairLength;
             this->description = pDescription;
@@ -74,17 +148,53 @@ Pet::Pet(bool is_cat, QString name, int age, QString breed, QString color, QStri
     chooseID();
 }
 
-bool Pet::insertIntoDB()
+bool Pet::insertIntoDB(int shelterID)
 {
-    QSqlQuery query;
-    query.prepare("insert into pet (name) "
-                  "values (?)");
-    query.addBindValue(name);
+    bool result;
 
-    bool result = query.exec();
+    if (!existsInDB()) {
+        QSqlQuery query;
+        query.prepare("insert into Pet (name, shelter_id, color, hair_length, description)"
+                      "values (?, ?, ?, ?, ?)");
+        query.addBindValue(name);
+        query.addBindValue(shelterID);
+        query.addBindValue(color);
+        query.addBindValue(hairLength);
+        query.addBindValue(description);
 
-    if (!result)
-        std::cerr << "Query error: " << query.lastError().text().toStdString() << std::endl;
+        if (query.exec()) {
+            QSqlQuery q2;
+            q2.prepare("insert into Pet_Attributes (is_cat, age, breed, weight, origin, hypoallergenic)"
+                       "values (?, ?, ?, ?, ?, ?)");
+            q2.addBindValue(int(is_cat));
+            q2.addBindValue(age);
+            q2.addBindValue(breed);
+            q2.addBindValue(weight);
+            q2.addBindValue(origin);
+            q2.addBindValue(int(hypoallergenic));
+
+            if (q2.exec()) {
+                QSqlQuery q3;
+                q3.prepare("update pet set pet_attribute_id = ? where pet_id = ?");
+                q3.addBindValue(q2.lastInsertId());
+                q3.addBindValue(pet_id);
+
+                result = q3.exec();
+
+                if (!result) {
+                    qDebug() << "Error linking pet attribute to pet:" << q3.lastError().text();
+                }
+            } else {
+                qDebug() << "Error inserting pet attributes:" << q2.lastError().text();
+                result = false;
+            }
+        } else {
+            qDebug() << "Error inserting pet:" << query.lastError().text();
+            result = false;
+        }
+    } else {
+        result = false;
+    }
 
     return result;
 }

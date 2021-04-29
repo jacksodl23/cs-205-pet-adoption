@@ -6,7 +6,6 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <ctime>
-#include <typeinfo>
 #include <cstring>
 #include <QString>
 #include <QDebug>
@@ -14,7 +13,7 @@
 #include "login.h"
 #include "createaccount.h"
 #include "petdisplay.h"
-#include "shelterupload.h"
+#include "shelterprofile.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 
@@ -47,6 +46,6 @@ private:
     void openDB();
 
     PetDisplay *petDisplay;
-    shelterUpload *shelterDisplay;
+    shelterProfile *shelterDisplay;
 };
 #endif // MAINWINDOW_H
