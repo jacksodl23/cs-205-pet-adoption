@@ -110,6 +110,14 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
             if (signUpSuccessful) {
                 currentUser = newOwner;
 
+
+                // adding more shelter profile information
+                hide();
+                moreShelterInfo = new MoreShelterInfo(this);
+                moreShelterInfo->show();
+
+
+
                 writeUserToFile(newOwner);
             } else {
                 if (newOwner.existsInDB()) {
