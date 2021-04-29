@@ -6,7 +6,6 @@ PetDisplay::PetDisplay(QWidget *parent) :
     ui(new Ui::PetDisplay)
 {
     ui->setupUi(this);
-    ui->statusbar->showMessage("number of pets liked or number of pets viewed here");
 
     QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
     petPic.load(photoFilePath);
@@ -233,6 +232,23 @@ void PetDisplay::getCurrentUser()
 {
     QString name = currentUser.getFirstName();
     ui->label_user_name->setText("<b><FONT COLOR=red>Welcome " + name + "!<FONT></b>");
+
+    QSqlQuery query;
+    query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
+    query.addBindValue(currentUser.getID());
+
+    if (query.exec()) {
+        if (query.next()) {
+            int numLiked = query.value(0).toInt();
+
+            if (numLiked == 1)
+                ui->statusbar->showMessage("You have liked 1 pet.");
+            else
+                ui->statusbar->showMessage("You have liked " + QString::number(numLiked) + " pets.");
+        }
+    } else {
+        qDebug() << "Error getting number of pets liked:" << query.lastError().text();
+    }
 }
 
 void PetDisplay::on_profileButton_clicked()
