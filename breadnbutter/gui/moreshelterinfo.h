@@ -12,7 +12,7 @@ class MoreShelterInfo : public QDialog
     Q_OBJECT
 
 public:
-    explicit MoreShelterInfo(QWidget *parent = 0);
+    explicit MoreShelterInfo(QWidget *parent = nullptr);
     ~MoreShelterInfo();
 
 private:
