@@ -26,8 +26,7 @@ SOURCES += \
     shelterprofile.cpp \
     petliked.cpp \
     petownerhelp.cpp \
-    shelterhelp.cpp \
-    moreshelterinfo.cpp
+    shelterhelp.cpp
 
 HEADERS += \
     createaccount.h \
@@ -42,8 +41,7 @@ HEADERS += \
     shelterprofile.h \
     petliked.h \
     petownerhelp.h \
-    shelterhelp.h \
-    moreshelterinfo.h
+    shelterhelp.h
 
 FORMS += \
     createaccount.ui \
@@ -55,8 +53,7 @@ FORMS += \
     shelterprofile.ui \
     petliked.ui \
     petownerhelp.ui \
-    shelterhelp.ui \
-    moreshelterinfo.ui
+    shelterhelp.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
