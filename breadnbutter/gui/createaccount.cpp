@@ -26,6 +26,20 @@ void CreateAccount::writeUserToFile(User newUser)
     config.close();
 }
 
+
+void CreateAccount::on_roleBox_activated(const QString &arg1)
+{
+    if (arg1 == "Adopter") {
+        ui->firstNameLabel->setText("First Name");
+        ui->lastNameLabel->setText("Last Name");
+    } else if (arg1 == "Provider") {
+        ui->firstNameLabel->setText("Full Name");
+        ui->lastNameLabel->setText("Shelter Name");
+    }
+}
+
+
+
 /* void CreateAccount::on_createOkay_accepted()
 {
     QString firstName = ui->firstNameField->text();
@@ -109,15 +123,6 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
 
             if (signUpSuccessful) {
                 currentUser = newOwner;
-
-
-                // adding more shelter profile information
-                // TODO CANNOT TEST until we fix the signup issue
-                // "recursive call"
-                MoreShelterInfo moreShelterInfoUI;
-                moreShelterInfoUI.setModal(true);
-                moreShelterInfoUI.exec();
-
 
                 writeUserToFile(newOwner);
             } else {
