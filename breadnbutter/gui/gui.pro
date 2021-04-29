@@ -13,7 +13,6 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    moreshelterinfo.cpp \
     petdisplay.cpp \
     ../backend/globals.cpp \
     ../backend/simplecrypt.cpp \
@@ -33,7 +32,6 @@ HEADERS += \
     createaccount.h \
     login.h \
     mainwindow.h \
-    moreshelterinfo.h \
     petdisplay.h \
     ../backend/*.h \
     ../backend/shelterowner.h \
@@ -49,7 +47,6 @@ FORMS += \
     createaccount.ui \
     login.ui \
     mainwindow.ui \
-    moreshelterinfo.ui \
     petdisplay.ui \
     shelterupload.ui \
     petprofile.ui \
