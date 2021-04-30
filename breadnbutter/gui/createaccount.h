@@ -30,9 +30,12 @@ private slots:
 
     void on_createOkay_clicked(QAbstractButton *button);
 
+    void on_roleBox_activated(const QString &arg1);
+
 private:
     Ui::CreateAccount *ui;
     void writeUserToFile(User newUser);
+
 };
 
 #endif // CREATEACCOUNT_H
