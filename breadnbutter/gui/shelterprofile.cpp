@@ -31,8 +31,6 @@ void shelterProfile::fetchShelter()
             int shelterID = query.value(0).toInt();
 
             Shelter *s = new Shelter(shelterID);
-            ShelterOwner *owner = new ShelterOwner(currentUser.getID());
-            s->setOwner(owner);
 
             currentShelter = s;
             ui->shelterNameLabel->setText("You are the owner of " + currentShelter->getName());

@@ -1,21 +1,5 @@
 #include "pet.h"
 
-void Pet::chooseID()
-{
-    QSqlQuery query;
-
-    if (query.exec("select max(pet_id) from Pet")) {
-        if (query.next()) {
-            int lastID = query.value(0).toInt();
-            pet_id = lastID + 1;
-        } else {
-            pet_id = 1;
-        }
-    } else {
-        std::cerr << "Error getting pets: " << query.lastError().text().toStdString() << std::endl;
-    }
-}
-
 bool Pet::existsInDB()
 {
     QSqlQuery query;
@@ -144,8 +128,6 @@ Pet::Pet(bool is_cat, QString name, int age, QString breed, QString color, QStri
     this->origin = origin;
     this->hypoallergenic = hypoallergenic;
     this->description = description;
-
-    chooseID();
 }
 
 bool Pet::insertIntoDB(int shelterID)
@@ -163,6 +145,9 @@ bool Pet::insertIntoDB(int shelterID)
         query.addBindValue(description);
 
         if (query.exec()) {
+            int pInsertID = query.lastInsertId().toInt();
+            this->pet_id = pInsertID;
+
             QSqlQuery q2;
             q2.prepare("insert into Pet_Attributes (is_cat, age, breed, weight, origin, hypoallergenic)"
                        "values (?, ?, ?, ?, ?, ?)");
@@ -176,7 +161,9 @@ bool Pet::insertIntoDB(int shelterID)
             if (q2.exec()) {
                 QSqlQuery q3;
                 q3.prepare("update pet set pet_attribute_id = ? where pet_id = ?");
-                q3.addBindValue(q2.lastInsertId());
+
+                int insertID = q2.lastInsertId().toInt();
+                q3.addBindValue(insertID);
                 q3.addBindValue(pet_id);
 
                 result = q3.exec();

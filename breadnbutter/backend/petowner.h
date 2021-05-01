@@ -57,7 +57,6 @@ private:
     int p_weight;
     QString p_origin;
     bool p_allergy;
-    void chooseID();
 };
 
 #endif // PETOWNER_H

@@ -48,8 +48,6 @@ ShelterOwner::ShelterOwner(QString fn, QString ln, QString loc, QString e, QStri
     this->location = loc;
     this->email = e;
     this->password = p;
-
-    chooseID();
 }
 
 bool ShelterOwner::insertInDB()
@@ -70,6 +68,8 @@ bool ShelterOwner::insertInDB()
 
         if (!result)
             qDebug() << "Error inserting shelter owner:" << query.lastError().text();
+
+        this->id = query.lastInsertId().toInt();
     }
 
     return result;
@@ -110,21 +110,4 @@ bool ShelterOwner::existsInDB()
     }
 
     return false;
-}
-
-void ShelterOwner::chooseID()
-{
-    QSqlQuery query;
-
-    if (query.exec("select max(user_id) from User")) {
-        if (query.next()) {
-            int lastID = query.value(0).toInt();
-
-            id = lastID + 1;
-        } else {
-            id = 1;
-        }
-    } else {
-        qDebug() << "Error getting highest adopter ID:" << query.lastError().text();
-    }
 }

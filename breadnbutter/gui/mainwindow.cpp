@@ -46,6 +46,7 @@ void MainWindow::showShelterDisplay()
 {
     hide();
     shelterDisplay = new shelterProfile(this);
+    shelterDisplay->setAttribute(Qt::WA_DeleteOnClose);
     shelterDisplay->show();
 }
 

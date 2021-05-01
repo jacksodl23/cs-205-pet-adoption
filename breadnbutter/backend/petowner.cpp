@@ -1,22 +1,5 @@
 #include "petowner.h"
 
-void PetOwner::chooseID()
-{
-    QSqlQuery query;
-
-    if (query.exec("select max(user_id) from User")) {
-        if (query.next()) {
-            int lastID = query.value(0).toInt();
-
-            id = lastID + 1;
-        } else {
-            id = 1;
-        }
-    } else {
-        qDebug() << "Error getting highest adopter ID:" << query.lastError().text();
-    }
-}
-
 bool PetOwner::existsInDB()
 {
     QSqlQuery query;

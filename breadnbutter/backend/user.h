@@ -38,7 +38,7 @@ protected:
 
     bool is_adopter;
 
-    virtual void chooseID();
+    void chooseID();
 };
 
 #endif // USER_H
