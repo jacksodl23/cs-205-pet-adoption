@@ -18,8 +18,6 @@ public:
     ~shelterUpload();
 
 private slots:
-    void on_pushButton_clicked();
-
     void on_typeBox_currentTextChanged(const QString &arg1);
 
     void on_colorBox_activated(const QString &arg1);
@@ -29,6 +27,10 @@ private slots:
     void on_breedBox_activated(const QString &arg1);
 
     void on_hypoBox_currentTextChanged(const QString &arg1);
+
+    void on_cancelButton_clicked();
+
+    void on_addButton_clicked();
 
 private:
     Ui::shelterUpload *ui;

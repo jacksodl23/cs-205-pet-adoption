@@ -13,23 +13,6 @@ shelterUpload::~shelterUpload()
     delete ui;
 }
 
-void shelterUpload::on_pushButton_clicked()
-{
-    this->name = ui->nameField->text();
-    this->age = ui->ageField->text().toInt();
-    this->weight = ui->weightField->text().toFloat();
-    this->origin = ui->originField->text();
-    this->description = ui->descriptionTextEdit->toPlainText();
-
-    Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
-
-    bool check = newPet.insertIntoDB();
-
-    if(check){
-        QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
-    }
-}
-
 void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
 {
     if(arg1 == "Dog"){
@@ -90,5 +73,28 @@ void shelterUpload::on_hypoBox_currentTextChanged(const QString &arg1)
     }
     else{
         this->hypoallergenic = false;
+    }
+}
+
+void shelterUpload::on_cancelButton_clicked()
+{
+    hide();
+    parentWidget()->show();
+}
+
+void shelterUpload::on_addButton_clicked()
+{
+    this->name = ui->nameField->text();
+    this->age = ui->ageField->text().toInt();
+    this->weight = ui->weightField->text().toFloat();
+    this->origin = ui->originField->text();
+    this->description = ui->descriptionTextEdit->toPlainText();
+
+    Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
+
+    bool check = newPet.insertIntoDB();
+
+    if(check){
+        QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
     }
 }

@@ -29,7 +29,7 @@ color: rgb(239, 207, 187);</string>
     </property>
     <property name="font">
      <font>
-      <family>Source Code Pro</family>
+      <family>Dyuthi</family>
       <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -42,34 +42,13 @@ color: rgb(239, 207, 187);</string>
      <string>Here you can add a new pet !</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>460</y>
-      <width>111</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(239, 207, 187);</string>
-    </property>
-    <property name="text">
-     <string>Add</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>90</y>
       <width>238</width>
-      <height>182</height>
+      <height>200</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -79,6 +58,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_13">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -105,6 +85,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_2">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -156,6 +137,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_3">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -182,6 +164,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_4">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -233,6 +216,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_5">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -269,6 +253,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_6">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -312,7 +297,7 @@ color: rgb(239, 207, 187);</string>
       <x>410</x>
       <y>90</y>
       <width>243</width>
-      <height>89</height>
+      <height>98</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -322,6 +307,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_7">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -344,6 +330,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_11">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -363,6 +350,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_8">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -385,6 +373,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_12">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -404,6 +393,7 @@ color: rgb(239, 207, 187);</string>
         <widget class="QLabel" name="label_9">
          <property name="font">
           <font>
+           <family>Dyuthi</family>
            <pointsize>14</pointsize>
           </font>
          </property>
@@ -440,6 +430,7 @@ color: rgb(239, 207, 187);</string>
       <widget class="QLabel" name="label_10">
        <property name="font">
         <font>
+         <family>Dyuthi</family>
          <pointsize>14</pointsize>
         </font>
        </property>
@@ -455,6 +446,47 @@ color: rgb(239, 207, 187);</string>
       <widget class="QTextEdit" name="descriptionTextEdit">
        <property name="styleSheet">
         <string notr="true">color: rgb(239, 207, 187);</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>480</y>
+      <width>170</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="addButton">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(239, 207, 187);</string>
+       </property>
+       <property name="text">
+        <string>Add</string>
        </property>
       </widget>
      </item>
@@ -508,6 +540,11 @@ color: rgb(239, 207, 187);</string>
    <addaction name="menuLog_out"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionUpload">
+   <property name="text">
+    <string>Upload</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
