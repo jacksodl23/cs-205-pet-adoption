@@ -92,14 +92,9 @@ void shelterUpload::on_addButton_clicked()
 
     Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
 
-    bool check = newPet.insertIntoDB(shelter->getShelterID());
+    bool check = newPet.insertIntoDB();
 
     if(check){
         QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
     }
-}
-
-void shelterUpload::setShelter(Shelter *value)
-{
-    shelter = value;
 }
