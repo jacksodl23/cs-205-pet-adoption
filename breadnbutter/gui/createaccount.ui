@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>692</width>
-    <height>478</height>
+    <height>579</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1331,22 +1331,6 @@ color: rgb(0, 0, 0);</string>
  </tabstops>
  <resources/>
  <connections>
-  <connection>
-   <sender>createOkay</sender>
-   <signal>accepted()</signal>
-   <receiver>CreateAccount</receiver>
-   <slot>exec()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>257</x>
-     <y>290</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>createOkay</sender>
    <signal>rejected()</signal>
