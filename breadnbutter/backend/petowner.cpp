@@ -80,6 +80,7 @@ PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)
     this->lastName = ln;
     this->email = e;
     this->location = loc;
+    this->is_adopter = true;
 }
 
 QString PetOwner::getPassword()
