@@ -300,7 +300,7 @@ void PetDisplay::fetchPets()
 
 void PetDisplay::on_actionLogout_triggered()
 {
-    hide();
+    close();
 
     currentUser.logOut();
     parentWidget()->show();

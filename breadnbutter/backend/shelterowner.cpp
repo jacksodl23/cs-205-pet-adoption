@@ -69,7 +69,7 @@ bool ShelterOwner::insertInDB()
         if (!result)
             qDebug() << "Error inserting shelter owner:" << query.lastError().text();
 
-        this->id = query.lastInsertId().toInt();
+        id = query.lastInsertId().toInt();
     }
 
     return result;

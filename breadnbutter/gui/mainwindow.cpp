@@ -39,6 +39,7 @@ void MainWindow::showPetDisplay()
 {
     hide();
     petDisplay = new PetDisplay(this);
+    petDisplay->setAttribute(Qt::WA_DeleteOnClose);
     petDisplay->show();
 }
 

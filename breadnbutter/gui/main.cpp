@@ -31,6 +31,9 @@ int getCurrentUser() {
                         currentUser = PetOwner(theID);
                     else if (is_adopter == 0)
                         currentUser = ShelterOwner(theID);
+                } else {
+                    qDebug() << "No valid user could be found.";
+                    return -1;
                 }
             } else {
                 qDebug() << "Error getting user:" << query.lastError().text();

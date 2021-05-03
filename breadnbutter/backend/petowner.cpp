@@ -80,8 +80,6 @@ PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)
     this->lastName = ln;
     this->email = e;
     this->location = loc;
-
-    chooseID();
 }
 
 QString PetOwner::getPassword()
@@ -207,6 +205,8 @@ bool PetOwner::insertInDB()
 
         if (!result)
             qDebug() << "Error inserting adopter:" << query.lastError().text();
+
+        id = query.lastInsertId().toInt();
     }
 
     return result;
