@@ -15,6 +15,9 @@ public:
     explicit PetProfile(QWidget *parent = 0);
     ~PetProfile();
 
+private slots:
+    void on_timeSlider_valueChanged(int value);
+
 private:
     Ui::PetProfile *ui;
 

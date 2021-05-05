@@ -208,22 +208,6 @@ border: 2px solid  white;
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_breed">
-           <property name="font">
-            <font>
-             <family>Dyuthi</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
-           </property>
-           <property name="text">
-            <string>Breed</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QLabel" name="label_type">
            <property name="font">
             <font>
@@ -240,6 +224,22 @@ border: 2px solid  white;
           </widget>
          </item>
          <item>
+          <widget class="QLabel" name="label_breed">
+           <property name="font">
+            <font>
+             <family>Dyuthi</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(239, 207, 187);</string>
+           </property>
+           <property name="text">
+            <string>Breed</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="label_shelter_name">
            <property name="font">
             <font>
@@ -252,22 +252,6 @@ border: 2px solid  white;
            </property>
            <property name="text">
             <string>Shelter</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="label_location">
-           <property name="font">
-            <font>
-             <family>Dyuthi</family>
-             <pointsize>12</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
-           </property>
-           <property name="text">
-            <string>Approx location</string>
            </property>
           </widget>
          </item>
@@ -635,7 +619,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1046</width>
-     <height>38</height>
+     <height>27</height>
     </rect>
    </property>
    <property name="font">
