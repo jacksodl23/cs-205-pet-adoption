@@ -1,5 +1,8 @@
 #include "shelterprofile.h"
 #include "ui_shelterprofile.h"
+#include "shelterhelp.h"
+#include "shelterupload.h"
+
 
 shelterProfile::shelterProfile(QWidget *parent) :
     QMainWindow(parent),
@@ -38,4 +41,11 @@ void shelterProfile::fetchShelter()
     } else {
         qDebug() << "Error finding owner's shelter:" << query.lastError().text();
     }
+}
+
+void shelterProfile::on_actionUpload_triggered()
+{
+    shelterUpload *w = new shelterUpload;
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
 }

@@ -19,6 +19,9 @@ public:
     explicit shelterProfile(QWidget *parent = 0);
     ~shelterProfile();
 
+private slots:
+    void on_actionUpload_triggered();
+
 private:
     Ui::shelterProfile *ui;
     Shelter *currentShelter;

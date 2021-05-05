@@ -474,7 +474,7 @@ color: rgb(239, 207, 187);</string>
      <string>You are the owner of</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>510</x>
@@ -502,7 +502,7 @@ color: rgb(239, 207, 187);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -544,6 +544,7 @@ color: rgb(239, 207, 187);</string>
     <property name="title">
      <string>Profile</string>
     </property>
+    <addaction name="actionUpload"/>
    </widget>
    <widget class="QMenu" name="menuUpload">
     <property name="title">
@@ -572,6 +573,11 @@ color: rgb(239, 207, 187);</string>
    <addaction name="menuLog_out"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionUpload">
+   <property name="text">
+    <string>Upload</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

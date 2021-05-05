@@ -1,5 +1,6 @@
 #include "petdisplay.h"
 #include "ui_petdisplay.h"
+#include "petliked.h"
 
 PetDisplay::PetDisplay(QWidget *parent) :
     QMainWindow(parent),
@@ -224,4 +225,11 @@ void PetDisplay::fetchPets()
     } else {
         qDebug() << "Error fetching pets:" << query.lastError().text();
     }
+}
+
+void PetDisplay::on_actionLiked_triggered()
+{
+    petliked *w = new petliked;
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
 }
