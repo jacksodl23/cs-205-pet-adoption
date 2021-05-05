@@ -25,6 +25,12 @@ color: rgb(239, 207, 187);</string>
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
       <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(239, 207, 187);
 border: 2px solid  white; 
@@ -39,7 +45,7 @@ border: 2px solid  white;
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>500</height>
+            <height>600</height>
            </size>
           </property>
           <property name="maximumSize">
@@ -50,168 +56,6 @@ border: 2px solid  white;
           </property>
           <property name="text">
            <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="groupBox_3">
-       <property name="styleSheet">
-        <string notr="true">color: rgb(239, 207, 187);
-border: 2px solid  white; 
-     border-radius: 3px;</string>
-       </property>
-       <property name="title">
-        <string/>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QLabel" name="label_appointment">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>Your appointment is on ---</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <item>
-           <widget class="QLabel" name="label_day">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Dyuthi</family>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Choose Day</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QComboBox" name="dayComboBox">
-            <property name="font">
-             <font>
-              <family>Dyuthi</family>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <item>
-             <property name="text">
-              <string>Any</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Monday</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Tuesday</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Wednesday</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Thursday</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Friday</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Saturday</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Sunday</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <item>
-           <widget class="QLabel" name="label_time">
-            <property name="minimumSize">
-             <size>
-              <width>150</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Dyuthi</family>
-              <pointsize>12</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Choose Time:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSlider" name="timeSlider">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QPushButton" name="makeApptButton">
-          <property name="font">
-           <font>
-            <family>Dyuthi</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Make Appointment</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="deleteApptButton">
-          <property name="font">
-           <font>
-            <family>Dyuthi</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Delete Appointment</string>
           </property>
          </widget>
         </item>
@@ -338,6 +182,20 @@ border: 2px solid  white;
         </property>
         <property name="text">
          <string>Shelter Owner</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_phone">
+        <property name="text">
+         <string>Phone</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_email">
+        <property name="text">
+         <string>Email</string>
         </property>
        </widget>
       </item>

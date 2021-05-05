@@ -255,6 +255,13 @@ border: 2px solid  white;
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QLabel" name="label_location">
+           <property name="text">
+            <string>Location</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
