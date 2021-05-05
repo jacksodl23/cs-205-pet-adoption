@@ -9,9 +9,7 @@ shelterProfile::shelterProfile(QWidget *parent) :
     ui->welcomeLabel->setText("Welcome " + currentUser.getFirstName() + "!");
 
     fetchShelter();
-    if (currentShelter == nullptr)
-        QMessageBox::warning(this, "No Shelter Linked!", "Please indicate which shelter you own.", QMessageBox::Ok);
-    else
+    if (currentShelter != nullptr)
         populatePetsTable();
 }
 
@@ -34,6 +32,9 @@ void shelterProfile::fetchShelter()
 
             currentShelter = s;
             ui->shelterNameLabel->setText("You are the owner of " + currentShelter->getName());
+        } else {
+            QMessageBox::critical(this, "No Shelter Linked!", "The shelter you own could not be found.");
+            logOutShelterOwner();
         }
     } else {
         qDebug() << "Error finding owner's shelter:" << query.lastError().text();
@@ -61,10 +62,15 @@ void shelterProfile::on_actionUpload_triggered()
     w->show();
 }
 
-void shelterProfile::on_actionLog_out_triggered()
+void shelterProfile::logOutShelterOwner()
 {
     hide();
 
     currentUser.logOut();
     parentWidget()->show();
+}
+
+void shelterProfile::on_actionLog_out_triggered()
+{
+    logOutShelterOwner();
 }

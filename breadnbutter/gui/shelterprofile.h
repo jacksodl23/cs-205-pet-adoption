@@ -32,6 +32,7 @@ private:
 
     void fetchShelter();
     void populatePetsTable();
+    void logOutShelterOwner();
 };
 
 #endif // SHELTERPROFILE_H
