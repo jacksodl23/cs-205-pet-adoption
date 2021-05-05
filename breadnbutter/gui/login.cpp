@@ -17,7 +17,6 @@ Login::~Login()
 
 void Login::on_loginOkay_accepted()
 {
-    // where should we store user information?
     QString email = ui->emailField->text();
     QString password = ui->passwordField->text();
 

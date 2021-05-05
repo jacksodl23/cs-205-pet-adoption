@@ -68,6 +68,19 @@ border: 2px solid  white;
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
+         <widget class="QLabel" name="label_appointment">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>Your appointment is on ---</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QLabel" name="label_day">
@@ -144,6 +157,12 @@ border: 2px solid  white;
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QLabel" name="label_time">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
@@ -157,7 +176,7 @@ border: 2px solid  white;
              </font>
             </property>
             <property name="text">
-             <string>Choose Time</string>
+             <string>Choose Time:</string>
             </property>
            </widget>
           </item>
@@ -179,7 +198,7 @@ border: 2px solid  white;
            </font>
           </property>
           <property name="text">
-           <string>Make or Update Appointment</string>
+           <string>Make Appointment</string>
           </property>
          </widget>
         </item>
@@ -245,7 +264,7 @@ border: 2px solid  white;
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="label_breed">
         <property name="font">
          <font>
           <family>Dyuthi</family>
@@ -292,7 +311,7 @@ border: 2px solid  white;
          </font>
         </property>
         <property name="text">
-         <string>Hypallergenic</string>
+         <string>Hypoallergenic</string>
         </property>
        </widget>
       </item>
@@ -319,19 +338,6 @@ border: 2px solid  white;
         </property>
         <property name="text">
          <string>Shelter Owner</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_phone">
-        <property name="font">
-         <font>
-          <family>Dyuthi</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Phone</string>
         </property>
        </widget>
       </item>
