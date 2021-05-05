@@ -23,7 +23,6 @@ public:
 
 private slots:
     void on_actionUpload_triggered();
-
     void on_actionLog_out_triggered();
 
 private:
