@@ -6,7 +6,6 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <ctime>
-#include <typeinfo>
 #include <cstring>
 #include <QString>
 #include <QDebug>

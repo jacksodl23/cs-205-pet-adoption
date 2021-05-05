@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QMessageBox>
+#include <QSqlQueryModel>
 #include "../backend/globals.h"
 #include "../backend/shelter.h"
+#include "shelterupload.h"
 
 namespace Ui {
 class shelterProfile;
@@ -19,11 +21,17 @@ public:
     explicit shelterProfile(QWidget *parent = 0);
     ~shelterProfile();
 
+private slots:
+    void on_actionUpload_triggered();
+
+    void on_actionLog_out_triggered();
+
 private:
     Ui::shelterProfile *ui;
     Shelter *currentShelter;
 
     void fetchShelter();
+    void populatePetsTable();
 };
 
 #endif // SHELTERPROFILE_H

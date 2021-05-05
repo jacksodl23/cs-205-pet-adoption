@@ -4,6 +4,7 @@
 #include <QString>
 #include <QtSql>
 #include <iostream>
+#include <fstream>
 
 class User
 {
@@ -12,15 +13,20 @@ public:
     User(QString email, QString password);
     virtual ~User();
 
-   virtual bool insertInDB();
-   virtual bool deleteFromDB();
-   virtual bool existsInDB();
+    virtual bool insertInDB();
+    virtual bool deleteFromDB();
+    virtual bool existsInDB();
 
-   bool attemptLogin();
+    bool attemptLogin();
+    void logOut();
 
-   int getID();
+    int getID();
 
-   QString getFirstName();
+    QString getFirstName();
+
+    bool getIs_adopter() const;
+
+    QString getLastName() const;
 
 protected:
     int id;
@@ -30,7 +36,9 @@ protected:
     QString email;
     QString password;
 
-    virtual void chooseID();
+    bool is_adopter;
+
+    void chooseID();
 };
 
 #endif // USER_H

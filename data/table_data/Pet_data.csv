@@ -1,100 +1,1000 @@
-1,Beans,36,1
-2,Shelby,16,2
-3,Biscuit,41,3
-4,Kira,56,4
-5,Itsy-bitsy,89,5
-6,Buster,61,6
-7,Koda,74,7
-8,Yogi-bear,59,8
-9,Raison,17,9
-10,Pablo,31,10
-11,Pooky,32,11
-12,Wallace,29,12
-13,Puddles,29,13
-14,Rosa,34,14
-15,Buddy,9,15
-16,Sheba,40,16
-17,Salty,78,17
-18,Booker,5,18
-19,Dallas,99,19
-20,Silky,37,20
-21,Smudge,68,21
-22,Finnegan,74,22
-23,Zoie,46,23
-24,Skittles,69,24
-25,Ryder,17,25
-26,Boo,35,26
-27,Taco,53,27
-28,Pinky,44,28
-29,Prince,21,29
-30,Montana,100,30
-31,Checkers,94,31
-32,Chyna,63,32
-33,Blossom,40,33
-34,Sparkle,27,34
-35,Silvester,78,35
-36,Hercules,55,36
-37,Puddles,23,37
-38,Chico,87,38
-39,Chewie,83,39
-40,Brit,41,40
-41,Vegas,74,41
-42,Bogey,17,42
-43,Snoop,55,43
-44,Dixie,26,44
-45,Tipper,7,45
-46,Hardy,96,46
-47,Dusty,70,47
-48,Austin,32,48
-49,Gunther,45,49
-50,Brie,97,50
-51,Laney,70,51
-52,Gringo,62,52
-53,Hans,93,53
-54,Chippy,24,54
-55,Nutmeg,100,55
-56,Presley,87,56
-57,Emmy,100,57
-58,Billie,21,58
-59,Beaux,58,59
-60,Pretty-girl,92,60
-61,Bugsey,64,61
-62,Scooter,14,62
-63,Nala,50,63
-64,Lou,7,64
-65,Birdy,95,65
-66,Cutie,84,66
-67,Bunky,52,67
-68,Haley,35,68
-69,Rolex,91,69
-70,Walter,83,70
-71,Shiloh,30,71
-72,Butchy,83,72
-73,Wilson,64,73
-74,Flakey,56,74
-75,Stich,22,75
-76,Bobby,29,76
-77,Pokey,29,77
-78,Bizzy,63,78
-79,Tanner,70,79
-80,Bodie,18,80
-81,Bart,27,81
-82,Connor,80,82
-83,Boss,96,83
-84,Paddington,43,84
-85,Mouse,51,85
-86,China,88,86
-87,Misha,71,87
-88,Kiki,50,88
-89,Cotton,36,89
-90,Raison,73,90
-91,Pixie,31,91
-92,Billie,57,92
-93,Blackie,34,93
-94,Sparky,60,94
-95,Hardy,80,95
-96,Pippin,67,96
-97,T-bone,69,97
-98,Ivory,34,98
-99,Angus,28,99
-100,Hallie,53,100
+1,Vinny,1,1,orange,long,Voluptatem dolorem porro sed.
+2,Holly,1,2,spotted,short,Tempora velit est dolorem quaerat sit.
+3,Jesse,1,3,black,medium,Non est est eius quaerat numquam.
+4,Jade,1,4,spotted,short,Amet numquam ipsum etincidunt sit tempora.
+5,Sophia,1,5,spotted,short,Magnam consectetur quaerat dolor.
+6,Buck,1,6,orange,long,Labore labore porro modi aliquam.
+7,Penny,1,7,orange,medium,Ipsum ut sit dolor dolorem.
+8,Vinny,1,8,orange,medium,Neque numquam neque etincidunt labore consectetur neque voluptatem.
+9,Angus,1,9,orange,short,Neque quisquam etincidunt dolor.
+10,Roland,1,10,white,short,Voluptatem est adipisci modi numquam quiquia velit quisquam.
+11,Budda,2,11,orange,short,Dolorem dolorem porro consectetur.
+12,Pooh-bear,2,12,black,medium,Velit dolor etincidunt voluptatem porro dolor voluptatem.
+13,Eddy,2,13,black,medium,Numquam etincidunt numquam eius dolor porro ipsum.
+14,Captain,2,14,black,short,Magnam eius velit non non dolor non.
+15,Pablo,2,15,brown,medium,Consectetur dolorem sed dolore dolore eius labore dolorem.
+16,Jasmine,2,16,brown,short,Porro numquam porro consectetur.
+17,Barclay,2,17,orange,medium,Adipisci quaerat consectetur neque quisquam.
+18,Samson,2,18,brown,short,Consectetur est dolorem aliquam non ipsum tempora voluptatem.
+19,Jolly,2,19,orange,long,Sit ipsum quisquam dolore dolor sit eius.
+20,Vinny,2,20,white,medium,Aliquam sit eius quiquia porro etincidunt dolore neque.
+21,Jelly-bean,3,21,spotted,long,Tempora voluptatem eius eius magnam non neque.
+22,Paris,3,22,white,short,Voluptatem non est dolore etincidunt aliquam labore.
+23,Jerry,3,23,black,long,Voluptatem porro etincidunt est magnam aliquam dolorem magnam.
+24,Tequila,3,24,orange,medium,Dolorem voluptatem eius velit.
+25,Digger,3,25,spotted,medium,Labore ipsum dolor neque modi sed sed est.
+26,Linus,3,26,brown,medium,Quiquia sit aliquam velit velit.
+27,Bibbles,3,27,black,medium,Quaerat amet sit quiquia quisquam est est.
+28,Eva,3,28,brown,long,Dolore dolor labore est.
+29,Rocky,3,29,orange,medium,Quisquam ut est neque quaerat labore est dolor.
+30,Pumpkin,3,30,spotted,long,Tempora voluptatem etincidunt modi tempora eius.
+31,Samson,4,31,brown,long,Voluptatem non dolor ipsum.
+32,Cherokee,4,32,spotted,short,Amet sit amet porro eius.
+33,Edsel,4,33,black,long,Modi quisquam adipisci tempora dolorem.
+34,Penny,4,34,spotted,long,Labore est sed aliquam.
+35,Mookie,4,35,brown,medium,Etincidunt dolor magnam tempora quisquam ut.
+36,Duffy,4,36,brown,short,Non quisquam amet amet magnam neque dolorem.
+37,Champ,4,37,black,short,Consectetur magnam neque non tempora.
+38,Boris,4,38,orange,short,Eius eius dolor etincidunt.
+39,Nosey,4,39,black,medium,Modi quisquam adipisci etincidunt non porro ut voluptatem.
+40,Captain,4,40,black,long,Voluptatem voluptatem voluptatem magnam.
+41,Emily,5,41,white,short,Eius non etincidunt quiquia sit.
+42,Hallie,5,42,white,medium,Neque quiquia consectetur adipisci tempora dolore dolore sit.
+43,Bella,5,43,white,long,Sit etincidunt tempora sed sit velit voluptatem voluptatem.
+44,Taffy,5,44,black,short,Neque etincidunt tempora quaerat numquam.
+45,Kane,5,45,orange,medium,Etincidunt adipisci porro dolore.
+46,Tommy-boy,5,46,orange,long,Velit non tempora eius porro.
+47,Jack,5,47,spotted,medium,Neque magnam ut consectetur ut.
+48,Jesse,5,48,black,medium,Velit amet amet aliquam aliquam.
+49,Turbo,5,49,brown,long,Consectetur labore dolorem voluptatem tempora numquam dolorem non.
+50,Nitro,5,50,white,long,Consectetur voluptatem sed consectetur modi etincidunt velit dolore.
+51,Bobo,6,51,brown,short,Numquam dolorem quaerat quaerat consectetur voluptatem etincidunt.
+52,Miss Priss,6,52,orange,medium,Est eius magnam sit eius ipsum.
+53,Braggs,6,53,orange,medium,Dolorem quaerat ipsum quisquam.
+54,Duncan,6,54,black,medium,Velit voluptatem sit quiquia dolor.
+55,Presley,6,55,orange,short,Velit dolor numquam magnam etincidunt magnam ut est.
+56,Violet,6,56,brown,short,Tempora consectetur numquam magnam quisquam.
+57,Chaz,6,57,spotted,short,Neque aliquam tempora tempora.
+58,Benny,6,58,spotted,medium,Sed amet labore quisquam dolorem.
+59,Dusty,6,59,black,medium,Magnam adipisci labore etincidunt.
+60,Popcorn,6,60,black,medium,Dolor aliquam modi magnam tempora.
+61,Griffen,7,61,white,long,Etincidunt ut dolorem modi.
+62,Willow,7,62,orange,medium,Aliquam dolor sed ut dolorem amet amet.
+63,Rex,7,63,spotted,medium,Quisquam dolor est ipsum etincidunt.
+64,Nugget,7,64,orange,short,Voluptatem porro magnam ipsum dolore aliquam.
+65,Brady,7,65,white,long,Labore labore sit porro.
+66,Ruchus,7,66,spotted,medium,Etincidunt etincidunt ut dolor dolore tempora.
+67,Cricket,7,67,brown,long,Tempora amet amet non dolorem sit ut.
+68,Purdy,7,68,white,long,Eius ipsum numquam ut voluptatem velit ut sed.
+69,Grady,7,69,orange,medium,Sit non adipisci voluptatem.
+70,Houdini,7,70,orange,long,Sit consectetur ut magnam neque velit.
+71,Brindle,8,71,black,medium,Sed numquam quisquam quiquia magnam.
+72,Butchy,8,72,orange,short,Magnam non labore voluptatem sit modi.
+73,Babbles,8,73,spotted,short,Non dolor dolor quaerat.
+74,Reilly,8,74,spotted,short,Eius etincidunt dolore modi dolorem.
+75,Aires,8,75,brown,long,Etincidunt numquam numquam sit neque ut tempora velit.
+76,Bb,8,76,white,long,Aliquam modi ut quisquam dolore.
+77,Nickie,8,77,black,medium,Quisquam dolore numquam porro neque.
+78,Mini,8,78,black,long,Consectetur dolorem neque etincidunt.
+79,Alfie,8,79,orange,medium,Consectetur etincidunt etincidunt eius consectetur sit.
+80,Bits,8,80,black,medium,Est voluptatem etincidunt velit velit.
+81,Phantom,9,81,brown,medium,Voluptatem eius quisquam dolor modi magnam.
+82,Meadow,9,82,brown,short,Modi sed neque non.
+83,Scooter,9,83,black,long,Dolore quiquia velit amet quiquia non.
+84,Queenie,9,84,orange,short,Dolorem ut consectetur dolor neque ut.
+85,Pudge,9,85,black,short,Etincidunt neque magnam sit est voluptatem.
+86,Oz,9,86,spotted,long,Dolorem quaerat voluptatem consectetur.
+87,Gypsy,9,87,black,short,Voluptatem voluptatem ipsum consectetur.
+88,Iris,9,88,orange,short,Aliquam neque quiquia dolor.
+89,Timmy,9,89,brown,medium,Ipsum sit sit quaerat porro.
+90,Gucci,9,90,brown,long,Consectetur amet non porro quaerat dolorem tempora quisquam.
+91,Meadow,10,91,black,medium,Aliquam aliquam aliquam consectetur sed.
+92,Bumper,10,92,white,medium,Magnam ipsum voluptatem numquam labore.
+93,Zena,10,93,black,medium,Labore est dolore quiquia dolore ipsum ut.
+94,Hooch,10,94,brown,short,Quiquia amet quiquia sed eius eius adipisci ipsum.
+95,Prince,10,95,orange,long,Etincidunt velit magnam ut.
+96,Pearl,10,96,brown,long,Ipsum ut non porro.
+97,Dudley,10,97,brown,long,Ut eius labore etincidunt velit adipisci magnam.
+98,Tiny,10,98,orange,long,Labore tempora magnam sit modi ipsum.
+99,Barkley,10,99,spotted,medium,Voluptatem velit voluptatem ut neque.
+100,Bessie,10,100,white,long,Etincidunt amet dolore etincidunt etincidunt modi dolorem quiquia.
+101,Hugo,11,101,brown,short,Tempora numquam magnam quaerat etincidunt consectetur.
+102,Tiger,11,102,white,short,Tempora ut dolor adipisci etincidunt porro aliquam.
+103,Yoda,11,103,white,long,Quiquia aliquam numquam labore labore.
+104,Precious,11,104,spotted,medium,Velit velit sed sit.
+105,Bridgette,11,105,orange,short,Tempora voluptatem neque neque est.
+106,Marble,11,106,brown,short,Numquam adipisci velit numquam porro labore modi ipsum.
+107,Poochie,11,107,orange,long,Quiquia aliquam quiquia quaerat porro non.
+108,Buddy,11,108,black,short,Tempora sit numquam numquam.
+109,Bizzy,11,109,spotted,short,Adipisci voluptatem adipisci ipsum modi eius quaerat aliquam.
+110,Moose,11,110,brown,medium,Quaerat dolor ut eius.
+111,Kibbles,12,111,spotted,short,Sit voluptatem dolor modi neque.
+112,Blondie,12,112,spotted,medium,Voluptatem amet voluptatem velit aliquam.
+113,Wilber,12,113,white,medium,Tempora amet ut sit.
+114,Winter,12,114,brown,medium,Tempora quiquia est magnam.
+115,Dee,12,115,white,medium,Porro tempora numquam velit consectetur numquam ipsum non.
+116,Beauty,12,116,brown,long,Dolore magnam voluptatem magnam voluptatem porro porro ut.
+117,Vava,12,117,orange,long,Consectetur numquam modi sit dolor neque adipisci.
+118,Mitzy,12,118,black,long,Velit voluptatem modi dolore numquam.
+119,Michael,12,119,black,short,Quaerat numquam labore tempora tempora dolore.
+120,Caesar,12,120,black,short,Velit velit eius ipsum sed neque.
+121,Charisma,13,121,spotted,long,Ipsum ut dolore magnam quiquia amet quaerat non.
+122,Bobo,13,122,white,short,Voluptatem non ut ut.
+123,Sweet-pea,13,123,white,medium,Eius est porro eius magnam magnam consectetur quaerat.
+124,Chester,13,124,brown,medium,Magnam quisquam porro ipsum velit magnam.
+125,Plato,13,125,brown,medium,Neque magnam eius eius amet labore.
+126,Pippy,13,126,brown,short,Modi aliquam modi ipsum neque.
+127,Griffen,13,127,black,medium,Numquam voluptatem non dolore dolor consectetur voluptatem.
+128,Ty,13,128,spotted,medium,Dolorem velit quaerat dolore ut neque.
+129,Skittles,13,129,spotted,short,Etincidunt magnam magnam quisquam.
+130,Pepe,13,130,spotted,short,Aliquam consectetur dolor consectetur.
+131,Daisey-mae,14,131,brown,long,Etincidunt ut sed quiquia consectetur voluptatem magnam labore.
+132,Sparkle,14,132,black,long,Neque amet aliquam ipsum.
+133,Joy,14,133,brown,long,Aliquam numquam non velit.
+134,Macho,14,134,black,long,Consectetur numquam aliquam quiquia est quaerat magnam.
+135,Precious,14,135,black,medium,Sit adipisci porro quisquam non labore.
+136,Gypsy,14,136,black,short,Modi aliquam eius non magnam consectetur.
+137,King,14,137,orange,long,Etincidunt quiquia dolorem labore.
+138,Persy,14,138,black,medium,Ipsum dolorem consectetur quiquia dolore sed.
+139,Nikki,14,139,orange,long,Sed tempora consectetur ut ipsum magnam aliquam quisquam.
+140,Timber,14,140,black,medium,Amet est dolorem ut magnam ipsum amet amet.
+141,Skippy,15,141,white,short,Modi porro ut dolorem sed amet est velit.
+142,Bud,15,142,brown,short,Eius dolore tempora dolore.
+143,KC,15,143,orange,long,Eius dolor neque ipsum ipsum dolor ut aliquam.
+144,Ming,15,144,black,short,Adipisci dolor ipsum etincidunt.
+145,Abigail,15,145,brown,long,Numquam neque ipsum porro consectetur dolor.
+146,Sabrina,15,146,orange,short,Sit magnam numquam magnam labore magnam etincidunt.
+147,Abigail,15,147,orange,short,Amet porro dolorem quisquam aliquam consectetur magnam.
+148,Hoover,15,148,brown,long,Neque dolor neque ut.
+149,Claire,15,149,white,medium,Sed dolorem adipisci ipsum velit.
+150,Peppy,15,150,white,medium,Ipsum porro numquam ipsum numquam etincidunt dolore.
+151,Bosco,16,151,black,short,Magnam voluptatem dolor etincidunt dolor voluptatem.
+152,Sampson,16,152,spotted,short,Dolor dolore tempora aliquam.
+153,Jingles,16,153,black,long,Dolor voluptatem quiquia magnam dolorem dolorem dolore voluptatem.
+154,Piglet,16,154,orange,medium,Adipisci non velit etincidunt tempora sit porro labore.
+155,Klaus,16,155,brown,long,Non ipsum labore numquam.
+156,Biablo,16,156,black,long,Quisquam etincidunt non neque numquam neque modi.
+157,Stuart,16,157,spotted,short,Porro porro neque sit.
+158,Jet,16,158,orange,short,Neque est est dolore.
+159,Butter,16,159,spotted,long,Ipsum velit neque consectetur consectetur adipisci.
+160,Tucker,16,160,white,medium,Neque etincidunt dolore non.
+161,Mickey,17,161,white,medium,Non dolor velit tempora magnam numquam.
+162,Yoda,17,162,spotted,short,Modi tempora voluptatem amet quaerat amet.
+163,Jamie,17,163,white,short,Tempora modi ut labore consectetur labore numquam voluptatem.
+164,Jaxson,17,164,white,long,Ut quiquia aliquam non.
+165,Gilda,17,165,black,medium,Sit etincidunt amet quiquia porro amet.
+166,Itsy,17,166,orange,short,Ut dolor adipisci quisquam quisquam amet dolore eius.
+167,Darwin,17,167,spotted,short,Consectetur est est quiquia dolor tempora dolorem.
+168,Mittens,17,168,black,medium,Tempora ut dolorem dolor.
+169,Ben,17,169,orange,short,Porro sed amet dolor.
+170,Brit,17,170,brown,long,Est adipisci est aliquam.
+171,Daffy,18,171,black,long,Consectetur consectetur non aliquam quiquia labore eius quiquia.
+172,Cocoa,18,172,spotted,medium,Modi magnam neque etincidunt adipisci eius est quiquia.
+173,Sky,18,173,spotted,short,Neque quiquia modi quisquam numquam ut amet.
+174,Mercle,18,174,spotted,long,Labore dolor quaerat dolor aliquam dolor neque sit.
+175,T-bird,18,175,brown,medium,Sed est etincidunt aliquam est consectetur quiquia labore.
+176,Buffy,18,176,brown,short,Neque velit sit neque modi.
+177,Louie,18,177,white,long,Dolor labore modi adipisci velit voluptatem ut.
+178,Brittany,18,178,brown,short,Tempora eius est neque consectetur est consectetur.
+179,Cisco,18,179,black,medium,Eius etincidunt dolor quisquam quiquia sed.
+180,Porky,18,180,white,short,Porro numquam ipsum quaerat dolore.
+181,Arnie,19,181,orange,medium,Quiquia dolor eius tempora ut ipsum eius.
+182,Peanuts,19,182,spotted,long,Sit eius adipisci velit voluptatem.
+183,Snoop,19,183,spotted,medium,Ut est tempora ipsum adipisci aliquam.
+184,Rocket,19,184,orange,long,Sit aliquam dolore eius sit sit.
+185,Chauncey,19,185,black,short,Ipsum aliquam voluptatem est.
+186,Onie,19,186,brown,long,Sit tempora consectetur dolorem aliquam neque.
+187,Commando,19,187,orange,short,Amet aliquam dolore neque etincidunt dolor.
+188,Gretchen,19,188,spotted,short,Quaerat amet quiquia est amet labore.
+189,Paco,19,189,black,short,Tempora dolor dolore aliquam quaerat.
+190,Mouse,19,190,black,medium,Etincidunt numquam modi quisquam.
+191,Jimmy,20,191,black,long,Non numquam aliquam modi magnam non quiquia quaerat.
+192,Taylor,20,192,spotted,medium,Quiquia voluptatem eius tempora aliquam ut consectetur adipisci.
+193,Old Glory,20,193,white,medium,Non non est eius ipsum dolorem velit dolorem.
+194,Conan,20,194,brown,short,Eius sed dolore ut.
+195,Harpo,20,195,orange,long,Amet sit numquam dolore quisquam.
+196,Jersey,20,196,spotted,long,Velit non aliquam porro.
+197,Ladybug,20,197,orange,long,Etincidunt labore est tempora.
+198,Munchkin,20,198,brown,short,Non non consectetur consectetur ut sed.
+199,Mischief,20,199,brown,long,Labore ipsum sed eius quisquam.
+200,Lazarus,20,200,black,medium,Sed quisquam dolore numquam.
+201,Pixie,21,201,orange,short,Dolorem sit voluptatem dolor.
+202,Guido,21,202,spotted,medium,Dolorem porro quiquia porro.
+203,Cotton,21,203,spotted,medium,Eius labore quiquia ut quisquam etincidunt amet ut.
+204,Nickers,21,204,spotted,medium,Porro ut dolor quiquia tempora ipsum.
+205,Louis,21,205,black,short,Adipisci tempora dolore amet quisquam etincidunt labore adipisci.
+206,Roman,21,206,white,short,Quiquia neque labore numquam.
+207,Snowball,21,207,white,long,Quisquam dolore quaerat adipisci magnam sit neque voluptatem.
+208,Woofie,21,208,spotted,medium,Eius eius quisquam porro ut quiquia eius.
+209,Ranger,21,209,white,long,Sed non numquam numquam dolor consectetur aliquam.
+210,Muffin,21,210,orange,long,Est neque velit aliquam.
+211,Pinto,22,211,orange,medium,Ipsum consectetur numquam neque magnam voluptatem magnam dolorem.
+212,Presley,22,212,black,short,Ipsum tempora velit quaerat.
+213,Spud,22,213,spotted,medium,Neque dolor ipsum numquam ut voluptatem ut.
+214,Cubby,22,214,black,medium,Dolor sit velit quiquia numquam.
+215,Abby,22,215,spotted,short,Modi ut non magnam adipisci quisquam.
+216,Norton,22,216,white,medium,Adipisci porro ut aliquam dolorem tempora.
+217,Midnight,22,217,orange,long,Quaerat labore dolorem sed.
+218,Mandy,22,218,brown,long,Aliquam modi voluptatem eius neque.
+219,KC,22,219,brown,short,Dolor aliquam sit ipsum voluptatem quisquam dolore.
+220,Snowy,22,220,brown,short,Velit dolore quisquam aliquam quisquam velit.
+221,Minnie,23,221,brown,medium,Sit sed amet sit ut aliquam.
+222,Travis,23,222,spotted,long,Voluptatem magnam eius eius sed adipisci dolore.
+223,Waddles,23,223,spotted,long,Labore magnam quaerat magnam voluptatem quiquia modi ut.
+224,Dude,23,224,spotted,short,Quiquia velit non est non sit.
+225,Queenie,23,225,spotted,short,Numquam porro dolore dolor numquam quaerat.
+226,Domino,23,226,white,short,Voluptatem dolorem neque quaerat quaerat.
+227,Skeeter,23,227,black,short,Eius velit voluptatem porro amet modi labore.
+228,Billie,23,228,orange,medium,Neque sed dolore ut numquam dolore etincidunt numquam.
+229,Pickles,23,229,brown,long,Est ipsum est velit ut labore magnam.
+230,Bullet,23,230,white,short,Amet neque neque velit numquam modi.
+231,Ally,24,231,brown,short,Amet tempora adipisci magnam labore labore aliquam.
+232,Niki,24,232,orange,medium,Ipsum dolorem ut aliquam quisquam etincidunt velit magnam.
+233,Kira,24,233,orange,short,Sit labore porro est numquam.
+234,Ty,24,234,orange,medium,Sed est eius quaerat.
+235,Minnie,24,235,brown,short,Labore dolore eius dolore dolorem amet est magnam.
+236,Mary,24,236,black,medium,Velit numquam consectetur sit porro.
+237,Poppy,24,237,black,long,Voluptatem modi quiquia ut amet numquam amet.
+238,Salty,24,238,black,medium,Dolorem adipisci eius eius labore amet velit.
+239,Beanie,24,239,spotted,medium,Ut consectetur aliquam sed modi eius velit aliquam.
+240,Mariah,24,240,spotted,long,Numquam dolore etincidunt porro adipisci adipisci amet amet.
+241,Hunter,25,241,brown,short,Sit magnam dolorem magnam sed porro ipsum.
+242,Trouble,25,242,brown,short,Modi non dolore numquam voluptatem adipisci est.
+243,Shasta,25,243,brown,long,Ipsum tempora velit porro velit etincidunt sed magnam.
+244,Boo-boo,25,244,white,short,Ut numquam dolorem modi etincidunt magnam modi modi.
+245,Phoenix,25,245,black,long,Dolor dolore numquam aliquam porro.
+246,Jett,25,246,brown,long,Amet sed magnam ut magnam sed aliquam amet.
+247,Tinker,25,247,brown,medium,Amet sed velit amet dolorem.
+248,Heidi,25,248,brown,short,Etincidunt amet sit numquam non voluptatem magnam.
+249,Baxter,25,249,brown,short,Consectetur sed ipsum sit eius.
+250,Lucky,25,250,white,long,Dolore voluptatem voluptatem est est neque tempora.
+251,Whiskey,26,251,orange,long,Quisquam voluptatem velit quiquia numquam aliquam.
+252,Koda,26,252,orange,medium,Est modi velit velit magnam numquam tempora quaerat.
+253,Aggie,26,253,brown,medium,Ipsum amet quiquia est eius.
+254,Puffy,26,254,spotted,long,Est sed dolor quaerat aliquam sed ut.
+255,Gretchen,26,255,brown,medium,Sed aliquam aliquam quisquam.
+256,Winter,26,256,orange,long,Adipisci porro porro dolorem.
+257,Harley,26,257,white,short,Aliquam sit tempora magnam.
+258,Zippy,26,258,orange,long,Non quiquia labore non.
+259,Jazz,26,259,brown,short,Modi non aliquam quisquam modi.
+260,Quincy,26,260,brown,medium,Sed adipisci dolore velit aliquam modi dolore.
+261,Harley,27,261,black,short,Non voluptatem ut magnam dolore quiquia sit tempora.
+262,Rocco,27,262,white,long,Etincidunt quisquam modi non tempora velit.
+263,Brie,27,263,orange,short,Consectetur quaerat est aliquam sit adipisci ut aliquam.
+264,Scooby-doo,27,264,spotted,short,Quisquam quisquam numquam magnam eius sed neque est.
+265,Rowdy,27,265,orange,long,Porro aliquam ipsum tempora.
+266,Jaguar,27,266,black,long,Non quisquam modi dolorem voluptatem porro est.
+267,Kirby,27,267,brown,short,Etincidunt ut tempora quaerat consectetur est sit neque.
+268,Blackie,27,268,brown,medium,Neque consectetur quisquam labore non quaerat ipsum sit.
+269,Laddie,27,269,white,short,Sed aliquam ut dolore modi velit.
+270,Chase,27,270,orange,short,Neque dolor neque aliquam aliquam labore.
+271,Gizmo,28,271,orange,long,Magnam sit sed sed.
+272,Nina,28,272,spotted,short,Velit modi dolorem labore.
+273,Ringo,28,273,white,short,Non dolor dolorem consectetur est.
+274,Dewey,28,274,white,medium,Ipsum dolorem aliquam magnam quaerat numquam dolore labore.
+275,Ruchus,28,275,black,short,Dolorem ipsum amet est voluptatem dolore consectetur porro.
+276,Ben,28,276,orange,long,Magnam tempora amet modi.
+277,Lightning,28,277,spotted,long,Porro modi dolorem sit etincidunt labore est sit.
+278,Sheena,28,278,white,long,Quiquia adipisci sit non porro.
+279,Elvis,28,279,black,short,Quiquia tempora ipsum dolorem numquam quiquia eius adipisci.
+280,Bradley,28,280,black,medium,Etincidunt amet numquam dolore amet etincidunt dolor numquam.
+281,Floyd,29,281,spotted,short,Quaerat voluptatem numquam ipsum sit ipsum porro.
+282,Ally,29,282,black,long,Voluptatem velit eius modi consectetur est.
+283,Eddy,29,283,brown,medium,Dolor voluptatem non dolor dolore.
+284,Snowball,29,284,black,long,Amet magnam quaerat quisquam consectetur.
+285,Barclay,29,285,black,short,Quiquia sed amet tempora quiquia ipsum quiquia.
+286,Chips,29,286,white,long,Modi eius magnam adipisci.
+287,Montana,29,287,white,medium,Dolorem etincidunt dolor aliquam sit quisquam est.
+288,Rosa,29,288,black,long,Est ipsum magnam etincidunt.
+289,Dandy,29,289,brown,long,Magnam modi quisquam consectetur.
+290,Travis,29,290,brown,short,Tempora eius adipisci aliquam.
+291,Roxy,30,291,white,long,Modi labore non quisquam consectetur ipsum ipsum.
+292,Rico,30,292,white,long,Eius numquam sed non est.
+293,Friday,30,293,spotted,long,Sit adipisci sit eius quaerat quaerat consectetur porro.
+294,Beamer,30,294,brown,medium,Quaerat dolore numquam quisquam.
+295,Lefty,30,295,spotted,short,Porro eius tempora tempora ut eius.
+296,Mischief,30,296,brown,long,Dolore magnam labore ipsum tempora quaerat quisquam.
+297,Amy,30,297,brown,short,Quaerat dolor magnam labore.
+298,Brit,30,298,brown,short,Etincidunt est modi quaerat.
+299,Greenie,30,299,spotted,short,Eius sit quaerat magnam.
+300,Mikey,30,300,white,short,Sit consectetur amet consectetur labore sit.
+301,Tristan,31,301,orange,medium,Consectetur dolorem labore velit.
+302,Skittles,31,302,black,medium,Quiquia dolorem dolor tempora.
+303,Hardy,31,303,brown,short,Labore dolorem dolor quaerat quiquia tempora quaerat voluptatem.
+304,Simone,31,304,spotted,short,Ipsum quiquia sed sit.
+305,Gidget,31,305,spotted,short,Dolor non dolorem tempora quaerat sed tempora.
+306,Chauncey,31,306,black,medium,Quiquia adipisci non quisquam sit.
+307,Freddy,31,307,orange,long,Velit voluptatem neque modi voluptatem eius eius magnam.
+308,Bingo,31,308,brown,long,Quiquia aliquam etincidunt tempora.
+309,Babbles,31,309,black,short,Ipsum eius magnam aliquam neque porro.
+310,Daisey-mae,31,310,spotted,long,Eius numquam tempora aliquam magnam quaerat.
+311,Bob,32,311,white,long,Sed modi non modi consectetur velit.
+312,Autumn,32,312,spotted,long,Magnam tempora ipsum modi non eius.
+313,Yellow,32,313,spotted,short,Numquam non sed neque dolor.
+314,Dash,32,314,white,long,Magnam neque quiquia modi amet etincidunt consectetur.
+315,Zeke,32,315,orange,medium,Ut non labore dolore.
+316,Jojo,32,316,spotted,long,Est quaerat etincidunt adipisci sit aliquam modi.
+317,Nemo,32,317,brown,long,Consectetur est adipisci sed velit ipsum amet numquam.
+318,Sonny,32,318,white,long,Labore quiquia voluptatem eius.
+319,Cody,32,319,orange,medium,Sed numquam est dolorem quisquam aliquam.
+320,Jess,32,320,black,short,Tempora dolore neque adipisci dolore tempora etincidunt.
+321,Poncho,33,321,white,short,Magnam consectetur ipsum voluptatem velit.
+322,Scrappy,33,322,orange,medium,Sed est non ipsum dolorem labore magnam velit.
+323,Teddy-bear,33,323,black,long,Quisquam porro velit etincidunt.
+324,Billie,33,324,white,medium,Sed non adipisci voluptatem sed.
+325,Gilbert,33,325,black,short,Ipsum dolor tempora sit tempora quisquam.
+326,Billy,33,326,brown,medium,Velit sit est velit tempora dolore quaerat.
+327,Kissy,33,327,black,long,Dolor modi est quaerat.
+328,Gringo,33,328,white,short,Voluptatem amet est amet eius dolor.
+329,Loki,33,329,white,medium,Sed eius ut est dolorem.
+330,Romeo,33,330,black,short,Est dolorem quaerat aliquam non dolore.
+331,Ellie,34,331,orange,medium,Ipsum labore consectetur sit.
+332,Bootie,34,332,white,short,Velit adipisci quisquam magnam.
+333,Bunky,34,333,spotted,long,Amet voluptatem adipisci porro magnam sed quaerat.
+334,Bozley,34,334,black,medium,Dolore labore voluptatem non.
+335,Bailey,34,335,white,short,Numquam neque labore amet velit.
+336,Tigger,34,336,white,short,Sed neque magnam consectetur dolor quaerat.
+337,Wilson,34,337,spotted,long,Dolorem neque eius quiquia eius sit quisquam.
+338,Brutus,34,338,white,long,Magnam etincidunt velit magnam velit est quisquam quaerat.
+339,Blue,34,339,white,short,Eius porro amet velit.
+340,Emmy,34,340,black,short,Quisquam porro etincidunt eius porro.
+341,Pockets,35,341,orange,short,Velit sed etincidunt velit.
+342,Tally,35,342,spotted,short,Modi eius dolore porro ipsum modi.
+343,Callie,35,343,white,short,Aliquam etincidunt magnam etincidunt aliquam dolor dolor.
+344,Shorty,35,344,orange,long,Tempora labore porro non sit amet eius.
+345,Sienna,35,345,white,short,Sed adipisci amet sed quiquia dolorem est.
+346,Zippy,35,346,black,medium,Consectetur ut ipsum non tempora sed non.
+347,Cheyenne,35,347,white,medium,Quisquam voluptatem aliquam labore adipisci sed.
+348,Marble,35,348,spotted,long,Neque dolore eius numquam quaerat dolore.
+349,Binky,35,349,spotted,short,Voluptatem adipisci quisquam amet quiquia magnam ipsum amet.
+350,Tex,35,350,black,medium,Ipsum dolore consectetur consectetur labore magnam dolor non.
+351,Punkin,36,351,spotted,medium,Consectetur labore voluptatem voluptatem dolor.
+352,Riley,36,352,brown,short,Modi ut quaerat voluptatem dolore ipsum est.
+353,Lexus,36,353,black,long,Aliquam dolorem neque quisquam etincidunt modi consectetur.
+354,Patsy,36,354,spotted,long,Sit eius ipsum velit voluptatem.
+355,Phoenix,36,355,white,long,Magnam dolore quiquia est quiquia quisquam.
+356,Cody,36,356,white,medium,Neque neque sit neque tempora.
+357,Speedo,36,357,orange,long,Quaerat amet magnam adipisci dolorem numquam quaerat.
+358,Skye,36,358,black,long,Est amet numquam eius sit.
+359,Cindy,36,359,white,short,Ipsum tempora sit dolorem.
+360,Cooper,36,360,brown,medium,Magnam adipisci dolorem ipsum labore tempora consectetur.
+361,Ryder,37,361,brown,long,Etincidunt modi ipsum est.
+362,Ally,37,362,orange,short,Aliquam non voluptatem adipisci consectetur velit neque.
+363,Nitro,37,363,white,medium,Magnam porro voluptatem tempora sed.
+364,Buddy Boy,37,364,orange,short,Ut consectetur neque est consectetur dolorem magnam neque.
+365,Parker,37,365,white,long,Porro non ipsum aliquam dolorem.
+366,Guinness,37,366,spotted,short,Labore magnam modi neque sed quiquia modi ipsum.
+367,Sparky,37,367,orange,long,Modi ipsum voluptatem porro dolor porro consectetur voluptatem.
+368,Miller,37,368,white,long,Labore quiquia quisquam dolore.
+369,Topaz,37,369,white,medium,Dolorem quisquam non magnam.
+370,Queen,37,370,black,long,Dolore sit dolorem dolor.
+371,Thyme,38,371,black,medium,Amet dolorem consectetur quisquam voluptatem adipisci dolorem.
+372,Newt,38,372,orange,medium,Dolorem porro dolor aliquam quaerat adipisci labore ut.
+373,Axle,38,373,brown,long,Velit porro ut quisquam sed non tempora est.
+374,Tracker,38,374,brown,short,Amet quaerat ut dolorem sit est dolor.
+375,Rock,38,375,spotted,medium,Magnam modi est quiquia amet est.
+376,Jagger,38,376,white,medium,Dolore est etincidunt non.
+377,Edgar,38,377,brown,short,Labore amet non amet sed.
+378,Patricky,38,378,spotted,long,Tempora quisquam tempora consectetur adipisci.
+379,Ruffer,38,379,white,long,Consectetur eius sed non sed numquam.
+380,Merlin,38,380,spotted,short,Adipisci modi numquam dolor consectetur eius neque adipisci.
+381,Odie,39,381,orange,short,Dolore consectetur numquam velit quaerat eius.
+382,Dillon,39,382,brown,short,Tempora numquam quisquam porro modi labore.
+383,Sassie,39,383,orange,short,Ut sit ipsum ipsum velit ut non.
+384,Dexter,39,384,brown,short,Amet eius dolorem eius quiquia.
+385,Nitro,39,385,white,medium,Porro non voluptatem modi quaerat numquam.
+386,Tiny,39,386,orange,long,Eius quaerat labore ipsum sed consectetur.
+387,Onyx,39,387,orange,short,Est neque magnam adipisci.
+388,Smoke,39,388,orange,short,Non quiquia adipisci sed ipsum magnam.
+389,Buddy,39,389,spotted,long,Modi aliquam non neque magnam ipsum sit quiquia.
+390,Gigi,39,390,brown,short,Modi est numquam numquam tempora.
+391,April,40,391,orange,short,Modi etincidunt sed est labore magnam sit velit.
+392,Sailor,40,392,black,short,Adipisci sit modi ipsum.
+393,Tessa,40,393,spotted,medium,Sit modi tempora aliquam.
+394,Summer,40,394,white,long,Amet dolore quiquia labore labore ut non voluptatem.
+395,Abbie,40,395,brown,short,Aliquam numquam aliquam dolorem eius aliquam.
+396,Hercules,40,396,brown,short,Ipsum amet amet ut dolorem neque.
+397,Ivory,40,397,brown,medium,Quiquia sit adipisci amet.
+398,Georgia,40,398,white,short,Ipsum modi adipisci magnam consectetur consectetur eius amet.
+399,Frosty,40,399,brown,medium,Est dolore numquam dolore amet amet.
+400,Bones,40,400,orange,short,Quisquam sit dolor consectetur.
+401,Midnight,41,401,orange,medium,Quiquia aliquam est modi etincidunt sed quiquia.
+402,Dutches,41,402,spotted,short,Dolorem non eius dolore quisquam aliquam dolor.
+403,Foxy,41,403,black,short,Ipsum adipisci est quisquam quiquia quaerat quiquia voluptatem.
+404,Amigo,41,404,white,long,Voluptatem ut numquam quiquia dolore ut amet ipsum.
+405,Girl,41,405,spotted,short,Ipsum dolor est consectetur non.
+406,Nathan,41,406,black,medium,Labore est quiquia ut quiquia voluptatem aliquam magnam.
+407,Magic,41,407,spotted,short,Ut sed aliquam dolorem etincidunt adipisci quiquia.
+408,Dottie,41,408,brown,long,Numquam labore amet eius dolore non dolor tempora.
+409,Quincy,41,409,brown,short,Quisquam porro quaerat sed.
+410,Rocko,41,410,white,medium,Tempora dolor quiquia sed quaerat velit quaerat etincidunt.
+411,May,42,411,spotted,medium,Consectetur ut est ut magnam porro etincidunt etincidunt.
+412,Gavin,42,412,black,long,Consectetur sit est tempora sed.
+413,Nugget,42,413,orange,medium,Porro modi eius porro non non sit.
+414,Jolie,42,414,black,long,Numquam sed modi quisquam velit est est ut.
+415,Opie,42,415,spotted,medium,Amet numquam aliquam dolore.
+416,Dusty,42,416,white,short,Non voluptatem neque ipsum.
+417,Bart,42,417,black,long,Numquam velit velit eius dolore est est.
+418,Abel,42,418,spotted,medium,Quiquia non ut consectetur tempora velit dolore tempora.
+419,Wayne,42,419,brown,long,Tempora ut non est.
+420,Cutie,42,420,white,medium,Quaerat eius sit labore dolorem quiquia velit adipisci.
+421,Bogey,43,421,orange,medium,Dolor eius est sit est quaerat aliquam.
+422,Gringo,43,422,brown,medium,Non quisquam modi etincidunt adipisci porro amet.
+423,Dexter,43,423,orange,medium,Eius porro etincidunt eius quisquam.
+424,Rufus,43,424,black,medium,Etincidunt dolorem sed quisquam velit quaerat quisquam.
+425,Itsy-bitsy,43,425,brown,medium,Eius ipsum quisquam amet consectetur.
+426,Belle,43,426,white,long,Consectetur dolor labore eius quaerat.
+427,Sky,43,427,spotted,short,Amet amet magnam adipisci sed quiquia.
+428,Abigail,43,428,orange,long,Magnam sed neque non.
+429,Brittany,43,429,spotted,long,Sed aliquam ipsum modi quisquam consectetur.
+430,Gunner,43,430,brown,long,Est dolor ut quaerat adipisci.
+431,Brodie,44,431,brown,long,Quiquia dolore sit dolore tempora.
+432,Mandy,44,432,black,medium,Numquam tempora est quisquam.
+433,Koda,44,433,spotted,short,Tempora aliquam consectetur etincidunt ipsum.
+434,Kiwi,44,434,spotted,long,Sit quisquam dolorem quisquam modi.
+435,Axle,44,435,spotted,short,Amet adipisci non velit non.
+436,Admiral,44,436,orange,medium,Magnam dolorem velit modi quiquia.
+437,Honey,44,437,black,short,Est eius dolore dolorem.
+438,Beanie,44,438,black,short,Voluptatem eius modi magnam voluptatem.
+439,Gunther,44,439,white,medium,Eius dolor eius sed consectetur.
+440,Kato,44,440,spotted,short,Numquam dolorem velit quiquia quisquam consectetur est ipsum.
+441,Boss,45,441,white,medium,Quisquam quiquia amet velit aliquam.
+442,Ivy,45,442,spotted,short,Quiquia dolorem est est.
+443,Frankie,45,443,orange,short,Amet adipisci non etincidunt non.
+444,Ziggy,45,444,white,short,Tempora est voluptatem aliquam eius sed quaerat modi.
+445,Gretel,45,445,white,long,Magnam velit voluptatem labore numquam amet.
+446,Stink,45,446,orange,medium,Aliquam dolore dolore sed quiquia quaerat adipisci.
+447,Angel,45,447,brown,long,Dolor ipsum dolorem velit adipisci est.
+448,Fiona,45,448,orange,medium,Tempora quisquam dolorem sed est dolore adipisci aliquam.
+449,Libby,45,449,black,medium,Porro non adipisci est.
+450,Doc,45,450,spotted,long,Quaerat velit quisquam quiquia amet amet quisquam.
+451,Kiwi,46,451,brown,long,Sit ipsum etincidunt quiquia.
+452,Norton,46,452,white,medium,Quiquia magnam magnam porro non sed numquam quisquam.
+453,Hanna,46,453,white,medium,Numquam sed neque labore adipisci.
+454,Nestle,46,454,orange,medium,Velit ipsum quaerat ut modi dolor.
+455,Titus,46,455,black,long,Neque non etincidunt velit.
+456,Moocher,46,456,black,long,Quaerat quisquam ut porro dolore voluptatem sed.
+457,Foxy,46,457,white,medium,Modi tempora dolor dolor sit consectetur sed consectetur.
+458,Rollie,46,458,spotted,medium,Consectetur dolore voluptatem voluptatem modi.
+459,Jewel,46,459,spotted,short,Dolor est consectetur modi est velit.
+460,Rollie,46,460,orange,medium,Eius non etincidunt sit tempora.
+461,Yeller,47,461,orange,long,Magnam sed neque consectetur eius sed.
+462,Axle,47,462,brown,long,Ut ipsum quiquia porro numquam modi.
+463,Jaguar,47,463,orange,short,Dolorem eius modi quiquia dolor adipisci.
+464,Tito,47,464,brown,long,Aliquam adipisci neque magnam.
+465,Axel,47,465,orange,short,Velit quiquia ipsum etincidunt.
+466,Sumo,47,466,spotted,medium,Consectetur magnam velit neque sed tempora magnam labore.
+467,Barkley,47,467,white,short,Ipsum magnam dolor numquam sed porro.
+468,Titus,47,468,spotted,short,Velit non consectetur sit dolor tempora magnam est.
+469,Abbie,47,469,spotted,long,Adipisci porro aliquam sit consectetur est.
+470,Jolie,47,470,black,short,Ipsum sed etincidunt adipisci aliquam.
+471,Pokey,48,471,spotted,short,Tempora ut dolore tempora sed sed sit dolore.
+472,Nikki,48,472,white,medium,Sit dolorem dolor ipsum.
+473,Lightning,48,473,spotted,long,Tempora quiquia voluptatem dolore.
+474,Wilson,48,474,brown,medium,Consectetur eius ut eius non.
+475,Layla,48,475,black,medium,Eius aliquam eius adipisci.
+476,Sammy,48,476,white,medium,Modi ut dolore quiquia sed amet tempora dolore.
+477,Teddy-bear,48,477,spotted,short,Quaerat amet dolorem tempora dolorem.
+478,Boo-boo,48,478,brown,medium,Quisquam tempora est etincidunt.
+479,Jags,48,479,white,short,Eius numquam adipisci quaerat porro.
+480,Duke,48,480,white,medium,Quaerat voluptatem ipsum numquam.
+481,Peanut,49,481,black,medium,Voluptatem eius est etincidunt porro neque magnam eius.
+482,Sailor,49,482,orange,medium,Sed dolorem est amet.
+483,Paddington,49,483,brown,short,Ut aliquam non etincidunt consectetur.
+484,Lucifer,49,484,orange,short,Quisquam modi labore modi amet non porro.
+485,Porky,49,485,brown,long,Etincidunt quiquia sit velit.
+486,Bodie,49,486,spotted,long,Etincidunt quisquam est labore quiquia numquam sed.
+487,Clifford,49,487,spotted,short,Neque consectetur sed quiquia ipsum.
+488,Sox,49,488,orange,long,Velit est neque modi consectetur non.
+489,Buttons,49,489,orange,long,Velit magnam magnam quaerat eius non.
+490,Gracie,49,490,white,short,Voluptatem porro neque ut quaerat.
+491,Bunky,50,491,black,long,Labore neque tempora consectetur quiquia numquam.
+492,Parker,50,492,brown,long,Consectetur dolore consectetur porro etincidunt.
+493,Obie,50,493,spotted,medium,Quiquia voluptatem sit consectetur consectetur.
+494,Buttons,50,494,spotted,long,Non adipisci quaerat ut.
+495,Buster-brown,50,495,brown,long,Voluptatem numquam numquam velit porro ipsum neque.
+496,Frodo,50,496,white,medium,Neque sit est consectetur aliquam modi.
+497,Argus,50,497,white,short,Quiquia adipisci ipsum dolor quisquam non.
+498,Butchy,50,498,white,short,Dolor sit tempora est.
+499,Wally,50,499,brown,short,Sed aliquam ut velit quisquam.
+500,Garfield,50,500,orange,long,Magnam non neque dolor neque neque dolorem.
+501,Chic,51,501,orange,medium,Sit porro etincidunt magnam consectetur.
+502,Clifford,51,502,black,long,Modi consectetur quaerat modi amet.
+503,Angel,51,503,brown,short,Labore modi voluptatem voluptatem dolore sed dolor.
+504,Missie,51,504,orange,long,Modi adipisci neque ipsum dolore voluptatem.
+505,Boo,51,505,black,medium,Sit modi velit amet.
+506,Itsy-bitsy,51,506,white,medium,Non modi adipisci dolorem aliquam.
+507,Tex,51,507,brown,short,Dolor non porro numquam est ut labore sit.
+508,Skinny,51,508,white,short,Quaerat quaerat ut velit labore amet labore.
+509,Starr,51,509,orange,medium,Est voluptatem labore sit.
+510,Kiwi,51,510,orange,short,Porro quiquia quaerat tempora.
+511,Chief,52,511,orange,short,Velit velit ut porro quiquia.
+512,Chippy,52,512,orange,short,Magnam ut amet dolore adipisci dolore labore.
+513,Emma,52,513,black,long,Sit aliquam sed sed sit aliquam adipisci.
+514,Spookey,52,514,spotted,long,Modi neque aliquam etincidunt quisquam labore modi numquam.
+515,Elmo,52,515,white,long,Non ipsum quiquia magnam aliquam.
+516,Stuart,52,516,spotted,short,Quaerat amet neque tempora.
+517,Flakey,52,517,spotted,medium,Quisquam labore aliquam adipisci neque etincidunt.
+518,Cutie-pie,52,518,brown,medium,Voluptatem ipsum sit porro consectetur.
+519,Turner,52,519,white,medium,Quaerat ut tempora quisquam.
+520,Bobo,52,520,black,short,Quaerat quaerat sed velit.
+521,Nibby,53,521,spotted,short,Sed dolorem non ipsum voluptatem modi.
+522,Skip,53,522,white,short,Adipisci est sit magnam.
+523,Doc,53,523,orange,long,Labore labore voluptatem non quaerat sed sit tempora.
+524,Cookie,53,524,white,long,Non est porro dolore sed porro adipisci.
+525,Bingo,53,525,orange,medium,Numquam aliquam velit dolorem non dolore est.
+526,Pretty-girl,53,526,spotted,long,Etincidunt adipisci dolor aliquam eius labore numquam.
+527,Thelma,53,527,orange,long,Modi dolore voluptatem dolor sit dolor numquam tempora.
+528,Genie,53,528,white,long,Non tempora non aliquam porro sit velit.
+529,Louie,53,529,white,medium,Ipsum sit amet porro.
+530,Godiva,53,530,white,long,Amet adipisci porro magnam quisquam.
+531,Taffy,54,531,brown,short,Sed quiquia quisquam modi velit sit non magnam.
+532,Wiz,54,532,black,medium,Labore adipisci ut neque est sit aliquam quiquia.
+533,Moocher,54,533,brown,medium,Eius neque amet modi.
+534,Macho,54,534,spotted,long,Non consectetur dolore voluptatem etincidunt.
+535,Bubba,54,535,white,long,Adipisci dolor numquam magnam quiquia dolorem.
+536,Homer,54,536,white,medium,Quisquam neque sit velit.
+537,Duffy,54,537,brown,medium,Velit quiquia consectetur dolorem est ut dolor quisquam.
+538,Edsel,54,538,white,medium,Modi amet dolor voluptatem porro aliquam.
+539,Brownie,54,539,orange,long,Neque ut quiquia eius quaerat non numquam non.
+540,Brit,54,540,black,long,Tempora eius sed dolore labore amet consectetur.
+541,Oliver,55,541,white,short,Eius quisquam aliquam sit ut consectetur tempora porro.
+542,Phoebe,55,542,spotted,short,Modi adipisci eius quisquam numquam porro quisquam.
+543,Skittles,55,543,spotted,long,Dolore sed etincidunt dolore labore.
+544,Sasha,55,544,orange,long,Labore sed non consectetur dolor ipsum.
+545,Edgar,55,545,spotted,long,Neque etincidunt velit consectetur dolor dolor non.
+546,Kosmo,55,546,brown,medium,Dolore adipisci ut etincidunt.
+547,Missie,55,547,white,long,Porro tempora est quaerat modi quisquam numquam.
+548,Aries,55,548,spotted,long,Aliquam magnam tempora velit tempora.
+549,Speedo,55,549,brown,long,Consectetur quisquam adipisci ut modi.
+550,Tess,55,550,spotted,short,Numquam magnam neque aliquam numquam.
+551,Ivory,56,551,orange,short,Adipisci sit amet quaerat est velit labore.
+552,Doc,56,552,orange,medium,Quisquam dolore adipisci dolore ut consectetur est est.
+553,Kira,56,553,brown,medium,Aliquam modi ipsum non adipisci quiquia sit quisquam.
+554,Jessie,56,554,black,short,Neque tempora est aliquam modi quaerat.
+555,Bibbles,56,555,brown,medium,Ut quisquam eius adipisci.
+556,Niko,56,556,orange,long,Sit dolore quiquia magnam.
+557,Savannah,56,557,orange,short,Quiquia neque etincidunt modi modi labore est.
+558,Henry,56,558,black,long,Dolorem modi dolorem adipisci amet.
+559,Jagger,56,559,brown,long,Ipsum ut eius non dolorem.
+560,Sage,56,560,white,long,Quisquam est quaerat neque.
+561,Buzzy,57,561,orange,short,Dolor quiquia neque ipsum adipisci tempora voluptatem.
+562,Fritz,57,562,spotted,long,Non numquam adipisci amet sed dolore adipisci.
+563,Tito,57,563,orange,medium,Tempora ipsum dolor velit quisquam modi modi.
+564,Jingles,57,564,white,medium,Porro tempora labore labore amet modi tempora.
+565,Reilly,57,565,black,long,Porro quaerat quisquam quiquia eius ipsum amet.
+566,Cotton,57,566,white,short,Consectetur ut quiquia modi dolore numquam.
+567,Buster,57,567,brown,short,Eius sit non aliquam sed ipsum.
+568,Bridgette,57,568,brown,short,Velit dolor numquam dolore non modi aliquam dolore.
+569,Charisma,57,569,black,short,Sit est numquam numquam eius sed.
+570,Lucky,57,570,brown,short,Velit amet ut dolore consectetur aliquam quisquam.
+571,Pooh,58,571,white,medium,Etincidunt dolorem aliquam ut dolor ipsum.
+572,Scooby-doo,58,572,spotted,long,Modi neque quaerat aliquam quiquia.
+573,Whispy,58,573,orange,short,Ipsum quisquam sit dolorem labore.
+574,Dottie,58,574,spotted,medium,Eius velit consectetur dolore voluptatem labore.
+575,Chanel,58,575,white,short,Ut dolorem porro amet neque numquam ipsum magnam.
+576,Mcduff,58,576,orange,medium,Quiquia dolor modi sit labore magnam.
+577,Maverick,58,577,spotted,short,Ut dolorem velit amet consectetur labore.
+578,Rocky,58,578,orange,short,Neque dolor tempora quiquia est sit modi.
+579,Digger,58,579,spotted,long,Dolorem eius quisquam dolor etincidunt.
+580,Rosebud,58,580,white,long,Tempora velit labore labore.
+581,Mitzi,59,581,black,medium,Voluptatem quaerat labore numquam dolorem.
+582,Dobie,59,582,spotted,short,Quaerat quisquam est aliquam dolorem sed.
+583,Samson,59,583,black,short,Sed sit etincidunt magnam sit.
+584,Olive,59,584,brown,short,Modi eius quaerat neque magnam adipisci.
+585,Monkey,59,585,white,short,Consectetur sit est quiquia.
+586,Buckeye,59,586,orange,long,Quaerat eius quisquam dolor modi quisquam.
+587,Erin,59,587,spotted,short,Labore labore dolorem dolorem voluptatem ipsum dolor.
+588,Cleopatra,59,588,brown,long,Dolore velit neque dolor.
+589,Waddles,59,589,orange,medium,Quaerat consectetur voluptatem adipisci velit dolor.
+590,Oliver,59,590,brown,short,Dolorem tempora voluptatem neque est ut sit magnam.
+591,Beaux,60,591,black,medium,Consectetur neque ut ipsum dolor velit dolore.
+592,Barley,60,592,brown,medium,Voluptatem sed quaerat amet consectetur voluptatem.
+593,Nitro,60,593,brown,long,Voluptatem ipsum porro etincidunt amet.
+594,Klaus,60,594,spotted,short,Voluptatem dolorem est sed magnam magnam neque.
+595,Dudley,60,595,orange,long,Dolore modi consectetur modi consectetur adipisci non.
+596,Casey,60,596,black,short,Labore modi consectetur amet quisquam.
+597,Barker,60,597,orange,medium,Modi velit quiquia aliquam.
+598,Bumper,60,598,brown,short,Quisquam numquam dolore eius sed dolore dolorem.
+599,Itsy,60,599,spotted,long,Eius quaerat dolore dolor.
+600,JJ,60,600,black,medium,Aliquam dolor magnam dolorem quisquam quaerat.
+601,Aldo,61,601,black,medium,Neque non neque etincidunt.
+602,Beaux,61,602,black,long,Numquam est eius sed magnam adipisci amet adipisci.
+603,Pookie,61,603,brown,long,Dolor labore quisquam dolorem ut labore.
+604,Winston,61,604,spotted,long,Aliquam tempora adipisci aliquam magnam dolore.
+605,Summer,61,605,black,medium,Consectetur ut dolorem neque consectetur.
+606,Skip,61,606,brown,medium,Est voluptatem porro dolorem.
+607,Napoleon,61,607,orange,medium,Dolore modi sit dolore.
+608,Austin,61,608,black,medium,Voluptatem velit dolorem dolor.
+609,Sunday,61,609,orange,long,Aliquam ipsum voluptatem dolore adipisci.
+610,Pockets,61,610,spotted,long,Sed ut modi ipsum labore sed dolorem.
+611,Crystal,62,611,brown,medium,Etincidunt dolore quaerat dolorem non ipsum.
+612,Mittens,62,612,spotted,medium,Ut dolor dolore non sit.
+613,Tiffany,62,613,brown,medium,Consectetur dolor porro quaerat.
+614,Vegas,62,614,brown,short,Dolore voluptatem quaerat quisquam dolore.
+615,Dallas,62,615,brown,medium,Dolorem magnam voluptatem ipsum aliquam est est.
+616,Chocolate,62,616,brown,long,Est dolorem consectetur est etincidunt.
+617,Cisco,62,617,black,medium,Ipsum dolor sit neque quisquam sed aliquam.
+618,Jetta,62,618,orange,medium,Ut ipsum numquam consectetur quiquia dolor amet dolorem.
+619,Charlie Brown,62,619,spotted,medium,Aliquam velit quisquam etincidunt etincidunt magnam voluptatem magnam.
+620,Bootie,62,620,black,long,Aliquam quiquia ut quisquam numquam etincidunt etincidunt.
+621,Pretty,63,621,black,short,Modi ipsum consectetur magnam non ut magnam.
+622,Shady,63,622,black,short,Quiquia tempora sed aliquam quaerat non voluptatem amet.
+623,Mary,63,623,brown,short,Porro quaerat consectetur quaerat quiquia.
+624,Darcy,63,624,white,long,Est labore aliquam dolore ut quiquia modi voluptatem.
+625,Maxwell,63,625,spotted,short,Numquam est quiquia adipisci eius amet consectetur adipisci.
+626,Tiki,63,626,black,long,Ut dolore voluptatem ut.
+627,Meadow,63,627,brown,medium,Neque aliquam sit aliquam quaerat.
+628,Red,63,628,orange,medium,Porro velit etincidunt tempora dolore quaerat.
+629,Chloe,63,629,spotted,long,Sit adipisci aliquam non dolor sed.
+630,Ringo,63,630,white,medium,Neque quiquia magnam numquam porro magnam consectetur aliquam.
+631,Pepe,64,631,brown,short,Neque porro labore est adipisci quaerat sed velit.
+632,Jester,64,632,orange,long,Numquam tempora sed eius ut labore eius est.
+633,Atlas,64,633,black,long,Amet dolorem magnam neque.
+634,Roland,64,634,black,short,Adipisci est neque adipisci etincidunt.
+635,Jetta,64,635,orange,long,Neque quisquam porro quisquam ipsum.
+636,Jordan,64,636,orange,medium,Labore est tempora dolore neque quaerat.
+637,Montgomery,64,637,black,short,Quisquam dolor eius dolorem.
+638,Stanley,64,638,white,long,Amet non numquam amet voluptatem.
+639,Baron,64,639,white,short,Modi tempora aliquam voluptatem tempora quiquia aliquam.
+640,Tinker,64,640,white,short,Dolor neque est quaerat velit numquam.
+641,Thor,65,641,white,short,Dolore numquam consectetur voluptatem sed velit.
+642,Popcorn,65,642,spotted,medium,Modi dolorem voluptatem ipsum modi labore.
+643,Charles,65,643,brown,medium,Quiquia tempora dolorem labore consectetur.
+644,Mia,65,644,orange,short,Velit dolorem voluptatem numquam modi labore ipsum dolor.
+645,Lexus,65,645,white,long,Adipisci quisquam etincidunt quisquam neque eius.
+646,Blue,65,646,spotted,medium,Dolor labore voluptatem consectetur aliquam dolorem ipsum.
+647,Godiva,65,647,orange,medium,Quaerat dolore magnam tempora neque ipsum dolor.
+648,Joy,65,648,white,long,Labore dolore consectetur dolorem labore.
+649,Reilly,65,649,brown,short,Quisquam consectetur sit voluptatem est sit.
+650,Bernie,65,650,spotted,short,Sed amet est quisquam ipsum numquam eius.
+651,Montgomery,66,651,brown,long,Numquam labore aliquam numquam magnam adipisci dolore.
+652,Angus,66,652,black,medium,Neque ut ipsum adipisci eius etincidunt.
+653,Moochie,66,653,white,short,Magnam numquam eius velit voluptatem voluptatem dolorem numquam.
+654,Klaus,66,654,white,short,Etincidunt consectetur sit labore etincidunt.
+655,Duchess,66,655,white,long,Velit non voluptatem aliquam dolore magnam.
+656,Blaze,66,656,brown,short,Quisquam consectetur dolorem aliquam voluptatem ipsum.
+657,Freckles,66,657,spotted,short,Est est ipsum numquam etincidunt sed dolor.
+658,Pooh-bear,66,658,spotted,short,Consectetur quaerat tempora sed.
+659,Beans,66,659,orange,medium,Quisquam est ut dolorem velit.
+660,Brindle,66,660,orange,long,Quisquam sed dolor etincidunt etincidunt.
+661,Dave,67,661,black,medium,Est sit consectetur consectetur dolorem numquam labore dolor.
+662,Faith,67,662,brown,short,Labore dolore eius est aliquam modi.
+663,Chester,67,663,brown,short,Labore porro numquam tempora dolorem velit dolorem.
+664,Bongo,67,664,black,long,Dolore porro quisquam dolor eius dolore neque.
+665,Corky,67,665,spotted,short,Ut adipisci eius dolorem dolorem dolor sed.
+666,Teddy-bear,67,666,white,short,Velit consectetur consectetur adipisci quiquia tempora non est.
+667,Bob,67,667,orange,short,Dolor voluptatem modi tempora numquam est.
+668,Thunder,67,668,white,medium,Porro amet porro non.
+669,Nugget,67,669,spotted,short,Ut tempora velit non neque.
+670,Hooch,67,670,spotted,long,Magnam amet aliquam magnam dolore amet labore porro.
+671,Starr,68,671,orange,medium,Neque ut velit est velit.
+672,Sandy,68,672,spotted,medium,Sed etincidunt porro sed dolorem modi.
+673,Ember,68,673,orange,short,Magnam ut voluptatem voluptatem eius etincidunt.
+674,Jolie,68,674,orange,short,Aliquam quiquia consectetur voluptatem.
+675,Sugar,68,675,white,medium,Voluptatem consectetur adipisci quiquia porro.
+676,Plato,68,676,spotted,medium,Neque ut magnam quisquam eius ut.
+677,Twinkle,68,677,spotted,short,Magnam adipisci sed tempora eius tempora quisquam adipisci.
+678,Yeller,68,678,black,short,Amet dolore dolorem magnam ut etincidunt.
+679,Benson,68,679,spotted,medium,Magnam consectetur magnam dolorem.
+680,Sailor,68,680,brown,medium,Etincidunt velit dolorem neque labore.
+681,Mitzy,69,681,brown,short,Tempora non labore quaerat ut consectetur velit.
+682,Kerry,69,682,spotted,short,Est dolorem dolorem tempora sit.
+683,Nero,69,683,brown,short,Quiquia quisquam etincidunt consectetur adipisci adipisci.
+684,Champ,69,684,black,medium,Amet porro numquam non.
+685,Buzzy,69,685,spotted,short,Dolorem aliquam amet quiquia labore aliquam numquam porro.
+686,Snowball,69,686,white,short,Quiquia modi sit quisquam quaerat ut tempora.
+687,Darcy,69,687,brown,medium,Velit neque tempora dolore velit sit dolore quaerat.
+688,Kali,69,688,brown,long,Modi dolore sit tempora sit.
+689,Otto,69,689,spotted,long,Magnam velit dolorem voluptatem etincidunt labore dolor dolorem.
+690,Tinker-bell,69,690,brown,long,Quisquam magnam modi amet tempora quaerat sit non.
+691,Pooky,70,691,orange,short,Quisquam consectetur sed velit aliquam neque quiquia sit.
+692,Mulligan,70,692,brown,short,Dolorem consectetur adipisci neque consectetur eius consectetur.
+693,Pooh-bear,70,693,white,long,Consectetur ut quaerat voluptatem sit.
+694,Miller,70,694,orange,short,Numquam sed quiquia dolorem.
+695,Abel,70,695,spotted,medium,Adipisci quisquam non non eius voluptatem dolorem.
+696,Brook,70,696,brown,short,Numquam dolor dolor adipisci magnam sit.
+697,Miller,70,697,spotted,medium,Dolorem quisquam ut dolorem quaerat consectetur.
+698,Vito,70,698,brown,long,Amet etincidunt consectetur consectetur velit non.
+699,Mcduff,70,699,brown,short,Magnam modi neque quiquia est consectetur sed velit.
+700,Niko,70,700,white,long,Numquam modi dolorem est consectetur neque.
+701,Bobo,71,701,white,medium,Sit dolor quisquam tempora quiquia adipisci sed amet.
+702,Susie,71,702,black,medium,Numquam voluptatem consectetur adipisci ipsum.
+703,Mitzy,71,703,brown,medium,Adipisci amet labore labore magnam porro.
+704,Cubby,71,704,white,medium,Dolore est consectetur sed amet est.
+705,Tango,71,705,white,short,Voluptatem porro eius neque dolore etincidunt ut.
+706,Comet,71,706,spotted,long,Aliquam etincidunt ipsum velit labore tempora dolor.
+707,Barbie,71,707,spotted,long,Eius adipisci eius ut sed dolor voluptatem.
+708,Darby,71,708,black,medium,Porro quaerat modi ut voluptatem dolor non sit.
+709,Toni,71,709,white,long,Ut modi neque quiquia etincidunt amet tempora consectetur.
+710,Zena,71,710,orange,medium,Est quiquia eius dolor quiquia magnam porro magnam.
+711,Buffy,72,711,brown,short,Ipsum quisquam quaerat tempora non voluptatem.
+712,Sara,72,712,black,medium,Eius consectetur quisquam dolore sit dolore ipsum non.
+713,Teddy-bear,72,713,black,long,Non velit porro neque eius.
+714,Gigi,72,714,spotted,medium,Quaerat adipisci quisquam non aliquam numquam ipsum dolor.
+715,Dolly,72,715,spotted,short,Labore neque velit eius sed est tempora.
+716,Goober,72,716,white,short,Est magnam dolore consectetur dolorem dolorem tempora.
+717,Patty,72,717,black,short,Neque dolor sit modi.
+718,Buddie,72,718,brown,medium,Sed consectetur labore sit porro numquam eius.
+719,Bunky,72,719,black,long,Quaerat tempora sit non magnam.
+720,Bones,72,720,black,medium,Labore non adipisci quiquia magnam porro neque aliquam.
+721,Ruthie,73,721,white,short,Tempora quaerat modi adipisci amet labore.
+722,Bradley,73,722,orange,short,Modi magnam numquam dolore adipisci.
+723,Sundance,73,723,white,long,Dolorem dolorem neque ipsum amet.
+724,Mckenzie,73,724,black,short,Dolor tempora est neque ipsum.
+725,Cleo,73,725,black,short,Dolor consectetur dolore eius.
+726,Doggon’,73,726,spotted,long,Dolor est labore porro tempora.
+727,Dandy,73,727,white,medium,Quiquia amet magnam porro magnam porro labore.
+728,Wrinkles,73,728,orange,long,Quisquam quiquia sit voluptatem numquam.
+729,Violet,73,729,brown,long,Est quiquia adipisci etincidunt est etincidunt ut est.
+730,Dutchess,73,730,spotted,medium,Amet ut labore dolor est etincidunt.
+731,Barnaby,74,731,brown,medium,Non dolorem consectetur porro aliquam.
+732,Bumper,74,732,black,short,Consectetur sit adipisci quaerat neque neque neque sed.
+733,Trapper,74,733,orange,medium,Tempora neque ut quaerat etincidunt modi aliquam velit.
+734,Augie,74,734,spotted,medium,Adipisci aliquam quiquia consectetur modi dolorem.
+735,Tara,74,735,brown,long,Magnam consectetur adipisci est adipisci consectetur adipisci quisquam.
+736,Humphrey,74,736,white,long,Dolore numquam est ut.
+737,Schultz,74,737,orange,long,Voluptatem consectetur adipisci est sit adipisci voluptatem.
+738,Butterscotch,74,738,spotted,medium,Ut consectetur dolore amet dolor.
+739,KC,74,739,black,short,Magnam tempora est numquam magnam.
+740,Shadow,74,740,orange,medium,Quiquia eius porro consectetur neque modi consectetur.
+741,Angel,75,741,white,medium,Sed aliquam quiquia dolor tempora.
+742,Sammy,75,742,white,medium,Neque tempora aliquam magnam modi eius.
+743,Puppy,75,743,white,long,Quisquam adipisci dolorem dolore ipsum voluptatem.
+744,Billy,75,744,orange,short,Velit numquam tempora est ut non.
+745,Sampson,75,745,black,short,Sit quisquam dolorem dolore tempora quisquam modi porro.
+746,Ralph,75,746,spotted,short,Adipisci amet ut tempora.
+747,Killian,75,747,orange,medium,Quisquam consectetur amet dolore dolorem amet dolorem quiquia.
+748,Sugar,75,748,spotted,short,Ut voluptatem ut aliquam eius sit voluptatem neque.
+749,Butterball,75,749,brown,medium,Amet aliquam porro aliquam non non.
+750,Wilson,75,750,orange,medium,Tempora ipsum magnam sit.
+751,Greenie,76,751,orange,short,Eius ut dolor neque adipisci aliquam.
+752,Muffy,76,752,orange,long,Non tempora amet tempora magnam etincidunt quisquam tempora.
+753,Deacon,76,753,black,short,Est dolorem sed amet modi ipsum.
+754,Nosey,76,754,brown,long,Eius quiquia numquam dolorem tempora.
+755,Buttons,76,755,spotted,long,Dolore modi etincidunt quisquam eius voluptatem sed dolor.
+756,Bosley,76,756,black,medium,Dolore etincidunt magnam quisquam eius amet quisquam.
+757,Thyme,76,757,spotted,medium,Voluptatem sit ut adipisci adipisci non sit.
+758,Mandy,76,758,spotted,short,Sed non porro quiquia.
+759,Valinto,76,759,brown,long,Amet aliquam tempora labore sed etincidunt sit dolor.
+760,Boomer,76,760,black,short,Labore ipsum aliquam velit labore etincidunt magnam.
+761,Shelly,77,761,orange,short,Adipisci voluptatem adipisci modi.
+762,Tabetha,77,762,brown,medium,Velit sed labore neque labore aliquam voluptatem numquam.
+763,Jordan,77,763,black,short,Dolorem neque ipsum adipisci aliquam.
+764,Pandora,77,764,orange,long,Ipsum labore non aliquam numquam tempora.
+765,Mcduff,77,765,white,short,Porro quiquia ut neque voluptatem.
+766,Sabine,77,766,white,long,Est quiquia sed eius neque quiquia adipisci.
+767,Sky,77,767,brown,long,Sit magnam dolor modi.
+768,Marble,77,768,spotted,medium,Non magnam sit quisquam sed.
+769,Pasha,77,769,white,short,Velit velit voluptatem ut non est dolorem.
+770,Cooper,77,770,white,medium,Quisquam adipisci voluptatem velit consectetur sit.
+771,Boris,78,771,orange,medium,Tempora sed ipsum sit.
+772,Tilly,78,772,white,medium,Amet numquam numquam eius ut quiquia labore.
+773,Beaux,78,773,black,medium,Amet labore aliquam labore ipsum.
+774,Morgan,78,774,black,medium,Etincidunt quiquia magnam quiquia numquam etincidunt quiquia quaerat.
+775,Jetta,78,775,brown,medium,Dolore dolorem porro neque tempora sit ut eius.
+776,Moochie,78,776,black,medium,Dolore quisquam modi consectetur adipisci neque.
+777,Rambo,78,777,black,medium,Adipisci numquam tempora voluptatem adipisci magnam aliquam.
+778,Molly,78,778,brown,short,Dolor amet quaerat aliquam dolore est.
+779,Fritz,78,779,white,long,Adipisci est quaerat consectetur voluptatem.
+780,Sox,78,780,orange,short,Est quiquia neque aliquam.
+781,Velvet,79,781,white,long,Labore tempora ut quiquia non.
+782,Captain,79,782,spotted,short,Dolor non labore labore.
+783,Baby-doll,79,783,black,short,Sed quisquam non voluptatem dolorem neque amet.
+784,Sparky,79,784,black,long,Quaerat quisquam magnam consectetur aliquam.
+785,Hudson,79,785,orange,short,Etincidunt etincidunt adipisci magnam.
+786,Karma,79,786,orange,short,Magnam voluptatem velit consectetur voluptatem quisquam velit.
+787,Fido,79,787,white,medium,Labore adipisci sit labore voluptatem non.
+788,Trigger,79,788,orange,short,Dolore quaerat dolore numquam.
+789,Pooh,79,789,spotted,medium,Quiquia labore numquam voluptatem.
+790,Ralph,79,790,brown,medium,Tempora modi sed porro eius quisquam.
+791,Jack,80,791,brown,medium,Amet amet ipsum aliquam.
+792,Rexy,80,792,white,short,Magnam eius quiquia neque.
+793,Crystal,80,793,spotted,long,Porro sit quiquia quaerat quiquia labore modi.
+794,Winston,80,794,black,long,Quaerat est voluptatem dolorem.
+795,Ashes,80,795,white,medium,Etincidunt quaerat labore voluptatem voluptatem dolor.
+796,Shady,80,796,orange,medium,Voluptatem porro sit sit neque adipisci.
+797,Kiki,80,797,spotted,long,Quisquam ipsum ipsum eius.
+798,Bishop,80,798,spotted,short,Amet tempora dolor eius adipisci voluptatem.
+799,Duffy,80,799,orange,long,Eius non non modi.
+800,Spike,80,800,black,medium,Dolor neque dolore etincidunt quisquam numquam ipsum amet.
+801,Buckeye,81,801,brown,medium,Voluptatem etincidunt ipsum dolore sit eius.
+802,Pookie,81,802,black,long,Modi labore dolore sit est.
+803,Jenny,81,803,orange,long,Voluptatem labore est non magnam.
+804,Nemo,81,804,spotted,short,Magnam tempora sed voluptatem quaerat.
+805,Buster-brown,81,805,brown,short,Voluptatem neque adipisci dolore dolor quisquam dolor.
+806,Chauncey,81,806,brown,short,Non magnam quisquam neque.
+807,Argus,81,807,orange,short,Amet dolorem quaerat numquam adipisci modi neque.
+808,Moose,81,808,white,short,Dolorem magnam quiquia sit quisquam sit ipsum voluptatem.
+809,Aussie,81,809,spotted,long,Est porro quiquia modi modi sit.
+810,Tess,81,810,orange,long,Ipsum numquam dolor eius tempora dolore.
+811,Snowflake,82,811,black,long,Quisquam labore eius voluptatem tempora neque eius tempora.
+812,Panther,82,812,spotted,long,Quisquam amet modi quaerat.
+813,Mac,82,813,spotted,short,Aliquam modi quaerat aliquam quisquam non adipisci labore.
+814,Penny,82,814,spotted,short,Est quaerat labore est.
+815,Bodie,82,815,black,short,Ipsum tempora voluptatem labore consectetur.
+816,Barbie,82,816,brown,long,Ipsum non velit dolor dolore quaerat.
+817,Chevy,82,817,spotted,short,Labore etincidunt sit consectetur quaerat aliquam modi ipsum.
+818,Girl,82,818,white,medium,Modi quaerat non dolor dolorem numquam etincidunt non.
+819,Pebbles,82,819,spotted,long,Adipisci quisquam dolore porro non quisquam non.
+820,Boy,82,820,orange,medium,Quiquia eius magnam adipisci.
+821,Sabine,83,821,orange,long,Dolor non amet numquam.
+822,Keesha,83,822,black,short,Aliquam dolorem dolor ut modi voluptatem.
+823,Patsy,83,823,orange,long,Ipsum labore numquam neque aliquam.
+824,Chaos,83,824,orange,medium,Quaerat numquam quisquam quisquam quaerat aliquam magnam aliquam.
+825,Velvet,83,825,orange,medium,Amet tempora neque voluptatem adipisci labore.
+826,Fresier,83,826,orange,medium,Consectetur consectetur quisquam eius quaerat consectetur modi quisquam.
+827,Happy,83,827,black,long,Etincidunt dolore numquam adipisci magnam consectetur sed.
+828,Babbles,83,828,black,short,Non voluptatem sed sit quisquam magnam.
+829,Shady,83,829,black,medium,Consectetur quiquia adipisci sit modi non est.
+830,Nosey,83,830,brown,long,Numquam neque quisquam adipisci aliquam dolorem labore magnam.
+831,Susie,84,831,black,short,Dolor etincidunt consectetur numquam numquam eius consectetur.
+832,Buster-brown,84,832,white,medium,Etincidunt quisquam non amet voluptatem sed neque.
+833,Dreamer,84,833,orange,long,Eius eius etincidunt dolore labore quiquia etincidunt eius.
+834,Daisy,84,834,white,medium,Velit labore voluptatem modi.
+835,Aires,84,835,spotted,long,Non quisquam eius dolore.
+836,Izzy,84,836,black,medium,Magnam consectetur non quisquam aliquam magnam sed.
+837,Ace,84,837,brown,short,Voluptatem numquam eius eius modi.
+838,Sawyer,84,838,black,medium,Neque eius sed dolore quisquam adipisci numquam quaerat.
+839,Isabelle,84,839,orange,short,Quaerat magnam numquam quaerat.
+840,Cleopatra,84,840,white,medium,Est velit modi amet numquam ipsum.
+841,Gilda,85,841,orange,short,Ipsum etincidunt tempora quiquia voluptatem labore.
+842,Peanuts,85,842,black,short,Dolorem consectetur dolor aliquam sed dolore sed.
+843,Jethro,85,843,brown,short,Magnam est non labore quisquam.
+844,Kid,85,844,brown,short,Neque non ut adipisci magnam dolorem sed quiquia.
+845,Allie,85,845,brown,long,Amet consectetur sit numquam numquam numquam porro.
+846,Willy,85,846,spotted,long,Adipisci neque modi dolor quisquam ut.
+847,Rosebud,85,847,brown,medium,Ut quisquam voluptatem amet porro.
+848,Nugget,85,848,orange,short,Aliquam adipisci tempora etincidunt ut.
+849,Brandi,85,849,spotted,short,Quisquam velit tempora ut amet.
+850,Piggy,85,850,brown,long,Tempora sit magnam dolor numquam.
+851,Mariah,86,851,white,medium,Neque dolor dolorem sit.
+852,Skinny,86,852,orange,short,Labore labore adipisci labore labore eius magnam ipsum.
+853,Gretel,86,853,spotted,long,Est voluptatem consectetur eius ut labore dolor.
+854,Ben,86,854,orange,short,Eius sed amet adipisci.
+855,Earl,86,855,spotted,medium,Adipisci eius amet modi sed dolorem ut etincidunt.
+856,Zena,86,856,spotted,long,Quiquia sed neque dolorem etincidunt quaerat.
+857,Ivy,86,857,spotted,medium,Quiquia dolor eius dolore neque non tempora.
+858,Darby,86,858,white,long,Voluptatem velit ipsum adipisci eius dolorem.
+859,Minnie,86,859,spotted,medium,Quisquam dolor est voluptatem aliquam quisquam.
+860,Tori,86,860,brown,long,Magnam quiquia voluptatem eius.
+861,Brie,87,861,white,short,Non quiquia dolore numquam.
+862,Chamberlain,87,862,brown,short,Porro labore aliquam consectetur eius modi.
+863,Hugh,87,863,spotted,short,Dolorem consectetur ut adipisci.
+864,Guido,87,864,white,medium,Ipsum ut consectetur quiquia tempora velit labore dolor.
+865,Kobe,87,865,brown,long,Dolor aliquam dolorem ut est aliquam magnam.
+866,Trooper,87,866,white,long,Adipisci sed voluptatem porro non etincidunt tempora.
+867,Precious,87,867,brown,short,Ut est voluptatem sed neque dolore etincidunt.
+868,Boy,87,868,black,medium,Ut labore velit neque quaerat non quiquia magnam.
+869,Puppy,87,869,brown,long,Velit labore velit velit.
+870,Hooch,87,870,spotted,short,Amet magnam non ipsum ut velit.
+871,Rollie,88,871,brown,short,Dolorem aliquam quaerat etincidunt velit dolore consectetur.
+872,Monster,88,872,black,long,Dolor ipsum consectetur magnam neque magnam dolor adipisci.
+873,Walter,88,873,black,short,Tempora dolor numquam adipisci dolor etincidunt.
+874,Tommy-boy,88,874,brown,short,Sit modi sit aliquam etincidunt.
+875,Pooch,88,875,black,medium,Porro etincidunt eius quisquam est adipisci labore.
+876,Daisey-mae,88,876,spotted,long,Magnam sit aliquam sit quaerat non consectetur.
+877,Susie-q,88,877,white,short,Consectetur dolorem sit amet adipisci.
+878,Ben,88,878,brown,short,Ut eius dolor neque non neque modi numquam.
+879,Ashley,88,879,white,long,Sit tempora sed sed consectetur non tempora numquam.
+880,Scooby,88,880,brown,long,Sit dolor quiquia labore.
+881,Whispy,89,881,black,short,Non labore numquam quisquam.
+882,Boomer,89,882,white,long,Dolorem ipsum neque porro dolorem amet.
+883,Shelly,89,883,brown,long,Numquam non dolor voluptatem quisquam.
+884,Grace,89,884,brown,short,Non velit eius quiquia ipsum etincidunt quisquam ut.
+885,Addie,89,885,orange,medium,Non quisquam est quiquia numquam sit consectetur est.
+886,Baby-doll,89,886,white,long,Dolorem dolorem ipsum est dolor ipsum quiquia amet.
+887,Cubby,89,887,orange,short,Adipisci est dolore ipsum ut magnam.
+888,Charlie,89,888,white,long,Sed ut quisquam porro modi.
+889,Sage,89,889,brown,medium,Ut voluptatem sed est.
+890,Augie,89,890,black,medium,Adipisci modi neque quisquam magnam sit sed etincidunt.
+891,Joy,90,891,brown,long,Sed porro quaerat non adipisci.
+892,Alex,90,892,orange,long,Ut sed quiquia sit ipsum.
+893,Jesse James,90,893,black,long,Dolore dolor est magnam voluptatem sed ipsum.
+894,Barclay,90,894,brown,medium,Dolore numquam quisquam ut.
+895,Monkey,90,895,white,medium,Ut sed sed etincidunt eius tempora voluptatem.
+896,Giant,90,896,white,short,Non etincidunt dolore sit non ut.
+897,Chauncey,90,897,black,medium,Adipisci modi est sed velit.
+898,Bits,90,898,white,long,Aliquam labore consectetur quisquam porro.
+899,Gucci,90,899,black,short,Dolore magnam quisquam non velit dolorem eius.
+900,Rosa,90,900,white,medium,Tempora dolor est dolor dolorem numquam ut.
+901,Zeus,91,901,orange,medium,Ipsum eius amet ipsum dolore.
+902,Toby,91,902,brown,medium,Ut numquam eius consectetur quiquia.
+903,Tucker,91,903,black,medium,Dolorem dolorem dolor voluptatem labore porro.
+904,Bud,91,904,orange,medium,Adipisci est est dolorem dolore.
+905,Jackpot,91,905,spotted,short,Magnam sit sit adipisci ipsum amet.
+906,Maxwell,91,906,spotted,long,Sit magnam ipsum adipisci aliquam ut.
+907,Daisey-mae,91,907,spotted,long,Dolorem est quisquam labore consectetur dolor.
+908,Clyde,91,908,brown,medium,Etincidunt voluptatem magnam numquam modi.
+909,Higgins,91,909,brown,short,Eius voluptatem amet quisquam adipisci dolor sit.
+910,George,91,910,orange,medium,Etincidunt sed tempora sed velit.
+911,Grady,92,911,spotted,medium,Dolorem quisquam magnam etincidunt.
+912,Chaz,92,912,black,long,Sed neque ut dolorem modi numquam dolorem.
+913,Pete,92,913,white,long,Porro quisquam dolor dolore aliquam dolore.
+914,Scarlett,92,914,brown,short,Dolore quaerat adipisci quaerat numquam.
+915,Amie,92,915,black,long,Consectetur ut est sed aliquam voluptatem labore dolorem.
+916,Little-guy,92,916,spotted,long,Non est consectetur labore numquam porro amet.
+917,Rin Tin Tin,92,917,orange,medium,Dolor dolorem etincidunt modi quiquia modi porro velit.
+918,Nero,92,918,spotted,long,Quiquia aliquam labore voluptatem dolor numquam numquam.
+919,May,92,919,white,medium,Dolore consectetur est quaerat.
+920,Lefty,92,920,black,short,Adipisci eius ipsum labore adipisci voluptatem.
+921,Lexi,93,921,spotted,short,Est aliquam velit modi neque.
+922,Millie,93,922,orange,medium,Tempora numquam sit est porro.
+923,Shasta,93,923,orange,long,Sed adipisci porro ut.
+924,Sailor,93,924,white,medium,Ut voluptatem sed magnam magnam quisquam eius.
+925,Libby,93,925,white,medium,Modi quisquam quisquam ut magnam consectetur.
+926,Peaches,93,926,black,short,Dolor etincidunt dolore aliquam ipsum tempora dolorem.
+927,Sweetie-pie,93,927,black,short,Eius tempora est dolor quaerat amet quaerat.
+928,Daisey-mae,93,928,brown,medium,Labore quiquia velit est sit adipisci.
+929,Athena,93,929,orange,medium,Numquam modi amet ipsum porro consectetur sit porro.
+930,Moses,93,930,white,medium,Consectetur sed dolor modi.
+931,Erin,94,931,brown,medium,Quiquia sit ut quiquia.
+932,Houdini,94,932,brown,short,Porro sed sed dolore quisquam non.
+933,Nala,94,933,black,short,Ut quaerat dolore etincidunt dolor.
+934,Ginger,94,934,black,long,Labore tempora labore non porro.
+935,Arnie,94,935,black,short,Amet quisquam consectetur ut dolorem.
+936,Leo,94,936,spotted,long,Sed non tempora modi ut.
+937,Nico,94,937,orange,long,Dolorem modi quisquam eius est.
+938,Reggie,94,938,white,long,Dolor aliquam ut voluptatem sit voluptatem magnam non.
+939,Taffy,94,939,black,short,Consectetur labore neque labore eius.
+940,Shorty,94,940,orange,long,Ut consectetur sed adipisci labore non eius.
+941,Rock,95,941,brown,short,Quisquam adipisci est porro consectetur velit dolorem porro.
+942,Flakey,95,942,black,long,Tempora quisquam sit numquam sit ut tempora modi.
+943,Tucker,95,943,white,medium,Dolore sed sit dolore ut quisquam.
+944,Prancer,95,944,orange,short,Numquam velit velit est neque sit dolor.
+945,Dobie,95,945,white,long,Quisquam quiquia quisquam velit.
+946,April,95,946,orange,long,Voluptatem non modi quisquam.
+947,Pooch,95,947,white,short,Ut labore porro quaerat quisquam dolorem neque neque.
+948,Puck,95,948,spotted,long,Modi sit adipisci ut aliquam dolore ut.
+949,Johnny,95,949,brown,long,Eius ipsum dolor ut neque.
+950,Rascal,95,950,black,long,Velit amet amet eius aliquam aliquam quisquam non.
+951,Titan,96,951,brown,medium,Quiquia quaerat magnam ut dolor.
+952,Pebbles,96,952,spotted,long,Ut amet modi magnam dolorem.
+953,Tessa,96,953,black,short,Dolor ipsum dolorem voluptatem neque non neque dolor.
+954,Koda,96,954,brown,short,Non dolore eius quisquam dolor magnam etincidunt.
+955,Curly,96,955,brown,short,Non magnam labore porro porro tempora dolorem.
+956,Pearl,96,956,spotted,medium,Sed quisquam sit ut consectetur labore adipisci.
+957,Hugo,96,957,white,long,Neque labore tempora quisquam modi sed consectetur.
+958,Austin,96,958,orange,long,Adipisci aliquam quisquam porro.
+959,Solomon,96,959,black,medium,Numquam ut sit sed eius.
+960,Biggie,96,960,orange,long,Ut modi quisquam aliquam.
+961,Nutmeg,97,961,spotted,short,Labore eius labore quaerat labore aliquam porro.
+962,Oz,97,962,white,medium,Magnam aliquam tempora etincidunt dolorem consectetur ipsum ipsum.
+963,Beau,97,963,spotted,short,Est consectetur amet adipisci eius magnam sit.
+964,Lassie,97,964,orange,short,Eius ut quiquia etincidunt non.
+965,Bailey,97,965,white,short,Numquam etincidunt etincidunt dolorem dolorem magnam.
+966,Biscuit,97,966,orange,long,Aliquam non neque sit.
+967,Sly,97,967,white,short,Eius labore eius velit ipsum amet aliquam.
+968,Crystal,97,968,orange,short,Non tempora ut labore adipisci dolor quiquia.
+969,Hans,97,969,orange,long,Velit neque ipsum ut.
+970,Dandy,97,970,white,long,Quisquam etincidunt non consectetur porro voluptatem.
+971,Tripod,98,971,orange,medium,Velit magnam porro magnam etincidunt tempora.
+972,Buddie,98,972,spotted,long,Aliquam dolore consectetur tempora neque ut.
+973,Ming,98,973,white,short,Modi quisquam quisquam voluptatem.
+974,Panther,98,974,spotted,long,Aliquam quiquia etincidunt non sit.
+975,Chucky,98,975,brown,long,Sit aliquam quisquam voluptatem quisquam non dolor amet.
+976,Ty,98,976,orange,short,Labore quaerat labore etincidunt dolorem dolorem adipisci aliquam.
+977,Poppy,98,977,white,medium,Sed quisquam quisquam numquam.
+978,Thumper,98,978,orange,medium,Sit velit tempora dolore magnam.
+979,Blossom,98,979,white,short,Aliquam sit amet velit aliquam quaerat sit etincidunt.
+980,Tucker,98,980,brown,short,Ut amet sit aliquam numquam.
+981,Pooh,99,981,spotted,medium,Dolor labore magnam numquam aliquam sit.
+982,Rocco,99,982,orange,long,Neque neque porro amet.
+983,Dozer,99,983,white,short,Etincidunt adipisci quiquia ut sed.
+984,Wizard,99,984,brown,short,Ipsum magnam ut labore.
+985,Topaz,99,985,white,long,Est numquam quiquia dolorem.
+986,Hank,99,986,black,long,Dolorem quisquam dolor consectetur voluptatem porro ipsum aliquam.
+987,Georgie,99,987,spotted,short,Ut neque quiquia neque.
+988,Duncan,99,988,black,long,Voluptatem tempora neque consectetur labore eius.
+989,Athena,99,989,white,short,Quaerat voluptatem tempora quiquia.
+990,Shadow,99,990,brown,medium,Sed sit sed tempora sit etincidunt etincidunt.
+991,Dutchess,100,991,white,long,Amet sed dolorem amet non est dolore voluptatem.
+992,Brittany,100,992,spotted,short,Sed voluptatem labore dolor magnam.
+993,Brit,100,993,white,long,Eius amet dolor dolorem velit eius.
+994,Cubby,100,994,black,medium,Quisquam labore quiquia modi non voluptatem est modi.
+995,Boozer,100,995,black,medium,Voluptatem neque dolore ipsum velit non.
+996,Cupcake,100,996,brown,medium,Sit non velit aliquam non numquam dolorem.
+997,Tasha,100,997,spotted,long,Non neque quisquam est etincidunt amet consectetur.
+998,China,100,998,brown,long,Est dolor labore non ut.
+999,Ricky,100,999,brown,long,Etincidunt sed modi labore.
+1000,Samantha,100,1000,orange,medium,Ipsum aliquam dolorem dolore dolorem.
