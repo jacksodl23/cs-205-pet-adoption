@@ -18,3 +18,8 @@ PetProfile::~PetProfile()
 {
     delete ui;
 }
+
+void PetProfile::on_backToSearchButton_clicked()
+{
+    close();
+}

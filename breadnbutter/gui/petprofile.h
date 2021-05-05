@@ -15,6 +15,9 @@ public:
     explicit PetProfile(QWidget *parent = 0);
     ~PetProfile();
 
+private slots:
+    void on_backToSearchButton_clicked();
+
 private:
     Ui::PetProfile *ui;
 
