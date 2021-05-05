@@ -30,6 +30,7 @@ PetProfile::~PetProfile()
     delete ui;
 }
 
+<<<<<<< HEAD
 void PetProfile::setPDisplay(const Pet &value)
 {
     pDisplay = value;
@@ -75,9 +76,9 @@ void PetProfile::fetchPet()
             }
         }
     }
-}
-
+=======
 void PetProfile::on_backToSearchButton_clicked()
 {
     close();
+>>>>>>> refs/heads/gui
 }

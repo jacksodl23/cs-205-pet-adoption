@@ -700,14 +700,8 @@ background-color: rgb(239, 207, 187);</string>
     </property>
     <addaction name="actionGet_Help"/>
    </widget>
-   <widget class="QMenu" name="menuLiked">
-    <property name="title">
-     <string>Liked</string>
-    </property>
-   </widget>
    <addaction name="menuBread_and_Butter"/>
    <addaction name="menuProfile"/>
-   <addaction name="menuLiked"/>
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
@@ -765,17 +759,6 @@ background-color: rgb(239, 207, 187);</string>
     </font>
    </property>
   </action>
-  <action name="actionLiked">
-   <property name="text">
-    <string>Liked</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
   <action name="actionLogout">
    <property name="text">
     <string>Logout</string>
@@ -797,6 +780,17 @@ background-color: rgb(239, 207, 187);</string>
      <pointsize>14</pointsize>
      <weight>50</weight>
      <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionLiked">
+   <property name="text">
+    <string>Liked</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
     </font>
    </property>
   </action>

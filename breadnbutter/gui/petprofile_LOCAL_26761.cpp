@@ -76,8 +76,3 @@ void PetProfile::fetchPet()
         }
     }
 }
-
-void PetProfile::on_backToSearchButton_clicked()
-{
-    close();
-}
