@@ -26,6 +26,19 @@ void CreateAccount::writeUserToFile(User newUser)
     config.close();
 }
 
+
+void CreateAccount::on_roleBox_activated(const QString &arg1)
+{
+    if (arg1 == "Adopter") {
+        ui->firstNameLabel->setText("First Name");
+        ui->lastNameLabel->setText("Last Name");
+    } else if (arg1 == "Provider") {
+        ui->firstNameLabel->setText("Full Name");
+        ui->lastNameLabel->setText("Shelter Name");
+    }
+}
+
+
 /* void CreateAccount::on_createOkay_accepted()
 {
     QString firstName = ui->firstNameField->text();
@@ -75,6 +88,45 @@ void CreateAccount::writeUserToFile(User newUser)
     }
 } */
 
+void CreateAccount::signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString password)
+{
+    PetOwner newAdopter(password, firstName, lastName, email, location);
+    signUpSuccessful = newAdopter.insertInDB();
+
+    if (signUpSuccessful) {
+        currentUser = newAdopter;
+
+        writeUserToFile(newAdopter);
+    } else {
+        if (newAdopter.existsInDB()) {
+            QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");
+        }
+    }
+}
+
+void CreateAccount::linkShelterOwnerToShelter(Shelter s, QString location, QString firstName, QString email, QString lastName, QString password)
+{
+    ShelterOwner newOwner(firstName, lastName, location, email, password);
+    if (newOwner.insertInDB()) {
+        QSqlQuery query;
+        query.prepare("update shelter set owner_id = ? where shelter_id = ?");
+        query.addBindValue(newOwner.getID());
+        query.addBindValue(s.getShelterID());
+
+        signUpSuccessful = query.exec();
+
+        if (signUpSuccessful) {
+            currentUser = newOwner;
+
+            writeUserToFile(newOwner);
+        } else {
+            if (newOwner.existsInDB()) {
+                QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");
+            }
+        }
+    }
+}
+
 void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
 {
     QString firstName = ui->firstNameField->text();
@@ -91,38 +143,26 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
         }
 
         if (ui->roleBox->currentIndex() == 0) {
-            PetOwner newAdopter(password, firstName, lastName, email, location);
-            signUpSuccessful = newAdopter.insertInDB();
-
-            if (signUpSuccessful) {
-                currentUser = newAdopter;
-
-                writeUserToFile(newAdopter);
-            } else {
-                if (newAdopter.existsInDB()) {
-                    QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");
-                }
-            }
+            signUpAdopter(firstName, lastName, location, email, password);
         } else {
-            ShelterOwner newOwner(firstName, lastName, location, email, password);
-            signUpSuccessful = newOwner.insertInDB();
+            // Change to take in full name and shelter name values.
+            Shelter s(lastName, location, email);
+            if (s.insertIntoDB()) {
 
-            if (signUpSuccessful) {
-                currentUser = newOwner;
+                QString oFirstName;
+                QString oLastName;
 
-
-                // adding more shelter profile information
-                hide();
-                moreShelterInfo = new MoreShelterInfo(this);
-                moreShelterInfo->show();
-
-
-
-                writeUserToFile(newOwner);
-            } else {
-                if (newOwner.existsInDB()) {
-                    QMessageBox::critical(this, "Email taken!", "This email is already taken. Please try again.");
+                QStringList pieces = firstName.split(" ");
+                for (int i = 0; i < pieces.size(); i++) {
+                    if (i == 0)
+                        oFirstName = pieces.at(i);
+                    else if (i == 1)
+                        oLastName = pieces.at(i);
                 }
+
+                linkShelterOwnerToShelter(s, location, oFirstName, email, oLastName, password);
+            } else {
+                QMessageBox::critical(this, "Unable to create shelter", "Something went wrong while trying to register a new shelter. Please try again.");
             }
         }
     } else {

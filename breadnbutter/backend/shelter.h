@@ -28,8 +28,14 @@ public:
     bool deleteFromDB();
     bool existsInDB();
 
+    std::vector<Pet> getPets();
+
     ShelterOwner *getOwner() const;
     void setOwner(ShelterOwner *value);
+
+    int getShelterID() const;
+
+    void setShelterID(int value);
 
 private:
     int shelterID;
@@ -38,7 +44,10 @@ private:
     QString email;
 
     std::vector<Pet> pets;
+
+    void fetchPets();
     ShelterOwner *owner;
+    void fetchInfoFromID(int id);
 };
 
 #endif // SHELTER_H

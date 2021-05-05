@@ -299,12 +299,13 @@ void PetDisplay::fetchPets()
     }
 }
 
+<<<<<<< HEAD
 void PetDisplay::on_actionLiked_triggered()
 {
     petliked *w = new petliked;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
-
+=======
 void PetDisplay::on_actionLogout_triggered()
 {
     close();
@@ -318,4 +319,5 @@ void PetDisplay::on_actionLiked_triggered()
     hide();
     likedUI = new PetLiked(this);
     likedUI->show();
+>>>>>>> ab383b82b1c8e05ff90f290bd3efa1d0c11ea58b
 }

@@ -526,7 +526,13 @@ color: rgb(239, 207, 187);</string>
       </widget>
      </item>
      <item>
-      <widget class="QTableView" name="tableView"/>
+      <widget class="QTableView" name="tableView">
+       <property name="font">
+        <font>
+         <family>Dyuthi</family>
+        </font>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -545,6 +551,7 @@ color: rgb(239, 207, 187);</string>
      <string>Profile</string>
     </property>
     <addaction name="actionUpload"/>
+    <addaction name="actionLog_out"/>
    </widget>
    <widget class="QMenu" name="menuUpload">
     <property name="title">
@@ -576,6 +583,11 @@ color: rgb(239, 207, 187);</string>
   <action name="actionUpload">
    <property name="text">
     <string>Upload</string>
+   </property>
+  </action>
+  <action name="actionLog_out">
+   <property name="text">
+    <string>Log out</string>
    </property>
   </action>
  </widget>

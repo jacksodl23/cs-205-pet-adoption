@@ -39,6 +39,7 @@ void MainWindow::showPetDisplay()
 {
     hide();
     petDisplay = new PetDisplay(this);
+    petDisplay->setAttribute(Qt::WA_DeleteOnClose);
     petDisplay->show();
 }
 
@@ -46,6 +47,7 @@ void MainWindow::showShelterDisplay()
 {
     hide();
     shelterDisplay = new shelterProfile(this);
+    shelterDisplay->setAttribute(Qt::WA_DeleteOnClose);
     shelterDisplay->show();
 }
 
@@ -60,9 +62,8 @@ void MainWindow::on_loginButton_clicked()
     loginUI.setModal(true);
     loginUI.exec();
 
-    const char *typeName = typeid(currentUser).name();
     if (loginUI.loginSuccessful) {
-        if (strcmp(typeName, "4User") == 0)
+        if (!currentUser.getIs_adopter())
             showShelterDisplay();
         else
             showPetDisplay();
@@ -77,9 +78,8 @@ void MainWindow::on_createButton_clicked()
     createUI.setModal(true);
     createUI.exec();
 
-    const char *typeName = typeid(currentUser).name();
     if (createUI.signUpSuccessful) {
-       if (strcmp(typeName, "4User") == 0)
+       if (!currentUser.getIs_adopter())
            showShelterDisplay();
        else
            showPetDisplay();

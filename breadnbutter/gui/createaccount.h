@@ -5,11 +5,11 @@
 #include <QMessageBox>
 #include <QPushButton>
 #include <fstream>
-#include "moreshelterinfo.h"
 #include "../backend/petowner.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 #include "../backend/shelterowner.h"
+#include "../backend/shelter.h"
 #include "../backend/user.h"
 
 namespace Ui {
@@ -31,11 +31,14 @@ private slots:
 
     void on_createOkay_clicked(QAbstractButton *button);
 
+    void on_roleBox_activated(const QString &arg1);
+
 private:
     Ui::CreateAccount *ui;
     void writeUserToFile(User newUser);
 
-    MoreShelterInfo *moreShelterInfo;
+    void signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString password);
+    void linkShelterOwnerToShelter(Shelter s, QString location, QString firstName, QString email, QString lastName, QString password);
 };
 
 #endif // CREATEACCOUNT_H

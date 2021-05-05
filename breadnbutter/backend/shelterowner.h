@@ -16,8 +16,6 @@ public:
     bool insertInDB();
     bool deleteFromDB();
     bool existsInDB();
-private:
-    void chooseID();
 };
 
 #endif // SHELTEROWNER_H

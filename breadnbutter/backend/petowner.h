@@ -4,7 +4,6 @@
 #include <QStringList>
 #include <QtSql>
 #include <iostream>
-#include <vector>
 #include "pet.h"
 #include "user.h"
 
@@ -49,13 +48,6 @@ public:
     bool insertInDB();
     bool deleteFromDB();
     bool existsInDB();
-
-    std::vector<Pet> getLikedPets();
-
-
-
-
-
 private:
     // preferences
     int p_age;
@@ -65,8 +57,6 @@ private:
     int p_weight;
     QString p_origin;
     bool p_allergy;
-    void chooseID();
-    std::vector<Pet> likedPets;
 };
 
 #endif // PETOWNER_H

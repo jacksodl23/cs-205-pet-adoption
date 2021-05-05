@@ -15,6 +15,7 @@
 #include "../backend/petowner.h"
 #include "../backend/pet.h"
 #include "petprofile.h"
+#include "petliked.h"
 
 namespace Ui {
 class PetDisplay;
@@ -43,10 +44,15 @@ private slots:
 
     void on_button_dislike_clicked();
 
+    void on_actionLogout_triggered();
+
     void on_actionLiked_triggered();
 
 private:
     Ui::PetDisplay *ui;
+    PetProfile *profileUI;
+    PetLiked *likedUI;
+
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;

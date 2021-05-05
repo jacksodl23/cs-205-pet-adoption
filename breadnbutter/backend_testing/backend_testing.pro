@@ -20,4 +20,5 @@ HEADERS += ../backend/*.h \
 SOURCES += main.cpp \
            ../backend/petowner.cpp \
            ../backend/pet.cpp \
-           ../backend/user.cpp
+           ../backend/user.cpp \
+           ../backend/shelter.cpp

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include "../backend/pet.h"
+#include "../backend/shelter.h"
 
 namespace Ui {
 class shelterUpload;
@@ -17,9 +18,9 @@ public:
     explicit shelterUpload(QWidget *parent = 0);
     ~shelterUpload();
 
-private slots:
-    void on_pushButton_clicked();
+    void setShelter(Shelter *value);
 
+private slots:
     void on_typeBox_currentTextChanged(const QString &arg1);
 
     void on_colorBox_activated(const QString &arg1);
@@ -29,6 +30,10 @@ private slots:
     void on_breedBox_activated(const QString &arg1);
 
     void on_hypoBox_currentTextChanged(const QString &arg1);
+
+    void on_cancelButton_clicked();
+
+    void on_addButton_clicked();
 
 private:
     Ui::shelterUpload *ui;
@@ -45,6 +50,8 @@ private:
     bool is_cat;
 
     bool upload;
+
+    Shelter *shelter;
 
 };
 

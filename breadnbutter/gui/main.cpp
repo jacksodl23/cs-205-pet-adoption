@@ -5,7 +5,6 @@
 #include <QApplication>
 #include <QtSql>
 #include <fstream>
-#include <typeinfo>
 #include <cstring>
 
 int getCurrentUser() {
@@ -19,7 +18,6 @@ int getCurrentUser() {
             QString lineString = QString::fromStdString(line);
             QString decrypted = crypto.decryptToString(lineString);
             int theID = decrypted.toInt();
-            qDebug() << "Decrypted ID:" << theID;
 
             QSqlQuery query;
             query.prepare("select is_adopter from User where user_id = ?");
@@ -33,6 +31,9 @@ int getCurrentUser() {
                         currentUser = PetOwner(theID);
                     else if (is_adopter == 0)
                         currentUser = ShelterOwner(theID);
+                } else {
+                    qDebug() << "No valid user could be found.";
+                    return -1;
                 }
             } else {
                 qDebug() << "Error getting user:" << query.lastError().text();
@@ -54,8 +55,7 @@ int main(int argc, char *argv[])
     if(getCurrentUser() == -1)
         w.show();
     else {
-        const char *typeName = typeid(currentUser).name();
-        if (strcmp(typeName, "4User") == 0)
+        if (!currentUser.getIs_adopter())
             w.showShelterDisplay();
         else
             w.showPetDisplay();
