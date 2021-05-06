@@ -2,7 +2,8 @@
 #include "ui_petliked.h"
 #include "petownerhelp.h"
 #include "petdisplay.h"
-#include "login.h"
+#include "createaccount.h"
+#include "mainwindow.h"
 
 void PetLiked::fetchLikedPets()
 {
@@ -115,7 +116,7 @@ void PetLiked::on_button_prev_clicked()
 void PetLiked::on_actionLog_out_triggered()
 {
     hide();
-    Login *login = new Login(this);
+    MainWindow *login = new MainWindow(this);
     login->setAttribute(Qt::WA_DeleteOnClose);
     login->show();
 }

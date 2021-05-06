@@ -2,7 +2,8 @@
 #include "ui_petdisplay.h"
 #include "petliked.h"
 #include "petownerhelp.h"
-#include "login.h"
+#include "createaccount.h"
+#include "mainwindow.h"
 
 PetDisplay::PetDisplay(QWidget *parent) :
     QMainWindow(parent),
@@ -333,9 +334,8 @@ void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
 void PetDisplay::on_actionLog_out_triggered()
 {
     hide();
-    Login *login = new Login(this);
-    login->setAttribute(Qt::WA_DeleteOnClose);
-    login->show();
+    currentUser.logOut();
+    parentWidget()->show();
 }
 
 void PetDisplay::on_actionLiked_triggered()

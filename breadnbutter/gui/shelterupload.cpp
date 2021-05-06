@@ -1,5 +1,9 @@
 #include "shelterupload.h"
 #include "ui_shelterupload.h"
+#include "shelterhelp.h"
+#include "shelterprofile.h"
+#include "createaccount.h"
+#include "mainwindow.h"
 
 shelterUpload::shelterUpload(QWidget *parent) :
     QMainWindow(parent),
@@ -102,4 +106,26 @@ void shelterUpload::on_addButton_clicked()
 void shelterUpload::setShelter(Shelter *value)
 {
     shelter = value;
+}
+
+void shelterUpload::on_actionProfile_triggered()
+{
+    shelterProfile *w = new shelterProfile(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+}
+
+void shelterUpload::on_actionHelp_triggered()
+{
+    shelterhelp *w = new shelterhelp(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+}
+
+void shelterUpload::on_actionLog_out_triggered()
+{
+    hide();
+    MainWindow *login = new MainWindow(this);
+    login->setAttribute(Qt::WA_DeleteOnClose);
+    login->show();
 }

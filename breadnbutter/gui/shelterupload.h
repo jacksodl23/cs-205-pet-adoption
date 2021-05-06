@@ -35,6 +35,12 @@ private slots:
 
     void on_addButton_clicked();
 
+    void on_actionProfile_triggered();
+
+    void on_actionHelp_triggered();
+
+    void on_actionLog_out_triggered();
+
 private:
     Ui::shelterUpload *ui;
     QString type;

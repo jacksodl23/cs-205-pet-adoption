@@ -470,7 +470,6 @@ border: 2px solid  white;
      <string>Menu</string>
     </property>
     <addaction name="actionProfile"/>
-    <addaction name="actionUpload_2"/>
     <addaction name="actionHelp"/>
     <addaction name="actionLog_out"/>
    </widget>
@@ -485,11 +484,6 @@ border: 2px solid  white;
   <action name="actionProfile">
    <property name="text">
     <string>Profile</string>
-   </property>
-  </action>
-  <action name="actionUpload_2">
-   <property name="text">
-    <string>Upload</string>
    </property>
   </action>
   <action name="actionHelp">
