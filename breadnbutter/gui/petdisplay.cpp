@@ -77,6 +77,25 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
+    if (prefString.isEmpty()) {
+        QString queryString = "where pet_attributes.breed = ";
+        queryString.append('\'');
+        queryString.append(arg1);
+        queryString.append('\'');
+        prefString.append(queryString);
+    } else {
+        QString queryString = "and pet_attributes.breed = ";
+
+        if (prefString.indexOf(queryString) == -1) {
+            queryString.append('\'');
+            queryString.append(arg1);
+            queryString.append('\'');
+            prefString.append(queryString);
+        } else {
+
+        }
+    }
+
     std::vector<std::string> affenpinscherColors = {"Any", "Black", "Grey", "Red", "Tan",
                                                    "Silver", "Beige"};
 
@@ -274,8 +293,12 @@ void PetDisplay::on_button_like_clicked()
     query.addBindValue(currPet.getPet_id());
 
     if (query.exec()) {
-        currentPos++;
-        displayPet(pets.at(currentPos));
+        if (currentPos + 1 > pets.size() - 1) {
+            QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
+        } else {
+            currentPos++;
+            displayPet(pets.at(currentPos));
+        }
     } else {
         qDebug() << "Error liking pet:" << query.lastError().text();
     }
@@ -283,12 +306,19 @@ void PetDisplay::on_button_like_clicked()
 
 void PetDisplay::on_button_dislike_clicked()
 {
-    currentPos++;
-    displayPet(pets.at(currentPos));
+    if (currentPos + 1 > pets.size() - 1) {
+        QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
+    } else {
+        currentPos++;
+        displayPet(pets.at(currentPos));
+    }
+
 }
 
 void PetDisplay::fetchPets()
 {
+    qDebug() << "Running query " + baseQuery + prefString;
+
     QSqlQuery query;
     if (query.exec(baseQuery + prefString)) {
         if (!pets.empty())
