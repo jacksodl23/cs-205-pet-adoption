@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1048</width>
+    <width>1128</width>
     <height>845</height>
    </rect>
   </property>
@@ -192,7 +192,7 @@ border: 2px solid  white;
       </property>
       <property name="maximumSize">
        <size>
-        <width>170</width>
+        <width>220</width>
         <height>550</height>
        </size>
       </property>
@@ -203,7 +203,9 @@ border: 2px solid  white;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
+     border-radius: 3px;</string>
       </property>
       <property name="title">
        <string/>
@@ -213,6 +215,18 @@ border: 2px solid  white;
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QLabel" name="icon0_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -223,6 +237,12 @@ border: 2px solid  white;
          </item>
          <item>
           <widget class="QLabel" name="label_name">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
@@ -246,6 +266,18 @@ border: 2px solid  white;
         <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
           <widget class="QLabel" name="icon1_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -256,6 +288,12 @@ border: 2px solid  white;
          </item>
          <item>
           <widget class="QLabel" name="label_type">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
@@ -276,6 +314,18 @@ border: 2px solid  white;
         <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QLabel" name="icon2_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -286,6 +336,12 @@ border: 2px solid  white;
          </item>
          <item>
           <widget class="QLabel" name="label_breed">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
@@ -306,6 +362,18 @@ border: 2px solid  white;
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
           <widget class="QLabel" name="icon3_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -316,6 +384,12 @@ border: 2px solid  white;
          </item>
          <item>
           <widget class="QLabel" name="label_shelter_name">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
@@ -336,6 +410,18 @@ border: 2px solid  white;
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
           <widget class="QLabel" name="icon4_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -346,6 +432,12 @@ border: 2px solid  white;
          </item>
          <item>
           <widget class="QLabel" name="label_location">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
@@ -777,8 +869,8 @@ color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1048</width>
-     <height>27</height>
+     <width>1128</width>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
