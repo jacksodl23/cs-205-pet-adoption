@@ -58,12 +58,18 @@ void shelterProfile::populatePetsTable()
     QSqlQueryModel *model = new QSqlQueryModel();
 
     QSqlQuery query;
-    query.prepare("select * from Pet where shelter_id = ?");
+    query.prepare("select pet.name, pet.color, pet.hair_length, pet.description, pet_attributes.age, pet_attributes.breed, pet_attributes.weight, pet_attributes.origin "
+                  "from pet "
+                  "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id "
+                  "where pet.shelter_id = ?");
     query.addBindValue(currentShelter->getShelterID());
 
-    query.exec();
-    model->setQuery(query);
-    ui->tableView->setModel(model);
+    if (query.exec()) {
+        model->setQuery(query);
+        ui->tableView->setModel(model);
+    } else {
+        qDebug() << "Error getting pets in shelter:" << query.lastError().text();
+    }
 }
 
 void shelterProfile::on_actionUpload_triggered()
