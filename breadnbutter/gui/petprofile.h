@@ -19,8 +19,10 @@ public:
     ~PetProfile();
 
     void setPDisplay(const Pet &value);
+
 private slots:
     void on_backToSearchButton_clicked();
+
 
 private:
     Ui::PetProfile *ui;

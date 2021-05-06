@@ -29,7 +29,8 @@ color: rgb(239, 207, 187);</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(239, 207, 187);</string>
+      <string notr="true">color: rgb(239, 207, 187);
+</string>
      </property>
      <property name="text">
       <string>LOGIN</string>

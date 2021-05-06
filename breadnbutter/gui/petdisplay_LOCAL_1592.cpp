@@ -7,20 +7,18 @@ PetDisplay::PetDisplay(QWidget *parent) :
     ui(new Ui::PetDisplay)
 {
     ui->setupUi(this);
+    ui->statusbar->showMessage("number of pets liked or number of pets viewed here");
 
     QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
     petPic.load(photoFilePath);
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
-
-    queryString = "select * "
-            "from pet "
-            "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
-
-    currentPos = 0;
     fetchPets();
     getCurrentUser();
+
+    if (pets.size() > 0)
+        displayPet(pets.front());
 }
 
 PetDisplay::~PetDisplay()
@@ -49,10 +47,6 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long i = 0; i < dogBreedList.size(); i++) {
             ui->breedBox->addItem(dogBreedList[i].data());
         }
-
-        qDebug() << "Appending query string...";
-        queryString.remove("where pet_attributes.is_cat = 1 ");
-        queryString.append("where pet_attributes.is_cat = 0 ");
     }
 
 
@@ -69,9 +63,6 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long j = 0; j < catBreedList.size(); j++) {
             ui->breedBox->addItem(catBreedList[j].data());
         }
-
-        queryString.remove("where pet_attributes.is_cat = 0 ");
-        queryString.append("where pet_attributes.is_cat = 1 ");
     }
 }
 
@@ -184,101 +175,35 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
 
 void PetDisplay::on_pushButton_clicked()
 {
-    fetchPets();
+    QString noticeString = "Search button clicked! Your pet type is ";
+    noticeString.append(ui->typeBox->currentText());
+    QMessageBox::information(this, "Hurray!", noticeString);
+    //QMessageBox searchBox;
+    //searchBox.setText("Hurray!\nSearch button clicked!");
+    //searchBox.exec();
 }
 
 void PetDisplay::displayPet(Pet p)
 {
-    int numberOfPhotos = 8;
-
-    srand(time(0));
-    int photoNum = rand() % numberOfPhotos;
-
-    QString photoString = QString::number(photoNum);
-
-    QString tempPath(":/resources/imgs/petPhoto");
-    tempPath.append(photoString);
-    QString filePath = tempPath.append(".jpg");
-    qDebug() << filePath;
-
-    petPic.load(filePath);
-    int width = ui->animalDisplay->width();
-    int height = ui->animalDisplay->height();
-    ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
-
     ui->label_name->setText(p.getName());
-    ui->label_breed->setText(p.getBreed());
-
-    if (!p.getIs_cat())
-        ui->label_type->setText("Dog");
-    else
-        ui->label_type->setText("Cat");
-
-    QSqlQuery query;
-    query.prepare("select shelter_id from pet where pet_id = ?");
-    query.addBindValue(p.getPet_id());
-
-    // This does not update the label text when the dislike button is selected.
-    if (query.exec()) {
-        if (query.next()) {
-            int shelterID = query.value(0).toInt();
-
-            Shelter s(shelterID);
-            ui->label_shelter_name->setText(s.getName());
-            ui->label_location->setText(s.getLocation());
-        }
-    } else {
-        qDebug() << "Error getting pet's shelter:" << query.lastError().text();
-    }
 }
 
 void PetDisplay::getCurrentUser()
 {
     QString name = currentUser.getFirstName();
-    ui->label_user_name->setText("Welcome " + name + "!");
-
-    QSqlQuery query;
-    query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
-    query.addBindValue(currentUser.getID());
-
-    if (query.exec()) {
-        if (query.next()) {
-            int numLiked = query.value(0).toInt();
-
-            if (numLiked == 1)
-                ui->statusbar->showMessage("You have liked 1 pet.");
-            else
-                ui->statusbar->showMessage("You have liked " + QString::number(numLiked) + " pets.");
-        }
-    } else {
-        qDebug() << "Error getting number of pets liked:" << query.lastError().text();
-    }
+    ui->label_user_name->setText("<b><FONT COLOR=red>Welcome " + name + "!<FONT></b>");
 }
 
 void PetDisplay::on_profileButton_clicked()
 {
-   profileUI = new PetProfile(this);
-   profileUI->setPDisplay(pets.at(currentPos));
-   profileUI->setModal(true);
-   profileUI->exec();
+   PetProfile profileUI;
+   profileUI.setModal(true);
+   profileUI.exec();
 }
 
 void PetDisplay::on_button_like_clicked()
 {
-    Pet currPet = pets.at(currentPos);
 
-    QSqlQuery query;
-    query.prepare("insert into Liked_By (adopter_id, pet_id)"
-                  "values (?, ?)");
-    query.addBindValue(currentUser.getID());
-    query.addBindValue(currPet.getPet_id());
-
-    if (query.exec()) {
-        currentPos++;
-        displayPet(pets.at(currentPos));
-    } else {
-        qDebug() << "Error liking pet:" << query.lastError().text();
-    }
 }
 
 void PetDisplay::on_button_dislike_clicked()
@@ -290,84 +215,21 @@ void PetDisplay::on_button_dislike_clicked()
 void PetDisplay::fetchPets()
 {
     QSqlQuery query;
-    if (query.exec(queryString)) {
-        if (!pets.empty())
-            pets.clear();
-
+    if (query.exec("select pet_id from Pet")) {
         while (query.next()) {
             int pID = query.value(0).toInt();
 
             Pet p(pID);
             pets.push_back(p);
         }
-
-        displayPet(pets.at(currentPos));
     } else {
         qDebug() << "Error fetching pets:" << query.lastError().text();
     }
 }
 
-/*
 void PetDisplay::on_actionLiked_triggered()
 {
-    PetLiked *w = new PetLiked;
+    petliked *w = new petliked;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
-}
-*/
-
-void PetDisplay::on_actionLogout_triggered()
-{
-    close();
-
-    currentUser.logOut();
-    parentWidget()->show();
-}
-
-void PetDisplay::on_actionLiked_triggered()
-{
-    hide();
-    likedUI = new PetLiked(this);
-    likedUI->show();
-}
-
-void PetDisplay::on_hypoBox_activated(const QString &arg1)
-{
-    if (arg1 == "Yes") {
-
-    } else if (arg1 == "No") {
-
-    }
-}
-void PetDisplay::on_horizontalSlider_valueChanged(int value)
-{
-    QString labelText = "Minimum Age: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_minage->setText(labelText);
-}
-
-void PetDisplay::on_horizontalSlider_2_valueChanged(int value)
-{
-    QString labelText = "Maximum Age: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_maxage->setText(labelText);
-}
-
-void PetDisplay::on_horizontalSlider_3_valueChanged(int value)
-{
-    QString labelText = "Minimum Weight: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_minweight->setText(labelText);
-
-}
-
-void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
-{
-    QString labelText = "Maximum Weight: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_maxweight->setText(labelText);
 }

@@ -30,6 +30,7 @@ PetProfile::~PetProfile()
     delete ui;
 }
 
+
 void PetProfile::setPDisplay(const Pet &value)
 {
     pDisplay = value;

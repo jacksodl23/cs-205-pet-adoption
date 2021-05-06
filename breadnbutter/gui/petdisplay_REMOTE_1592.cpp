@@ -1,6 +1,5 @@
 #include "petdisplay.h"
 #include "ui_petdisplay.h"
-#include "petliked.h"
 
 PetDisplay::PetDisplay(QWidget *parent) :
     QMainWindow(parent),
@@ -14,13 +13,12 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
-    queryString = "select * "
-            "from pet "
-            "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
-
     currentPos = 0;
     fetchPets();
     getCurrentUser();
+
+    if (pets.size() > 0)
+        displayPet(pets.front());
 }
 
 PetDisplay::~PetDisplay()
@@ -49,10 +47,6 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long i = 0; i < dogBreedList.size(); i++) {
             ui->breedBox->addItem(dogBreedList[i].data());
         }
-
-        qDebug() << "Appending query string...";
-        queryString.remove("where pet_attributes.is_cat = 1 ");
-        queryString.append("where pet_attributes.is_cat = 0 ");
     }
 
 
@@ -69,9 +63,6 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long j = 0; j < catBreedList.size(); j++) {
             ui->breedBox->addItem(catBreedList[j].data());
         }
-
-        queryString.remove("where pet_attributes.is_cat = 0 ");
-        queryString.append("where pet_attributes.is_cat = 1 ");
     }
 }
 
@@ -184,7 +175,12 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
 
 void PetDisplay::on_pushButton_clicked()
 {
-    fetchPets();
+    QString noticeString = "Search button clicked! Your pet type is ";
+    noticeString.append(ui->typeBox->currentText());
+    QMessageBox::information(this, "Hurray!", noticeString);
+    //QMessageBox searchBox;
+    //searchBox.setText("Hurray!\nSearch button clicked!");
+    //searchBox.exec();
 }
 
 void PetDisplay::displayPet(Pet p)
@@ -235,7 +231,7 @@ void PetDisplay::displayPet(Pet p)
 void PetDisplay::getCurrentUser()
 {
     QString name = currentUser.getFirstName();
-    ui->label_user_name->setText("Welcome " + name + "!");
+    ui->label_user_name->setText("<b><FONT COLOR=red>Welcome " + name + "!<FONT></b>");
 
     QSqlQuery query;
     query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
@@ -290,31 +286,17 @@ void PetDisplay::on_button_dislike_clicked()
 void PetDisplay::fetchPets()
 {
     QSqlQuery query;
-    if (query.exec(queryString)) {
-        if (!pets.empty())
-            pets.clear();
-
+    if (query.exec("select pet_id from Pet")) {
         while (query.next()) {
             int pID = query.value(0).toInt();
 
             Pet p(pID);
             pets.push_back(p);
         }
-
-        displayPet(pets.at(currentPos));
     } else {
         qDebug() << "Error fetching pets:" << query.lastError().text();
     }
 }
-
-/*
-void PetDisplay::on_actionLiked_triggered()
-{
-    PetLiked *w = new PetLiked;
-    w->setAttribute(Qt::WA_DeleteOnClose);
-    w->show();
-}
-*/
 
 void PetDisplay::on_actionLogout_triggered()
 {
@@ -329,45 +311,4 @@ void PetDisplay::on_actionLiked_triggered()
     hide();
     likedUI = new PetLiked(this);
     likedUI->show();
-}
-
-void PetDisplay::on_hypoBox_activated(const QString &arg1)
-{
-    if (arg1 == "Yes") {
-
-    } else if (arg1 == "No") {
-
-    }
-}
-void PetDisplay::on_horizontalSlider_valueChanged(int value)
-{
-    QString labelText = "Minimum Age: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_minage->setText(labelText);
-}
-
-void PetDisplay::on_horizontalSlider_2_valueChanged(int value)
-{
-    QString labelText = "Maximum Age: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_maxage->setText(labelText);
-}
-
-void PetDisplay::on_horizontalSlider_3_valueChanged(int value)
-{
-    QString labelText = "Minimum Weight: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_minweight->setText(labelText);
-
-}
-
-void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
-{
-    QString labelText = "Maximum Weight: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_maxweight->setText(labelText);
 }

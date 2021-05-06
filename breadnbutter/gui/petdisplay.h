@@ -50,6 +50,14 @@ private slots:
 
     void on_hypoBox_activated(const QString &arg1);
 
+    void on_horizontalSlider_valueChanged(int value);
+
+    void on_horizontalSlider_2_valueChanged(int value);
+
+    void on_horizontalSlider_3_valueChanged(int value);
+
+    void on_horizontalSlider_4_valueChanged(int value);
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
