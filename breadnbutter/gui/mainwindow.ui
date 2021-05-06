@@ -47,8 +47,7 @@ color: rgb(239, 207, 187);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(239, 207, 187);
-border: 2px solid  white; 
-     border-radius: 3px;</string>
+</string>
       </property>
       <property name="text">
        <string>WELCOME TO BREADNBUTTER</string>
@@ -92,7 +91,9 @@ border: 2px solid  white;
         </property>
         <property name="styleSheet">
          <string notr="true">background-color:rgb(239, 207, 187);
-color: rgb(0, 0, 0);</string>
+color: rgb(0, 0, 0);
+border: 2px solid  white; 
+     border-radius: 3px;</string>
         </property>
         <property name="text">
          <string>Login</string>
@@ -109,7 +110,9 @@ color: rgb(0, 0, 0);</string>
         </property>
         <property name="styleSheet">
          <string notr="true">background-color:rgb(239, 207, 187);
-color: rgb(0, 0, 0);</string>
+color: rgb(0, 0, 0);
+border: 2px solid  white; 
+     border-radius: 3px;</string>
         </property>
         <property name="text">
          <string>Create Account</string>
@@ -126,7 +129,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">

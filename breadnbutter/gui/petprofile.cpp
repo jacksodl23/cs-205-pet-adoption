@@ -30,11 +30,6 @@ PetProfile::~PetProfile()
     delete ui;
 }
 
-void PetProfile::on_timeSlider_valueChanged(int value)
-{
-    QString labelText = QString::number(value);
-    ui->label_time->setText(labelText);
-}
 
 void PetProfile::setPDisplay(const Pet &value)
 {

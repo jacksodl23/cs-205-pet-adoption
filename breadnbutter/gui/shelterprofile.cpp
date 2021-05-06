@@ -43,12 +43,14 @@ void shelterProfile::fetchShelter()
     }
 }
 
+/*
 void shelterProfile::on_actionUpload_triggered()
 {
     shelterUpload *w = new shelterUpload;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }
+*/
 
 void shelterProfile::populatePetsTable()
 {

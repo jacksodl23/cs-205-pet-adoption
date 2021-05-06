@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1046</width>
-    <height>742</height>
+    <width>1048</width>
+    <height>845</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,22 +21,27 @@ color: rgb(239, 207, 187);</string>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0" colspan="3">
      <widget class="QLabel" name="label_user_name">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>60</height>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Dyuthi</family>
-        <pointsize>48</pointsize>
+        <pointsize>72</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(239, 207, 187);
-border: 2px solid  white; 
-     border-radius: 3px;</string>
+</string>
       </property>
       <property name="text">
        <string>WELCOME First Name!</string>
@@ -48,10 +53,16 @@ border: 2px solid  white;
     </item>
     <item row="1" column="1">
      <widget class="QGroupBox" name="groupBox_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>600</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>550</width>
-        <height>16777215</height>
+        <height>550</height>
        </size>
       </property>
       <property name="font">
@@ -75,14 +86,14 @@ border: 2px solid  white;
           <widget class="QLabel" name="animalDisplay">
            <property name="minimumSize">
             <size>
-             <width>515</width>
-             <height>425</height>
+             <width>470</width>
+             <height>450</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>400</height>
+             <height>700</height>
             </size>
            </property>
            <property name="text">
@@ -98,6 +109,12 @@ border: 2px solid  white;
               <size>
                <width>0</width>
                <height>70</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
               </size>
              </property>
              <property name="font">
@@ -120,6 +137,12 @@ border: 2px solid  white;
               <size>
                <width>0</width>
                <height>70</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
               </size>
              </property>
              <property name="font">
@@ -164,13 +187,13 @@ border: 2px solid  white;
       <property name="minimumSize">
        <size>
         <width>200</width>
-        <height>0</height>
+        <height>600</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>170</width>
-        <height>16777215</height>
+        <height>550</height>
        </size>
       </property>
       <property name="font">
@@ -214,7 +237,7 @@ border: 2px solid  white;
            <property name="font">
             <font>
              <family>Dyuthi</family>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -230,7 +253,7 @@ border: 2px solid  white;
            <property name="font">
             <font>
              <family>Dyuthi</family>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -246,7 +269,7 @@ border: 2px solid  white;
            <property name="font">
             <font>
              <family>Dyuthi</family>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
@@ -259,6 +282,12 @@ border: 2px solid  white;
          </item>
          <item>
           <widget class="QLabel" name="label_location">
+           <property name="font">
+            <font>
+             <family>Dyuthi</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Location</string>
            </property>
@@ -273,14 +302,14 @@ border: 2px solid  white;
      <widget class="QGroupBox" name="groupBox">
       <property name="minimumSize">
        <size>
-        <width>275</width>
-        <height>0</height>
+        <width>320</width>
+        <height>600</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>200</width>
-        <height>16777215</height>
+        <height>550</height>
        </size>
       </property>
       <property name="font">
@@ -299,11 +328,17 @@ border: 2px solid  white;
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_search_type">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -315,11 +350,17 @@ border: 2px solid  white;
         </widget>
        </item>
        <item row="6" column="0">
-        <widget class="QLabel" name="label_7">
+        <widget class="QLabel" name="label_search_minage">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -331,11 +372,17 @@ border: 2px solid  white;
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_search_breed">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -396,11 +443,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="8" column="0">
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="label_search_minweight">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -426,11 +479,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="7" column="0">
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_search_maxage">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -442,7 +501,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QSlider" name="horizontalSlider_3">
+        <widget class="QSlider" name="horizontalSlider_2">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -492,7 +551,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QSlider" name="horizontalSlider_2">
+        <widget class="QSlider" name="horizontalSlider_4">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -503,11 +562,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="label_search_hair">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -543,11 +608,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="label_search_hypo">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -575,11 +646,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="label_search_color">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -591,11 +668,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="9" column="0">
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="label_search_maxweight">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -607,7 +690,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="8" column="1">
-        <widget class="QSlider" name="horizontalSlider_4">
+        <widget class="QSlider" name="horizontalSlider_3">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -627,8 +710,8 @@ color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1046</width>
-     <height>27</height>
+     <width>1048</width>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">

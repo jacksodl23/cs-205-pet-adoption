@@ -232,7 +232,7 @@ void PetDisplay::displayPet(Pet p)
 void PetDisplay::getCurrentUser()
 {
     QString name = currentUser.getFirstName();
-    ui->label_user_name->setText("<b><FONT COLOR=red>Welcome " + name + "!<FONT></b>");
+    ui->label_user_name->setText("Welcome " + name + "!");
 
     QSqlQuery query;
     query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
@@ -299,11 +299,14 @@ void PetDisplay::fetchPets()
     }
 }
 
+/*
 void PetDisplay::on_actionLiked_triggered()
 {
-    petliked *w = new petliked;
+    PetLiked *w = new PetLiked;
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
+}
+*/
 
 void PetDisplay::on_actionLogout_triggered()
 {
@@ -318,4 +321,38 @@ void PetDisplay::on_actionLiked_triggered()
     hide();
     likedUI = new PetLiked(this);
     likedUI->show();
+}
+
+void PetDisplay::on_horizontalSlider_valueChanged(int value)
+{
+    QString labelText = "Minimum Age: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_minage->setText(labelText);
+}
+
+void PetDisplay::on_horizontalSlider_2_valueChanged(int value)
+{
+    QString labelText = "Maximum Age: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_maxage->setText(labelText);
+}
+
+void PetDisplay::on_horizontalSlider_3_valueChanged(int value)
+{
+    QString labelText = "Minimum Weight: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_minweight->setText(labelText);
+
+}
+
+void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
+{
+    QString labelText = "Maximum Weight: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_maxweight->setText(labelText);
+
 }

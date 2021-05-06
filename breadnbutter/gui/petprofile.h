@@ -21,7 +21,6 @@ public:
     void setPDisplay(const Pet &value);
 
 private slots:
-    void on_timeSlider_valueChanged(int value);
     void on_backToSearchButton_clicked();
 
 

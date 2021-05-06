@@ -31,8 +31,7 @@ color: rgb(239, 207, 187);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(239, 207, 187);
-border: 2px solid  white; 
-     border-radius: 3px;</string>
+</string>
       </property>
       <property name="text">
        <string>Here you can add a new pet !</string>
@@ -457,8 +456,14 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <widget class="QMenu" name="menuProfile">
     <property name="title">
