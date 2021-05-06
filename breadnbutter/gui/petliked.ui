@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1046</width>
-    <height>751</height>
+    <height>758</height>
    </rect>
   </property>
   <property name="palette">
@@ -779,41 +779,20 @@ color: rgb(239, 207, 187);</string>
    </property>
    <widget class="QMenu" name="menuBread_and_Butter">
     <property name="title">
-     <string>Bread and Butter</string>
+     <string>Menu</string>
     </property>
     <addaction name="actionAbout"/>
     <addaction name="actionLog_out"/>
-   </widget>
-   <widget class="QMenu" name="menuProfile">
-    <property name="font">
-     <font>
-      <family>Dyuthi</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="title">
-     <string>Profile</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuSearch">
-    <property name="title">
-     <string>Search</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuLiked">
-    <property name="title">
-     <string>Liked</string>
-    </property>
+    <addaction name="actionSearch"/>
+    <addaction name="actionHelp"/>
+    <addaction name="actionLog_out_2"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
-   <addaction name="menuProfile"/>
-   <addaction name="menuSearch"/>
-   <addaction name="menuLiked"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbout">
    <property name="text">
-    <string>About</string>
+    <string>Profile</string>
    </property>
    <property name="font">
     <font>
@@ -824,13 +803,28 @@ color: rgb(239, 207, 187);</string>
   </action>
   <action name="actionLog_out">
    <property name="text">
-    <string>Log out</string>
+    <string>Liked</string>
    </property>
    <property name="font">
     <font>
      <family>Dyuthi</family>
      <pointsize>14</pointsize>
     </font>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionLog_out_2">
+   <property name="text">
+    <string>Log out</string>
    </property>
   </action>
  </widget>
