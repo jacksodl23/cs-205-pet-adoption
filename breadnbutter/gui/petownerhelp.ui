@@ -1302,7 +1302,6 @@ p, li { white-space: pre-wrap; }
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionProfile"/>
     <addaction name="actionLiked"/>
     <addaction name="actionSearch"/>
     <addaction name="actionHelp"/>
@@ -1311,11 +1310,6 @@ p, li { white-space: pre-wrap; }
    <addaction name="menuBRead_and_Butter"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionProfile">
-   <property name="text">
-    <string>Profile</string>
-   </property>
-  </action>
   <action name="actionLiked">
    <property name="text">
     <string>Liked</string>

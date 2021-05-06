@@ -1,5 +1,7 @@
 #include "petliked.h"
 #include "ui_petliked.h"
+#include "petownerhelp.h"
+#include "petdisplay.h"
 
 void PetLiked::fetchLikedPets()
 {
@@ -107,4 +109,28 @@ void PetLiked::on_button_prev_clicked()
         if (!ui->button_next->isEnabled())
             ui->button_next->setEnabled(true);
     }
+}
+
+void PetLiked::on_actionLog_out_triggered()
+{
+    close();
+
+    currentUser.logOut();
+    parentWidget()->show();
+}
+
+void PetLiked::on_actionHelp_triggered()
+{
+    hide();
+    petownerhelp *helpUI = new petownerhelp(this);
+    helpUI->setAttribute(Qt::WA_DeleteOnClose);
+    helpUI->show();
+}
+
+void PetLiked::on_actionSearch_triggered()
+{
+    hide();
+    PetDisplay *petUI = new PetDisplay(this);
+    petUI->setAttribute(Qt::WA_DeleteOnClose);
+    petUI->show();
 }

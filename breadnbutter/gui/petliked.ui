@@ -781,37 +781,14 @@ color: rgb(239, 207, 187);</string>
     <property name="title">
      <string>Menu</string>
     </property>
-    <addaction name="actionAbout"/>
-    <addaction name="actionLog_out"/>
+    <addaction name="actionLiked"/>
     <addaction name="actionSearch"/>
     <addaction name="actionHelp"/>
-    <addaction name="actionLog_out_2"/>
+    <addaction name="actionLog_out"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionAbout">
-   <property name="text">
-    <string>Profile</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionLog_out">
-   <property name="text">
-    <string>Liked</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
   <action name="actionSearch">
    <property name="text">
     <string>Search</string>
@@ -822,9 +799,14 @@ color: rgb(239, 207, 187);</string>
     <string>Help</string>
    </property>
   </action>
-  <action name="actionLog_out_2">
+  <action name="actionLog_out">
    <property name="text">
     <string>Log out</string>
+   </property>
+  </action>
+  <action name="actionLiked">
+   <property name="text">
+    <string>Liked</string>
    </property>
   </action>
  </widget>
