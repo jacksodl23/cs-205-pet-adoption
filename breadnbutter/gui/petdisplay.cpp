@@ -24,6 +24,30 @@ PetDisplay::PetDisplay(QWidget *parent) :
     height = ui->icon0_display->height();
     ui->icon0_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString icon1(":/icons/icons/Type.png");
+    petPic.load(icon1);
+    width = ui->icon1_display->width();
+    height = ui->icon1_display->height();
+    ui->icon1_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString icon2(":/icons/icons/Breed.png");
+    petPic.load(icon2);
+    width = ui->icon2_display->width();
+    height = ui->icon2_display->height();
+    ui->icon2_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString icon3(":/icons/icons/Shelter.png");
+    petPic.load(icon3);
+    width = ui->icon3_display->width();
+    height = ui->icon3_display->height();
+    ui->icon3_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString icon4(":/icons/icons/Location.png");
+    petPic.load(icon4);
+    width = ui->icon4_display->width();
+    height = ui->icon4_display->height();
+    ui->icon4_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
     currentPos = 0;
     fetchPets();
     getCurrentUser();
