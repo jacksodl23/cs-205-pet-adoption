@@ -7,6 +7,10 @@ void PetLiked::fetchLikedPets()
     query.prepare("select pet_id from liked_by where adopter_id = ?");
     query.addBindValue(currentUser.getID());
 
+
+    // TODO add num of liked pets to this page as well
+    ui->statusbar->showMessage("You have liked 1 pet.");
+
     if (query.exec()) {
         while (query.next()) {
             int pID = query.value(0).toInt();

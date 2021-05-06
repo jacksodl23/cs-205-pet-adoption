@@ -34,7 +34,9 @@ color: rgb(239, 207, 187);</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(239, 207, 187);</string>
+       <string notr="true">color: rgb(239, 207, 187);
+border: 2px solid  white; 
+     border-radius: 3px;</string>
       </property>
       <property name="text">
        <string>WELCOME First Name!</string>
