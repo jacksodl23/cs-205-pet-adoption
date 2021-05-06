@@ -88,7 +88,7 @@ void shelterProfile::logOutShelterOwner()
     parentWidget()->show();
 }
 
-void shelterProfile::on_actionLog_out_triggered()
+void shelterProfile::on_actionLogOut_triggered()
 {
     logOutShelterOwner();
 }

@@ -28,6 +28,8 @@ public:
 
     QString getLastName() const;
 
+    QString getEmail() const;
+
 protected:
     int id;
     QString firstName;

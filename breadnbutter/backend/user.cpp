@@ -125,10 +125,15 @@ QString User::getLastName() const
     return lastName;
 }
 
+QString User::getEmail() const
+{
+    return email;
+}
+
 void User::chooseID()
 {
     QSqlQuery query;
-
+    
     if (query.exec("select max(user_id) from User")) {
         if (query.next()) {
             int lastID = query.value(0).toInt();

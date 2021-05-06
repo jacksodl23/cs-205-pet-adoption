@@ -23,7 +23,8 @@ public:
 
 private slots:
     void on_actionUpload_triggered();
-    void on_actionLog_out_triggered();
+
+    void on_actionLogOut_triggered();
 
 private:
     Ui::shelterProfile *ui;
