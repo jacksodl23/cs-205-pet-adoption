@@ -121,6 +121,18 @@ TEST(TestRead,TestReadPet) {
     }
 }
 
+TEST (TestRead, TestReadDogsOnly) {
+    QSqlQuery query;
+    if (query.exec("select * "
+                   "from Pet "
+                   "inner join Pet_Attributes on Pet_Attributes.pet_att_id = Pet.pet_attribute_id "
+                   "where Pet_Attributes.is_cat = 0")) {
+        ASSERT_EQ(query.next(), true);
+    } else {
+        qDebug() << "Error querying dogs:" << query.lastError().text();
+    }
+}
+
 TEST(TestRead, GetPetsFromShelter) {
     QSqlQuery query("select max(shelter_id) from Shelter");
 

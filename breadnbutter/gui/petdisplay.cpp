@@ -13,12 +13,13 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
+    queryString = "select * "
+            "from pet "
+            "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
+
     currentPos = 0;
     fetchPets();
     getCurrentUser();
-
-    if (pets.size() > 0)
-        displayPet(pets.front());
 }
 
 PetDisplay::~PetDisplay()
@@ -47,6 +48,10 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long i = 0; i < dogBreedList.size(); i++) {
             ui->breedBox->addItem(dogBreedList[i].data());
         }
+
+        qDebug() << "Appending query string...";
+        queryString.remove("where pet_attributes.is_cat = 1 ");
+        queryString.append("where pet_attributes.is_cat = 0 ");
     }
 
 
@@ -63,6 +68,9 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long j = 0; j < catBreedList.size(); j++) {
             ui->breedBox->addItem(catBreedList[j].data());
         }
+
+        queryString.remove("where pet_attributes.is_cat = 0 ");
+        queryString.append("where pet_attributes.is_cat = 1 ");
     }
 }
 
@@ -175,12 +183,7 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
 
 void PetDisplay::on_pushButton_clicked()
 {
-    QString noticeString = "Search button clicked! Your pet type is ";
-    noticeString.append(ui->typeBox->currentText());
-    QMessageBox::information(this, "Hurray!", noticeString);
-    //QMessageBox searchBox;
-    //searchBox.setText("Hurray!\nSearch button clicked!");
-    //searchBox.exec();
+    fetchPets();
 }
 
 void PetDisplay::displayPet(Pet p)
@@ -286,13 +289,18 @@ void PetDisplay::on_button_dislike_clicked()
 void PetDisplay::fetchPets()
 {
     QSqlQuery query;
-    if (query.exec("select pet_id from Pet")) {
+    if (query.exec(queryString)) {
+        if (!pets.empty())
+            pets.clear();
+
         while (query.next()) {
             int pID = query.value(0).toInt();
 
             Pet p(pID);
             pets.push_back(p);
         }
+
+        displayPet(pets.at(currentPos));
     } else {
         qDebug() << "Error fetching pets:" << query.lastError().text();
     }
@@ -311,4 +319,13 @@ void PetDisplay::on_actionLiked_triggered()
     hide();
     likedUI = new PetLiked(this);
     likedUI->show();
+}
+
+void PetDisplay::on_hypoBox_activated(const QString &arg1)
+{
+    if (arg1 == "Yes") {
+
+    } else if (arg1 == "No") {
+
+    }
 }

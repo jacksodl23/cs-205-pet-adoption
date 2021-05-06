@@ -48,6 +48,8 @@ private slots:
 
     void on_actionLiked_triggered();
 
+    void on_hypoBox_activated(const QString &arg1);
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
@@ -56,6 +58,7 @@ private:
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;
+    QString queryString;
 
     void fetchPets();
     void displayPet(Pet p);
