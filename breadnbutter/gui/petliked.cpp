@@ -2,6 +2,7 @@
 #include "ui_petliked.h"
 #include "petownerhelp.h"
 #include "petdisplay.h"
+#include "login.h"
 
 void PetLiked::fetchLikedPets()
 {
@@ -113,10 +114,10 @@ void PetLiked::on_button_prev_clicked()
 
 void PetLiked::on_actionLog_out_triggered()
 {
-    close();
-
-    currentUser.logOut();
-    parentWidget()->show();
+    hide();
+    Login *login = new Login(this);
+    login->setAttribute(Qt::WA_DeleteOnClose);
+    login->show();
 }
 
 void PetLiked::on_actionHelp_triggered()
