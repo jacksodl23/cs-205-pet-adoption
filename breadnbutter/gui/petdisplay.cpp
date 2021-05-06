@@ -17,6 +17,13 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
+    // adding icons to the page
+    QString icon0(":/icons/icons/Name.png");
+    petPic.load(icon0);
+    width = ui->icon0_display->width();
+    height = ui->icon0_display->height();
+    ui->icon0_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
     currentPos = 0;
     fetchPets();
     getCurrentUser();

@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/Email.png</file>
+        <file>icons/Phone.png</file>
+        <file>icons/Hypoallergenic.png</file>
+        <file>icons/Color.png</file>
+        <file>icons/Age.png</file>
+        <file>icons/Type.png</file>
+        <file>icons/Location.png</file>
+        <file>icons/Shelter.png</file>
+        <file>icons/Breed.png</file>
+        <file>icons/Name.png</file>
+    </qresource>
+</RCC>

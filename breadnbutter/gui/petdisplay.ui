@@ -210,9 +210,20 @@ border: 2px solid  white;
       <property name="title">
        <string/>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="icon0_display">
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_name">
            <property name="font">
@@ -232,6 +243,21 @@ border: 2px solid  white;
            </property>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="icon1_display">
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_type">
            <property name="font">
@@ -245,6 +271,21 @@ border: 2px solid  white;
            </property>
            <property name="text">
             <string>Type</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="icon2_display">
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </item>
@@ -264,6 +305,21 @@ border: 2px solid  white;
            </property>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="icon3_display">
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_shelter_name">
            <property name="font">
@@ -277,6 +333,21 @@ border: 2px solid  white;
            </property>
            <property name="text">
             <string>Shelter</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="icon4_display">
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </item>
@@ -711,7 +782,7 @@ color: rgb(0, 0, 0);</string>
      <x>0</x>
      <y>0</y>
      <width>1048</width>
-     <height>38</height>
+     <height>27</height>
     </rect>
    </property>
    <property name="font">
