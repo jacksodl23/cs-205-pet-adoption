@@ -1,6 +1,7 @@
 #include "petdisplay.h"
 #include "ui_petdisplay.h"
 #include "petliked.h"
+#include "petownerhelp.h"
 
 PetDisplay::PetDisplay(QWidget *parent) :
     QMainWindow(parent),
@@ -328,17 +329,26 @@ void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
 
 }
 
-void PetDisplay::on_actionLiked_triggered()
-{
-    hide();
-    likedUI = new PetLiked(this);
-    likedUI->show();
-}
-
 void PetDisplay::on_actionLog_out_triggered()
 {
     close();
 
     currentUser.logOut();
     parentWidget()->show();
+}
+
+void PetDisplay::on_actionLiked_triggered()
+{
+    hide();
+    PetLiked *likedUI = new PetLiked(this);
+    likedUI->setAttribute(Qt::WA_DeleteOnClose);
+    likedUI->show();
+}
+
+void PetDisplay::on_actionHelp_triggered()
+{
+    hide();
+    petownerhelp *helpUI = new petownerhelp(this);
+    helpUI->setAttribute(Qt::WA_DeleteOnClose);
+    helpUI->show();
 }

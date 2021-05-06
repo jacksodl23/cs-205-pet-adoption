@@ -1,5 +1,7 @@
 #include "petownerhelp.h"
 #include "ui_petownerhelp.h"
+#include "petliked.h"
+#include "petdisplay.h"
 
 petownerhelp::petownerhelp(QWidget *parent) :
     QMainWindow(parent),
@@ -11,4 +13,28 @@ petownerhelp::petownerhelp(QWidget *parent) :
 petownerhelp::~petownerhelp()
 {
     delete ui;
+}
+
+void petownerhelp::on_actionLiked_triggered()
+{
+    hide();
+    PetLiked *likedUI = new PetLiked(this);
+    likedUI->setAttribute(Qt::WA_DeleteOnClose);
+    likedUI->show();
+}
+
+void petownerhelp::on_actionSearch_triggered()
+{
+    hide();
+    PetDisplay *petUI = new PetDisplay(this);
+    petUI->setAttribute(Qt::WA_DeleteOnClose);
+    petUI->show();
+}
+
+void petownerhelp::on_actionLog_out_triggered()
+{
+    close();
+
+    currentUser.logOut();
+    parentWidget()->show();
 }

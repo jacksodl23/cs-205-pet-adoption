@@ -7,6 +7,9 @@
 #include <vector>
 #include "../backend/globals.h"
 #include "../backend/pet.h"
+#include "petprofile.h"
+#include "petownerhelp.h"
+#include "petdisplay.h"
 
 namespace Ui {
 class petliked;
@@ -25,8 +28,15 @@ private slots:
 
     void on_button_prev_clicked();
 
+    void on_actionLog_out_triggered();
+
+    void on_actionHelp_triggered();
+
+    void on_actionSearch_triggered();
+
 private:
     Ui::petliked *ui;
+    PetProfile *profileUI;
 
     int currentPos;
 

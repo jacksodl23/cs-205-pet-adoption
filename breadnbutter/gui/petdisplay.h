@@ -16,6 +16,7 @@
 #include "../backend/pet.h"
 #include "petprofile.h"
 #include "petliked.h"
+#include "petownerhelp.h"
 
 namespace Ui {
 class PetDisplay;
@@ -50,14 +51,15 @@ private slots:
 
     void on_horizontalSlider_4_valueChanged(int value);
 
+    void on_actionLog_out_triggered();
+
     void on_actionLiked_triggered();
 
-    void on_actionLog_out_triggered();
+    void on_actionHelp_triggered();
 
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
-    PetLiked *likedUI;
 
     QPixmap petPic;
     std::vector<Pet> pets;
