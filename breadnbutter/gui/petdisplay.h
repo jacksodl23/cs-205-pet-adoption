@@ -30,8 +30,6 @@ public:
     ~PetDisplay();
 
 private slots:
-    void on_actionQuit_triggered();
-
     void on_typeBox_activated(const QString &arg1);
 
     void on_breedBox_activated(const QString &arg1);
@@ -44,10 +42,6 @@ private slots:
 
     void on_button_dislike_clicked();
 
-    void on_actionLogout_triggered();
-
-    void on_actionLiked_triggered();
-
     void on_horizontalSlider_valueChanged(int value);
 
     void on_horizontalSlider_2_valueChanged(int value);
@@ -55,6 +49,10 @@ private slots:
     void on_horizontalSlider_3_valueChanged(int value);
 
     void on_horizontalSlider_4_valueChanged(int value);
+
+    void on_actionLiked_triggered();
+
+    void on_actionLog_out_triggered();
 
 private:
     Ui::PetDisplay *ui;
