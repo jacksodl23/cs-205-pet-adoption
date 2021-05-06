@@ -28,11 +28,6 @@ PetDisplay::~PetDisplay()
     delete ui;
 }
 
-void PetDisplay::on_actionQuit_triggered()
-{
-   QApplication::quit();
-}
-
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
@@ -340,30 +335,6 @@ void PetDisplay::fetchPets()
     }
 }
 
-/*
-void PetDisplay::on_actionLiked_triggered()
-{
-    PetLiked *w = new PetLiked;
-    w->setAttribute(Qt::WA_DeleteOnClose);
-    w->show();
-}
-*/
-
-void PetDisplay::on_actionLogout_triggered()
-{
-    close();
-
-    currentUser.logOut();
-    parentWidget()->show();
-}
-
-void PetDisplay::on_actionLiked_triggered()
-{
-    hide();
-    likedUI = new PetLiked(this);
-    likedUI->show();
-}
-
 void PetDisplay::on_hypoBox_activated(const QString &arg1)
 {
     if (arg1 == "Yes") {
@@ -385,6 +356,7 @@ void PetDisplay::on_hypoBox_activated(const QString &arg1)
         }
     }
 }
+
 void PetDisplay::on_horizontalSlider_valueChanged(int value)
 {
     QString labelText = "Minimum Age: ";
@@ -416,4 +388,19 @@ void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
     QString numText = QString::number(value);
     labelText.append(numText);
     ui->label_search_maxweight->setText(labelText);
+}
+
+void PetDisplay::on_actionLiked_triggered()
+{
+    hide();
+    likedUI = new PetLiked(this);
+    likedUI->show();
+}
+
+void PetDisplay::on_actionLog_out_triggered()
+{
+    close();
+
+    currentUser.logOut();
+    parentWidget()->show();
 }
