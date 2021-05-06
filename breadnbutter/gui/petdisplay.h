@@ -66,7 +66,8 @@ private:
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;
-    QString queryString;
+    QString baseQuery;
+    QString prefString;
 
     void fetchPets();
     void displayPet(Pet p);

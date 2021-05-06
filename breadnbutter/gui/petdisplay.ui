@@ -421,6 +421,11 @@ color: rgb(0, 0, 0);</string>
          </property>
          <item>
           <property name="text">
+           <string>Any</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
            <string>Yes</string>
           </property>
          </item>
