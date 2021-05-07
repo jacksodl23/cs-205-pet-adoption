@@ -20,6 +20,13 @@ shelterProfile::~shelterProfile()
     delete ui;
 }
 
+void shelterProfile::showEvent(QShowEvent *event)
+{
+    QMainWindow::showEvent(event);
+    if (currentShelter != nullptr)
+        populatePetsTable();
+}
+
 void shelterProfile::fetchShelter()
 {
     QSqlQuery query;
@@ -76,6 +83,8 @@ void shelterProfile::on_actionUpload_triggered()
     shelterUpload *w = new shelterUpload(this);
     w->setShelter(currentShelter);
     w->setAttribute(Qt::WA_DeleteOnClose);
+
+    hide();
     w->show();
 }
 
