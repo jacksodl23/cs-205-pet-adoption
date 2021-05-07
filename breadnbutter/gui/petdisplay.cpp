@@ -18,35 +18,37 @@ PetDisplay::PetDisplay(QWidget *parent) :
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
     // adding icons to the page
+    QPixmap icon;
+
     QString icon0(":/icons/icons/Name.png");
-    petPic.load(icon0);
+    icon.load(icon0);
     width = ui->icon0_display->width();
     height = ui->icon0_display->height();
-    ui->icon0_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon0_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString icon1(":/icons/icons/Type.png");
-    petPic.load(icon1);
+    icon.load(icon1);
     width = ui->icon1_display->width();
     height = ui->icon1_display->height();
-    ui->icon1_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon1_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString icon2(":/icons/icons/Breed.png");
-    petPic.load(icon2);
+    icon.load(icon2);
     width = ui->icon2_display->width();
     height = ui->icon2_display->height();
-    ui->icon2_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon2_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString icon3(":/icons/icons/Shelter.png");
-    petPic.load(icon3);
+    icon.load(icon3);
     width = ui->icon3_display->width();
     height = ui->icon3_display->height();
-    ui->icon3_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon3_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString icon4(":/icons/icons/Location.png");
-    petPic.load(icon4);
+    icon.load(icon4);
     width = ui->icon4_display->width();
     height = ui->icon4_display->height();
-    ui->icon4_display->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon4_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     currentPos = 0;
     fetchPets();
