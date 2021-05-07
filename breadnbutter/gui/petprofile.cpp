@@ -53,11 +53,11 @@ PetProfile::PetProfile(QWidget *parent) :
 
     QString iconHypo(":/icons/icons/Hypoallergenic.png");
     icon.load(iconHypo);
-    width = ui->icon_hypoallergenica->width();
+    width = ui->icon_hypoallergenic->width();
     height = ui->icon_hypoallergenic->height();
     ui->icon_hypoallergenic->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
-    QString iconLocation(":/icons/icons/Color.png");
+    QString iconLocation(":/icons/icons/Location.png");
     icon.load(iconLocation);
     width = ui->icon_location->width();
     height = ui->icon_location->height();
