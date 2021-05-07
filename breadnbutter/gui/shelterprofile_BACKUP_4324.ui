@@ -524,6 +524,38 @@ color: rgb(239, 207, 187);</string>
         </item>
        </layout>
       </item>
+<<<<<<< HEAD
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>Dyuthi</family>
+            <pointsize>20</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid  white;
+     border-radius: 3px;</string>
+          </property>
+          <property name="text">
+           <string>Our Appointments !</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="tableView_2">
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid  white;
+     border-radius: 3px;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+=======
+>>>>>>> refs/heads/gui
      </layout>
     </item>
    </layout>
