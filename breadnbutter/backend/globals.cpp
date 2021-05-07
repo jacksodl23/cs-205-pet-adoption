@@ -1,3 +1,3 @@
 #include "globals.h"
 
-int currentUserID;
+User currentUser;

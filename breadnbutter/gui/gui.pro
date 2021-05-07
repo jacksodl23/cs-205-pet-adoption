@@ -18,20 +18,42 @@ SOURCES += \
     ../backend/simplecrypt.cpp \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
-    ../backend/shelter.cpp
+    ../backend/shelter.cpp \
+    ../backend/shelterowner.cpp \
+    ../backend/user.cpp \
+    shelterupload.cpp \
+    petprofile.cpp \
+    shelterprofile.cpp \
+    petliked.cpp \
+    petownerhelp.cpp \
+    shelterhelp.cpp
 
 HEADERS += \
     createaccount.h \
     login.h \
     mainwindow.h \
     petdisplay.h \
-    ../backend/*.h
+    ../backend/*.h \
+    ../backend/shelterowner.h \
+    ../backend/user.h \
+    shelterupload.h \
+    petprofile.h \
+    shelterprofile.h \
+    petliked.h \
+    petownerhelp.h \
+    shelterhelp.h
 
 FORMS += \
     createaccount.ui \
     login.ui \
     mainwindow.ui \
-    petdisplay.ui
+    petdisplay.ui \
+    shelterupload.ui \
+    petprofile.ui \
+    shelterprofile.ui \
+    petliked.ui \
+    petownerhelp.ui \
+    shelterhelp.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -39,4 +61,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
+    icons.qrc \
     petPhotos.qrc

@@ -6,12 +6,14 @@
 #include <QMainWindow>
 #include <QPixmap>
 #include <ctime>
+#include <cstring>
 #include <QString>
 #include <QDebug>
 #include <QtSql>
 #include "login.h"
 #include "createaccount.h"
 #include "petdisplay.h"
+#include "shelterprofile.h"
 #include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 
@@ -26,6 +28,7 @@ class MainWindow : public QMainWindow
 public:
     void setWelcomePhoto();
     void showPetDisplay();
+    void showShelterDisplay();
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -43,5 +46,6 @@ private:
     void openDB();
 
     PetDisplay *petDisplay;
+    shelterProfile *shelterDisplay;
 };
 #endif // MAINWINDOW_H

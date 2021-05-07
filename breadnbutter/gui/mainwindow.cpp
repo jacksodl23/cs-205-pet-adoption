@@ -39,7 +39,16 @@ void MainWindow::showPetDisplay()
 {
     hide();
     petDisplay = new PetDisplay(this);
+    petDisplay->setAttribute(Qt::WA_DeleteOnClose);
     petDisplay->show();
+}
+
+void MainWindow::showShelterDisplay()
+{
+    hide();
+    shelterDisplay = new shelterProfile(this);
+    shelterDisplay->setAttribute(Qt::WA_DeleteOnClose);
+    shelterDisplay->show();
 }
 
 void MainWindow::on_loginButton_clicked()
@@ -54,9 +63,10 @@ void MainWindow::on_loginButton_clicked()
     loginUI.exec();
 
     if (loginUI.loginSuccessful) {
-        showPetDisplay();
-    } else {
-        QMessageBox::critical(this, "Error Logging In", "Something went wrong when logging in. Please try again.");
+        if (!currentUser.getIs_adopter())
+            showShelterDisplay();
+        else
+            showPetDisplay();
     }
 
 }
@@ -69,7 +79,10 @@ void MainWindow::on_createButton_clicked()
     createUI.exec();
 
     if (createUI.signUpSuccessful) {
-       showPetDisplay();
+       if (!currentUser.getIs_adopter())
+           showShelterDisplay();
+       else
+           showPetDisplay();
     }
 }
 

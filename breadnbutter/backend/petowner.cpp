@@ -1,26 +1,9 @@
 #include "petowner.h"
 
-void PetOwner::chooseID()
-{
-    QSqlQuery query;
-
-    if (query.exec("select max(adopter_id) from Adopter")) {
-        if (query.next()) {
-            int lastID = query.value(0).toInt();
-
-            petOwnerID = lastID + 1;
-        } else {
-            petOwnerID = 1;
-        }
-    } else {
-        std::cerr << "Error getting adopters: " << query.lastError().text().toStdString() << std::endl;
-    }
-}
-
 bool PetOwner::existsInDB()
 {
     QSqlQuery query;
-    query.prepare("select email from Adopter where email = ?");
+    query.prepare("select email from User where email = ?");
     query.addBindValue(email);
 
     if (query.exec()) {
@@ -32,36 +15,23 @@ bool PetOwner::existsInDB()
                 return true;
         }
     } else {
-        std::cerr << "Error getting adopters: " << query.lastError().text().toStdString() << std::endl;
+        qDebug() << "Error searching for adopter in DB:" << query.lastError().text();
     }
 
     return false;
 }
 
-bool PetOwner::attemptLogin()
+void PetOwner::setLocation(QString loc)
 {
-    QSqlQuery query;
-    query.prepare("select * from Adopter where email = ? and password = ?");
-    query.addBindValue(email);
-    query.addBindValue(password);
-
-    if (query.exec()) {
-        while (query.next()) {
-            QString dbName = query.value(2).toString();
-            int dbID = query.value(0).toInt();
-
-            this->petOwnerID = dbID;
-
-            return true;
-        }
-    } else {
-        std::cerr << "Error attempting login: " << query.lastError().text().toStdString() << std::endl;
-    }
-
-    return false;
+    location = loc;
 }
 
-PetOwner::PetOwner()
+QString PetOwner::getLocation()
+{
+    return location;
+}
+
+PetOwner::~PetOwner()
 {
 
 }
@@ -72,24 +42,50 @@ PetOwner::PetOwner(QString email, QString password)
     this->password = password;
 }
 
-PetOwner::PetOwner(QString p, QString f, QString l, QString e)
+PetOwner::PetOwner(int id)
+{
+    this->id = id;
+    this->is_adopter = true;
+
+    QSqlQuery query;
+    query.prepare("select * from User where user_id = ?");
+    query.addBindValue(id);
+
+    if (query.exec()) {
+        if (query.next()) {
+            QString aName = query.value(1).toString();
+            QString aEmail = query.value(3).toString();
+            QString aPassword = query.value(4).toString();
+
+            QStringList pieces = aName.split(" ");
+            for (int i = 0; i < pieces.size(); i++) {
+                if (i == 0)
+                    this->firstName = pieces.at(i);
+                else if (i == 1)
+                    this->lastName = pieces.at(i);
+            }
+
+            this->email = aEmail;
+            this->password = aPassword;
+        }
+    } else {
+        qDebug() << "Error creating adopter:" << query.lastError().text();
+    }
+}
+
+PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)
 {
     this->password = p;
-    this->firstName = f;
-    this->lastName = l;
+    this->firstName = fn;
+    this->lastName = ln;
     this->email = e;
-
-    chooseID();
+    this->location = loc;
+    this->is_adopter = true;
 }
 
 QString PetOwner::getPassword()
 {
     return password;
-}
-
-QString PetOwner::getFirstName()
-{
-    return firstName;
 }
 
 QString PetOwner::getLastName()
@@ -100,11 +96,6 @@ QString PetOwner::getLastName()
 QString PetOwner::getEmail()
 {
     return email;
-}
-
-int PetOwner::getID()
-{
-    return petOwnerID;
 }
 
 int PetOwner::getAge()
@@ -197,25 +188,26 @@ void PetOwner::setAllergy(bool a)
     this->p_allergy = a;
 }
 
-bool PetOwner::insertIntoDB()
+bool PetOwner::insertInDB()
 {
     bool result;
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into Adopter (adopter_id, name, password, email)"
-                      "values (?, ?, ?, ?)");
-        query.addBindValue(petOwnerID);
+        query.prepare("insert into User (name, location, email, password, is_adopter)"
+                      "values (?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(password);
+        query.addBindValue(location);
         query.addBindValue(email);
+        query.addBindValue(password);
+        query.addBindValue(1);
 
         result = query.exec();
 
         if (!result)
-            std::cerr << query.lastError().text().toStdString() << std::endl;
-    } else {
-        result = false;
+            qDebug() << "Error inserting adopter:" << query.lastError().text();
+
+        id = query.lastInsertId().toInt();
     }
 
     return result;
@@ -226,8 +218,8 @@ bool PetOwner::deleteFromDB()
     bool result;
 
     QSqlQuery query;
-    query.prepare("delete from Adopter where adopter_id = ?");
-    query.addBindValue(petOwnerID);
+    query.prepare("delete from User where user_id = ?");
+    query.addBindValue(id);
 
     result = query.exec();
 
