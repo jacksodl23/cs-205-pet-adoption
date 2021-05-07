@@ -2,7 +2,8 @@
 #include "ui_petownerhelp.h"
 #include "petliked.h"
 #include "petdisplay.h"
-#include "login.h"
+#include "createaccount.h"
+#include "mainwindow.h"
 
 petownerhelp::petownerhelp(QWidget *parent) :
     QMainWindow(parent),
@@ -35,7 +36,7 @@ void petownerhelp::on_actionSearch_triggered()
 void petownerhelp::on_actionLog_out_triggered()
 {
     hide();
-    Login *login = new Login(this);
+    MainWindow *login = new MainWindow(this);
     login->setAttribute(Qt::WA_DeleteOnClose);
     login->show();
 }

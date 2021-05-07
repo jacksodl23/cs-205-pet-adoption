@@ -3,7 +3,6 @@
 #include "shelterhelp.h"
 #include "shelterupload.h"
 
-
 shelterProfile::shelterProfile(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::shelterProfile)
@@ -80,6 +79,11 @@ void shelterProfile::on_actionUpload_triggered()
     w->show();
 }
 
+void shelterProfile::on_actionLog_out_triggered()
+{
+    logOutShelterOwner();
+}
+
 void shelterProfile::logOutShelterOwner()
 {
     hide();
@@ -88,7 +92,9 @@ void shelterProfile::logOutShelterOwner()
     parentWidget()->show();
 }
 
-void shelterProfile::on_actionLogOut_triggered()
+void shelterProfile::on_actionHelp_triggered()
 {
-    logOutShelterOwner();
+    shelterhelp *w = new shelterhelp(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
 }
