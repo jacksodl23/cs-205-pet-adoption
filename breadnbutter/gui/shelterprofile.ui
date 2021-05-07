@@ -465,7 +465,7 @@ color: rgb(239, 207, 187);</string>
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">border: 2px solid  white; 
+         <string notr="true">border: 2px solid  white;
      border-radius: 3px;</string>
         </property>
        </widget>
@@ -485,7 +485,7 @@ color: rgb(239, 207, 187);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 2px solid  white; 
+           <string notr="true">border: 2px solid  white;
      border-radius: 3px;</string>
           </property>
           <property name="text">
@@ -514,7 +514,7 @@ color: rgb(239, 207, 187);</string>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true">border: 2px solid  white; 
+           <string notr="true">border: 2px solid  white;
      border-radius: 3px;</string>
           </property>
           <property name="text">

@@ -17,6 +17,9 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
+    baseQuery = "select * "
+            "from pet "
+            "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
     // adding icons to the page
     QPixmap icon;
 
@@ -53,9 +56,6 @@ PetDisplay::PetDisplay(QWidget *parent) :
     currentPos = 0;
     fetchPets();
     getCurrentUser();
-
-    if (pets.size() > 0)
-        displayPet(pets.front());
 }
 
 PetDisplay::~PetDisplay()
@@ -79,6 +79,10 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long i = 0; i < dogBreedList.size(); i++) {
             ui->breedBox->addItem(dogBreedList[i].data());
         }
+
+        qDebug() << "Appending query string...";
+        prefString.remove("where pet_attributes.is_cat = 1 ");
+        prefString.append("where pet_attributes.is_cat = 0 ");
     }
 
 
@@ -95,11 +99,33 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         for (unsigned long j = 0; j < catBreedList.size(); j++) {
             ui->breedBox->addItem(catBreedList[j].data());
         }
+
+        prefString.remove("where pet_attributes.is_cat = 0 ");
+        prefString.append("where pet_attributes.is_cat = 1 ");
     }
 }
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
+    if (prefString.isEmpty()) {
+        QString queryString = "where pet_attributes.breed = ";
+        queryString.append('\'');
+        queryString.append(arg1);
+        queryString.append('\'');
+        prefString.append(queryString);
+    } else {
+        QString queryString = "and pet_attributes.breed = ";
+
+        if (prefString.indexOf(queryString) == -1) {
+            queryString.append('\'');
+            queryString.append(arg1);
+            queryString.append('\'');
+            prefString.append(queryString);
+        } else {
+
+        }
+    }
+
     std::vector<std::string> affenpinscherColors = {"Any", "Black", "Grey", "Red", "Tan",
                                                    "Silver", "Beige"};
 
@@ -207,12 +233,7 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
 
 void PetDisplay::on_pushButton_clicked()
 {
-    QString noticeString = "Search button clicked! Your pet type is ";
-    noticeString.append(ui->typeBox->currentText());
-    QMessageBox::information(this, "Hurray!", noticeString);
-    //QMessageBox searchBox;
-    //searchBox.setText("Hurray!\nSearch button clicked!");
-    //searchBox.exec();
+    fetchPets();
 }
 
 void PetDisplay::displayPet(Pet p)
@@ -302,8 +323,12 @@ void PetDisplay::on_button_like_clicked()
     query.addBindValue(currPet.getPet_id());
 
     if (query.exec()) {
-        currentPos++;
-        displayPet(pets.at(currentPos));
+        if (currentPos + 1 > pets.size() - 1) {
+            QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
+        } else {
+            currentPos++;
+            displayPet(pets.at(currentPos));
+        }
     } else {
         qDebug() << "Error liking pet:" << query.lastError().text();
     }
@@ -311,22 +336,59 @@ void PetDisplay::on_button_like_clicked()
 
 void PetDisplay::on_button_dislike_clicked()
 {
-    currentPos++;
-    displayPet(pets.at(currentPos));
+    if (currentPos + 1 > pets.size() - 1) {
+        QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
+    } else {
+        currentPos++;
+        displayPet(pets.at(currentPos));
+    }
+
 }
 
 void PetDisplay::fetchPets()
 {
+    qDebug() << "Running query " + baseQuery + prefString;
+
     QSqlQuery query;
-    if (query.exec("select pet_id from Pet")) {
+    if (query.exec(baseQuery + prefString)) {
+        if (!pets.empty())
+            pets.clear();
+
         while (query.next()) {
             int pID = query.value(0).toInt();
 
             Pet p(pID);
             pets.push_back(p);
         }
+
+        if (!pets.empty())
+            displayPet(pets.at(currentPos));
+        else
+            QMessageBox::critical(this, "No Pets Found", "No pets could be found with your search parameters. Please change your search and try again.");
     } else {
         qDebug() << "Error fetching pets:" << query.lastError().text();
+    }
+}
+
+void PetDisplay::on_hypoBox_activated(const QString &arg1)
+{
+    if (arg1 == "Yes") {
+        if (prefString.isEmpty()) {
+            prefString.remove("where pet_attributes.hypoallergenic = 0 ");
+            prefString.append("where pet_attributes.hypoallergenic = 1 ");
+        } else {
+            prefString.remove("and pet_attributes.hypoallergenic = 0 ");
+            prefString.append("and pet_attributes.hypoallergenic = 1 ");
+        }
+
+    } else if (arg1 == "No") {
+        if (prefString.isEmpty()) {
+            prefString.remove("where pet_attributes.hypoallergenic = 1 ");
+            prefString.append("where pet_attributes.hypoallergenic = 0 ");
+        } else {
+            prefString.remove("and pet_attributes.hypoallergenic = 1 ");
+            prefString.append("and pet_attributes.hypoallergenic = 0 ");
+        }
     }
 }
 
@@ -361,7 +423,6 @@ void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
     QString numText = QString::number(value);
     labelText.append(numText);
     ui->label_search_maxweight->setText(labelText);
-
 }
 
 void PetDisplay::on_actionLog_out_triggered()

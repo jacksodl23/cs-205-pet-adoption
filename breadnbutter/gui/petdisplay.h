@@ -43,6 +43,8 @@ private slots:
 
     void on_button_dislike_clicked();
 
+    void on_hypoBox_activated(const QString &arg1);
+
     void on_horizontalSlider_valueChanged(int value);
 
     void on_horizontalSlider_2_valueChanged(int value);
@@ -64,6 +66,8 @@ private:
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;
+    QString baseQuery;
+    QString prefString;
 
     void fetchPets();
     void displayPet(Pet p);
