@@ -228,7 +228,8 @@ border: 2px solid  white;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
            </property>
            <property name="text">
             <string/>
@@ -279,7 +280,8 @@ border: 2px solid  white;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
            </property>
            <property name="text">
             <string/>
@@ -327,7 +329,8 @@ border: 2px solid  white;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
            </property>
            <property name="text">
             <string/>
@@ -375,7 +378,8 @@ border: 2px solid  white;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
            </property>
            <property name="text">
             <string/>
@@ -423,7 +427,8 @@ border: 2px solid  white;
             </size>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
            </property>
            <property name="text">
             <string/>
