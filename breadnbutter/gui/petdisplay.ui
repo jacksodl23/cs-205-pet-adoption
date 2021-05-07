@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1046</width>
-    <height>742</height>
+    <width>1128</width>
+    <height>845</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,20 +21,27 @@ color: rgb(239, 207, 187);</string>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0" colspan="3">
      <widget class="QLabel" name="label_user_name">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>80</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>16777215</width>
-        <height>60</height>
+        <height>100</height>
        </size>
       </property>
       <property name="font">
        <font>
         <family>Dyuthi</family>
-        <pointsize>48</pointsize>
+        <pointsize>72</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(239, 207, 187);</string>
+       <string notr="true">color: rgb(239, 207, 187);
+</string>
       </property>
       <property name="text">
        <string>WELCOME First Name!</string>
@@ -46,10 +53,16 @@ color: rgb(239, 207, 187);</string>
     </item>
     <item row="1" column="1">
      <widget class="QGroupBox" name="groupBox_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>600</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
         <width>550</width>
-        <height>16777215</height>
+        <height>550</height>
        </size>
       </property>
       <property name="font">
@@ -73,14 +86,14 @@ border: 2px solid  white;
           <widget class="QLabel" name="animalDisplay">
            <property name="minimumSize">
             <size>
-             <width>515</width>
-             <height>425</height>
+             <width>470</width>
+             <height>450</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>400</height>
+             <height>700</height>
             </size>
            </property>
            <property name="text">
@@ -96,6 +109,12 @@ border: 2px solid  white;
               <size>
                <width>0</width>
                <height>70</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
               </size>
              </property>
              <property name="font">
@@ -118,6 +137,12 @@ border: 2px solid  white;
               <size>
                <width>0</width>
                <height>70</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>30</height>
               </size>
              </property>
              <property name="font">
@@ -162,13 +187,13 @@ border: 2px solid  white;
       <property name="minimumSize">
        <size>
         <width>200</width>
-        <height>0</height>
+        <height>600</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>170</width>
-        <height>16777215</height>
+        <width>220</width>
+        <height>550</height>
        </size>
       </property>
       <property name="font">
@@ -185,11 +210,40 @@ border: 2px solid  white;
       <property name="title">
        <string/>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="icon0_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_name">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
@@ -197,7 +251,7 @@ border: 2px solid  white;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Name</string>
@@ -207,67 +261,199 @@ border: 2px solid  white;
            </property>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
-          <widget class="QLabel" name="label_breed">
-           <property name="font">
-            <font>
-             <family>Dyuthi</family>
-             <pointsize>12</pointsize>
-            </font>
+          <widget class="QLabel" name="icon1_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
            </property>
            <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
            </property>
            <property name="text">
-            <string>Breed</string>
+            <string/>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_type">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Type</string>
            </property>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
-          <widget class="QLabel" name="label_shelter_name">
+          <widget class="QLabel" name="icon2_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_breed">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>Breed</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="icon3_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_shelter_name">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Dyuthi</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>Shelter</string>
            </property>
           </widget>
          </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="icon4_display">
+           <property name="minimumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>75</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="label_location">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
            <property name="font">
             <font>
              <family>Dyuthi</family>
-             <pointsize>12</pointsize>
+             <pointsize>14</pointsize>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color:rgb(239, 207, 187);</string>
+            <string notr="true"/>
            </property>
            <property name="text">
-            <string>Approx location</string>
+            <string>Location</string>
            </property>
           </widget>
          </item>
@@ -280,14 +466,14 @@ border: 2px solid  white;
      <widget class="QGroupBox" name="groupBox">
       <property name="minimumSize">
        <size>
-        <width>275</width>
-        <height>0</height>
+        <width>320</width>
+        <height>600</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
         <width>200</width>
-        <height>16777215</height>
+        <height>550</height>
        </size>
       </property>
       <property name="font">
@@ -306,11 +492,17 @@ border: 2px solid  white;
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_search_type">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -322,11 +514,17 @@ border: 2px solid  white;
         </widget>
        </item>
        <item row="6" column="0">
-        <widget class="QLabel" name="label_7">
+        <widget class="QLabel" name="label_search_minage">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -338,11 +536,17 @@ border: 2px solid  white;
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_search_breed">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -376,6 +580,14 @@ color: rgb(0, 0, 0);</string>
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
          </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Any</string>
+          </property>
+         </item>
          <item>
           <property name="text">
            <string>Yes</string>
@@ -403,11 +615,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="8" column="0">
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="label_search_minweight">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -433,11 +651,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="7" column="0">
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_search_maxage">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -449,7 +673,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QSlider" name="horizontalSlider_3">
+        <widget class="QSlider" name="horizontalSlider_2">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -499,7 +723,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="9" column="1">
-        <widget class="QSlider" name="horizontalSlider_2">
+        <widget class="QSlider" name="horizontalSlider_4">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -510,11 +734,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="label_search_hair">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -537,6 +767,14 @@ color: rgb(0, 0, 0);</string>
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
          </property>
+         <property name="currentText">
+          <string>Any</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Any</string>
+          </property>
+         </item>
          <item>
           <property name="text">
            <string>Dog</string>
@@ -550,11 +788,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="label_9">
+        <widget class="QLabel" name="label_search_hypo">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -582,11 +826,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_5">
+        <widget class="QLabel" name="label_search_color">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -598,11 +848,17 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="9" column="0">
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="label_search_maxweight">
+         <property name="minimumSize">
+          <size>
+           <width>140</width>
+           <height>0</height>
+          </size>
+         </property>
          <property name="font">
           <font>
            <family>Dyuthi</family>
-           <pointsize>12</pointsize>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -614,7 +870,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="8" column="1">
-        <widget class="QSlider" name="horizontalSlider_4">
+        <widget class="QSlider" name="horizontalSlider_3">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -634,7 +890,7 @@ color: rgb(0, 0, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1046</width>
+     <width>1128</width>
      <height>38</height>
     </rect>
    </property>
@@ -659,50 +915,15 @@ color: rgb(0, 0, 0);</string>
 background-color: rgb(239, 207, 187);</string>
     </property>
     <property name="title">
-     <string>Bread and Butter</string>
+     <string>Menu</string>
     </property>
-    <addaction name="actionAbout_Bread_and_Butter"/>
-    <addaction name="separator"/>
-    <addaction name="actionPreferenecs"/>
-    <addaction name="actionQuit"/>
-   </widget>
-   <widget class="QMenu" name="menuProfile">
-    <property name="font">
-     <font>
-      <family>Dyuthi</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(239, 207, 187);</string>
-    </property>
-    <property name="title">
-     <string>Profile</string>
-    </property>
-    <addaction name="actionAccount"/>
     <addaction name="actionLiked"/>
-    <addaction name="actionLogout"/>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="font">
-     <font>
-      <family>Dyuthi</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(0, 0, 0);
-background-color: rgb(239, 207, 187);</string>
-    </property>
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionGet_Help"/>
+    <addaction name="separator"/>
+    <addaction name="actionSearch"/>
+    <addaction name="actionHelp"/>
+    <addaction name="actionLog_out"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
-   <addaction name="menuProfile"/>
-   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="font">
@@ -715,83 +936,24 @@ background-color: rgb(239, 207, 187);</string>
     <string notr="true">color: rgb(239, 207, 187);</string>
    </property>
   </widget>
-  <action name="actionAbout_Bread_and_Butter">
+  <action name="actionHelp">
    <property name="text">
-    <string>About Bread and Butter</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
+    <string>Help</string>
    </property>
   </action>
-  <action name="actionPreferenecs">
+  <action name="actionLog_out">
    <property name="text">
-    <string>Prefereneces</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionQuit">
-   <property name="text">
-    <string>Quit</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionAccount">
-   <property name="text">
-    <string>Account</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionLogout">
-   <property name="text">
-    <string>Logout</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionGet_Help">
-   <property name="text">
-    <string>Get Help</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
-    </font>
+    <string>Log out</string>
    </property>
   </action>
   <action name="actionLiked">
    <property name="text">
     <string>Liked</string>
    </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Search</string>
    </property>
   </action>
  </widget>

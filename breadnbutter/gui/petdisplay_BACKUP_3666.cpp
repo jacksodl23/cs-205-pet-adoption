@@ -17,9 +17,11 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
+<<<<<<< HEAD
     baseQuery = "select * "
             "from pet "
             "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
+=======
     // adding icons to the page
     QPixmap icon;
 
@@ -52,6 +54,7 @@ PetDisplay::PetDisplay(QWidget *parent) :
     width = ui->icon4_display->width();
     height = ui->icon4_display->height();
     ui->icon4_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+>>>>>>> refs/heads/gui
 
     currentPos = 0;
     fetchPets();
@@ -428,6 +431,10 @@ void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
 void PetDisplay::on_actionLog_out_triggered()
 {
     hide();
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/heads/gui
     currentUser.logOut();
     parentWidget()->show();
 }

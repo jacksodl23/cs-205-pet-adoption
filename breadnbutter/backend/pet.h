@@ -48,8 +48,6 @@ private:
     QString origin;
     bool hypoallergenic;
     QString description;
-
-    void chooseID();
 };
 
 #endif // PET_H

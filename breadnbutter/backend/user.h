@@ -28,6 +28,8 @@ public:
 
     QString getLastName() const;
 
+    QString getEmail() const;
+
 protected:
     int id;
     QString firstName;
@@ -38,7 +40,7 @@ protected:
 
     bool is_adopter;
 
-    virtual void chooseID();
+    void chooseID();
 };
 
 #endif // USER_H

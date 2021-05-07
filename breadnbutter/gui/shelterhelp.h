@@ -15,6 +15,13 @@ public:
     explicit shelterhelp(QWidget *parent = 0);
     ~shelterhelp();
 
+private slots:
+    void on_actionProfile_triggered();
+
+    void on_actionUpload_triggered();
+
+    void on_actionLog_out_triggered();
+
 private:
     Ui::shelterhelp *ui;
 };

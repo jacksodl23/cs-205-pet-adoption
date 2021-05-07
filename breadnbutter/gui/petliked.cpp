@@ -1,11 +1,19 @@
 #include "petliked.h"
 #include "ui_petliked.h"
+#include "petownerhelp.h"
+#include "petdisplay.h"
+#include "createaccount.h"
+#include "mainwindow.h"
 
 void PetLiked::fetchLikedPets()
 {
     QSqlQuery query;
     query.prepare("select pet_id from liked_by where adopter_id = ?");
     query.addBindValue(currentUser.getID());
+
+
+    // TODO add num of liked pets to this page as well
+    ui->statusbar->showMessage("You have liked 1 pet.");
 
     if (query.exec()) {
         while (query.next()) {
@@ -103,4 +111,28 @@ void PetLiked::on_button_prev_clicked()
         if (!ui->button_next->isEnabled())
             ui->button_next->setEnabled(true);
     }
+}
+
+void PetLiked::on_actionLog_out_triggered()
+{
+    hide();
+    MainWindow *login = new MainWindow(this);
+    login->setAttribute(Qt::WA_DeleteOnClose);
+    login->show();
+}
+
+void PetLiked::on_actionHelp_triggered()
+{
+    hide();
+    petownerhelp *helpUI = new petownerhelp(this);
+    helpUI->setAttribute(Qt::WA_DeleteOnClose);
+    helpUI->show();
+}
+
+void PetLiked::on_actionSearch_triggered()
+{
+    hide();
+    PetDisplay *petUI = new PetDisplay(this);
+    petUI->setAttribute(Qt::WA_DeleteOnClose);
+    petUI->show();
 }

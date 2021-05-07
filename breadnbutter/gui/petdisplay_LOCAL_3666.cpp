@@ -2,8 +2,7 @@
 #include "ui_petdisplay.h"
 #include "petliked.h"
 #include "petownerhelp.h"
-#include "createaccount.h"
-#include "mainwindow.h"
+#include "login.h"
 
 PetDisplay::PetDisplay(QWidget *parent) :
     QMainWindow(parent),
@@ -20,38 +19,6 @@ PetDisplay::PetDisplay(QWidget *parent) :
     baseQuery = "select * "
             "from pet "
             "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
-    // adding icons to the page
-    QPixmap icon;
-
-    QString icon0(":/icons/icons/Name.png");
-    icon.load(icon0);
-    width = ui->icon0_display->width();
-    height = ui->icon0_display->height();
-    ui->icon0_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
-
-    QString icon1(":/icons/icons/Type.png");
-    icon.load(icon1);
-    width = ui->icon1_display->width();
-    height = ui->icon1_display->height();
-    ui->icon1_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
-
-    QString icon2(":/icons/icons/Breed.png");
-    icon.load(icon2);
-    width = ui->icon2_display->width();
-    height = ui->icon2_display->height();
-    ui->icon2_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
-
-    QString icon3(":/icons/icons/Shelter.png");
-    icon.load(icon3);
-    width = ui->icon3_display->width();
-    height = ui->icon3_display->height();
-    ui->icon3_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
-
-    QString icon4(":/icons/icons/Location.png");
-    icon.load(icon4);
-    width = ui->icon4_display->width();
-    height = ui->icon4_display->height();
-    ui->icon4_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     currentPos = 0;
     fetchPets();
@@ -428,6 +395,7 @@ void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
 void PetDisplay::on_actionLog_out_triggered()
 {
     hide();
+
     currentUser.logOut();
     parentWidget()->show();
 }

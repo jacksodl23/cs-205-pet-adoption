@@ -39,6 +39,7 @@ void MainWindow::showPetDisplay()
 {
     hide();
     petDisplay = new PetDisplay(this);
+    petDisplay->setAttribute(Qt::WA_DeleteOnClose);
     petDisplay->show();
 }
 
@@ -46,6 +47,7 @@ void MainWindow::showShelterDisplay()
 {
     hide();
     shelterDisplay = new shelterProfile(this);
+    shelterDisplay->setAttribute(Qt::WA_DeleteOnClose);
     shelterDisplay->show();
 }
 

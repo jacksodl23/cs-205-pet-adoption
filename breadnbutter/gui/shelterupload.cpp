@@ -1,5 +1,9 @@
 #include "shelterupload.h"
 #include "ui_shelterupload.h"
+#include "shelterhelp.h"
+#include "shelterprofile.h"
+#include "createaccount.h"
+#include "mainwindow.h"
 
 shelterUpload::shelterUpload(QWidget *parent) :
     QMainWindow(parent),
@@ -11,26 +15,6 @@ shelterUpload::shelterUpload(QWidget *parent) :
 shelterUpload::~shelterUpload()
 {
     delete ui;
-}
-
-void shelterUpload::on_pushButton_clicked()
-{
-    this->name = ui->nameField->text();
-    this->age = ui->ageField->text().toInt();
-    this->weight = ui->weightField->text().toFloat();
-    this->origin = ui->originField->text();
-    this->description = ui->descriptionTextEdit->toPlainText();
-
-    Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
-
-    bool check = newPet.insertIntoDB(shelter->getShelterID());
-
-    if(check){
-        QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
-
-        hide();
-        parentWidget()->show();
-    }
 }
 
 void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
@@ -96,7 +80,55 @@ void shelterUpload::on_hypoBox_currentTextChanged(const QString &arg1)
     }
 }
 
+void shelterUpload::on_cancelButton_clicked()
+{
+    hide();
+    parentWidget()->show();
+}
+
+void shelterUpload::on_addButton_clicked()
+{
+    this->name = ui->nameField->text();
+    this->age = ui->ageField->text().toInt();
+    this->weight = ui->weightField->text().toFloat();
+    this->origin = ui->originField->text();
+    this->description = ui->descriptionTextEdit->toPlainText();
+
+    Pet newPet(is_cat, name, age, breed, color, hairLength, weight, origin, hypoallergenic, description);
+
+    bool check = newPet.insertIntoDB(shelter->getShelterID());
+
+    if(check){
+        QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
+
+        hide();
+        parentWidget()->show();
+    }
+}
+
 void shelterUpload::setShelter(Shelter *value)
 {
     shelter = value;
+}
+
+void shelterUpload::on_actionProfile_triggered()
+{
+    shelterProfile *w = new shelterProfile(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+}
+
+void shelterUpload::on_actionHelp_triggered()
+{
+    shelterhelp *w = new shelterhelp(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+}
+
+void shelterUpload::on_actionLog_out_triggered()
+{
+    hide();
+    MainWindow *login = new MainWindow(this);
+    login->setAttribute(Qt::WA_DeleteOnClose);
+    login->show();
 }

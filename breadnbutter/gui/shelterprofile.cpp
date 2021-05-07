@@ -1,5 +1,7 @@
 #include "shelterprofile.h"
 #include "ui_shelterprofile.h"
+#include "shelterhelp.h"
+#include "shelterupload.h"
 
 shelterProfile::shelterProfile(QWidget *parent) :
     QMainWindow(parent),
@@ -9,15 +11,20 @@ shelterProfile::shelterProfile(QWidget *parent) :
     ui->welcomeLabel->setText("Welcome " + currentUser.getFirstName() + "!");
 
     fetchShelter();
-    if (currentShelter == nullptr)
-        QMessageBox::warning(this, "No Shelter Linked!", "Please indicate which shelter you own.", QMessageBox::Ok);
-    else
+    if (currentShelter != nullptr)
         populatePetsTable();
 }
 
 shelterProfile::~shelterProfile()
 {
     delete ui;
+}
+
+void shelterProfile::showEvent(QShowEvent *event)
+{
+    QMainWindow::showEvent(event);
+    if (currentShelter != nullptr)
+        populatePetsTable();
 }
 
 void shelterProfile::fetchShelter()
@@ -31,28 +38,44 @@ void shelterProfile::fetchShelter()
             int shelterID = query.value(0).toInt();
 
             Shelter *s = new Shelter(shelterID);
-            ShelterOwner *owner = new ShelterOwner(currentUser.getID());
-            s->setOwner(owner);
 
             currentShelter = s;
             ui->shelterNameLabel->setText("You are the owner of " + currentShelter->getName());
+        } else {
+            QMessageBox::critical(this, "No Shelter Linked!", "The shelter you own could not be found.");
+            logOutShelterOwner();
         }
     } else {
         qDebug() << "Error finding owner's shelter:" << query.lastError().text();
     }
 }
 
+/*
+void shelterProfile::on_actionUpload_triggered()
+{
+    shelterUpload *w = new shelterUpload;
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
+}
+*/
+
 void shelterProfile::populatePetsTable()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
 
     QSqlQuery query;
-    query.prepare("select * from Pet where shelter_id = ?");
+    query.prepare("select pet.name, pet.color, pet.hair_length, pet.description, pet_attributes.age, pet_attributes.breed, pet_attributes.weight, pet_attributes.origin "
+                  "from pet "
+                  "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id "
+                  "where pet.shelter_id = ?");
     query.addBindValue(currentShelter->getShelterID());
 
-    query.exec();
-    model->setQuery(query);
-    ui->tableView->setModel(model);
+    if (query.exec()) {
+        model->setQuery(query);
+        ui->tableView->setModel(model);
+    } else {
+        qDebug() << "Error getting pets in shelter:" << query.lastError().text();
+    }
 }
 
 void shelterProfile::on_actionUpload_triggered()
@@ -60,13 +83,27 @@ void shelterProfile::on_actionUpload_triggered()
     shelterUpload *w = new shelterUpload(this);
     w->setShelter(currentShelter);
     w->setAttribute(Qt::WA_DeleteOnClose);
+
+    hide();
     w->show();
 }
 
 void shelterProfile::on_actionLog_out_triggered()
 {
+    logOutShelterOwner();
+}
+
+void shelterProfile::logOutShelterOwner()
+{
     hide();
 
     currentUser.logOut();
     parentWidget()->show();
+}
+
+void shelterProfile::on_actionHelp_triggered()
+{
+    shelterhelp *w = new shelterhelp(this);
+    w->setAttribute(Qt::WA_DeleteOnClose);
+    w->show();
 }

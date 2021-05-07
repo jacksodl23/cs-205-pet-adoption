@@ -1,9 +1,7 @@
 #include "shelter.h"
 
-Shelter::Shelter(int id)
+void Shelter::fetchInfoFromID(int id)
 {
-    this->shelterID = id;
-
     QSqlQuery query;
     query.prepare("select * from shelter where shelter_id = ?");
     query.addBindValue(id);
@@ -13,6 +11,7 @@ Shelter::Shelter(int id)
             int nameIndex = query.record().indexOf("name");
             int locIndex = query.record().indexOf("location");
             int emailIndex = query.record().indexOf("email");
+            int ownerIndex = query.record().indexOf("owner_id");
 
             this->name = query.value(nameIndex).toString();
             this->location = query.value(locIndex).toString();
@@ -23,6 +22,13 @@ Shelter::Shelter(int id)
     } else {
         qDebug() << "Error getting shelter info:" << query.lastError().text();
     }
+}
+
+Shelter::Shelter(int id)
+{
+    this->shelterID = id;
+
+    fetchInfoFromID(id);
 }
 
 Shelter::Shelter(QString n, QString l, QString e) {
@@ -67,9 +73,8 @@ bool Shelter::insertIntoDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into Shelter (shelter_id, name, location, email)"
-                      "values (?, ?, ?, ?)");
-        query.addBindValue(shelterID);
+        query.prepare("insert into Shelter (name, location, email)"
+                      "values (?, ?, ?)");
         query.addBindValue(name);
         query.addBindValue(location);
         query.addBindValue(email);
@@ -78,6 +83,8 @@ bool Shelter::insertIntoDB()
 
         if (!result)
             std::cerr << query.lastError().text().toStdString() << std::endl;
+
+        this->shelterID = query.lastInsertId().toInt();
     } else {
         result = false;
     }
@@ -97,14 +104,14 @@ bool Shelter::deleteFromDB()
 bool Shelter::existsInDB()
 {
     QSqlQuery query;
-    query.prepare("select location from Shelter where location = ?");
-    query.addBindValue(location);
+    query.prepare("select name from Shelter where name = ?");
+    query.addBindValue(name);
 
     if (query.exec()) {
         while (query.next()) {
             QString dbLoc = query.value(0).toString();
 
-            int compare = QString::compare(location, dbLoc, Qt::CaseInsensitive);
+            int compare = QString::compare(name, dbLoc, Qt::CaseInsensitive);
             if (compare == 0)
                 return true;
         }
@@ -152,4 +159,9 @@ void Shelter::setOwner(ShelterOwner *value)
 int Shelter::getShelterID() const
 {
     return shelterID;
+}
+
+void Shelter::setShelterID(int value)
+{
+    shelterID = value;
 }

@@ -23,12 +23,70 @@ PetProfile::PetProfile(QWidget *parent) :
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+
+    // adding icons to the page
+    QPixmap icon;
+
+    QString iconName(":/icons/icons/Name.png");
+    icon.load(iconName);
+    width = ui->icon_name->width();
+    height = ui->icon_name->height();
+    ui->icon_name->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconBreed(":/icons/icons/Breed.png");
+    icon.load(iconBreed);
+    width = ui->icon_breed->width();
+    height = ui->icon_breed->height();
+    ui->icon_breed->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconAge(":/icons/icons/Age.png");
+    icon.load(iconAge);
+    width = ui->icon_age->width();
+    height = ui->icon_age->height();
+    ui->icon_age->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconColor(":/icons/icons/Color.png");
+    icon.load(iconColor);
+    width = ui->icon_color->width();
+    height = ui->icon_color->height();
+    ui->icon_color->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconHypo(":/icons/icons/Hypoallergenic.png");
+    icon.load(iconHypo);
+    width = ui->icon_hypoallergenic->width();
+    height = ui->icon_hypoallergenic->height();
+    ui->icon_hypoallergenic->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconLocation(":/icons/icons/Location.png");
+    icon.load(iconLocation);
+    width = ui->icon_location->width();
+    height = ui->icon_location->height();
+    ui->icon_location->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconShelter(":/icons/icons/Shelter.png");
+    icon.load(iconShelter);
+    width = ui->icon_shelter->width();
+    height = ui->icon_shelter->height();
+    ui->icon_shelter->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconPhone(":/icons/icons/Phone.png");
+    icon.load(iconPhone);
+    width = ui->icon_phone->width();
+    height = ui->icon_phone->height();
+    ui->icon_phone->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconEmail(":/icons/icons/Email.png");
+    icon.load(iconEmail);
+    width = ui->icon_email->width();
+    height = ui->icon_email->height();
+    ui->icon_email->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 }
 
 PetProfile::~PetProfile()
 {
     delete ui;
 }
+
 
 void PetProfile::setPDisplay(const Pet &value)
 {
@@ -71,8 +129,14 @@ void PetProfile::fetchPet()
 
                     ShelterOwner owner(ownerID);
                     ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
+                    ui->label_email->setText(owner.getEmail());
                 }
             }
         }
     }
+}
+
+void PetProfile::on_backToSearchButton_clicked()
+{
+    close();
 }

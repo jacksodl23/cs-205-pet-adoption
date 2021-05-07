@@ -35,6 +35,8 @@ public:
 
     int getShelterID() const;
 
+    void setShelterID(int value);
+
 private:
     int shelterID;
     QString name;
@@ -45,6 +47,7 @@ private:
 
     void fetchPets();
     ShelterOwner *owner;
+    void fetchInfoFromID(int id);
 };
 
 #endif // SHELTER_H
