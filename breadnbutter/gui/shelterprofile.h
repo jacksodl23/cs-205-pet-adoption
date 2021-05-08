@@ -21,6 +21,9 @@ public:
     explicit shelterProfile(QWidget *parent = 0);
     ~shelterProfile();
 
+protected:
+    void showEvent(QShowEvent *event);
+
 private slots:
     void on_actionUpload_triggered();
     void on_actionLog_out_triggered();
@@ -32,6 +35,7 @@ private:
 
     void fetchShelter();
     void populatePetsTable();
+    void logOutShelterOwner();
 };
 
 #endif // SHELTERPROFILE_H

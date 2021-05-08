@@ -580,6 +580,14 @@ color: rgb(0, 0, 0);</string>
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
          </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Any</string>
+          </property>
+         </item>
          <item>
           <property name="text">
            <string>Yes</string>
@@ -759,6 +767,14 @@ color: rgb(0, 0, 0);</string>
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
          </property>
+         <property name="currentText">
+          <string>Any</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Any</string>
+          </property>
+         </item>
          <item>
           <property name="text">
            <string>Dog</string>

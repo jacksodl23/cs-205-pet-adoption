@@ -93,12 +93,15 @@ void shelterUpload::on_addButton_clicked()
     this->weight = ui->weightField->text().toFloat();
     this->description = ui->descriptionTextEdit->toPlainText();
 
-    Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
+    Pet newPet(is_cat, name, age, breed, color, hairLength, weight, origin, hypoallergenic, description);
 
     bool check = newPet.insertIntoDB(shelter->getShelterID());
 
     if(check){
         QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
+
+        hide();
+        parentWidget()->show();
     }
 }
 

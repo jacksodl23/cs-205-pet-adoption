@@ -129,6 +129,7 @@ void PetProfile::fetchPet()
 
                     ShelterOwner owner(ownerID);
                     ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
+                    ui->label_email->setText(owner.getEmail());
                 }
             }
         }
