@@ -364,12 +364,27 @@ border: 2px solid  white;
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QLineEdit" name="originField">
+           <widget class="QComboBox" name="originBox">
             <property name="styleSheet">
              <string notr="true">color: rgb(239, 207, 187);
 border: 2px solid  white; 
      border-radius: 3px;</string>
             </property>
+            <item>
+             <property name="text">
+              <string>Breeder</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Rescue</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Shelter</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>
