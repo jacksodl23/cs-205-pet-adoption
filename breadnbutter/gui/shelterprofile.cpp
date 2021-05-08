@@ -61,10 +61,10 @@ void shelterProfile::on_actionUpload_triggered()
 
 void shelterProfile::populatePetsTable()
 {
-    QSqlQueryModel *model = new QSqlQueryModel();
+    ShelterProfileSqlModel *model = new ShelterProfileSqlModel();
 
     QSqlQuery query;
-    query.prepare("select pet.name, pet.color, pet.hair_length, pet.description, pet_attributes.age, pet_attributes.breed, pet_attributes.weight, pet_attributes.origin "
+    query.prepare("select * "
                   "from pet "
                   "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id "
                   "where pet.shelter_id = ?");
@@ -72,7 +72,15 @@ void shelterProfile::populatePetsTable()
 
     if (query.exec()) {
         model->setQuery(query);
+        model->setHeaderData(9, Qt::Horizontal, tr("type")); // change is_cat column name to type
+
         ui->tableView->setModel(model);
+
+        ui->tableView->hideColumn(0); // pet_id
+        ui->tableView->hideColumn(2); // shelter_id
+        ui->tableView->hideColumn(3); // pet_attribute_id
+        ui->tableView->hideColumn(7); // pet_att_id
+        ui->tableView->hideColumn(8); // pet_id
     } else {
         qDebug() << "Error getting pets in shelter:" << query.lastError().text();
     }

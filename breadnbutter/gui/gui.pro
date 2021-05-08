@@ -26,7 +26,8 @@ SOURCES += \
     shelterprofile.cpp \
     petliked.cpp \
     petownerhelp.cpp \
-    shelterhelp.cpp
+    shelterhelp.cpp \
+    shelterprofilesqlmodel.cpp
 
 HEADERS += \
     createaccount.h \
@@ -41,7 +42,8 @@ HEADERS += \
     shelterprofile.h \
     petliked.h \
     petownerhelp.h \
-    shelterhelp.h
+    shelterhelp.h \
+    shelterprofilesqlmodel.h
 
 FORMS += \
     createaccount.ui \

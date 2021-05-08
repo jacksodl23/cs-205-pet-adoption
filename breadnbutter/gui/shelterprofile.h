@@ -7,6 +7,7 @@
 #include <QSqlQueryModel>
 #include "../backend/globals.h"
 #include "../backend/shelter.h"
+#include "shelterprofilesqlmodel.h"
 #include "shelterupload.h"
 
 namespace Ui {

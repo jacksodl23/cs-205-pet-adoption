@@ -9,6 +9,7 @@
 #include "../backend/shelter.h"
 #include "../backend/pet.h"
 #include "../backend/user.h"
+#include "../gui/shelterprofilesqlmodel.h"
 
 using namespace std;
 
@@ -20,6 +21,10 @@ public:
     AdopterTest() {
         owner = new PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "Seattle");
     }
+
+    void TearDown() {
+        owner->deleteFromDB();
+    }
 };
 
 class PetTest : public ::testing::Test {
@@ -30,6 +35,10 @@ public:
     PetTest() {
         pet = new Pet(true, "Fuzzy Wuzzy", 4, "Turkish Van", "brown", "medium", 8, "Shelter", true, "Lorem Ipsum");
     }
+
+    void TearDown() {
+        pet->deleteFromDB();
+    }
 };
 
 class ShelterTest : public ::testing::Test {
@@ -39,6 +48,10 @@ protected:
 public:
     ShelterTest() {
         shelter = new Shelter("Who Let the Paws Out?", "Pittsburgh", "paws@paws.com");
+    }
+
+    void TearDown() {
+        shelter->deleteFromDB();
     }
 };
 
