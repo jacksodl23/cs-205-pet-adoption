@@ -91,7 +91,6 @@ void shelterUpload::on_addButton_clicked()
     this->name = ui->nameField->text();
     this->age = ui->ageField->text().toInt();
     this->weight = ui->weightField->text().toFloat();
-    this->origin = ui->originField->text();
     this->description = ui->descriptionTextEdit->toPlainText();
 
     Pet newPet(is_cat,name,age,breed,color,hairLength,weight,origin,hypoallergenic,description);
@@ -128,4 +127,9 @@ void shelterUpload::on_actionLog_out_triggered()
     MainWindow *login = new MainWindow(this);
     login->setAttribute(Qt::WA_DeleteOnClose);
     login->show();
+}
+
+void shelterUpload::on_originBox_activated(const QString &arg1)
+{
+    origin = arg1;
 }
