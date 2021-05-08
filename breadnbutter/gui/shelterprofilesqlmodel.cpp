@@ -12,6 +12,7 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
 
     QModelIndex attKeyIndex = QSqlQueryModel::index(index.row(), 3);
     int attID = data(attKeyIndex).toInt();
+    qDebug() << "Att id is" << attID;
 
     QModelIndex shelterKeyIndex = QSqlQueryModel::index(index.row(), 2);
     int shelterID = data(shelterKeyIndex).toInt();
@@ -31,6 +32,25 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
         break;
     case 6:
         ok = setDescription(petID, value.toString());
+        break;
+    case 8:
+        ok = setIsCat(attID, value.toInt());
+        break;
+    case 9:
+        ok = setAge(attID, value.toInt());
+        break;
+    case 10:
+        ok = setBreed(attID, value.toString());
+        break;
+    case 11:
+        ok = setWeight(attID, value.toFloat());
+        break;
+    case 12:
+        ok = setOrigin(attID, value.toString());
+        break;
+    case 13:
+        ok = setHypo(attID, value.toInt());
+        break;
     default:
         break;
     }
@@ -44,6 +64,8 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
         query.addBindValue(shelterID);
 
         setQuery(query);
+    } else {
+        qDebug() << "Something went wrong while updating.";
     }
 
     return ok;
@@ -82,6 +104,60 @@ bool ShelterProfileSqlModel::setDescription(int petID, const QString &pDesc)
     query.prepare("update pet set description = ? where pet_id = ?");
     query.addBindValue(pDesc);
     query.addBindValue(petID);
+    return query.exec();
+}
+
+bool ShelterProfileSqlModel::setIsCat(int attID, const int &pIsCat)
+{
+    QSqlQuery query;
+    query.prepare("update pet_attributes set is_cat = ? where pet_att_id = ?");
+    query.addBindValue(attID);
+    query.addBindValue(pIsCat);
+    return query.exec();
+}
+
+bool ShelterProfileSqlModel::setAge(int attID, const int &pAge)
+{
+    QSqlQuery query;
+    query.prepare("update pet_attributes set age = ? where pet_att_id = ?");
+    query.addBindValue(attID);
+    query.addBindValue(pAge);
+    return query.exec();
+}
+
+bool ShelterProfileSqlModel::setBreed(int attID, const QString &pBreed)
+{
+    QSqlQuery query;
+    query.prepare("update pet_attributes set breed = ? where pet_att_id = ?");
+    query.addBindValue(attID);
+    query.addBindValue(pBreed);
+    return query.exec();
+}
+
+bool ShelterProfileSqlModel::setWeight(int attID, const float &pWeight)
+{
+    QSqlQuery query;
+    query.prepare("update pet_attributes set weight = ? where pet_att_id = ?");
+    query.addBindValue(attID);
+    query.addBindValue(pWeight);
+    return query.exec();
+}
+
+bool ShelterProfileSqlModel::setOrigin(int attID, const QString &pOrigin)
+{
+    QSqlQuery query;
+    query.prepare("update pet_attributes set origin = ? where pet_att_id = ?");
+    query.addBindValue(attID);
+    query.addBindValue(pOrigin);
+    return query.exec();
+}
+
+bool ShelterProfileSqlModel::setHypo(int attID, const int &pHypo)
+{
+    QSqlQuery query;
+    query.prepare("update pet_attributes set hypoallergenic = ? where pet_att_id = ?");
+    query.addBindValue(attID);
+    query.addBindValue(pHypo);
     return query.exec();
 }
 

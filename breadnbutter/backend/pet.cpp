@@ -149,9 +149,8 @@ bool Pet::insertIntoDB(int shelterID)
             this->pet_id = pInsertID;
 
             QSqlQuery q2;
-            q2.prepare("insert into Pet_Attributes (pet_id, is_cat, age, breed, weight, origin, hypoallergenic) "
-                       "values (?, ?, ?, ?, ?, ?, ?)");
-            q2.addBindValue(pet_id);
+            q2.prepare("insert into Pet_Attributes (is_cat, age, breed, weight, origin, hypoallergenic) "
+                       "values (?, ?, ?, ?, ?, ?)");
             q2.addBindValue(int(is_cat));
             q2.addBindValue(age);
             q2.addBindValue(breed);

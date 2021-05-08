@@ -72,7 +72,7 @@ void shelterProfile::populatePetsTable()
 
     if (query.exec()) {
         model->setQuery(query);
-        model->setHeaderData(9, Qt::Horizontal, tr("type")); // change is_cat column name to type
+        model->setHeaderData(8, Qt::Horizontal, tr("type")); // change is_cat column name to type
 
         ui->tableView->setModel(model);
 
@@ -80,7 +80,6 @@ void shelterProfile::populatePetsTable()
         ui->tableView->hideColumn(2); // shelter_id
         ui->tableView->hideColumn(3); // pet_attribute_id
         ui->tableView->hideColumn(7); // pet_att_id
-        ui->tableView->hideColumn(8); // pet_id
     } else {
         qDebug() << "Error getting pets in shelter:" << query.lastError().text();
     }
