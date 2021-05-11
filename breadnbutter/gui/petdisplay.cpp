@@ -17,9 +17,7 @@ PetDisplay::PetDisplay(QWidget *parent) :
     int height = ui->animalDisplay->height();
     ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
 
-    baseQuery = "select * "
-            "from pet "
-            "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id ";
+    baseQuery = "select * from pet ";
     // adding icons to the page
     QPixmap icon;
 
@@ -81,8 +79,8 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         }
 
         qDebug() << "Appending query string...";
-        prefString.remove("where pet_attributes.is_cat = 1 ");
-        prefString.append("where pet_attributes.is_cat = 0 ");
+        prefString.remove("where is_cat = 1 ");
+        prefString.append("where is_cat = 0 ");
     }
 
 
@@ -100,21 +98,21 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
             ui->breedBox->addItem(catBreedList[j].data());
         }
 
-        prefString.remove("where pet_attributes.is_cat = 0 ");
-        prefString.append("where pet_attributes.is_cat = 1 ");
+        prefString.remove("where is_cat = 0 ");
+        prefString.append("where is_cat = 1 ");
     }
 }
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
     if (prefString.isEmpty()) {
-        QString queryString = "where pet_attributes.breed = ";
+        QString queryString = "where breed = ";
         queryString.append('\'');
         queryString.append(arg1);
         queryString.append('\'');
         prefString.append(queryString);
     } else {
-        QString queryString = "and pet_attributes.breed = ";
+        QString queryString = "and breed = ";
 
         if (prefString.indexOf(queryString) == -1) {
             queryString.append('\'');
@@ -374,20 +372,20 @@ void PetDisplay::on_hypoBox_activated(const QString &arg1)
 {
     if (arg1 == "Yes") {
         if (prefString.isEmpty()) {
-            prefString.remove("where pet_attributes.hypoallergenic = 0 ");
-            prefString.append("where pet_attributes.hypoallergenic = 1 ");
+            prefString.remove("where hypoallergenic = 0 ");
+            prefString.append("where hypoallergenic = 1 ");
         } else {
-            prefString.remove("and pet_attributes.hypoallergenic = 0 ");
-            prefString.append("and pet_attributes.hypoallergenic = 1 ");
+            prefString.remove("and hypoallergenic = 0 ");
+            prefString.append("and hypoallergenic = 1 ");
         }
 
     } else if (arg1 == "No") {
         if (prefString.isEmpty()) {
-            prefString.remove("where pet_attributes.hypoallergenic = 1 ");
-            prefString.append("where pet_attributes.hypoallergenic = 0 ");
+            prefString.remove("where hypoallergenic = 1 ");
+            prefString.append("where hypoallergenic = 0 ");
         } else {
-            prefString.remove("and pet_attributes.hypoallergenic = 1 ");
-            prefString.append("and pet_attributes.hypoallergenic = 0 ");
+            prefString.remove("and hypoallergenic = 1 ");
+            prefString.append("and hypoallergenic = 0 ");
         }
     }
 }

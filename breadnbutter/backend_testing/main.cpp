@@ -79,7 +79,12 @@ TEST_F(PetTest, TestInsertPet) {
 }
 
 TEST_F(PetTest, TestUpdatePet) {
+    QSqlQuery query;
+    query.prepare("update pet set age = ? where pet_id = ?");
+    query.addBindValue(13);
+    query.addBindValue(pet->getPet_id());
 
+    ASSERT_EQ(query.exec(), true);
 }
 
 TEST_F(ShelterTest, TestInsertShelter) {

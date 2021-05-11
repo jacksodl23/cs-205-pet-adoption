@@ -51,7 +51,7 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
         break;
     }
 
-    if (ok) {
+    /*if (ok) {
         QSqlQuery query;
         query.prepare("select * "
                       "from pet "
@@ -61,7 +61,7 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
         setQuery(query);
     } else {
         qDebug() << "Something went wrong while updating.";
-    }
+    } */
 
     return ok;
 }
@@ -86,6 +86,8 @@ bool ShelterProfileSqlModel::setColor(int petID, const QString &pColor)
 
 bool ShelterProfileSqlModel::setHairLength(int petID, const QString &pHairLen)
 {
+    qDebug() << "Setting hair length to" << pHairLen;
+
     QSqlQuery query;
     query.prepare("update pet set hair_length = ? where pet_id = ?");
     query.addBindValue(pHairLen);
@@ -95,6 +97,8 @@ bool ShelterProfileSqlModel::setHairLength(int petID, const QString &pHairLen)
 
 bool ShelterProfileSqlModel::setDescription(int petID, const QString &pDesc)
 {
+    qDebug() << "Setting description to" << pDesc;
+
     QSqlQuery query;
     query.prepare("update pet set description = ? where pet_id = ?");
     query.addBindValue(pDesc);
@@ -113,6 +117,8 @@ bool ShelterProfileSqlModel::setIsCat(int petID, const int &pIsCat)
 
 bool ShelterProfileSqlModel::setAge(int petID, const int &pAge)
 {
+    qDebug() << "Setting age to" << pAge;
+
     QSqlQuery query;
     query.prepare("update pet set age = ? where pet_id = ?");
     query.addBindValue(petID);
@@ -131,6 +137,8 @@ bool ShelterProfileSqlModel::setBreed(int petID, const QString &pBreed)
 
 bool ShelterProfileSqlModel::setWeight(int petID, const float &pWeight)
 {
+    qDebug() << "Setting weight to" << pWeight;
+
     QSqlQuery query;
     query.prepare("update pet set weight = ? where pet_id = ?");
     query.addBindValue(petID);
@@ -140,6 +148,8 @@ bool ShelterProfileSqlModel::setWeight(int petID, const float &pWeight)
 
 bool ShelterProfileSqlModel::setOrigin(int petID, const QString &pOrigin)
 {
+    qDebug() << "Setting origin to" << pOrigin;
+
     QSqlQuery query;
     query.prepare("update pet set origin = ? where pet_id = ?");
     query.addBindValue(petID);
