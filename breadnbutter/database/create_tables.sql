@@ -3,6 +3,7 @@ CREATE TABLE User (
   name TEXT NOT NULL,
   location TEXT NOT NULL,
   email TEXT NOT NULL,
+  phone TEXT NOT NULL,
   password TEXT NOT NULL,
   is_adopter INTEGER NOT NULL
   );
@@ -20,23 +21,17 @@ CREATE TABLE Pet (
   pet_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT, 
   name TEXT NOT NULL, 
   shelter_id INTEGER NOT NULL,
-  pet_attribute_id INTEGER UNIQUE,
   color TEXT,
   hair_length TEXT,
-  description TEXT,
-  --Image BLOB,
-  FOREIGN KEY(pet_attribute_id) REFERENCES Pet_Attributes(Pet_Attribute_id),
-  FOREIGN KEY(shelter_id) REFERENCES Shelter(shelter_id)
-  );
-
-CREATE TABLE Pet_Attributes ( -- ANYTHING WE WANT TO SEARCH BY
-  pet_att_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
   is_cat INTEGER,
   age INTEGER,
   breed TEXT,
   weight INTEGER,
   origin TEXT,
-  hypoallergenic INTEGER
+  hypoallergenic INTEGER,
+  description TEXT,
+  --Image BLOB,
+  FOREIGN KEY(shelter_id) REFERENCES Shelter(shelter_id)
   );
 
 CREATE TABLE Adopter_Preferences (
@@ -71,5 +66,12 @@ CREATE TABLE Breed_Pref (
 CREATE TABLE Breeds (
   breed_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
   breed_name TEXT NOT NULL
+  );
+
+CREATE TABLE Location (
+  location_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
+  location TEXT NOT NULL,
+  lattitude REAL, 
+  longitude REAL
   );
 
