@@ -15,7 +15,6 @@ public:
     bool insertIntoDB(int shelterID);
     bool deleteFromDB();
     QString getName();
-    bool existsInDB();
 
     int getAge() const;
 

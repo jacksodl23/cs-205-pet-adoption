@@ -1,26 +1,5 @@
 #include "pet.h"
 
-bool Pet::existsInDB()
-{
-    QSqlQuery query;
-    query.prepare("select name from Pet where name = ?");
-    query.addBindValue(name);
-
-    if (query.exec()) {
-        while (query.next()) {
-            QString dbName = query.value(0).toString();
-
-            int compare = QString::compare(name, dbName, Qt::CaseInsensitive);
-            if (compare == 0)
-                return true;
-        }
-    } else {
-        std::cerr << "Error getting pets: " << query.lastError().text().toStdString() << std::endl;
-    }
-
-    return false;
-}
-
 int Pet::getAge() const
 {
     return age;
@@ -71,9 +50,7 @@ Pet::Pet(int id)
     this->pet_id = id;
 
     QSqlQuery query;
-    query.prepare("select * from pet "
-                  "inner join pet_attributes on pet_attributes.pet_att_id = pet.pet_attribute_id "
-                  "where pet.pet_id = ?");
+    query.prepare("select * from pet where pet_id = ?");
     query.addBindValue(id);
 
     if (query.exec()) {
@@ -132,59 +109,30 @@ Pet::Pet(bool is_cat, QString name, int age, QString breed, QString color, QStri
 
 bool Pet::insertIntoDB(int shelterID)
 {
-    bool result;
+    bool ok;
 
-    if (!existsInDB()) {
-        QSqlQuery query;
-        query.prepare("insert into Pet (name, shelter_id, color, hair_length, description)"
-                      "values (?, ?, ?, ?, ?)");
-        query.addBindValue(name);
-        query.addBindValue(shelterID);
-        query.addBindValue(color);
-        query.addBindValue(hairLength);
-        query.addBindValue(description);
+    QSqlQuery query;
+    query.prepare("insert into Pet (name, shelter_id, color, hair_length, description, is_cat, age, breed, weight, origin, hypoallergenic)"
+                  "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        if (query.exec()) {
-            int pInsertID = query.lastInsertId().toInt();
-            this->pet_id = pInsertID;
+    query.addBindValue(name);
+    query.addBindValue(shelterID);
+    query.addBindValue(color);
+    query.addBindValue(hairLength);
+    query.addBindValue(description);
+    query.addBindValue(int(is_cat));
+    query.addBindValue(age);
+    query.addBindValue(breed);
+    query.addBindValue(weight);
+    query.addBindValue(origin);
+    query.addBindValue(int(hypoallergenic));
 
-            QSqlQuery q2;
-            q2.prepare("insert into Pet_Attributes (is_cat, age, breed, weight, origin, hypoallergenic) "
-                       "values (?, ?, ?, ?, ?, ?)");
-            q2.addBindValue(int(is_cat));
-            q2.addBindValue(age);
-            q2.addBindValue(breed);
-            q2.addBindValue(weight);
-            q2.addBindValue(origin);
-            q2.addBindValue(int(hypoallergenic));
+    ok = query.exec();
 
-            if (q2.exec()) {
-                QSqlQuery q3;
-                q3.prepare("update pet set pet_attribute_id = ? where pet_id = ?");
+    if (!ok)
+        qDebug() << "Error inserting pet:" << query.lastError().text();
 
-                int insertID = q2.lastInsertId().toInt();
-                q3.addBindValue(insertID);
-                q3.addBindValue(pet_id);
-
-                result = q3.exec();
-
-                if (!result) {
-                    qDebug() << "Error linking pet attribute to pet:" << q3.lastError().text();
-                }
-            } else {
-                qDebug() << "Error inserting pet attributes:" << q2.lastError().text();
-                result = false;
-            }
-        } else {
-            qDebug() << "Error inserting pet:" << query.lastError().text();
-            result = false;
-        }
-    } else {
-        qDebug() << "Pet already exists in database.";
-        result = false;
-    }
-
-    return result;
+    return ok;
 }
 
 bool Pet::deleteFromDB()

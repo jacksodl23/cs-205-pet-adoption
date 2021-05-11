@@ -18,12 +18,12 @@ private:
     bool setHairLength(int petID, const QString &pHairLen);
     bool setDescription(int petID, const QString &pDesc);
 
-    bool setIsCat(int attID, const int &pIsCat);
-    bool setAge(int attID, const int &pAge);
-    bool setBreed(int attID, const QString &pBreed);
-    bool setWeight(int attID, const float &pWeight);
-    bool setOrigin(int attID, const QString &pOrigin);
-    bool setHypo(int attID, const int &pHypo);
+    bool setIsCat(int petID, const int &pIsCat);
+    bool setAge(int petID, const int &pAge);
+    bool setBreed(int petID, const QString &pBreed);
+    bool setWeight(int petID, const float &pWeight);
+    bool setOrigin(int petID, const QString &pOrigin);
+    bool setHypo(int petID, const int &pHypo);
 };
 
 #endif // SHELTERPROFILESQLMODEL_H

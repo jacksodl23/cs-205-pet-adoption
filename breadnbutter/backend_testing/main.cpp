@@ -75,10 +75,11 @@ TEST_F(AdopterTest, TestDeleteAdopter) {
 } */
 
 TEST_F(PetTest, TestInsertPet) {
-    if (pet->existsInDB())
-        ASSERT_EQ(pet->insertIntoDB(100), false);
-    else
-        ASSERT_EQ(pet->insertIntoDB(100), true);
+    ASSERT_EQ(pet->insertIntoDB(100), true);
+}
+
+TEST_F(PetTest, TestUpdatePet) {
+
 }
 
 TEST_F(ShelterTest, TestInsertShelter) {
@@ -136,10 +137,7 @@ TEST(TestRead,TestReadPet) {
 
 TEST (TestRead, TestReadDogsOnly) {
     QSqlQuery query;
-    if (query.exec("select * "
-                   "from Pet "
-                   "inner join Pet_Attributes on Pet_Attributes.pet_att_id = Pet.pet_attribute_id "
-                   "where Pet_Attributes.is_cat = 0")) {
+    if (query.exec("select * from Pet where is_cat = 0")) {
         ASSERT_EQ(query.next(), true);
     } else {
         qDebug() << "Error querying dogs:" << query.lastError().text();
