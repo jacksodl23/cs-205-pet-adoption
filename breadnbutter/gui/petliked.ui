@@ -1356,16 +1356,22 @@ color: rgb(239, 207, 187);</string>
      <x>0</x>
      <y>0</y>
      <width>1043</width>
-     <height>31</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Dyuthi</family>
-     <pointsize>14</pointsize>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <widget class="QMenu" name="menuBread_and_Butter">
+    <property name="font">
+     <font>
+      <family>Dyuthi</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Menu</string>
     </property>
@@ -1381,20 +1387,44 @@ color: rgb(239, 207, 187);</string>
    <property name="text">
     <string>Search</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionHelp">
    <property name="text">
     <string>Help</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionLog_out">
    <property name="text">
     <string>Log out</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionLiked">
    <property name="text">
     <string>Liked</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
   </action>
  </widget>

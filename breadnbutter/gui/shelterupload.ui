@@ -471,16 +471,22 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>31</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Dyuthi</family>
-     <pointsize>14</pointsize>
+     <pointsize>18</pointsize>
     </font>
    </property>
    <widget class="QMenu" name="menuBread_and_Butter">
+    <property name="font">
+     <font>
+      <family>Dyuthi</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Menu</string>
     </property>
