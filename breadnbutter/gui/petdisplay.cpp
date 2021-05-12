@@ -113,14 +113,15 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
         prefString.append(queryString);
     } else {
         QString queryString = "and breed = ";
+        int stringIndex = prefString.indexOf(queryString);
 
-        if (prefString.indexOf(queryString) == -1) {
+        if (stringIndex == -1) {
             queryString.append('\'');
             queryString.append(arg1);
             queryString.append('\'');
             prefString.append(queryString);
         } else {
-
+            // TODO: figure out how to remove the existing breed string.
         }
     }
 
