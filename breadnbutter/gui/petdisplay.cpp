@@ -53,6 +53,12 @@ PetDisplay::PetDisplay(QWidget *parent) :
     height = ui->icon4_display->height();
     ui->icon4_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString icon5(":/icons/icons/Shelter.png");
+    icon.load(icon5);
+    width = ui->icon5_display->width();
+    height = ui->icon5_display->height();
+    ui->icon5_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     currentPos = 0;
     fetchPets();
     getCurrentUser();

@@ -88,8 +88,8 @@ PetLiked::PetLiked(QWidget *parent) :
 
     QString iconName(":/icons/icons/Name.png");
     icon.load(iconName);
-    width = ui->icon_name->width();
-    height = ui->icon_name->height();
+    int width = ui->icon_name->width();
+    int height = ui->icon_name->height();
     ui->icon_name->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString iconType(":/icons/icons/Type.png");
@@ -121,12 +121,6 @@ PetLiked::PetLiked(QWidget *parent) :
     width = ui->icon_hair->width();
     height = ui->icon_hair->height();
     ui->icon_hair->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
-
-    QString iconWeight(":/icons/icons/Weight.png");
-    icon.load(iconWeight);
-    width = ui->icon_weight->width();
-    height = ui->icon_weight->height();
-    ui->icon_weight->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString iconWeight(":/icons/icons/Weight.png");
     icon.load(iconWeight);

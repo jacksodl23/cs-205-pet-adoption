@@ -57,6 +57,18 @@ PetProfile::PetProfile(QWidget *parent) :
     height = ui->icon_color->height();
     ui->icon_color->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString iconHair(":/icons/icons/Hair.png");
+    icon.load(iconHair);
+    width = ui->icon_hair->width();
+    height = ui->icon_hair->height();
+    ui->icon_hair->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconWeight(":/icons/icons/Weight.png");
+    icon.load(iconWeight);
+    width = ui->icon_weight->width();
+    height = ui->icon_weight->height();
+    ui->icon_weight->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     QString iconHypo(":/icons/icons/Hypoallergenic.png");
     icon.load(iconHypo);
     width = ui->icon_hypoallergenic->width();
