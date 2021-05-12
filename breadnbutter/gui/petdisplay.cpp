@@ -41,7 +41,7 @@ PetDisplay::PetDisplay(QWidget *parent) :
     height = ui->icon2_display->height();
     ui->icon2_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
-    QString icon3(":/icons/icons/Shelter.png");
+    QString icon3(":/icons/icons/Age.png");
     icon.load(icon3);
     width = ui->icon3_display->width();
     height = ui->icon3_display->height();
@@ -446,4 +446,24 @@ void PetDisplay::on_actionHelp_triggered()
     petownerhelp *helpUI = new petownerhelp(this);
     helpUI->setAttribute(Qt::WA_DeleteOnClose);
     helpUI->show();
+}
+
+void PetDisplay::on_dislikeBoxType_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxBreed_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
+{
+
 }

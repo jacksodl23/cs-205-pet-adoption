@@ -33,6 +33,12 @@ PetProfile::PetProfile(QWidget *parent) :
     height = ui->icon_name->height();
     ui->icon_name->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString iconType(":/icons/icons/Type.png");
+    icon.load(iconType);
+    width = ui->icon_type->width();
+    height = ui->icon_type->height();
+    ui->icon_type->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     QString iconBreed(":/icons/icons/Breed.png");
     icon.load(iconBreed);
     width = ui->icon_breed->width();
@@ -56,6 +62,12 @@ PetProfile::PetProfile(QWidget *parent) :
     width = ui->icon_hypoallergenic->width();
     height = ui->icon_hypoallergenic->height();
     ui->icon_hypoallergenic->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconOrigin(":/icons/icons/Origin.png");
+    icon.load(iconOrigin);
+    width = ui->icon_origin->width();
+    height = ui->icon_origin->height();
+    ui->icon_origin->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString iconLocation(":/icons/icons/Location.png");
     icon.load(iconLocation);
