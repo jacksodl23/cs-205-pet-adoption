@@ -67,6 +67,8 @@ private slots:
 
     void on_dislikeBoxHairLen_clicked(bool checked);
 
+    void updateBar();
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

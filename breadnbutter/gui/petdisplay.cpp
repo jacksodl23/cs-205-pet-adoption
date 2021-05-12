@@ -62,6 +62,10 @@ PetDisplay::PetDisplay(QWidget *parent) :
     currentPos = 0;
     fetchPets();
     getCurrentUser();
+
+    ui->progressBar->setOrientation(Qt::Horizontal);
+    ui->progressBar->setRange(1, pets.size());
+    ui->progressBar->setValue(currentPos+1);
 }
 
 PetDisplay::~PetDisplay()
@@ -338,6 +342,8 @@ void PetDisplay::on_button_like_clicked()
     } else {
         qDebug() << "Error liking pet:" << query.lastError().text();
     }
+
+    updateBar();
 }
 
 void PetDisplay::on_button_dislike_clicked()
@@ -349,6 +355,7 @@ void PetDisplay::on_button_dislike_clicked()
         displayPet(pets.at(currentPos));
     }
 
+    updateBar();
 }
 
 void PetDisplay::fetchPets()
@@ -472,4 +479,9 @@ void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
 void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
 {
 
+}
+
+void PetDisplay::updateBar()
+{
+    ui->progressBar->setValue(currentPos+1);
 }

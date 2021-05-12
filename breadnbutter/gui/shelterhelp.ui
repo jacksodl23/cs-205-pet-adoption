@@ -1242,40 +1242,24 @@ p, li { white-space: pre-wrap; }
       <property name="font">
        <font>
         <family>Dyuthi</family>
-        <pointsize>16</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>If you have additional questions, feel free to contact us via email!</string>
+       <string>If you have additional questions, feel free to contact us via email:</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="minimumSize">
-       <size>
-        <width>200</width>
-        <height>75</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>150</width>
-        <height>16777215</height>
-       </size>
-      </property>
+     <widget class="QLabel" name="label_3">
       <property name="font">
        <font>
         <family>Dyuthi</family>
-        <pointsize>14</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">border: 2px solid  white; 
-     border-radius: 3px;</string>
-      </property>
       <property name="text">
-       <string>Contact us via email</string>
+       <string>breadnbutter@lafayette.edu</string>
       </property>
      </widget>
     </item>
