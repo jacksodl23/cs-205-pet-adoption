@@ -13,7 +13,12 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
     QModelIndex shelterKeyIndex = QSqlQueryModel::index(index.row(), 2);
     int shelterID = data(shelterKeyIndex).toInt();
 
+    QString queryStr = query().executedQuery();
+    queryStr.replace("?", QString::number(shelterID));
+    qDebug() << "Executed query" << queryStr;
+
     clear();
+    query().clear();
 
     bool ok;
     switch (index.column()) {
@@ -51,17 +56,9 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
         break;
     }
 
-    /*if (ok) {
-        QSqlQuery query;
-        query.prepare("select * "
-                      "from pet "
-                      "where pet.shelter_id = ?");
-        query.addBindValue(shelterID);
-
-        setQuery(query);
-    } else {
-        qDebug() << "Something went wrong while updating.";
-    } */
+    if (ok) {
+        setQuery(queryStr);
+    }
 
     return ok;
 }

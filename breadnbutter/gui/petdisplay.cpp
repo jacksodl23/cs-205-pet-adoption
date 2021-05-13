@@ -257,7 +257,6 @@ void PetDisplay::displayPet(Pet p)
     QString tempPath(":/resources/imgs/petPhoto");
     tempPath.append(photoString);
     QString filePath = tempPath.append(".jpg");
-    qDebug() << filePath;
 
     petPic.load(filePath);
     int width = ui->animalDisplay->width();
@@ -374,8 +373,10 @@ void PetDisplay::fetchPets()
             pets.push_back(p);
         }
 
-        if (!pets.empty())
-            displayPet(pets.at(currentPos));
+        if (!pets.empty()) {
+            currentPos = 0;
+            displayPet(pets.front());
+        }
         else
             QMessageBox::critical(this, "No Pets Found", "No pets could be found with your search parameters. Please change your search and try again.");
     } else {
