@@ -412,6 +412,8 @@ void PetDisplay::on_maxWeightSlider_valueChanged(int value)
     ui->label_search_maxweight->setText(labelText);
 }
 
+<<<<<<< HEAD
+=======
 void PetDisplay::on_searchRangeSlider_valueChanged(int value)
 {
     QString labelText = "Search Range: ";
@@ -420,6 +422,79 @@ void PetDisplay::on_searchRangeSlider_valueChanged(int value)
     ui->label_search_range->setText(labelText);
 }
 
+void PetDisplay::on_minAgeSlider_sliderReleased()
+{
+    int value = ui->minAgeSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where age >= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and age >= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and age >= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_maxAgeSlider_sliderReleased()
+{
+    int value = ui->maxAgeSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where age <= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and age <= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and age <= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_minWeightSlider_sliderReleased()
+{
+    int value = ui->minWeightSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where weight >= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and weight >= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and weight >= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_maxWeightSlider_sliderReleased()
+{
+    int value = ui->maxWeightSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where weight <= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and weight <= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and weight <= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+>>>>>>> refs/heads/gui
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();

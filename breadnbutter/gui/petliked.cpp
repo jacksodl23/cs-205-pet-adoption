@@ -128,6 +128,12 @@ PetLiked::PetLiked(QWidget *parent) :
     height = ui->icon_weight->height();
     ui->icon_weight->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString iconAllergy(":/icons/icons/Allergy.png");
+    icon.load(iconAllergy);
+    width = ui->icon_allergy->width();
+    height = ui->icon_allergy->height();
+    ui->icon_allergy->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     QString iconHypo(":/icons/icons/Hypoallergenic.png");
     icon.load(iconHypo);
     width = ui->icon_hypo->width();

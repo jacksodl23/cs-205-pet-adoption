@@ -67,6 +67,8 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_searchRangeSlider_valueChanged(int value);
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
