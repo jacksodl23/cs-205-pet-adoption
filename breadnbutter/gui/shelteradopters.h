@@ -15,6 +15,9 @@ public:
     explicit ShelterAdopters(QWidget *parent = nullptr);
     ~ShelterAdopters();
 
+private slots:
+    void on_actionQuit_triggered();
+
 private:
     Ui::ShelterAdopters *ui;
 };

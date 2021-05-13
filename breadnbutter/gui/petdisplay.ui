@@ -1030,6 +1030,7 @@ background-color: rgb(239, 207, 187);</string>
     <addaction name="actionSearch"/>
     <addaction name="actionHelp"/>
     <addaction name="actionLog_out"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
   </widget>
@@ -1062,6 +1063,11 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionSearch">
    <property name="text">
     <string>Search</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>

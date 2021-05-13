@@ -218,3 +218,8 @@ void PetLiked::on_actionSearch_triggered()
     petUI->setAttribute(Qt::WA_DeleteOnClose);
     petUI->show();
 }
+
+void PetLiked::on_actionQuit_triggered()
+{
+    QApplication::quit();
+}

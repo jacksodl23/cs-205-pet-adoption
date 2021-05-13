@@ -463,6 +463,7 @@ void PetDisplay::updateBar()
     ui->progressBar->setValue(currentPos+1);
 }
 
+<<<<<<< HEAD
 void PetDisplay::on_minAgeSlider_valueChanged(int value)
 {
     QString labelText = "Minimum Age: ";
@@ -565,8 +566,9 @@ void PetDisplay::on_maxWeightSlider_sliderReleased()
 
         }
     }
-
+=======
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
+>>>>>>> refs/heads/gui
 }

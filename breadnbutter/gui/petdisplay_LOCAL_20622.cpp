@@ -565,8 +565,4 @@ void PetDisplay::on_maxWeightSlider_sliderReleased()
 
         }
     }
-
-void PetDisplay::on_actionQuit_triggered()
-{
-   QApplication::quit();
 }

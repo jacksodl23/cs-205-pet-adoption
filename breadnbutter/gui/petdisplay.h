@@ -77,6 +77,8 @@ private slots:
 
     void on_maxWeightSlider_sliderReleased();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
