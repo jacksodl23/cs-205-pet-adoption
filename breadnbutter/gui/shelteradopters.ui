@@ -50,6 +50,12 @@ color: rgb(239, 207, 187);</string>
     </item>
     <item>
      <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>Dyuthi</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">border: 2px solid  white;
      border-radius: 3px;</string>
@@ -67,10 +73,26 @@ color: rgb(239, 207, 187);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>38</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
    <widget class="QMenu" name="menuMeni">
+    <property name="font">
+     <font>
+      <family>Dyuthi</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(239, 207, 187);</string>
+    </property>
     <property name="title">
      <string>Menu</string>
     </property>
@@ -81,25 +103,56 @@ color: rgb(239, 207, 187);</string>
    </widget>
    <addaction name="menuMeni"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </widget>
   <action name="actionProfile">
    <property name="text">
     <string>Profile</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
   </action>
   <action name="actionUpload">
    <property name="text">
     <string>Upload</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionLog_out">
    <property name="text">
     <string>Log Out</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
   </action>
   <action name="actionHelp">
    <property name="text">
     <string>Help</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
   </action>
  </widget>

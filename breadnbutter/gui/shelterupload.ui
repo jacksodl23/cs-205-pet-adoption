@@ -471,7 +471,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
@@ -486,6 +486,10 @@ border: 2px solid  white;
       <family>Dyuthi</family>
       <pointsize>14</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(239, 207, 187);</string>
     </property>
     <property name="title">
      <string>Menu</string>
