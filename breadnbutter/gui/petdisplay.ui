@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1129</width>
+    <width>1141</width>
     <height>838</height>
    </rect>
   </property>
@@ -758,7 +758,7 @@ color: rgb(0, 0, 0);</string>
        <widget class="QGroupBox" name="groupBox_2">
         <property name="minimumSize">
          <size>
-          <width>520</width>
+          <width>550</width>
           <height>600</height>
          </size>
         </property>
@@ -782,134 +782,118 @@ border: 2px solid  white;
         <property name="title">
          <string/>
         </property>
-        <widget class="QProgressBar" name="progressBar">
-         <property name="geometry">
-          <rect>
-           <x>11</x>
-           <y>625</y>
-           <width>99</width>
-           <height>27</height>
-          </rect>
-         </property>
-         <property name="value">
-          <number>24</number>
-         </property>
-        </widget>
-        <widget class="QLabel" name="animalDisplay">
-         <property name="geometry">
-          <rect>
-           <x>12</x>
-           <y>12</y>
-           <width>496</width>
-           <height>510</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>470</width>
-           <height>510</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>700</height>
-          </size>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="profileButton">
-         <property name="geometry">
-          <rect>
-           <x>12</x>
-           <y>581</y>
-           <width>173</width>
-           <height>37</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Dyuthi</family>
-           <pointsize>18</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(239, 207, 187);</string>
-         </property>
-         <property name="text">
-          <string>Check my profile!</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="button_like">
-         <property name="geometry">
-          <rect>
-           <x>13</x>
-           <y>524</y>
-           <width>44</width>
-           <height>70</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>70</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Dyuthi</family>
-           <pointsize>18</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(239, 207, 187);</string>
-         </property>
-         <property name="text">
-          <string>Like</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="button_dislike">
-         <property name="geometry">
-          <rect>
-           <x>280</x>
-           <y>520</y>
-           <width>66</width>
-           <height>70</height>
-          </rect>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>70</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Dyuthi</family>
-           <pointsize>18</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(239, 207, 187);</string>
-         </property>
-         <property name="text">
-          <string>Dislike</string>
-         </property>
-        </widget>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <item>
+            <widget class="QLabel" name="animalDisplay">
+             <property name="minimumSize">
+              <size>
+               <width>470</width>
+               <height>530</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>700</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <item>
+                <widget class="QPushButton" name="button_like">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>1000</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Dyuthi</family>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(239, 207, 187);</string>
+                 </property>
+                 <property name="text">
+                  <string>Like</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="button_dislike">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>1000</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Dyuthi</family>
+                   <pointsize>18</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(239, 207, 187);</string>
+                 </property>
+                 <property name="text">
+                  <string>Dislike</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QPushButton" name="profileButton">
+               <property name="font">
+                <font>
+                 <family>Dyuthi</family>
+                 <pointsize>18</pointsize>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:rgb(239, 207, 187);</string>
+               </property>
+               <property name="text">
+                <string>Check my profile!</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QProgressBar" name="progressBar">
+               <property name="value">
+                <number>24</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
        </widget>
       </item>
       <item>
@@ -1250,8 +1234,8 @@ border: 2px solid  white;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1129</width>
-     <height>38</height>
+     <width>1141</width>
+     <height>27</height>
     </rect>
    </property>
    <property name="font">
