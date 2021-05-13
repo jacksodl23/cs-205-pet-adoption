@@ -39,7 +39,7 @@ PetDisplay::PetDisplay(QWidget *parent) :
     height = ui->icon2_display->height();
     ui->icon2_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
-    QString icon3(":/icons/icons/Shelter.png");
+    QString icon3(":/icons/icons/Age.png");
     icon.load(icon3);
     width = ui->icon3_display->width();
     height = ui->icon3_display->height();
@@ -51,9 +51,19 @@ PetDisplay::PetDisplay(QWidget *parent) :
     height = ui->icon4_display->height();
     ui->icon4_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString icon5(":/icons/icons/Shelter.png");
+    icon.load(icon5);
+    width = ui->icon5_display->width();
+    height = ui->icon5_display->height();
+    ui->icon5_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     currentPos = 0;
     fetchPets();
     getCurrentUser();
+
+    ui->progressBar->setOrientation(Qt::Horizontal);
+    ui->progressBar->setRange(1, pets.size());
+    ui->progressBar->setValue(currentPos+1);
 }
 
 PetDisplay::~PetDisplay()
@@ -331,6 +341,8 @@ void PetDisplay::on_button_like_clicked()
     } else {
         qDebug() << "Error liking pet:" << query.lastError().text();
     }
+
+    updateBar();
 }
 
 void PetDisplay::on_button_dislike_clicked()
@@ -342,6 +354,7 @@ void PetDisplay::on_button_dislike_clicked()
         displayPet(pets.at(currentPos));
     }
 
+    updateBar();
 }
 
 void PetDisplay::fetchPets()
@@ -445,4 +458,29 @@ void PetDisplay::on_actionHelp_triggered()
     petownerhelp *helpUI = new petownerhelp(this);
     helpUI->setAttribute(Qt::WA_DeleteOnClose);
     helpUI->show();
+}
+
+void PetDisplay::on_dislikeBoxType_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxBreed_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::updateBar()
+{
+    ui->progressBar->setValue(currentPos+1);
 }
