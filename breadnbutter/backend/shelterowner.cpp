@@ -21,9 +21,15 @@ ShelterOwner::ShelterOwner(int id)
 
     if (query.exec()) {
         if (query.next()) {
-            QString aName = query.value(1).toString();
-            QString aEmail = query.value(3).toString();
-            QString aPassword = query.value(4).toString();
+            int nameIndex = query.record().indexOf("name");
+            int emailIndex = query.record().indexOf("email");
+            int passwordIndex = query.record().indexOf("password");
+            int phoneIndex = query.record().indexOf("phone");
+
+            QString aName = query.value(nameIndex).toString();
+            QString aEmail = query.value(emailIndex).toString();
+            QString aPassword = query.value(passwordIndex).toString();
+            QString aPhoneNum = query.value(phoneIndex).toString();
 
             QStringList pieces = aName.split(" ");
             for (int i = 0; i < pieces.size(); i++) {
@@ -35,6 +41,7 @@ ShelterOwner::ShelterOwner(int id)
 
             this->email = aEmail;
             this->password = aPassword;
+            this->phoneNumber = aPhoneNum;
         }
     } else {
         qDebug() << "Error creating adopter:" << query.lastError().text();

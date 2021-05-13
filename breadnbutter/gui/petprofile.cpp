@@ -125,37 +125,39 @@ void PetProfile::fetchPet()
     ui->label_breed->setText(pDisplay.getBreed());
     ui->label_age->setText(QString::number(pDisplay.getAge()));
     ui->label_color->setText(pDisplay.getColor());
+    ui->label_weight->setText(QString::number(pDisplay.getWeight()));
+    ui->label_origin->setText(pDisplay.getOrigin());
+
+    if (pDisplay.getIs_cat())
+        ui->label_type->setText("Cat");
+    else
+        ui->label_type->setText("Dog");
 
     if (pDisplay.getHypoallergenic())
         ui->label_hypo->setText("Yes");
     else
         ui->label_hypo->setText("No");
 
-    // Note for the future: see if inner joins can be used to cut down on the amount of queries.
     QSqlQuery query;
-    query.prepare("select shelter_id from pet where pet_id = ?");
+    query.prepare("select shelter.owner_id, shelter.location "
+                  "from pet "
+                  "inner join shelter on shelter.shelter_id = pet.shelter_id "
+                  "where pet.pet_id = ?");
     query.addBindValue(pDisplay.getPet_id());
 
     if (query.exec()) {
         if (query.next()) {
-            int shelterID = query.value(0).toInt();
+            int ownerIndex = query.record().indexOf("owner_id");
+            int ownerID = query.value(ownerIndex).toInt();
 
-            Shelter s(shelterID);
-            ui->label_location->setText(s.getLocation());
+            int locIndex = query.record().indexOf("location");
+            QString loc = query.value(locIndex).toString();
+            ui->label_location->setText(loc);
 
-            QSqlQuery q2;
-            q2.prepare("select owner_id from shelter where shelter_id = ?");
-            q2.addBindValue(shelterID);
-
-            if (q2.exec()) {
-                if (q2.next()) {
-                    int ownerID = q2.value(0).toInt();
-
-                    ShelterOwner owner(ownerID);
-                    ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
-                    ui->label_email->setText(owner.getEmail());
-                }
-            }
+            ShelterOwner owner(ownerID);
+            ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
+            ui->label_email->setText(owner.getEmail());
+            ui->label_phone->setText(owner.getPhoneNumber());
         }
     }
 }
