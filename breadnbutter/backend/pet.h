@@ -32,6 +32,8 @@ public:
 
     QString getDescription() const;
 
+    float getWeight() const;
+
 private:
     int pet_id;
     bool is_cat;

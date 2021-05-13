@@ -40,6 +40,11 @@ QString Pet::getDescription() const
     return description;
 }
 
+float Pet::getWeight() const
+{
+    return weight;
+}
+
 Pet::Pet()
 {
     
