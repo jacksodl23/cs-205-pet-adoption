@@ -79,6 +79,10 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_colorBox_activated(const QString &arg1);
+
+    void on_hairLenBox_activated(const QString &arg1);
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

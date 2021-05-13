@@ -129,6 +129,7 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
         queryString.append('\'');
         queryString.append(arg1);
         queryString.append('\'');
+        queryString.append(" ");
         prefString.append(queryString);
     } else {
         QString queryString = "and breed = ";
@@ -138,6 +139,7 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
             queryString.append('\'');
             queryString.append(arg1);
             queryString.append('\'');
+            queryString.append(" ");
             prefString.append(queryString);
         } else {
             // TODO: figure out how to remove the existing breed string.
@@ -570,4 +572,50 @@ void PetDisplay::on_maxWeightSlider_sliderReleased()
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
+}
+
+void PetDisplay::on_colorBox_activated(const QString &arg1)
+{
+    if (prefString.isEmpty()) {
+        QString queryString = "where color = ";
+        queryString.append('\'');
+        queryString.append(arg1);
+        queryString.append('\'');
+        prefString.append(queryString);
+    } else {
+        QString queryString = "and color = ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            queryString.append('\'');
+            queryString.append(arg1);
+            queryString.append('\'');
+            prefString.append(queryString);
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_hairLenBox_activated(const QString &arg1)
+{
+    if (prefString.isEmpty()) {
+        QString queryString = "where hair_length = ";
+        queryString.append('\'');
+        queryString.append(arg1);
+        queryString.append('\'');
+        prefString.append(queryString);
+    } else {
+        QString queryString = "and hair_length = ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            queryString.append('\'');
+            queryString.append(arg1);
+            queryString.append('\'');
+            prefString.append(queryString);
+        } else {
+
+        }
+    }
 }
