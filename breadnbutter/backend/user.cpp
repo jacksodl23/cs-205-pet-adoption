@@ -130,6 +130,11 @@ QString User::getEmail() const
     return email;
 }
 
+QString User::getPhoneNumber() const
+{
+    return phoneNumber;
+}
+
 void User::chooseID()
 {
     QSqlQuery query;

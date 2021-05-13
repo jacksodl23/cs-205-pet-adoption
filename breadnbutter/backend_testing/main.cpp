@@ -9,6 +9,7 @@
 #include "../backend/shelter.h"
 #include "../backend/pet.h"
 #include "../backend/user.h"
+#include "../gui/shelterprofilesqlmodel.h"
 
 using namespace std;
 
@@ -20,6 +21,10 @@ public:
     AdopterTest() {
         owner = new PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "Seattle");
     }
+
+    void TearDown() {
+        owner->deleteFromDB();
+    }
 };
 
 class PetTest : public ::testing::Test {
@@ -30,6 +35,10 @@ public:
     PetTest() {
         pet = new Pet(true, "Fuzzy Wuzzy", 4, "Turkish Van", "brown", "medium", 8, "Shelter", true, "Lorem Ipsum");
     }
+
+    void TearDown() {
+        pet->deleteFromDB();
+    }
 };
 
 class ShelterTest : public ::testing::Test {
@@ -39,6 +48,10 @@ protected:
 public:
     ShelterTest() {
         shelter = new Shelter("Who Let the Paws Out?", "Pittsburgh", "paws@paws.com");
+    }
+
+    void TearDown() {
+        shelter->deleteFromDB();
     }
 };
 
@@ -62,10 +75,16 @@ TEST_F(AdopterTest, TestDeleteAdopter) {
 } */
 
 TEST_F(PetTest, TestInsertPet) {
-    if (pet->existsInDB())
-        ASSERT_EQ(pet->insertIntoDB(100), false);
-    else
-        ASSERT_EQ(pet->insertIntoDB(100), true);
+    ASSERT_EQ(pet->insertIntoDB(100), true);
+}
+
+TEST_F(PetTest, TestUpdatePet) {
+    QSqlQuery query;
+    query.prepare("update pet set age = ? where pet_id = ?");
+    query.addBindValue(13);
+    query.addBindValue(pet->getPet_id());
+
+    ASSERT_EQ(query.exec(), true);
 }
 
 TEST_F(ShelterTest, TestInsertShelter) {
@@ -123,10 +142,7 @@ TEST(TestRead,TestReadPet) {
 
 TEST (TestRead, TestReadDogsOnly) {
     QSqlQuery query;
-    if (query.exec("select * "
-                   "from Pet "
-                   "inner join Pet_Attributes on Pet_Attributes.pet_att_id = Pet.pet_attribute_id "
-                   "where Pet_Attributes.is_cat = 0")) {
+    if (query.exec("select * from Pet where is_cat = 0")) {
         ASSERT_EQ(query.next(), true);
     } else {
         qDebug() << "Error querying dogs:" << query.lastError().text();

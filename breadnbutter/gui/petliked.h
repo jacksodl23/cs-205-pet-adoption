@@ -34,6 +34,8 @@ private slots:
 
     void on_actionSearch_triggered();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::petliked *ui;
     PetProfile *profileUI;

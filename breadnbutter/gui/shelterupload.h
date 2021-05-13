@@ -41,6 +41,10 @@ private slots:
 
     void on_actionLog_out_triggered();
 
+    void on_originBox_activated(const QString &arg1);
+
+    void on_actionQuit_triggered();
+
 private:
     Ui::shelterUpload *ui;
     QString type;

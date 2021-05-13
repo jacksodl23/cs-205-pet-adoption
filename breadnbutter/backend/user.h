@@ -30,11 +30,14 @@ public:
 
     QString getEmail() const;
 
+    QString getPhoneNumber() const;
+
 protected:
     int id;
     QString firstName;
     QString lastName;
     QString location;
+    QString phoneNumber;
     QString email;
     QString password;
 
