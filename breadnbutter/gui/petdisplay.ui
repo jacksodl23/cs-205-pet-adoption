@@ -523,6 +523,9 @@ color: rgb(0, 0, 0);</string>
          <property name="currentText">
           <string>Any</string>
          </property>
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
          <item>
           <property name="text">
            <string>Any</string>

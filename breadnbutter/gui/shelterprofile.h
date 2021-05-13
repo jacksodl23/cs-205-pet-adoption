@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QMessageBox>
-#include <QSqlQueryModel>
 #include "../backend/globals.h"
 #include "../backend/shelter.h"
 #include "shelterprofilesqlmodel.h"

@@ -2,6 +2,7 @@
 #define SHELTERADOPTERS_H
 
 #include <QMainWindow>
+#include <QtSql>
 
 namespace Ui {
 class ShelterAdopters;
@@ -20,6 +21,8 @@ private slots:
 
 private:
     Ui::ShelterAdopters *ui;
+
+    void populateTable();
 };
 
 #endif // SHELTERADOPTERS_H
