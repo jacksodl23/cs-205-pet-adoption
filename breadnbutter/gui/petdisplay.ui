@@ -887,6 +887,9 @@ border: 2px solid  white;
                <property name="value">
                 <number>24</number>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
               </widget>
              </item>
             </layout>
@@ -1235,7 +1238,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>1141</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
