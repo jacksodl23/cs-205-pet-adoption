@@ -18,7 +18,7 @@ create adopters
 numShelters = 100
 avg_pets_shelter = 10
 numAdopters = 100
-avg_adopt_likes = 10
+avgLikes = 10
 
 
 class ID_ctr:
@@ -36,6 +36,7 @@ _pet_attr_id = ID_ctr()
 _adopt_pref_id = ID_ctr()
 _liked_by_id = ID_ctr()
 _breed_pref_id = ID_ctr()
+_liked_by_id = ID_ctr()
 
 class Shelter_Owner:
 	def __init__(self):
@@ -43,6 +44,7 @@ class Shelter_Owner:
 		self.name = genName()
 		self.location = randLine("sample_data/Locations.txt")
 		self.email = genEmail()
+		self.phone = genPhone()
 		self.password = genPassword()
 
 	def toCSV(self):
@@ -50,6 +52,7 @@ class Shelter_Owner:
 		line += self.name + ","
 		line += self.location + ","
 		line += self.email + ","
+		line += self.phone + ","
 		line += self.password + ","
 		line += "0"
 		line += "\n"
@@ -73,9 +76,13 @@ class Shelter:
 		line += "\n"
 		return line
 
-class Pet_Attributes:
-	def __init__(self):
-		self.pet_attribute_id = _pet_attr_id.nextID()
+class Pet:
+	def __init__(self, shelter_id):
+		self.pet_id = _pet_id.nextID()
+		self.name = randLine("sample_data/PetNames.txt")
+		self.shelter_id = shelter_id
+		self.color = r.choice(["black", "white", "orange", "spotted", "brown"])
+		self.hair_length = r.choice(["short", "medium", "long"])
 		self.is_cat = r.choice([1, 0])
 		self.age = r.randint(0, 20)
 		if self.is_cat:
@@ -86,36 +93,20 @@ class Pet_Attributes:
 			self.weight = r.randint(5, 25)
 		self.origin = r.choice(["Shelter", "Breeder", "Rescue"])
 		self.hypoallergenic = 1 if (r.random() < 0.05) else 0
-
-	def toCSV(self):
-		line = str(self.pet_attribute_id) + ","
-		line += str(self.is_cat) + ","
-		line += str(self.age) + ","
-		line += self.breed + ","
-		line += str(self.weight) + ","
-		line += self.origin + ","
-		line += str(self.hypoallergenic)
-		line += "\n"
-		return line
-
-class Pet:
-	def __init__(self, shelter_id):
-		self.pet_id = _pet_id.nextID()
-		self.name = randLine("sample_data/PetNames.txt")
-		self.shelter_id = shelter_id
-		self.attributes = Pet_Attributes()
-		self.pet_attribute_id = self.attributes.pet_attribute_id
-		self.color = r.choice(["black", "white", "orange", "spotted", "brown"])
-		self.hair_length = r.choice(["short", "medium", "long"])
 		self.description = lorem.sentence()
 
 	def toCSV(self):
 		line = str(self.pet_id) + ","
 		line += self.name + ","
 		line += str(self.shelter_id) + ","
-		line += str(self.pet_attribute_id) + ","
 		line += self.color + ","
 		line += self.hair_length + ","
+		line += str(self.is_cat) + ","
+		line += str(self.age) + ","
+		line += self.breed + ","
+		line += str(self.weight) + ","
+		line += self.origin + ","
+		line += str(self.hypoallergenic) + ","
 		line += self.description
 		line += "\n"
 		return line
@@ -151,6 +142,7 @@ class Adopter:
 		self.name = genName()
 		self.location = randLine("sample_data/Locations.txt")
 		self.email = genEmail()
+		self.phone = genPhone()
 		self.password = genPassword()
 		self.preferences = Adopter_Preferences(self.user_id)
 
@@ -159,6 +151,7 @@ class Adopter:
 		line += self.name + ","
 		line += self.location + ","
 		line += self.email + ","
+		line += self.phone + ","
 		line += self.password + ","
 		line += "1"
 		line += "\n"
@@ -178,6 +171,10 @@ def genName():
 def genEmail():
 	return ''.join(r.choice(string.ascii_letters) for _ in range(r.randint(5,10))) + "@gmail.com"
 
+def genPhone():
+	return ''.join(r.choice(string.digits) for _ in range(10))
+
+
 def genPassword():
 	return ''.join(r.choice(string.ascii_letters) for _ in range(r.randint(5,10)))
 
@@ -196,16 +193,13 @@ csv2.close()
 
 # Pets
 pets = []
-csv1 = open("table_data/Pet_data.csv", "w")
-csv2 = open("table_data/Pet_Attributes_data.csv", "w")
+csv = open("table_data/Pet_data.csv", "w")
 for s in shelters:
 	for _ in range(avg_pets_shelter):
 		p = Pet(s.shelter_id)
 		pets.append(p)
-		csv1.write(p.toCSV())
-		csv2.write(p.attributes.toCSV())
-csv1.close()
-csv2.close()
+		csv.write(p.toCSV())
+csv.close()
 
 # Adopters
 adopters = []
@@ -223,3 +217,23 @@ adopters.append(default)
 csv1.write(default.toCSV())
 csv2.write(default.preferences.toCSV())
 csv1.close()
+
+# Liked_By
+csv = open("table_data/Liked_By_data.csv", "w")
+for a in adopters:
+	liked_pets = []
+	for _ in range(avgLikes):
+		liked_pet = r.choice(pets)
+		while(liked_pet in liked_pets):
+			liked_pet = r.choice(pets)
+		liked_pets.append(liked_pet)
+
+		like = str(_liked_by_id.nextID()) + ","
+		like += str(a.user_id) + ","
+		like += str(liked_pet.pet_id)
+		like += "\n"
+		csv.write(like)
+csv.close()
+
+
+
