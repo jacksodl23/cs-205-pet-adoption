@@ -739,7 +739,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="15" column="2">
-        <widget class="QSlider" name="horizontalSlider_4">
+        <widget class="QSlider" name="maxWeightSlider">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -772,7 +772,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="13" column="2">
-        <widget class="QSlider" name="horizontalSlider_2">
+        <widget class="QSlider" name="maxAgeSlider">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -796,7 +796,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="14" column="2">
-        <widget class="QSlider" name="horizontalSlider_3">
+        <widget class="QSlider" name="minWeightSlider">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
@@ -885,7 +885,7 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item row="12" column="2">
-        <widget class="QSlider" name="horizontalSlider">
+        <widget class="QSlider" name="minAgeSlider">
          <property name="styleSheet">
           <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>

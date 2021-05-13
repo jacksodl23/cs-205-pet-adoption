@@ -88,9 +88,13 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
             ui->breedBox->addItem(dogBreedList[i].data());
         }
 
-        qDebug() << "Appending query string...";
-        prefString.remove("where is_cat = 1 ");
-        prefString.append("where is_cat = 0 ");
+        if (prefString.isEmpty()) {
+            prefString.remove("where is_cat = 1 ");
+            prefString.append("where is_cat = 0 ");
+        } else {
+            prefString.remove("and is_cat = 1 ");
+            prefString.append("and is_cat = 0 ");
+        }
     }
 
 
@@ -108,8 +112,13 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
             ui->breedBox->addItem(catBreedList[j].data());
         }
 
-        prefString.remove("where is_cat = 0 ");
-        prefString.append("where is_cat = 1 ");
+        if (prefString.isEmpty()) {
+            prefString.remove("where is_cat = 0 ");
+            prefString.append("where is_cat = 1 ");
+        } else {
+            prefString.remove("and is_cat = 0 ");
+            prefString.append("and is_cat = 1 ");
+        }
     }
 }
 
@@ -406,39 +415,6 @@ void PetDisplay::on_hypoBox_activated(const QString &arg1)
     }
 }
 
-void PetDisplay::on_horizontalSlider_valueChanged(int value)
-{
-    QString labelText = "Minimum Age: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_minage->setText(labelText);
-}
-
-void PetDisplay::on_horizontalSlider_2_valueChanged(int value)
-{
-    QString labelText = "Maximum Age: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_maxage->setText(labelText);
-}
-
-void PetDisplay::on_horizontalSlider_3_valueChanged(int value)
-{
-    QString labelText = "Minimum Weight: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_minweight->setText(labelText);
-
-}
-
-void PetDisplay::on_horizontalSlider_4_valueChanged(int value)
-{
-    QString labelText = "Maximum Weight: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_maxweight->setText(labelText);
-}
-
 void PetDisplay::on_actionLog_out_triggered()
 {
     hide();
@@ -485,4 +461,72 @@ void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
 void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
+}
+
+void PetDisplay::on_minAgeSlider_valueChanged(int value)
+{
+    QString labelText = "Minimum Age: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_minage->setText(labelText);
+}
+
+void PetDisplay::on_maxAgeSlider_valueChanged(int value)
+{
+    QString labelText = "Maximum Age: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_maxage->setText(labelText);
+}
+
+void PetDisplay::on_minWeightSlider_valueChanged(int value)
+{
+    QString labelText = "Minimum Weight: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_minweight->setText(labelText);
+}
+
+void PetDisplay::on_maxWeightSlider_valueChanged(int value)
+{
+    QString labelText = "Maximum Weight: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_maxweight->setText(labelText);
+}
+
+void PetDisplay::on_minAgeSlider_sliderReleased()
+{
+    int value = ui->minAgeSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where age >= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and age >= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and age >= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_maxAgeSlider_sliderReleased()
+{
+    int value = ui->maxAgeSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where age <= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and age <= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and age <= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
 }
