@@ -9,6 +9,7 @@
 #include "../backend/shelter.h"
 #include "shelterprofilesqlmodel.h"
 #include "shelterupload.h"
+#include "shelteradopters.h"
 
 namespace Ui {
 class shelterProfile;
@@ -29,6 +30,8 @@ private slots:
     void on_actionUpload_triggered();
     void on_actionLog_out_triggered();
     void on_actionHelp_triggered();
+
+    void on_actionAdopters_triggered();
 
 private:
     Ui::shelterProfile *ui;
