@@ -69,6 +69,8 @@ private slots:
 
     void updateBar();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

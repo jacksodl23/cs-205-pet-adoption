@@ -136,3 +136,8 @@ void shelterUpload::on_originBox_activated(const QString &arg1)
 {
     origin = arg1;
 }
+
+void shelterUpload::on_actionQuit_triggered()
+{
+   QApplication::quit();
+}

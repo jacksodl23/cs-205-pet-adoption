@@ -1299,6 +1299,7 @@ background-color: rgb(239, 207, 187);</string>
     <addaction name="actionAdopters"/>
     <addaction name="actionHelp"/>
     <addaction name="actionLog_out"/>
+    <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
   </widget>
@@ -1326,6 +1327,11 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionAdopters">
    <property name="text">
     <string>Adopters</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>

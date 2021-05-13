@@ -107,3 +107,8 @@ void shelterProfile::on_actionHelp_triggered()
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }
+
+void shelterProfile::on_actionQuit_triggered()
+{
+   QApplication::quit();
+}

@@ -485,3 +485,8 @@ void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
 }
+
+void PetDisplay::on_actionQuit_triggered()
+{
+   QApplication::quit();
+}

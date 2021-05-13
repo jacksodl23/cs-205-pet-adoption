@@ -29,6 +29,8 @@ private slots:
     void on_actionLog_out_triggered();
     void on_actionHelp_triggered();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::shelterProfile *ui;
     Shelter *currentShelter;

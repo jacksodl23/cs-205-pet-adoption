@@ -12,3 +12,8 @@ ShelterAdopters::~ShelterAdopters()
 {
     delete ui;
 }
+
+void ShelterAdopters::on_actionQuit_triggered()
+{
+   QApplication::quit();
+}
