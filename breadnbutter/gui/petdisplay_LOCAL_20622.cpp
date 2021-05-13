@@ -74,20 +74,9 @@ PetDisplay::~PetDisplay()
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
-
+    std::vector<std::string> dogBreedList = {"Any", "Affenpinscher", "Curly-Coated Retriever",
+                               "Foxhound", "Lakeland Terrier"};
     if (arg1 == "Dog") {
-
-        std::vector<std::string> dogBreedList = {"Any", "Affenpinscher", "Curly-Coated Retriever",
-                       "Foxhound", "Lakeland Terrier"};
-        /*
-        QSqlQuery query;
-        prefString.remove();
-        prefString.append();
-        if (query.exec(baseQuery + prefString)) {
-        while (query.next()) {
-            QString petBreed = query.value(0).toInt();
-            dogBreedList.append(petBreed);
-        */
 
         // clearing all of the drop down menus
         ui->breedBox->clear();
@@ -108,10 +97,10 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         }
     }
 
-    if (arg1 == "Cat") {
 
-        std::vector<std::string> catBreedList = {"Any", "Abyssinian", "Manx",
-                       "Russian Blue", "Sphynx"};
+    std::vector<std::string> catBreedList = {"Any", "Abyssinian", "Manx",
+                               "Russian Blue", "Sphynx"};
+    if (arg1 == "Cat") {
 
         // clearing all of the drop down menus
         ui->breedBox->clear();
@@ -140,7 +129,6 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
         queryString.append('\'');
         queryString.append(arg1);
         queryString.append('\'');
-        queryString.append(" ");
         prefString.append(queryString);
     } else {
         QString queryString = "and breed = ";
@@ -150,7 +138,6 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
             queryString.append('\'');
             queryString.append(arg1);
             queryString.append('\'');
-            queryString.append(" ");
             prefString.append(queryString);
         } else {
             // TODO: figure out how to remove the existing breed string.
@@ -574,57 +561,6 @@ void PetDisplay::on_maxWeightSlider_sliderReleased()
 
         if (index == -1) {
             prefString.append("and weight <= " + QString::number(value) + " ");
-        } else {
-
-        }
-    }
-}
-
-void PetDisplay::on_actionQuit_triggered()
-{
-   QApplication::quit();
-}
-
-void PetDisplay::on_colorBox_activated(const QString &arg1)
-{
-    if (prefString.isEmpty()) {
-        QString queryString = "where color = ";
-        queryString.append('\'');
-        queryString.append(arg1);
-        queryString.append('\'');
-        prefString.append(queryString);
-    } else {
-        QString queryString = "and color = ";
-        int index = prefString.indexOf(queryString);
-
-        if (index == -1) {
-            queryString.append('\'');
-            queryString.append(arg1);
-            queryString.append('\'');
-            prefString.append(queryString);
-        } else {
-
-        }
-    }
-}
-
-void PetDisplay::on_hairLenBox_activated(const QString &arg1)
-{
-    if (prefString.isEmpty()) {
-        QString queryString = "where hair_length = ";
-        queryString.append('\'');
-        queryString.append(arg1);
-        queryString.append('\'');
-        prefString.append(queryString);
-    } else {
-        QString queryString = "and hair_length = ";
-        int index = prefString.indexOf(queryString);
-
-        if (index == -1) {
-            queryString.append('\'');
-            queryString.append(arg1);
-            queryString.append('\'');
-            prefString.append(queryString);
         } else {
 
         }
