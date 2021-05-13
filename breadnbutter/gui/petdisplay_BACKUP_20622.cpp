@@ -74,23 +74,18 @@ PetDisplay::~PetDisplay()
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
-
+    std::vector<std::string> dogBreedList = {"Any", "Affenpinscher", "Curly-Coated Retriever",
+                               "Foxhound", "Lakeland Terrier"};
     if (arg1 == "Dog") {
+
         // clearing all of the drop down menus
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
+//        ui->hypoBox->clear();
 
-        QSqlQuery query;
-        query.prepare("select distinct breed from pet where is_cat = 0");
-
-        if (query.exec()) {
-            while (query.next()) {
-                QString breed = query.value(0).toString();
-                ui->breedBox->addItem(breed);
-            }
-        } else {
-            qDebug() << "Error getting dog breeds:" << query.lastError().text();
+        for (unsigned long i = 0; i < dogBreedList.size(); i++) {
+            ui->breedBox->addItem(dogBreedList[i].data());
         }
 
         if (prefString.isEmpty()) {
@@ -102,22 +97,19 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         }
     }
 
+
+    std::vector<std::string> catBreedList = {"Any", "Abyssinian", "Manx",
+                               "Russian Blue", "Sphynx"};
     if (arg1 == "Cat") {
+
         // clearing all of the drop down menus
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
+//        ui->hypoBox->clear();
 
-        QSqlQuery query;
-        query.prepare("select distinct breed from pet where is_cat = 1");
-
-        if (query.exec()) {
-            while (query.next()) {
-                QString breed = query.value(0).toString();
-                ui->breedBox->addItem(breed);
-            }
-        } else {
-            qDebug() << "Error getting cat breeds:" << query.lastError().text();
+        for (unsigned long j = 0; j < catBreedList.size(); j++) {
+            ui->breedBox->addItem(catBreedList[j].data());
         }
 
         if (prefString.isEmpty()) {
@@ -137,7 +129,6 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
         queryString.append('\'');
         queryString.append(arg1);
         queryString.append('\'');
-        queryString.append(" ");
         prefString.append(queryString);
     } else {
         QString queryString = "and breed = ";
@@ -147,27 +138,114 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
             queryString.append('\'');
             queryString.append(arg1);
             queryString.append('\'');
-            queryString.append(" ");
             prefString.append(queryString);
         } else {
             // TODO: figure out how to remove the existing breed string.
         }
     }
 
-    QSqlQuery query;
-    query.prepare("select distinct color from pet where breed = ?");
-    query.addBindValue(arg1);
+    std::vector<std::string> affenpinscherColors = {"Any", "Black", "Grey", "Red", "Tan",
+                                                   "Silver", "Beige"};
 
-    if (query.exec()) {
+    // handle dog breeds colors and hair length -- maybe use a map with key val pairs
+    // loaded from the database?
+    if (arg1 == "Affenpinscher") {
         ui->colorBox->clear();
         ui->hairLenBox->clear();
-
-        while (query.next()) {
-            QString color = query.value(0).toString();
-            ui->colorBox->addItem(color);
+        for (unsigned long k = 0; k < affenpinscherColors.size(); k++) {
+            ui->colorBox->addItem(affenpinscherColors[k].data());
         }
-    } else {
-        qDebug() << "Error getting breed colors:" << query.lastError().text();
+        ui->hairLenBox->addItem("Any");
+        ui->hairLenBox->addItem("Long");
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> curlyCoatedRetrieverColors = {"Any", "Black", "Liver"};
+    if (arg1 == "Curly-Coated Retriever") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long i = 0; i < curlyCoatedRetrieverColors.size(); i++) {
+            ui->colorBox->addItem(curlyCoatedRetrieverColors[i].data());
+        }
+        ui->hairLenBox->addItem("Any");
+        ui->hairLenBox->addItem("Medium");
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> foxhoundColors = {"Any", "White", "Tan", "Blue", "Tri-color",
+                                              "White & Cream", "Red"};
+    if (arg1 == "Foxhound") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long i = 0; i < foxhoundColors.size(); i++) {
+            ui->colorBox->addItem(foxhoundColors[i].data());
+        }
+        ui->hairLenBox->addItem("Any");
+        ui->hairLenBox->addItem("Medium");
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> lakelandTerrierColors = {"Any", "Black", "Wheaten", "Black and Tan",
+                                                      "Blue", "Grizzle & Tan", "Red"};
+    if (arg1 == "Lakeland Terrier") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned long i = 0; i < lakelandTerrierColors.size(); i++) {
+            ui->colorBox->addItem(lakelandTerrierColors[i].data());
+        }
+        ui->hairLenBox->addItem("Any");
+        ui->hairLenBox->addItem("Long");
+        ui->hairLenBox->addItem("Medium");
+    }
+
+
+
+    std::vector<std::string> abyssinianColors = {"Any", "Ruddy", "Sorrel", "Blue", "Fawn",
+                                                "Chocolate", "Silver", "Lilac"};
+    // handle cat breeds colors and hair length -- maybe use a map with key val pairs
+    // loaded from the database?
+    if (arg1 == "Abyssinian") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < abyssinianColors.size(); i++) {
+            ui->colorBox->addItem(abyssinianColors[i].data());
+        }
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> manxColors = {"Any", "White", "Blue", "Black", "Red",
+                                                "Cream", "Silver", "Tortoiseshell",
+                                          "Bluecream", "Brown"};
+    if (arg1 == "Manx") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < manxColors.size(); i++) {
+            ui->colorBox->addItem(manxColors[i].data());
+        }
+        ui->hairLenBox->addItem("Any");
+        ui->hairLenBox->addItem("Long");
+        ui->hairLenBox->addItem("Medium");
+    }
+
+    std::vector<std::string> russianBlueColors = {"Any", "Silver", "Dark Grey"};
+    if (arg1 == "Russian Blue") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < russianBlueColors.size(); i++) {
+            ui->colorBox->addItem(russianBlueColors[i].data());
+        }
+        ui->hairLenBox->addItem("Short");
+    }
+
+    std::vector<std::string> sphynxColors = {"Any", "White", "Black", "Red", "Brown",
+                                            "Lavender"};
+    if (arg1 == "Sphynx") {
+        ui->colorBox->clear();
+        ui->hairLenBox->clear();
+        for (unsigned int i = 0; i < sphynxColors.size(); i++) {
+            ui->colorBox->addItem(sphynxColors[i].data());
+        }
+        ui->hairLenBox->addItem("Hairless");
     }
 }
 
@@ -385,6 +463,7 @@ void PetDisplay::updateBar()
     ui->progressBar->setValue(currentPos+1);
 }
 
+<<<<<<< HEAD
 void PetDisplay::on_minAgeSlider_valueChanged(int value)
 {
     QString labelText = "Minimum Age: ";
@@ -487,55 +566,9 @@ void PetDisplay::on_maxWeightSlider_sliderReleased()
 
         }
     }
-}
-
+=======
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
-}
-
-void PetDisplay::on_colorBox_activated(const QString &arg1)
-{
-    if (prefString.isEmpty()) {
-        QString queryString = "where color = ";
-        queryString.append('\'');
-        queryString.append(arg1);
-        queryString.append('\'');
-        prefString.append(queryString);
-    } else {
-        QString queryString = "and color = ";
-        int index = prefString.indexOf(queryString);
-
-        if (index == -1) {
-            queryString.append('\'');
-            queryString.append(arg1);
-            queryString.append('\'');
-            prefString.append(queryString);
-        } else {
-
-        }
-    }
-}
-
-void PetDisplay::on_hairLenBox_activated(const QString &arg1)
-{
-    if (prefString.isEmpty()) {
-        QString queryString = "where hair_length = ";
-        queryString.append('\'');
-        queryString.append(arg1);
-        queryString.append('\'');
-        prefString.append(queryString);
-    } else {
-        QString queryString = "and hair_length = ";
-        int index = prefString.indexOf(queryString);
-
-        if (index == -1) {
-            queryString.append('\'');
-            queryString.append(arg1);
-            queryString.append('\'');
-            prefString.append(queryString);
-        } else {
-
-        }
-    }
+>>>>>>> refs/heads/gui
 }

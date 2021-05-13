@@ -10,5 +10,8 @@
         <file>icons/Shelter.png</file>
         <file>icons/Breed.png</file>
         <file>icons/Name.png</file>
+        <file>icons/Origin.png</file>
+        <file>icons/Weight.png</file>
+        <file>icons/Hair.png</file>
     </qresource>
 </RCC>
