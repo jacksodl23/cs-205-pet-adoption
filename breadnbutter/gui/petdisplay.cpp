@@ -266,6 +266,7 @@ void PetDisplay::displayPet(Pet p)
 
     ui->label_name->setText(p.getName());
     ui->label_breed->setText(p.getBreed());
+    ui->label_age->setText(QString::number(p.getAge()));
 
     if (!p.getIs_cat())
         ui->label_type->setText("Dog");
