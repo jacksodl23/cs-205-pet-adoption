@@ -92,7 +92,7 @@ void MainWindow::openDB()
     db.setDatabaseName("db.sqlite");
 
     if (db.open()) {
-        qDebug() << "Database opened successfully.\n";
+        qDebug() << "Database opened successfully.";
     } else {
         qFatal("Error opening database.");
     }

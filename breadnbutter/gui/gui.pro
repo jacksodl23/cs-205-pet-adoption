@@ -21,12 +21,14 @@ SOURCES += \
     ../backend/shelter.cpp \
     ../backend/shelterowner.cpp \
     ../backend/user.cpp \
+    shelteradopters.cpp \
     shelterupload.cpp \
     petprofile.cpp \
     shelterprofile.cpp \
     petliked.cpp \
     petownerhelp.cpp \
-    shelterhelp.cpp
+    shelterhelp.cpp \
+    shelterprofilesqlmodel.cpp
 
 HEADERS += \
     createaccount.h \
@@ -36,18 +38,21 @@ HEADERS += \
     ../backend/*.h \
     ../backend/shelterowner.h \
     ../backend/user.h \
+    shelteradopters.h \
     shelterupload.h \
     petprofile.h \
     shelterprofile.h \
     petliked.h \
     petownerhelp.h \
-    shelterhelp.h
+    shelterhelp.h \
+    shelterprofilesqlmodel.h
 
 FORMS += \
     createaccount.ui \
     login.ui \
     mainwindow.ui \
     petdisplay.ui \
+    shelteradopters.ui \
     shelterupload.ui \
     petprofile.ui \
     shelterprofile.ui \

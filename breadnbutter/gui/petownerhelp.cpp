@@ -40,3 +40,8 @@ void petownerhelp::on_actionLog_out_triggered()
     login->setAttribute(Qt::WA_DeleteOnClose);
     login->show();
 }
+
+void petownerhelp::on_actionQuit_triggered()
+{
+   QApplication::quit();
+}

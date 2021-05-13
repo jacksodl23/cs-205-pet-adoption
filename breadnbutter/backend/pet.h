@@ -15,7 +15,6 @@ public:
     bool insertIntoDB(int shelterID);
     bool deleteFromDB();
     QString getName();
-    bool existsInDB();
 
     int getAge() const;
 
@@ -32,6 +31,8 @@ public:
     QString getOrigin() const;
 
     QString getDescription() const;
+
+    float getWeight() const;
 
 private:
     int pet_id;

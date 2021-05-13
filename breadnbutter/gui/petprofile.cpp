@@ -33,6 +33,12 @@ PetProfile::PetProfile(QWidget *parent) :
     height = ui->icon_name->height();
     ui->icon_name->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString iconType(":/icons/icons/Type.png");
+    icon.load(iconType);
+    width = ui->icon_type->width();
+    height = ui->icon_type->height();
+    ui->icon_type->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     QString iconBreed(":/icons/icons/Breed.png");
     icon.load(iconBreed);
     width = ui->icon_breed->width();
@@ -51,11 +57,29 @@ PetProfile::PetProfile(QWidget *parent) :
     height = ui->icon_color->height();
     ui->icon_color->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString iconHair(":/icons/icons/Hair.png");
+    icon.load(iconHair);
+    width = ui->icon_hair->width();
+    height = ui->icon_hair->height();
+    ui->icon_hair->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconWeight(":/icons/icons/Weight.png");
+    icon.load(iconWeight);
+    width = ui->icon_weight->width();
+    height = ui->icon_weight->height();
+    ui->icon_weight->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     QString iconHypo(":/icons/icons/Hypoallergenic.png");
     icon.load(iconHypo);
     width = ui->icon_hypoallergenic->width();
     height = ui->icon_hypoallergenic->height();
     ui->icon_hypoallergenic->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
+    QString iconOrigin(":/icons/icons/Origin.png");
+    icon.load(iconOrigin);
+    width = ui->icon_origin->width();
+    height = ui->icon_origin->height();
+    ui->icon_origin->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString iconLocation(":/icons/icons/Location.png");
     icon.load(iconLocation);
@@ -101,37 +125,39 @@ void PetProfile::fetchPet()
     ui->label_breed->setText(pDisplay.getBreed());
     ui->label_age->setText(QString::number(pDisplay.getAge()));
     ui->label_color->setText(pDisplay.getColor());
+    ui->label_weight->setText(QString::number(pDisplay.getWeight()));
+    ui->label_origin->setText(pDisplay.getOrigin());
+
+    if (pDisplay.getIs_cat())
+        ui->label_type->setText("Cat");
+    else
+        ui->label_type->setText("Dog");
 
     if (pDisplay.getHypoallergenic())
         ui->label_hypo->setText("Yes");
     else
         ui->label_hypo->setText("No");
 
-    // Note for the future: see if inner joins can be used to cut down on the amount of queries.
     QSqlQuery query;
-    query.prepare("select shelter_id from pet where pet_id = ?");
+    query.prepare("select shelter.owner_id, shelter.location "
+                  "from pet "
+                  "inner join shelter on shelter.shelter_id = pet.shelter_id "
+                  "where pet.pet_id = ?");
     query.addBindValue(pDisplay.getPet_id());
 
     if (query.exec()) {
         if (query.next()) {
-            int shelterID = query.value(0).toInt();
+            int ownerIndex = query.record().indexOf("owner_id");
+            int ownerID = query.value(ownerIndex).toInt();
 
-            Shelter s(shelterID);
-            ui->label_location->setText(s.getLocation());
+            int locIndex = query.record().indexOf("location");
+            QString loc = query.value(locIndex).toString();
+            ui->label_location->setText(loc);
 
-            QSqlQuery q2;
-            q2.prepare("select owner_id from shelter where shelter_id = ?");
-            q2.addBindValue(shelterID);
-
-            if (q2.exec()) {
-                if (q2.next()) {
-                    int ownerID = q2.value(0).toInt();
-
-                    ShelterOwner owner(ownerID);
-                    ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
-                    ui->label_email->setText(owner.getEmail());
-                }
-            }
+            ShelterOwner owner(ownerID);
+            ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
+            ui->label_email->setText(owner.getEmail());
+            ui->label_phone->setText(owner.getPhoneNumber());
         }
     }
 }
