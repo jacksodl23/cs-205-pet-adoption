@@ -83,6 +83,8 @@ private slots:
 
     void on_hairLenBox_activated(const QString &arg1);
 
+    void on_searchRangeSlider_valueChanged(int value);
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

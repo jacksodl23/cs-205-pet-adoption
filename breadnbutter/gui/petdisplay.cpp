@@ -417,6 +417,14 @@ void PetDisplay::on_maxWeightSlider_valueChanged(int value)
     ui->label_search_maxweight->setText(labelText);
 }
 
+void PetDisplay::on_searchRangeSlider_valueChanged(int value)
+{
+    QString labelText = "Search Range: ";
+    QString numText = QString::number(value);
+    labelText.append(numText);
+    ui->label_search_range->setText(labelText);
+}
+
 void PetDisplay::on_minAgeSlider_sliderReleased()
 {
     int value = ui->minAgeSlider->value();
