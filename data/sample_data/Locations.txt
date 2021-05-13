@@ -16,7 +16,6 @@ Athens-Clarke County
 Atlanta
 Augusta-Richmond County
 Aurora
-Aurora
 Austin
 Bakersfield
 Baltimore
@@ -54,7 +53,6 @@ Clearwater
 Cleveland
 Colorado Springs
 Columbia
-Columbus
 Columbus
 Compton
 Concord
@@ -237,8 +235,6 @@ Simi Valley
 Sioux Falls
 South Bend
 Spokane
-Springfield
-Springfield
 Springfield
 Stamford
 Sterling Heights

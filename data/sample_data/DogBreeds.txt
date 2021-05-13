@@ -15,10 +15,7 @@ Basset Hound
 Beagle
 Bearded Collie
 Bedlington Terrier
-Belgian Shepherd Dog Groenendael
-Belgian Shepherd Dog Laekenois
-Belgian Shepherd Dog Malinois
-Belgian Shepherd Dog Tervueren
+Belgian Shepherd Dog
 Bernese Mountain Dog
 Bichon Frise
 Bloodhound
@@ -39,18 +36,13 @@ Cairn Terrier
 Cavalier King Charles Spaniel
 Cesky Terrier
 Chesapeake Bay Retriever
-Chihuahua (Smooth Coat)
+Chihuahua
 Chinese Crested
-Chow Chow (Smooth)
+Chow Chow
 Clumber Spaniel
-Collie (Rough)
-Collie (Smooth)
+Collie
 Curly-Coated Retriever
-Dachshund (Miniature Long Haired)
-Dachshund (Miniature Smooth Haired)
-Dachshund (Miniature Wire Haired)
-Dachshund (Smooth Haired)
-Dachshund (Wire Haired)
+Dachshund
 Dalmatian
 Dandie Dinmont Terrier
 Deerhound
