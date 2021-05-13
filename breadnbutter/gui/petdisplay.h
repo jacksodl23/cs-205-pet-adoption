@@ -73,6 +73,10 @@ private slots:
 
     void on_maxAgeSlider_sliderReleased();
 
+    void on_minWeightSlider_sliderReleased();
+
+    void on_maxWeightSlider_sliderReleased();
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

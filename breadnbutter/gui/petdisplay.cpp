@@ -530,3 +530,39 @@ void PetDisplay::on_maxAgeSlider_sliderReleased()
         }
     }
 }
+
+void PetDisplay::on_minWeightSlider_sliderReleased()
+{
+    int value = ui->minWeightSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where weight >= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and weight >= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and weight >= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_maxWeightSlider_sliderReleased()
+{
+    int value = ui->maxWeightSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where weight <= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and weight <= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and weight <= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
