@@ -21,6 +21,7 @@ SOURCES += \
     ../backend/shelter.cpp \
     ../backend/shelterowner.cpp \
     ../backend/user.cpp \
+    shelteradopters.cpp \
     shelterupload.cpp \
     petprofile.cpp \
     shelterprofile.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     ../backend/*.h \
     ../backend/shelterowner.h \
     ../backend/user.h \
+    shelteradopters.h \
     shelterupload.h \
     petprofile.h \
     shelterprofile.h \
@@ -48,6 +50,7 @@ FORMS += \
     login.ui \
     mainwindow.ui \
     petdisplay.ui \
+    shelteradopters.ui \
     shelterupload.ui \
     petprofile.ui \
     shelterprofile.ui \

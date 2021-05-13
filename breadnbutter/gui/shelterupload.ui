@@ -471,7 +471,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>38</height>
+     <height>27</height>
     </rect>
    </property>
    <property name="font">
@@ -491,6 +491,7 @@ border: 2px solid  white;
      <string>Menu</string>
     </property>
     <addaction name="actionProfile"/>
+    <addaction name="actionAdopters"/>
     <addaction name="actionHelp"/>
     <addaction name="actionLog_out"/>
    </widget>
@@ -515,6 +516,11 @@ border: 2px solid  white;
   <action name="actionLog_out">
    <property name="text">
     <string>Log out</string>
+   </property>
+  </action>
+  <action name="actionAdopters">
+   <property name="text">
+    <string>Adopters</string>
    </property>
   </action>
  </widget>
