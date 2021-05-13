@@ -74,9 +74,20 @@ PetDisplay::~PetDisplay()
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
-    std::vector<std::string> dogBreedList = {"Any", "Affenpinscher", "Curly-Coated Retriever",
-                               "Foxhound", "Lakeland Terrier"};
+
     if (arg1 == "Dog") {
+
+        std::vector<std::string> dogBreedList = {"Any", "Affenpinscher", "Curly-Coated Retriever",
+                       "Foxhound", "Lakeland Terrier"};
+        /*
+        QSqlQuery query;
+        prefString.remove();
+        prefString.append();
+        if (query.exec(baseQuery + prefString)) {
+        while (query.next()) {
+            QString petBreed = query.value(0).toInt();
+            dogBreedList.append(petBreed);
+        */
 
         // clearing all of the drop down menus
         ui->breedBox->clear();
@@ -97,10 +108,10 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         }
     }
 
-
-    std::vector<std::string> catBreedList = {"Any", "Abyssinian", "Manx",
-                               "Russian Blue", "Sphynx"};
     if (arg1 == "Cat") {
+
+        std::vector<std::string> catBreedList = {"Any", "Abyssinian", "Manx",
+                       "Russian Blue", "Sphynx"};
 
         // clearing all of the drop down menus
         ui->breedBox->clear();
