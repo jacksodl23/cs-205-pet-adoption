@@ -13,5 +13,6 @@
         <file>icons/Origin.png</file>
         <file>icons/Weight.png</file>
         <file>icons/Hair.png</file>
+        <file>icons/Allergy.png</file>
     </qresource>
 </RCC>
