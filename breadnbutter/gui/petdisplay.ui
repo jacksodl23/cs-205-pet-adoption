@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1139</width>
-    <height>755</height>
+    <height>766</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -964,7 +964,7 @@ border: 2px solid  white;
              <property name="font">
               <font>
                <family>Dyuthi</family>
-               <pointsize>30</pointsize>
+               <pointsize>22</pointsize>
               </font>
              </property>
              <property name="styleSheet">
@@ -1238,7 +1238,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>1139</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
