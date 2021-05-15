@@ -48,12 +48,13 @@ ShelterOwner::ShelterOwner(int id)
     }
 }
 
-ShelterOwner::ShelterOwner(QString fn, QString ln, QString loc, QString e, QString p)
+ShelterOwner::ShelterOwner(QString fn, QString ln, QString loc, QString e, QString ph, QString p)
 {
     this->firstName = fn;
     this->lastName = ln;
     this->location = loc;
     this->email = e;
+    this->phoneNumber = ph;
     this->password = p;
 }
 
@@ -63,11 +64,12 @@ bool ShelterOwner::insertInDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, password, is_adopter)"
-                      "values (?, ?, ?, ?, ?)");
+        query.prepare("insert into User (name, location, email, phone, password, is_adopter)"
+                      "values (?, ?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
         query.addBindValue(location);
         query.addBindValue(email);
+        query.addBindValue(phoneNumber);
         query.addBindValue(password);
         query.addBindValue(0);
 
@@ -106,7 +108,8 @@ bool ShelterOwner::existsInDB()
 
     if (query.exec()) {
         while (query.next()) {
-            QString dbEmail = query.value(0).toString();
+            int emailIndex = query.record().indexOf("email");
+            QString dbEmail = query.value(emailIndex).toString();
 
             int compare = QString::compare(email, dbEmail, Qt::CaseInsensitive);
             if (compare == 0)

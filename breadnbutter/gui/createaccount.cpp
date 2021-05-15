@@ -104,9 +104,9 @@ void CreateAccount::signUpAdopter(QString firstName, QString lastName, QString l
     }
 }
 
-void CreateAccount::linkShelterOwnerToShelter(Shelter s, QString location, QString firstName, QString email, QString lastName, QString password)
+void CreateAccount::linkShelterOwnerToShelter(Shelter s, QString location, QString firstName, QString email, QString phone, QString lastName, QString password)
 {
-    ShelterOwner newOwner(firstName, lastName, location, email, password);
+    ShelterOwner newOwner(firstName, lastName, location, email, phone, password);
     if (newOwner.insertInDB()) {
         QSqlQuery query;
         query.prepare("update shelter set owner_id = ? where shelter_id = ?");
@@ -161,7 +161,7 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
                         oLastName = pieces.at(i);
                 }
 
-                linkShelterOwnerToShelter(s, location, oFirstName, email, oLastName, password);
+                linkShelterOwnerToShelter(s, location, oFirstName, email, phone, oLastName, password);
             } else {
                 QMessageBox::critical(this, "Unable to create shelter", "Something went wrong while trying to register a new shelter. Please try again.");
             }
