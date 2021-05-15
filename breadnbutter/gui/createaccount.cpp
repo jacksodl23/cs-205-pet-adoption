@@ -165,6 +165,7 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
                 QMessageBox::critical(this, "Unable to create shelter", "Something went wrong while trying to register a new shelter. Please try again.");
             }
         }
+        this->close();
     } else {
         qDebug() << "Should dismiss.";
     }
