@@ -282,18 +282,20 @@ void PetDisplay::fetchPets()
     }
 
     if (breed != "Any") {
-        if (ui->dislikeBoxBreed->checkState() != Qt::Checked) {
-            queryString.append("and breed = ");
-            queryString.append('\'');
-            queryString.append(breed);
-            queryString.append('\'');
-            queryString.append(" ");
-        } else {
-            queryString.append("and breed != ");
-            queryString.append('\'');
-            queryString.append(breed);
-            queryString.append('\'');
-            queryString.append(" ");
+        if (ui->dislikeBoxType->checkState() != Qt::Checked) {
+            if (ui->dislikeBoxBreed->checkState() != Qt::Checked) {
+                queryString.append("and breed = ");
+                queryString.append('\'');
+                queryString.append(breed);
+                queryString.append('\'');
+                queryString.append(" ");
+            } else {
+                queryString.append("and breed != ");
+                queryString.append('\'');
+                queryString.append(breed);
+                queryString.append('\'');
+                queryString.append(" ");
+            }
         }
     }
 
