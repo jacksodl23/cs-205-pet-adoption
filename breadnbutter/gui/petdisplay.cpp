@@ -117,20 +117,32 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
-    QSqlQuery query;
-    query.prepare("select distinct color from pet where breed = ?");
-    query.addBindValue(arg1);
+    QSqlQuery colorQuery;
+    colorQuery.prepare("select distinct color from pet where breed = ?");
+    colorQuery.addBindValue(arg1);
 
-    if (query.exec()) {
+    if (colorQuery.exec()) {
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        while (query.next()) {
-            QString color = query.value(0).toString();
+        while (colorQuery.next()) {
+            QString color = colorQuery.value(0).toString();
             ui->colorBox->addItem(color);
         }
     } else {
-        qDebug() << "Error getting breed colors:" << query.lastError().text();
+        qDebug() << "Error getting breed colors:" << colorQuery.lastError().text();
+    }
+
+    QSqlQuery hairLenQuery;
+    hairLenQuery.prepare("select distinct hair_length from pet where breed = ?");
+    hairLenQuery.addBindValue(arg1);
+
+    if (hairLenQuery.exec()) {
+        qDebug() << "Executed query" << hairLenQuery.executedQuery();
+        while (hairLenQuery.next()) {
+            QString hairLen = hairLenQuery.value(0).toString();
+            ui->hairLenBox->addItem(hairLen);
+        }
     }
 }
 
@@ -316,7 +328,19 @@ void PetDisplay::fetchPets()
     }
 
     if (!hairLength.isEmpty()) {
-
+        if (ui->dislikeBoxHairLen->checkState() != Qt::Checked) {
+            queryString.append("and hair_length = ");
+            queryString.append('\'');
+            queryString.append(hairLength);
+            queryString.append('\'');
+            queryString.append(" ");
+        } else {
+            queryString.append("and hair_length != ");
+            queryString.append('\'');
+            queryString.append(hairLength);
+            queryString.append('\'');
+            queryString.append(" ");
+        }
     }
 
     if (hypo != "Any") {
