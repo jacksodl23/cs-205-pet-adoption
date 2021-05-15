@@ -19,7 +19,7 @@ protected:
 
 public:
     AdopterTest() {
-        owner = new PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "Seattle");
+        owner = new PetOwner("hello", "jonny", "appleseed", "themapples@gmail.com", "4845427676", "Seattle");
     }
 
     void TearDown() {

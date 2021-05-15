@@ -8,8 +8,9 @@ bool PetOwner::existsInDB()
 
     if (query.exec()) {
         while (query.next()) {
-            QString dbEmail = query.value(0).toString();
-
+            int emailIndex = query.record().indexOf("email");
+            QString dbEmail = query.value(emailIndex).toString();
+            // look at this later, should dbEmail has 0 value or not?
             int compare = QString::compare(email, dbEmail, Qt::CaseInsensitive);
             if (compare == 0)
                 return true;
@@ -26,9 +27,19 @@ void PetOwner::setLocation(QString loc)
     location = loc;
 }
 
+void PetOwner::setPhone(QString phone)
+{
+    phoneNumber = phone;
+}
+
 QString PetOwner::getLocation()
 {
     return location;
+}
+
+QString PetOwner::getPhone()
+{
+    return phoneNumber;
 }
 
 PetOwner::~PetOwner()
@@ -55,7 +66,8 @@ PetOwner::PetOwner(int id)
         if (query.next()) {
             QString aName = query.value(1).toString();
             QString aEmail = query.value(3).toString();
-            QString aPassword = query.value(4).toString();
+            QString aPhone = query.value(4).toString();
+            QString aPassword = query.value(5).toString();
 
             QStringList pieces = aName.split(" ");
             for (int i = 0; i < pieces.size(); i++) {
@@ -66,6 +78,7 @@ PetOwner::PetOwner(int id)
             }
 
             this->email = aEmail;
+            this->phoneNumber = aPhone;
             this->password = aPassword;
         }
     } else {
@@ -73,12 +86,13 @@ PetOwner::PetOwner(int id)
     }
 }
 
-PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)
+PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QString loc)
 {
     this->password = p;
     this->firstName = fn;
     this->lastName = ln;
     this->email = e;
+    this->phoneNumber = ph;
     this->location = loc;
     this->is_adopter = true;
 }
@@ -194,11 +208,12 @@ bool PetOwner::insertInDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, password, is_adopter)"
-                      "values (?, ?, ?, ?, ?)");
+        query.prepare("insert into User (name, location, email, phone, password, is_adopter)"
+                      "values (?, ?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
         query.addBindValue(location);
         query.addBindValue(email);
+        query.addBindValue(phoneNumber);
         query.addBindValue(password);
         query.addBindValue(1);
 
