@@ -37,7 +37,7 @@ private:
     Ui::CreateAccount *ui;
     void writeUserToFile(User newUser);
 
-    void signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString password);
+    void signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString phone, QString password);
     void linkShelterOwnerToShelter(Shelter s, QString location, QString firstName, QString email, QString lastName, QString password);
 };
 

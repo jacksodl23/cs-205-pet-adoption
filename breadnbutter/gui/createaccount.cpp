@@ -88,9 +88,9 @@ void CreateAccount::on_roleBox_activated(const QString &arg1)
     }
 } */
 
-void CreateAccount::signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString password)
+void CreateAccount::signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString phone, QString password)
 {
-    PetOwner newAdopter(password, firstName, lastName, email, location);
+    PetOwner newAdopter(password, firstName, lastName, email, phone, location);
     signUpSuccessful = newAdopter.insertInDB();
 
     if (signUpSuccessful) {
@@ -132,6 +132,7 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
     QString firstName = ui->firstNameField->text();
     QString lastName = ui->lastNameField->text();
     QString email = ui->emailField->text();
+    QString phone = ui->phoneField->text();
     QString password = ui->passwordField->text();
     QString confirmPassword = ui->passwordField_2->text();
     QString location = ui->locationField->text();
@@ -143,7 +144,7 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
         }
 
         if (ui->roleBox->currentIndex() == 0) {
-            signUpAdopter(firstName, lastName, location, email, password);
+            signUpAdopter(firstName, lastName, location, email, phone, password);
         } else {
             // Change to take in full name and shelter name values.
             Shelter s(lastName, location, email);
@@ -165,7 +166,9 @@ void CreateAccount::on_createOkay_clicked(QAbstractButton *button)
                 QMessageBox::critical(this, "Unable to create shelter", "Something went wrong while trying to register a new shelter. Please try again.");
             }
         }
+        this->close();
     } else {
         qDebug() << "Should dismiss.";
+        this->close();
     }
 }

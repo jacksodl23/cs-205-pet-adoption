@@ -13,13 +13,14 @@ public:
     ~PetOwner();
     PetOwner(QString email, QString password);
     PetOwner(int id);
-    PetOwner(QString p, QString fn, QString ln, QString e, QString loc);
+    PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QString loc);
 
     // accessor methods
     QString getPassword();
     QString getLastName();
     QString getEmail();
     QString getLocation();
+    QString getPhone();
 
     int getAge();
     QString getBreed();
@@ -35,6 +36,7 @@ public:
     void setLastName(QString ln);
     void setEmail(QString e);
     void setLocation(QString loc);
+    void setPhone(QString phone);
 
     void setAge(int age);
     void setBreed(QString breed);
