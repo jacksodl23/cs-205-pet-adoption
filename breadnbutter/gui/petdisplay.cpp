@@ -300,11 +300,19 @@ void PetDisplay::fetchPets()
     }
 
     if (!color.isEmpty()) {
-        queryString.append("and color = ");
-        queryString.append('\'');
-        queryString.append(color);
-        queryString.append('\'');
-        queryString.append(" ");
+        if (ui->dislikeBoxColor->checkState() != Qt::Checked) {
+            queryString.append("and color = ");
+            queryString.append('\'');
+            queryString.append(color);
+            queryString.append('\'');
+            queryString.append(" ");
+        } else {
+            queryString.append("and color != ");
+            queryString.append('\'');
+            queryString.append(color);
+            queryString.append('\'');
+            queryString.append(" ");
+        }
     }
 
     if (!hairLength.isEmpty()) {
@@ -322,8 +330,8 @@ void PetDisplay::fetchPets()
     queryString.append("and age >= " + QString::number(minAge) + " ");
     queryString.append("and age <= " + QString::number(maxAge) + " ");
 
-    queryString.append("and weight >= " + QString::number(minAge) + " ");
-    queryString.append("and weight <= " + QString::number(maxAge) + " ");
+    queryString.append("and weight >= " + QString::number(minWeight) + " ");
+    queryString.append("and weight <= " + QString::number(maxWeight) + " ");
 
     QSqlQuery query;
     qDebug() << "Running query" << queryString;
