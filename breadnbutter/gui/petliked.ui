@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1042</width>
-    <height>985</height>
+    <width>1045</width>
+    <height>884</height>
    </rect>
   </property>
   <property name="palette">
@@ -493,7 +493,7 @@ color: rgb(239, 207, 187);</string>
         <property name="minimumSize">
          <size>
           <width>600</width>
-          <height>750</height>
+          <height>600</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -1442,7 +1442,7 @@ color: rgb(239, 207, 187);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1042</width>
+     <width>1045</width>
      <height>27</height>
     </rect>
    </property>
