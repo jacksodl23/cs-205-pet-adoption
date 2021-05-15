@@ -432,31 +432,6 @@ color: rgb(0, 0, 0);</string>
                 <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
                </property>
-               <item>
-                <property name="text">
-                 <string>Any</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Affenpinscher</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Curly-Coated Retriever</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Foxhound</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Lakeland Terrier</string>
-                </property>
-               </item>
               </widget>
              </item>
             </layout>

@@ -266,19 +266,35 @@ void PetDisplay::fetchPets()
     QString queryString = "select * from pet ";
 
     if (type != "Any") {
-        if (type == "Dog") {
-            queryString.append("where is_cat = 0 ");
-        } else if (type == "Cat") {
-            queryString.append("where is_cat = 1 ");
+        if (ui->dislikeBoxType->checkState() != Qt::Checked) {
+            if (type == "Dog") {
+                queryString.append("where is_cat = 0 ");
+            } else if (type == "Cat") {
+                queryString.append("where is_cat = 1 ");
+            }
+        } else {
+            if (type == "Dog") {
+                queryString.append("where is_cat != 0 ");
+            } else if (type == "Cat") {
+                queryString.append("where is_cat != 1 ");
+            }
         }
     }
 
     if (breed != "Any") {
-        queryString.append("and breed = ");
-        queryString.append('\'');
-        queryString.append(breed);
-        queryString.append('\'');
-        queryString.append(" ");
+        if (ui->dislikeBoxBreed->checkState() != Qt::Checked) {
+            queryString.append("and breed = ");
+            queryString.append('\'');
+            queryString.append(breed);
+            queryString.append('\'');
+            queryString.append(" ");
+        } else {
+            queryString.append("and breed != ");
+            queryString.append('\'');
+            queryString.append(breed);
+            queryString.append('\'');
+            queryString.append(" ");
+        }
     }
 
     if (!color.isEmpty()) {
