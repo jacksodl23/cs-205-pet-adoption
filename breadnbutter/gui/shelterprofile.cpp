@@ -106,6 +106,7 @@ void shelterProfile::on_actionHelp_triggered()
 void shelterProfile::on_actionAdopters_triggered()
 {
     ShelterAdopters *w = new ShelterAdopters(this);
+    w->setShelter(currentShelter);
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }
