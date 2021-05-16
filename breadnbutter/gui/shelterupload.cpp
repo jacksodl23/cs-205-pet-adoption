@@ -81,8 +81,7 @@ void shelterUpload::fetchHairLengths()
     ui->hairLenBox->clear();
 
     QSqlQuery query;
-    query.prepare("select distinct hair_length from pet where breed = ?");
-    query.addBindValue(ui->breedBox->currentText());
+    query.prepare("select distinct hair_length from pet");
     if (query.exec()) {
         while (query.next()) {
             QString hairLen = query.value(0).toString();
