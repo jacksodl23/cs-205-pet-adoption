@@ -106,21 +106,6 @@ border: 2px solid  white;
               <string>Cat</string>
              </property>
             </item>
-            <item>
-             <property name="text">
-              <string>FIsh</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Hamster</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Snake</string>
-             </property>
-            </item>
            </widget>
           </item>
          </layout>
@@ -174,51 +159,6 @@ border: 2px solid  white;
           </item>
           <item>
            <widget class="QComboBox" name="colorBox">
-            <property name="styleSheet">
-             <string notr="true">color: rgb(239, 207, 187);
-border: 2px solid  white; 
-     border-radius: 3px;</string>
-            </property>
-            <item>
-             <property name="text">
-              <string>White</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Brown</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Black</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Green</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Golden</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <item>
-           <widget class="QLabel" name="label_11">
-            <property name="text">
-             <string>Pet's Allergy</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit">
             <property name="styleSheet">
              <string notr="true">color: rgb(239, 207, 187);
 border: 2px solid  white; 
@@ -491,7 +431,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
