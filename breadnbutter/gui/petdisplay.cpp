@@ -231,21 +231,13 @@ void PetDisplay::on_button_like_clicked()
 {
     Pet currPet = pets.at(currentPos);
 
-    QSqlQuery query;
-    query.prepare("insert into Liked_By (adopter_id, pet_id)"
-                  "values (?, ?)");
-    query.addBindValue(currentUser.getID());
-    query.addBindValue(currPet.getPet_id());
-
-    if (query.exec()) {
+    if (currentUser.likePet(currPet)) {
         if (currentPos + 1 > pets.size() - 1) {
             QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
         } else {
             currentPos++;
             displayPet(pets.at(currentPos));
         }
-    } else {
-        qDebug() << "Error liking pet:" << query.lastError().text();
     }
 
     updateBar();

@@ -62,17 +62,13 @@ TEST_F(AdopterTest, TestNewAdopter) {
         EXPECT_EQ(owner->insertInDB(), false);
 }
 
-TEST_F(AdopterTest, TestAdopterExists) {
-    ASSERT_EQ(owner->existsInDB(), true);
-}
-
-/* TEST_F(AdopterTest, TestLogin) {
+TEST_F(AdopterTest, TestLogin) {
     ASSERT_EQ(owner->attemptLogin(), true);
 }
 
 TEST_F(AdopterTest, TestDeleteAdopter) {
-    ASSERT_EQ(owner->attemptLogin(), true);
-} */
+    ASSERT_EQ(owner->deleteFromDB(), true);
+}
 
 TEST_F(PetTest, TestInsertPet) {
     ASSERT_EQ(pet->insertIntoDB(100), true);
@@ -85,6 +81,11 @@ TEST_F(PetTest, TestUpdatePet) {
     query.addBindValue(pet->getPet_id());
 
     ASSERT_EQ(query.exec(), true);
+}
+
+TEST_F(PetTest, TestLikePet) {
+    PetOwner owner(201);
+    ASSERT_EQ(owner.likePet(*pet), true);
 }
 
 TEST_F(ShelterTest, TestInsertShelter) {
@@ -103,14 +104,13 @@ TEST(TestRead, TestReadShelter) {
         srand(time(0));
         int id = rand() % maxID + 1;
 
-        QSqlQuery q2;
-        q2.prepare("select * from Shelter where shelter_id = ?");
-        q2.addBindValue(id);
+        query.prepare("select * from Shelter where shelter_id = ?");
+        query.addBindValue(id);
 
-        if (q2.exec()) {
-            while (q2.next()) {
-                QString name = q2.value(2).toString();
-                qDebug() << "Found shelter named" << name;
+        if (query.exec()) {
+            while (query.next()) {
+                int nameIndex = query.record().indexOf("name");
+                QString name = query.value(nameIndex).toString();
                 ASSERT_EQ(name.isEmpty(), false);
             }
         }
@@ -126,14 +126,13 @@ TEST(TestRead,TestReadPet) {
         srand(time(0));
         int id = rand() % maxID + 1;
 
-        QSqlQuery q2;
-        q2.prepare("select * from Pet where pet_id = ?");
-        q2.addBindValue(id);
+        query.prepare("select * from Pet where pet_id = ?");
+        query.addBindValue(id);
 
-        if (q2.exec()) {
-            while (q2.next()) {
-                QString name = q2.value(1).toString();
-                qDebug() << "Found pet named" << name;
+        if (query.exec()) {
+            while (query.next()) {
+                int nameIndex = query.record().indexOf("name");
+                QString name = query.value(nameIndex).toString();
                 ASSERT_EQ(name.isEmpty(), false);
             }
         }

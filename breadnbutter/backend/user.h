@@ -5,6 +5,7 @@
 #include <QtSql>
 #include <iostream>
 #include <fstream>
+#include "pet.h"
 
 class User
 {
@@ -16,6 +17,8 @@ public:
     virtual bool insertInDB();
     virtual bool deleteFromDB();
     virtual bool existsInDB();
+
+    virtual bool likePet(Pet p);
 
     bool attemptLogin();
     void logOut();
