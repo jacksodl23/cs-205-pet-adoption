@@ -108,7 +108,7 @@ void shelterUpload::on_cancelButton_clicked()
 
 void shelterUpload::on_addButton_clicked()
 {
-    bool is_cat;
+    bool is_cat = false;
     if (ui->typeBox->currentText() == "Cat")
         is_cat = true;
 
@@ -121,7 +121,7 @@ void shelterUpload::on_addButton_clicked()
     QString origin = ui->originBox->currentText();
     QString description = ui->descriptionTextEdit->toPlainText();
 
-    bool hypo;
+    bool hypo = false;
     if (ui->hypoBox->currentText() == "Yes")
         hypo = true;
 
