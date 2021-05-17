@@ -85,6 +85,8 @@ private slots:
 
     void on_searchRangeSlider_valueChanged(int value);
 
+    void on_actionAbout_BreadnButter_triggered();
+
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;

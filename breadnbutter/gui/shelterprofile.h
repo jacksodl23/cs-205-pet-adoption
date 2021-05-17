@@ -37,6 +37,8 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_actionAbout_BreadnButter_triggered();
+
 private:
     Ui::shelterProfile *ui;
     Shelter *currentShelter;
