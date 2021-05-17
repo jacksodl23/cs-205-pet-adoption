@@ -30,11 +30,6 @@ void PetLiked::fetchLikedPets()
 
 void PetLiked::displayPet(Pet p)
 {
-    if (currentPos == 0)
-        ui->button_prev->setEnabled(false);
-    if (currentPos == pets.size())
-        ui->button_next->setEnabled(false);
-
     ui->label_name->setText(p.getName());
     ui->label_age->setText(QString::number(p.getAge()));
 
@@ -54,23 +49,6 @@ void PetLiked::displayPet(Pet p)
         ui->label_hypo->setText("Yes");
 
     ui->label_origin->setText(p.getOrigin());
-
-    /* QSqlQuery query;
-    query.prepare("select location from Shelter "
-                  "inner join Pet on Pet.shelter_id = Shelter.shelter_id "
-                  "where Pet.pet_id = ?");
-    query.addBindValue(p.getPet_id());
-
-    if (query.exec()) {
-        if (query.next()) {
-            QString loc = query.value(0).toString();
-
-            ui->label_location->setText(loc);
-        } else {
-            ui->button_next->setEnabled(false);
-            ui->button_prev->setEnabled(false);
-        }
-    } */
 
     QSqlQuery query;
     query.prepare("select shelter.owner_id, shelter.location "
@@ -104,7 +82,6 @@ PetLiked::PetLiked(QWidget *parent) :
 {
     ui->setupUi(this);
     currentPos = 0;
-    ui->button_prev->setEnabled(false);
 
     fetchLikedPets();
     displayPet(pets.at(currentPos));
@@ -205,25 +182,21 @@ PetLiked::~PetLiked()
 
 void PetLiked::on_button_next_clicked()
 {
-    if (!(currentPos + 1 > pets.size() - 1)) {
+    if (currentPos < pets.size() - 1) {
         currentPos++;
         displayPet(pets.at(currentPos));
-
-        if (!ui->button_prev->isEnabled())
-            ui->button_prev->setEnabled(true);
     } else {
-        ui->button_next->setEnabled(false);
+        QMessageBox::warning(this, "No More Pets!", "There are no more pets that you have liked beyond this point.");
     }
 }
 
 void PetLiked::on_button_prev_clicked()
 {
-    if (!(currentPos - 1 < 0)) {
+    if (currentPos > 0) {
         currentPos--;
         displayPet(pets.at(currentPos));
-
-        if (!ui->button_next->isEnabled())
-            ui->button_next->setEnabled(true);
+    } else {
+        QMessageBox::warning(this, "No More Pets!", "There are no more pets that you have liked beyond this point.");
     }
 }
 
