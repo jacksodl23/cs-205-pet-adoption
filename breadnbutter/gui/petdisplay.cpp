@@ -221,38 +221,47 @@ void PetDisplay::getCurrentUser()
 
 void PetDisplay::on_profileButton_clicked()
 {
-   profileUI = new PetProfile(this);
-   profileUI->setPDisplay(pets.at(currentPos));
-   profileUI->setModal(true);
-   profileUI->exec();
+    if (!pets.empty()) {
+        profileUI = new PetProfile(this);
+        profileUI->setPDisplay(pets.at(currentPos));
+        profileUI->setModal(true);
+        profileUI->exec();
+    }
 }
 
 void PetDisplay::on_button_like_clicked()
 {
-    Pet currPet = pets.at(currentPos);
+    if (!pets.empty()) {
+        Pet currPet = pets.at(currentPos);
 
-    if (currentUser.likePet(currPet)) {
-        if (currentPos + 1 > pets.size() - 1) {
-            QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
+        if (currentUser.likePet(currPet)) {
+            if (currentPos + 1 > pets.size() - 1) {
+                QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
+            } else {
+                currentPos++;
+                displayPet(pets.at(currentPos));
+            }
         } else {
-            currentPos++;
-            displayPet(pets.at(currentPos));
+            QMessageBox::critical(this, "Unable to Like Pet!", "Something went wrong while trying to like this pet. "
+                                  "You may have already liked it.");
         }
-    }
 
-    updateBar();
+        updateBar();
+    }
 }
 
 void PetDisplay::on_button_dislike_clicked()
 {
-    if (currentPos + 1 > pets.size() - 1) {
-        QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
-    } else {
-        currentPos++;
-        displayPet(pets.at(currentPos));
-    }
+    if (!pets.empty()) {
+        if (currentPos + 1 > pets.size() - 1) {
+            QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
+        } else {
+            currentPos++;
+            displayPet(pets.at(currentPos));
+        }
 
-    updateBar();
+        updateBar();
+    }
 }
 
 void PetDisplay::fetchPets()
