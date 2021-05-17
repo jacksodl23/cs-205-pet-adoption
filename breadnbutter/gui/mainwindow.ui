@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>617</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,12 +32,15 @@ color: rgb(239, 207, 187);</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="icon0_display">
+      <property name="minimumSize">
+       <size>
+        <width>200</width>
+        <height>200</height>
+       </size>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap resource="icons.qrc">:/icons/icons/logo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -52,7 +55,7 @@ color: rgb(239, 207, 187);</string>
       <property name="minimumSize">
        <size>
         <width>600</width>
-        <height>400</height>
+        <height>340</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -185,8 +188,6 @@ background-color: rgb(239, 207, 187);</string>
    </property>
   </action>
  </widget>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

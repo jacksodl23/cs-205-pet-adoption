@@ -18,6 +18,15 @@ void MainWindow::setWelcomePhoto() {
     int width = ui->labelPic->width();
     int height = ui->labelPic->height();
     ui->labelPic->setPixmap(welcomePic.scaled(width, height, Qt::KeepAspectRatio));
+
+    // adding icons to the page
+    QPixmap icon;
+
+    QString icon0(":/icons/icons/logo.png");
+    icon.load(icon0);
+    width = ui->icon0_display->width();
+    height = ui->icon0_display->height();
+    ui->icon0_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 }
 
 MainWindow::MainWindow(QWidget *parent)
