@@ -14,5 +14,6 @@
         <file>icons/Weight.png</file>
         <file>icons/Hair.png</file>
         <file>icons/Allergy.png</file>
+        <file>icons/logo.png</file>
     </qresource>
 </RCC>
