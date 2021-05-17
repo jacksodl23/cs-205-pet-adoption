@@ -157,7 +157,6 @@ background-color: rgb(239, 207, 187);</string>
     </property>
     <addaction name="actionAbout_Bread_and_Butter"/>
     <addaction name="separator"/>
-    <addaction name="actionPreferences"/>
     <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
