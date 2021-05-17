@@ -49,14 +49,6 @@ private slots:
 
     void on_actionHelp_triggered();
 
-    void on_dislikeBoxType_clicked(bool checked);
-
-    void on_dislikeBoxBreed_clicked(bool checked);
-
-    void on_dislikeBoxColor_clicked(bool checked);
-
-    void on_dislikeBoxHairLen_clicked(bool checked);
-
     void on_minAgeSlider_valueChanged(int value);
 
     void on_maxAgeSlider_valueChanged(int value);

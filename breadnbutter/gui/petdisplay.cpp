@@ -397,26 +397,6 @@ void PetDisplay::on_actionHelp_triggered()
     helpUI->show();
 }
 
-void PetDisplay::on_dislikeBoxType_clicked(bool checked)
-{
-
-}
-
-void PetDisplay::on_dislikeBoxBreed_clicked(bool checked)
-{
-
-}
-
-void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
-{
-
-}
-
-void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
-{
-
-}
-
 void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
