@@ -23,13 +23,7 @@ public:
 private slots:
     void on_typeBox_currentTextChanged(const QString &arg1);
 
-    void on_colorBox_activated(const QString &arg1);
-
-    void on_hairLenBox_activated(const QString &arg1);
-
     void on_breedBox_activated(const QString &arg1);
-
-    void on_hypoBox_currentTextChanged(const QString &arg1);
 
     void on_cancelButton_clicked();
 
@@ -41,30 +35,18 @@ private slots:
 
     void on_actionLog_out_triggered();
 
-    void on_originBox_activated(const QString &arg1);
-
     void on_actionQuit_triggered();
 
     void on_actionAbout_BreadnButter_triggered();
 
 private:
     Ui::shelterUpload *ui;
-    QString type;
-    QString breed;
-    float weight;
-    int age;
-    QString hairLength;
-    QString color;
-    bool hypoallergenic;
-    QString origin;
-    QString description;
-    QString name;
-    bool is_cat;
-
-    bool upload;
 
     Shelter *shelter;
 
+    void fetchDogBreeds();
+    void fetchBreedColors();
+    void fetchHairLengths();
 };
 
 #endif // SHELTERUPLOAD_H

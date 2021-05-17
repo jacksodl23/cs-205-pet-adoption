@@ -76,6 +76,22 @@ bool User::existsInDB()
     return false;
 }
 
+bool User::likePet(Pet p)
+{
+    QSqlQuery query;
+    query.prepare("insert into Liked_By (adopter_id, pet_id)"
+                  "values (?, ?)");
+    query.addBindValue(id);
+    query.addBindValue(p.getPet_id());
+
+    bool ok = query.exec();
+
+    if (!ok)
+        qDebug() << "Error liking pet:" << query.lastError().text();
+
+    return ok;
+}
+
 bool User::attemptLogin()
 {
     QSqlQuery query;

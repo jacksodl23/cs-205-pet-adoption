@@ -397,6 +397,26 @@ void PetDisplay::on_actionHelp_triggered()
     helpUI->show();
 }
 
+void PetDisplay::on_dislikeBoxType_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxBreed_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
+{
+
+}
+
 void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
@@ -446,6 +466,54 @@ void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
+<<<<<<< HEAD
+=======
+
+void PetDisplay::on_colorBox_activated(const QString &arg1)
+{
+    if (prefString.isEmpty()) {
+        QString queryString = "where color = ";
+        queryString.append('\'');
+        queryString.append(arg1);
+        queryString.append('\'');
+        prefString.append(queryString);
+    } else {
+        QString queryString = "and color = ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            queryString.append('\'');
+            queryString.append(arg1);
+            queryString.append('\'');
+            prefString.append(queryString);
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_hairLenBox_activated(const QString &arg1)
+{
+    if (prefString.isEmpty()) {
+        QString queryString = "where hair_length = ";
+        queryString.append('\'');
+        queryString.append(arg1);
+        queryString.append('\'');
+        prefString.append(queryString);
+    } else {
+        QString queryString = "and hair_length = ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            queryString.append('\'');
+            queryString.append(arg1);
+            queryString.append('\'');
+            prefString.append(queryString);
+        } else {
+
+        }
+    }
+}
 
 void PetDisplay::on_actionAbout_BreadnButter_triggered()
 {
@@ -453,3 +521,4 @@ void PetDisplay::on_actionAbout_BreadnButter_triggered()
                    "This application allows quick, efficient and effective services for those looking for pets!\n"
                    "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }
+>>>>>>> refs/heads/gui

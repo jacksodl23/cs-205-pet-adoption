@@ -397,6 +397,26 @@ void PetDisplay::on_actionHelp_triggered()
     helpUI->show();
 }
 
+void PetDisplay::on_dislikeBoxType_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxBreed_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
+{
+
+}
+
 void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
@@ -445,11 +465,4 @@ void PetDisplay::on_searchRangeSlider_valueChanged(int value)
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
-}
-
-void PetDisplay::on_actionAbout_BreadnButter_triggered()
-{
-    QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"
-                   "This application allows quick, efficient and effective services for those looking for pets!\n"
-                   "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }

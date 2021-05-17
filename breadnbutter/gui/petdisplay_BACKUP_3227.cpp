@@ -117,32 +117,20 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
-    QSqlQuery colorQuery;
-    colorQuery.prepare("select distinct color from pet where breed = ?");
-    colorQuery.addBindValue(arg1);
+    QSqlQuery query;
+    query.prepare("select distinct color from pet where breed = ?");
+    query.addBindValue(arg1);
 
-    if (colorQuery.exec()) {
+    if (query.exec()) {
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        while (colorQuery.next()) {
-            QString color = colorQuery.value(0).toString();
+        while (query.next()) {
+            QString color = query.value(0).toString();
             ui->colorBox->addItem(color);
         }
     } else {
-        qDebug() << "Error getting breed colors:" << colorQuery.lastError().text();
-    }
-
-    QSqlQuery hairLenQuery;
-    hairLenQuery.prepare("select distinct hair_length from pet where breed = ?");
-    hairLenQuery.addBindValue(arg1);
-
-    if (hairLenQuery.exec()) {
-        qDebug() << "Executed query" << hairLenQuery.executedQuery();
-        while (hairLenQuery.next()) {
-            QString hairLen = hairLenQuery.value(0).toString();
-            ui->hairLenBox->addItem(hairLen);
-        }
+        qDebug() << "Error getting breed colors:" << query.lastError().text();
     }
 }
 
@@ -231,13 +219,21 @@ void PetDisplay::on_button_like_clicked()
 {
     Pet currPet = pets.at(currentPos);
 
-    if (currentUser.likePet(currPet)) {
+    QSqlQuery query;
+    query.prepare("insert into Liked_By (adopter_id, pet_id)"
+                  "values (?, ?)");
+    query.addBindValue(currentUser.getID());
+    query.addBindValue(currPet.getPet_id());
+
+    if (query.exec()) {
         if (currentPos + 1 > pets.size() - 1) {
             QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
         } else {
             currentPos++;
             displayPet(pets.at(currentPos));
         }
+    } else {
+        qDebug() << "Error liking pet:" << query.lastError().text();
     }
 
     updateBar();
@@ -270,69 +266,31 @@ void PetDisplay::fetchPets()
     QString queryString = "select * from pet ";
 
     if (type != "Any") {
-        if (ui->dislikeBoxType->checkState() != Qt::Checked) {
-            if (type == "Dog") {
-                queryString.append("where is_cat = 0 ");
-            } else if (type == "Cat") {
-                queryString.append("where is_cat = 1 ");
-            }
-        } else {
-            if (type == "Dog") {
-                queryString.append("where is_cat != 0 ");
-            } else if (type == "Cat") {
-                queryString.append("where is_cat != 1 ");
-            }
+        if (type == "Dog") {
+            queryString.append("where is_cat = 0 ");
+        } else if (type == "Cat") {
+            queryString.append("where is_cat = 1 ");
         }
     }
 
     if (breed != "Any") {
-        if (ui->dislikeBoxType->checkState() != Qt::Checked) {
-            if (ui->dislikeBoxBreed->checkState() != Qt::Checked) {
-                queryString.append("and breed = ");
-                queryString.append('\'');
-                queryString.append(breed);
-                queryString.append('\'');
-                queryString.append(" ");
-            } else {
-                queryString.append("and breed != ");
-                queryString.append('\'');
-                queryString.append(breed);
-                queryString.append('\'');
-                queryString.append(" ");
-            }
-        }
+        queryString.append("and breed = ");
+        queryString.append('\'');
+        queryString.append(breed);
+        queryString.append('\'');
+        queryString.append(" ");
     }
 
     if (!color.isEmpty()) {
-        if (ui->dislikeBoxColor->checkState() != Qt::Checked) {
-            queryString.append("and color = ");
-            queryString.append('\'');
-            queryString.append(color);
-            queryString.append('\'');
-            queryString.append(" ");
-        } else {
-            queryString.append("and color != ");
-            queryString.append('\'');
-            queryString.append(color);
-            queryString.append('\'');
-            queryString.append(" ");
-        }
+        queryString.append("and color = ");
+        queryString.append('\'');
+        queryString.append(color);
+        queryString.append('\'');
+        queryString.append(" ");
     }
 
     if (!hairLength.isEmpty()) {
-        if (ui->dislikeBoxHairLen->checkState() != Qt::Checked) {
-            queryString.append("and hair_length = ");
-            queryString.append('\'');
-            queryString.append(hairLength);
-            queryString.append('\'');
-            queryString.append(" ");
-        } else {
-            queryString.append("and hair_length != ");
-            queryString.append('\'');
-            queryString.append(hairLength);
-            queryString.append('\'');
-            queryString.append(" ");
-        }
+
     }
 
     if (hypo != "Any") {
@@ -346,8 +304,8 @@ void PetDisplay::fetchPets()
     queryString.append("and age >= " + QString::number(minAge) + " ");
     queryString.append("and age <= " + QString::number(maxAge) + " ");
 
-    queryString.append("and weight >= " + QString::number(minWeight) + " ");
-    queryString.append("and weight <= " + QString::number(maxWeight) + " ");
+    queryString.append("and weight >= " + QString::number(minAge) + " ");
+    queryString.append("and weight <= " + QString::number(maxAge) + " ");
 
     QSqlQuery query;
     qDebug() << "Running query" << queryString;
@@ -397,6 +355,26 @@ void PetDisplay::on_actionHelp_triggered()
     helpUI->show();
 }
 
+void PetDisplay::on_dislikeBoxType_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxBreed_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxColor_clicked(bool checked)
+{
+
+}
+
+void PetDisplay::on_dislikeBoxHairLen_clicked(bool checked)
+{
+
+}
+
 void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
@@ -434,6 +412,8 @@ void PetDisplay::on_maxWeightSlider_valueChanged(int value)
     ui->label_search_maxweight->setText(labelText);
 }
 
+<<<<<<< HEAD
+=======
 void PetDisplay::on_searchRangeSlider_valueChanged(int value)
 {
     QString labelText = "Search Range: ";
@@ -442,14 +422,80 @@ void PetDisplay::on_searchRangeSlider_valueChanged(int value)
     ui->label_search_range->setText(labelText);
 }
 
+void PetDisplay::on_minAgeSlider_sliderReleased()
+{
+    int value = ui->minAgeSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where age >= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and age >= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and age >= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_maxAgeSlider_sliderReleased()
+{
+    int value = ui->maxAgeSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where age <= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and age <= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and age <= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_minWeightSlider_sliderReleased()
+{
+    int value = ui->minWeightSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where weight >= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and weight >= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and weight >= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+void PetDisplay::on_maxWeightSlider_sliderReleased()
+{
+    int value = ui->maxWeightSlider->value();
+
+    if (prefString.isEmpty()) {
+        prefString.append("where weight <= " + QString::number(value) + " ");
+    } else {
+        QString queryString = "and weight <= ";
+        int index = prefString.indexOf(queryString);
+
+        if (index == -1) {
+            prefString.append("and weight <= " + QString::number(value) + " ");
+        } else {
+
+        }
+    }
+}
+
+>>>>>>> refs/heads/gui
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
-}
-
-void PetDisplay::on_actionAbout_BreadnButter_triggered()
-{
-    QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"
-                   "This application allows quick, efficient and effective services for those looking for pets!\n"
-                   "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }

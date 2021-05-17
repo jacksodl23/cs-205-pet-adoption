@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <QtSql>
 #include <QMessageBox>
-#include <QSqlQueryModel>
 #include "../backend/globals.h"
 #include "../backend/shelter.h"
 #include "shelterprofilesqlmodel.h"
@@ -36,6 +35,8 @@ private slots:
     void on_actionAdopters_triggered();
 
     void on_actionQuit_triggered();
+
+    void on_deletePetButton_clicked();
 
     void on_actionAbout_BreadnButter_triggered();
 

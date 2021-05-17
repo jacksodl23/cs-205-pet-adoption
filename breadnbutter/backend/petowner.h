@@ -46,6 +46,8 @@ public:
     void setOrigin(QString origin);
     void setAllergy(bool a);
 
+    bool likePet(Pet p);
+
     // database methods
     bool insertInDB();
     bool deleteFromDB();
@@ -59,6 +61,8 @@ private:
     int p_weight;
     QString p_origin;
     bool p_allergy;
+
+    bool hasLikedPet(Pet p);
 };
 
 #endif // PETOWNER_H

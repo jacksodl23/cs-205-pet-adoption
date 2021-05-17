@@ -7,14 +7,7 @@ bool PetOwner::existsInDB()
     query.addBindValue(email);
 
     if (query.exec()) {
-        while (query.next()) {
-            int emailIndex = query.record().indexOf("email");
-            QString dbEmail = query.value(emailIndex).toString();
-            // look at this later, should dbEmail has 0 value or not?
-            int compare = QString::compare(email, dbEmail, Qt::CaseInsensitive);
-            if (compare == 0)
-                return true;
-        }
+        return query.next();
     } else {
         qDebug() << "Error searching for adopter in DB:" << query.lastError().text();
     }
@@ -200,6 +193,40 @@ void PetOwner::setOrigin(QString origin)
 void PetOwner::setAllergy(bool a)
 {
     this->p_allergy = a;
+}
+
+bool PetOwner::hasLikedPet(Pet p)
+{
+    QSqlQuery query;
+    query.prepare("select * from Liked_By where adopter_id = ? and pet_id = ?");
+    query.addBindValue(id);
+    query.addBindValue(p.getPet_id());
+
+    if (query.exec()) {
+        return query.next();
+    } else {
+        qDebug() << "Error determining if pet was already liked:" << query.lastError().text();
+    }
+}
+
+bool PetOwner::likePet(Pet p)
+{
+    if (!hasLikedPet(p)) {
+        QSqlQuery query;
+        query.prepare("insert into Liked_By (adopter_id, pet_id)"
+                      "values (?, ?)");
+        query.addBindValue(id);
+        query.addBindValue(p.getPet_id());
+
+        bool ok = query.exec();
+
+        if (!ok)
+            qDebug() << "Error liking pet:" << query.lastError().text();
+
+        return ok;
+    }
+
+    return false;
 }
 
 bool PetOwner::insertInDB()

@@ -9,6 +9,7 @@ class ShelterProfileSqlModel : public QSqlQueryModel
 public:
     ShelterProfileSqlModel();
     bool setData(const QModelIndex &index, const QVariant &value, int role);
+    bool removeRow(int row, const QModelIndex &parent);
 
 private:
     Qt::ItemFlags flags(const QModelIndex &index) const;

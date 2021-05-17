@@ -20,7 +20,7 @@ color: rgb(239, 207, 187);</string>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="titleLabel">
       <property name="font">
        <font>
         <family>Dyuthi</family>
@@ -31,7 +31,7 @@ color: rgb(239, 207, 187);</string>
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Your Adopters!</string>
+       <string>These adopters have liked your pets!</string>
       </property>
      </widget>
     </item>
@@ -49,7 +49,7 @@ color: rgb(239, 207, 187);</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="adopterCountLabel">
       <property name="font">
        <font>
         <family>Dyuthi</family>

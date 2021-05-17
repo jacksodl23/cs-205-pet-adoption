@@ -106,21 +106,6 @@ border: 2px solid  white;
               <string>Cat</string>
              </property>
             </item>
-            <item>
-             <property name="text">
-              <string>FIsh</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Hamster</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Snake</string>
-             </property>
-            </item>
            </widget>
           </item>
          </layout>
