@@ -75,14 +75,12 @@ PetDisplay::~PetDisplay()
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
-
     if (arg1 == "Dog") {
         // clearing all of the drop down menus
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        QSqlQuery query;
         query.prepare("select distinct breed from pet where is_cat = 0");
 
         if (query.exec()) {
@@ -101,7 +99,6 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        QSqlQuery query;
         query.prepare("select distinct breed from pet where is_cat = 1");
 
         if (query.exec()) {
@@ -117,30 +114,28 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
-    QSqlQuery colorQuery;
-    colorQuery.prepare("select distinct color from pet where breed = ?");
-    colorQuery.addBindValue(arg1);
+    query.prepare("select distinct color from pet where breed = ?");
+    query.addBindValue(arg1);
 
-    if (colorQuery.exec()) {
+    if (query.exec()) {
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        while (colorQuery.next()) {
-            QString color = colorQuery.value(0).toString();
+        while (query.next()) {
+            QString color = query.value(0).toString();
             ui->colorBox->addItem(color);
         }
     } else {
-        qDebug() << "Error getting breed colors:" << colorQuery.lastError().text();
+        qDebug() << "Error getting breed colors:" << query.lastError().text();
     }
 
-    QSqlQuery hairLenQuery;
-    hairLenQuery.prepare("select distinct hair_length from pet where breed = ?");
-    hairLenQuery.addBindValue(arg1);
+    query.prepare("select distinct hair_length from pet where breed = ?");
+    query.addBindValue(arg1);
 
-    if (hairLenQuery.exec()) {
-        qDebug() << "Executed query" << hairLenQuery.executedQuery();
-        while (hairLenQuery.next()) {
-            QString hairLen = hairLenQuery.value(0).toString();
+    if (query.exec()) {
+        qDebug() << "Executed query" << query.executedQuery();
+        while (query.next()) {
+            QString hairLen = query.value(0).toString();
             ui->hairLenBox->addItem(hairLen);
         }
     }
@@ -178,7 +173,6 @@ void PetDisplay::displayPet(Pet p)
     else
         ui->label_type->setText("Cat");
 
-    QSqlQuery query;
     query.prepare("select shelter_id from pet where pet_id = ?");
     query.addBindValue(p.getPet_id());
 
@@ -201,7 +195,6 @@ void PetDisplay::getCurrentUser()
     QString name = currentUser.getFirstName();
     ui->label_user_name->setText("Welcome " + name + "!");
 
-    QSqlQuery query;
     query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
     query.addBindValue(currentUser.getID());
 
@@ -358,7 +351,6 @@ void PetDisplay::fetchPets()
     queryString.append("and weight >= " + QString::number(minWeight) + " ");
     queryString.append("and weight <= " + QString::number(maxWeight) + " ");
 
-    QSqlQuery query;
     qDebug() << "Running query" << queryString;
 
     if (query.exec(queryString)) {

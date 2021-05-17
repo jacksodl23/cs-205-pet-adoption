@@ -67,6 +67,8 @@ private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
 
+    QSqlQuery query;
+
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;
