@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>692</width>
-    <height>611</height>
+    <height>626</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1533,22 +1533,5 @@ color: rgb(0, 0, 0);</string>
   <tabstop>passwordField</tabstop>
  </tabstops>
  <resources/>
- <connections>
-  <connection>
-   <sender>createOkay</sender>
-   <signal>rejected()</signal>
-   <receiver>CreateAccount</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>325</x>
-     <y>290</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
