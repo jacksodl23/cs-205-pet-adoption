@@ -10,6 +10,7 @@
 #include <QString>
 #include <QDebug>
 #include <QtSql>
+#include <QMessageBox>
 #include "login.h"
 #include "createaccount.h"
 #include "petdisplay.h"
@@ -38,6 +39,8 @@ private slots:
     void on_createButton_clicked();
 
     void on_actionQuit_triggered();
+
+    void on_actionAbout_Bread_and_Butter_triggered();
 
 private:
     Ui::MainWindow *ui;

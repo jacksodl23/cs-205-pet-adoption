@@ -157,7 +157,6 @@ background-color: rgb(239, 207, 187);</string>
     </property>
     <addaction name="actionAbout_Bread_and_Butter"/>
     <addaction name="separator"/>
-    <addaction name="actionPreferences"/>
     <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
@@ -176,17 +175,6 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionAbout_Bread_and_Butter">
    <property name="text">
     <string>About BreadnButter</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionPreferences">
-   <property name="text">
-    <string>Preferences</string>
    </property>
    <property name="font">
     <font>
