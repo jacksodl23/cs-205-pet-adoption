@@ -34,12 +34,12 @@ void Login::on_loginOkay_accepted()
 
                 if (is_adopter == 1) {
                     currentUser = PetOwner(user.getID());
-                    writeUserToFile(currentUser);
-                }
-                else if (is_adopter == 0) {
+                } else {
                     currentUser = ShelterOwner(user.getID());
-                    writeUserToFile(currentUser);
                 }
+
+                if (ui->checkBox->checkState() == Qt::Checked)
+                    writeUserToFile(currentUser);
             }
         } else {
             qDebug() << "Error determining if user is adopter:" << query.lastError().text();
