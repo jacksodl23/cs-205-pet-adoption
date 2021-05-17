@@ -956,66 +956,6 @@ color: rgb(239, 207, 187);</string>
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_16">
-        <item>
-         <widget class="QLabel" name="icon_allergy">
-          <property name="minimumSize">
-           <size>
-            <width>37</width>
-            <height>37</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>37</width>
-            <height>37</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 2px solid  black; 
-     border-radius: 3px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_18">
-          <property name="font">
-           <font>
-            <family>Dyuthi</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Pet's Allergy:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_allergy">
-          <property name="font">
-           <font>
-            <family>Dyuthi</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">border: 2px solid  white; 
-     border-radius: 3px;</string>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::Box</enum>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
          <widget class="QLabel" name="icon_hypo">
@@ -1454,7 +1394,14 @@ background-color: rgb(239, 207, 187);</string>
    </widget>
    <addaction name="menuBread_and_Butter"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="font">
+    <font>
+     <family>Dyuthi</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+  </widget>
   <action name="actionSearch">
    <property name="text">
     <string>Search</string>
