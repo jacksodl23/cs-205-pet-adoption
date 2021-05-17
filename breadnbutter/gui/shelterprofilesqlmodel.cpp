@@ -63,6 +63,33 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
     return ok;
 }
 
+bool ShelterProfileSqlModel::removeRow(int row, const QModelIndex &parent)
+{
+    QModelIndex primaryKeyIndex = QSqlQueryModel::index(row, 0);
+    int petID = data(primaryKeyIndex).toInt();
+
+    QModelIndex shelterIDIndex = QSqlQueryModel::index(row, 2);
+    int shelterID = data(shelterIDIndex).toInt();
+
+    QString queryStr = query().executedQuery();
+    queryStr.replace("?", QString::number(shelterID));
+
+    clear();
+    query().clear();
+
+    QSqlQuery deleteQuery;
+    deleteQuery.prepare("delete from pet where pet_id = ?");
+    deleteQuery.addBindValue(petID);
+
+    bool ok = deleteQuery.exec();
+
+    if (ok) {
+        setQuery(queryStr);
+    }
+
+    return ok;
+}
+
 bool ShelterProfileSqlModel::setName(int petID, const QString &pName)
 {
     QSqlQuery query;

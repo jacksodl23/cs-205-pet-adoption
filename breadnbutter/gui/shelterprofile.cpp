@@ -115,3 +115,13 @@ void shelterProfile::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
+
+void shelterProfile::on_deletePetButton_clicked()
+{
+   QModelIndexList indexes = ui->tableView->selectionModel()->selectedRows();
+
+   for (int i = indexes.count(); i > 0; i--) {
+       ShelterProfileSqlModel *model = static_cast<ShelterProfileSqlModel *>(ui->tableView->model());
+       model->removeRow(indexes.at(i - 1).row(), QModelIndex());
+   }
+}

@@ -36,6 +36,8 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_deletePetButton_clicked();
+
 private:
     Ui::shelterProfile *ui;
     Shelter *currentShelter;
