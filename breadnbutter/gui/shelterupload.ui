@@ -212,6 +212,12 @@ border: 2px solid  white;
          <layout class="QHBoxLayout" name="horizontalLayout_7">
           <item>
            <widget class="QLabel" name="label_11">
+            <property name="font">
+             <font>
+              <family>Dyuthi</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="text">
              <string>Pet's Allergy</string>
             </property>
@@ -491,7 +497,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
