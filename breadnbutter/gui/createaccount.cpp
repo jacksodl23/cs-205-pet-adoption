@@ -47,17 +47,27 @@ void CreateAccount::writeUserToFile(User newUser)
  */
 void CreateAccount::on_roleBox_activated(const QString &arg1)
 {
-    if (arg1 == "Adopter") {
+    if (arg1 == "Adopter") {	// Adopter labels
         ui->firstNameLabel->setText("First Name");
         ui->lastNameLabel->setText("Last Name");
-    } else if (arg1 == "Provider") {
+    } else if (arg1 == "Provider") {    // Provider/Shelter labels
         ui->firstNameLabel->setText("Full Name");
         ui->lastNameLabel->setText("Shelter Name");
     }
 }
 
+/*
+ * Method to handle creating a PetOwner object based off of
+ * the information provided in the CreateAccount page
+ * If the new PetOwner information does not conflict with
+ * another User that is already in the system then the
+ * currentUser global variable is set to the new User and
+ * the new PetOwner is added to the User configuration file
+ */
 void CreateAccount::signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString phone, QString password)
 {
+    // creating new PetOwner named newAdopter and adding the User to the
+    // database
     PetOwner newAdopter(password, firstName, lastName, email, phone, location);
     signUpSuccessful = newAdopter.insertInDB();
 
