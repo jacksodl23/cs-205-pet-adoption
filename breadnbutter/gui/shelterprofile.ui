@@ -148,6 +148,15 @@
        </color>
       </brush>
      </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="NoBrush">
+       <color alpha="128">
+        <red>239</red>
+        <green>207</green>
+        <blue>187</blue>
+       </color>
+      </brush>
+     </colorrole>
     </active>
     <inactive>
      <colorrole role="WindowText">
@@ -282,6 +291,15 @@
         <red>0</red>
         <green>0</green>
         <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="NoBrush">
+       <color alpha="128">
+        <red>239</red>
+        <green>207</green>
+        <blue>187</blue>
        </color>
       </brush>
      </colorrole>
@@ -422,6 +440,15 @@
        </color>
       </brush>
      </colorrole>
+     <colorrole role="PlaceholderText">
+      <brush brushstyle="NoBrush">
+       <color alpha="128">
+        <red>239</red>
+        <green>207</green>
+        <blue>187</blue>
+       </color>
+      </brush>
+     </colorrole>
     </disabled>
    </palette>
   </property>
@@ -558,7 +585,7 @@ color: rgb(239, 207, 187);</string>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>38</height>
+     <height>27</height>
     </rect>
    </property>
    <property name="font">
@@ -581,6 +608,8 @@ background-color: rgb(239, 207, 187);</string>
     <property name="title">
      <string>Menu</string>
     </property>
+    <addaction name="actionAbout_BreadnButter"/>
+    <addaction name="actionProfile"/>
     <addaction name="actionUpload"/>
     <addaction name="actionAdopters"/>
     <addaction name="actionHelp"/>
@@ -618,6 +647,11 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout_BreadnButter">
+   <property name="text">
+    <string>About BreadnButter</string>
    </property>
   </action>
  </widget>

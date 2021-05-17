@@ -1466,6 +1466,7 @@ background-color: rgb(239, 207, 187);</string>
     <property name="title">
      <string>Menu</string>
     </property>
+    <addaction name="actionAbout_BreadnButter"/>
     <addaction name="actionLiked"/>
     <addaction name="actionSearch"/>
     <addaction name="actionHelp"/>
@@ -1522,6 +1523,11 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout_BreadnButter">
+   <property name="text">
+    <string>About BreadnButter</string>
    </property>
   </action>
  </widget>

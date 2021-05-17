@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QtSql>
 #include "../backend/shelter.h"
+#include <QMessageBox>
 
 namespace Ui {
 class ShelterAdopters;
@@ -21,6 +22,8 @@ public:
 
 private slots:
     void on_actionQuit_triggered();
+
+    void on_actionAbout_BreadnButter_triggered();
 
 private:
     Ui::ShelterAdopters *ui;

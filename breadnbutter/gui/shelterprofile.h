@@ -38,6 +38,8 @@ private slots:
 
     void on_deletePetButton_clicked();
 
+    void on_actionAbout_BreadnButter_triggered();
+
 private:
     Ui::shelterProfile *ui;
     Shelter *currentShelter;

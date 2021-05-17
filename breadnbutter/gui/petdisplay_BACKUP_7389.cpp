@@ -466,8 +466,10 @@ void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
+<<<<<<< HEAD
+=======
 
-/* void PetDisplay::on_colorBox_activated(const QString &arg1)
+void PetDisplay::on_colorBox_activated(const QString &arg1)
 {
     if (prefString.isEmpty()) {
         QString queryString = "where color = ";
@@ -511,7 +513,7 @@ void PetDisplay::on_hairLenBox_activated(const QString &arg1)
 
         }
     }
-} */
+}
 
 void PetDisplay::on_actionAbout_BreadnButter_triggered()
 {
@@ -519,3 +521,4 @@ void PetDisplay::on_actionAbout_BreadnButter_triggered()
                    "This application allows quick, efficient and effective services for those looking for pets!\n"
                    "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }
+>>>>>>> refs/heads/gui
