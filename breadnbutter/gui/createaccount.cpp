@@ -1,32 +1,50 @@
 #include "createaccount.h"
 #include "ui_createaccount.h"
 
+// CreateAccount constructor with reference to QWidget parent
 CreateAccount::CreateAccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateAccount)
 {
+    // setup code
     ui->setupUi(this);
+    // changing the text in the standard "Ok" button to "Sign up!"
     ui->createOkay->button(QDialogButtonBox::Ok)->setText("Sign up!");
 }
 
+// CreateAccount destructor
 CreateAccount::~CreateAccount()
 {
     delete ui;
 }
 
+/*
+ * writes a user's information to a configuration file
+ * when they sign up for an account
+ */
 void CreateAccount::writeUserToFile(User newUser)
 {
     std::ofstream config("currentuser.config");
 
+    // simple encryption for the user's information
     SimpleCrypt crypto(CRYPTO_KEY);
     QString id = QString::number(newUser.getID());
     QString encoded = crypto.encryptToString(id);
 
+    // writing encrypted user ID to the config file
     config << encoded.toStdString();
+    // close file
     config.close();
 }
 
-
+/*
+ * Changes labels on CreateAccount page
+ * If an adopter is signing up then the labels ask for
+ * the user's first name and last name
+ * If a shelter owner or other pet provider wants to sign up
+ * then the labels change and prompt the user for the
+ * full name of the owner and the name of the shelter
+ */
 void CreateAccount::on_roleBox_activated(const QString &arg1)
 {
     if (arg1 == "Adopter") {
