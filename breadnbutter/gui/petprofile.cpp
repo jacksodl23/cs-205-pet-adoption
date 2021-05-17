@@ -133,6 +133,7 @@ void PetProfile::fetchPet()
     ui->label_color->setText(pDisplay.getColor());
     ui->label_weight->setText(QString::number(pDisplay.getWeight()));
     ui->label_origin->setText(pDisplay.getOrigin());
+    ui->label_hair->setText(pDisplay.getHairLength());
 
     if (pDisplay.getIs_cat())
         ui->label_type->setText("Cat");
