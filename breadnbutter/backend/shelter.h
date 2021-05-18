@@ -4,6 +4,7 @@
 #include <QtSql>
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include "pet.h"
 #include "shelterowner.h"
 #include "location.h"
@@ -39,6 +40,8 @@ public:
     Location *getLocation() const;
     
     double distance(double lat1, double long1, double lat2, double long2);
+    
+    double distanceToUser(const User& user);
 
 private:
     int shelterID;
