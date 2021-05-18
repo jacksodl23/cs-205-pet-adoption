@@ -27,7 +27,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    void setWelcomePhoto();
     void showPetDisplay();
     void showShelterDisplay();
     MainWindow(QWidget *parent = nullptr);
@@ -47,6 +46,7 @@ private:
     QPixmap welcomePic;
 
     void openDB();
+    void setWelcomePhoto();
 
     PetDisplay *petDisplay;
     shelterProfile *shelterDisplay;

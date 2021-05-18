@@ -9,6 +9,8 @@
 #include "shelterowner.h"
 #include "location.h"
 
+class Location;
+
 class Shelter
 {
 public:

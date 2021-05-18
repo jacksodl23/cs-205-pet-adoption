@@ -6,6 +6,9 @@
 #include <iostream>
 #include <fstream>
 #include "pet.h"
+#include "location.h"
+
+class Location;
 
 class User
 {
@@ -35,16 +38,19 @@ public:
 
     QString getPhoneNumber() const;
 
+    Location *getLocation() const;
+
 protected:
     int id;
     QString firstName;
     QString lastName;
-    QString location;
     QString phoneNumber;
     QString email;
     QString password;
 
     bool is_adopter;
+
+    Location *location;
 
     void chooseID();
 };

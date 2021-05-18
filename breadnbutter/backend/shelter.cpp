@@ -177,6 +177,7 @@ void Shelter::setShelterID(int value)
 }
 
 double Shelter::distance(double lat1, double long1, double lat2, double long2) {
+    // Calculates in miles. Imperial system for the win.
 	// Haversine Formula
 	const double pi = 3.1415926535;
 	const double R = 3958.8; // radius of Earth (mi)
@@ -190,5 +191,5 @@ double Shelter::distance(double lat1, double long1, double lat2, double long2) {
 }
 
 double Shelter::distanceToUser(const User& user) {
-    return distanceToUser(location.longitude, location.lattitude, user.location.longitude, user.location.lattitude);
+    return distance(location->getLattitude(), location->getLongitude(), user.getLocation()->getLattitude(), user.getLocation()->getLongitude());
 }
