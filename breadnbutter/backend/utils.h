@@ -1,14 +1,20 @@
 #include <vector>
-#include <pair>
+#include <utility>
 #include <algorithm>
 #include "user.h"
+#include "pet.h"
 #include "location.h"
+#include "globals.cpp"
+
+float getScore(User user, Pet pet) {
+  return 1;
+}
 
 std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets) {
   std::vector<std::pair<Pet, float>> petScore;
   
   for (auto& p : pets) 
-    petScore.pushback(p, getScore(currentUser, p));
+    petScore.push_back(std::make_pair(p, getScore(currentUser, p)));
   
   std::sort(petScore.begin(), petScore.end(), 
     [](const std::pair<Pet, float>& a, const std::pair<Pet, float>& b) -> bool {
@@ -16,10 +22,6 @@ std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets) {
     });
   
   return petScore;
-}
-
-float getScore(user, pet) {
-  return 1;
 }
 
 double distance(double lat1, double long1, double lat2, double long2) {
@@ -36,7 +38,7 @@ double distance(double lat1, double long1, double lat2, double long2) {
     return 2 * R * std::atan2(std::sqrt(a), std::sqrt(1-a));
 }
 
-double distanceToUser(const Location& start, const User& user) {
+double distanceToUser(const Location& start, User user) {
     Location userLoc(user.getLocID());
 
     return distance(start.getLattitude(), start.getLongitude(), userLoc.getLattitude(), userLoc.getLongitude());

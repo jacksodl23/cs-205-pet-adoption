@@ -10,6 +10,8 @@
 #include "../backend/pet.h"
 #include "../backend/user.h"
 #include "../gui/shelterprofilesqlmodel.h"
+#include "../backend/utils.h"
+#include "../backend/location.h"
 
 using namespace std;
 
@@ -57,6 +59,38 @@ public:
 
 TEST_F(AdopterTest, TestNewAdopter) {
     ASSERT_EQ(owner->insertInDB(), true);
+}
+
+TEST_F(AdopterTest, TestDistanceToShelter) {
+    srand(time(0));
+
+    QSqlQuery query;
+    query.prepare("select max(shelter_id) from shelter");
+    if (query.exec()) {
+        if (query.next()) {
+            int maxID = query.value(0).toInt();
+
+            int randID = rand() % maxID;
+            query.prepare("select location_id from location where location_id = ?");
+            query.addBindValue(randID);
+
+            if (query.exec()) {
+                if (query.next()) {
+                    int locID = query.value(0).toInt();
+                    Location loc(locID);
+                    qDebug() << "Found shelter in" << loc.getCity();
+
+                    double result = distanceToUser(loc, *owner);
+                    qDebug() << "Distance is" << result << "miles.";
+                    ASSERT_NE(result, 0);
+                }
+            } else {
+                qDebug() << "Error getting random shelter:" << query.lastError().text();
+            }
+        }
+    } else {
+        qDebug() << "Error getting shelter IDs:" << query.lastError().text();
+    }
 }
 
 TEST_F(AdopterTest, TestDeleteAdopter) {
