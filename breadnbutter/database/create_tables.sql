@@ -1,11 +1,12 @@
 CREATE TABLE User (
   user_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
-  location TEXT NOT NULL,
+  location_id TEXT NOT NULL,
   email TEXT NOT NULL,
   phone TEXT NOT NULL,
   password TEXT NOT NULL,
-  is_adopter INTEGER NOT NULL
+  is_adopter INTEGER NOT NULL,
+  FOREIGN KEY(location_id) REFERENCES Location(location_id)
   );
 
 CREATE TABLE Shelter (
