@@ -60,6 +60,12 @@ PetDisplay::PetDisplay(QWidget *parent) :
     height = ui->icon5_display->height();
     ui->icon5_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString icon6(":/icons/icons/Distance.png");
+    icon.load(icon6);
+    width = ui->icon6_display->width();
+    height = ui->icon6_display->height();
+    ui->icon6_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     currentPos = 0;
     if (!pets.empty())
         displayPet(pets.front());

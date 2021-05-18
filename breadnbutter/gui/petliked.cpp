@@ -170,6 +170,12 @@ PetLiked::PetLiked(QWidget *parent) :
     height = ui->icon_origin->height();
     ui->icon_origin->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
+    QString iconDistance(":/icons/icons/Distance.png");
+    icon.load(iconDistance);
+    width = ui->icon_distance->width();
+    height = ui->icon_distance->height();
+    ui->icon_distance->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+
     QString iconLocation(":/icons/icons/Location.png");
     icon.load(iconLocation);
     width = ui->icon_location->width();
