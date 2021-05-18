@@ -176,7 +176,7 @@ void Shelter::setShelterID(int value)
     shelterID = value;
 }
 
-double distance(double lat1, double long1, double lat2, double long2) {
+double Shelter::distance(double lat1, double long1, double lat2, double long2) {
 	// Haversine Formula
 	const double pi = 3.1415926535;
 	const double R = 3958.8; // radius of Earth (mi)
@@ -187,4 +187,8 @@ double distance(double lat1, double long1, double lat2, double long2) {
 
     double a = std::pow(std::sin((lat2-lat1)/2), 2) + std::cos(lat1)*std::cos(lat2)*std::pow(std::sin((long2-long1)/2), 2);
     return 2 * R * std::atan2(std::sqrt(a), std::sqrt(1-a));
+}
+
+double Shelter::distanceToUser(const User& user) {
+    return distanceToUser(location.longitude, location.lattitude, user.location.longitude, user.location.lattitude);
 }
