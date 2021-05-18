@@ -73,6 +73,10 @@ PetProfile::PetProfile(QWidget *parent) :
     icon.load(iconOrigin);
     ui->icon_origin->setPixmap(icon.scaled(ui->icon_origin->width(), ui->icon_origin->height(), Qt::KeepAspectRatio));
 
+    QString iconDistance(":/icons/icons/Distance.png");
+    icon.load(iconDistance);
+    ui->icon_distance->setPixmap(icon.scaled(ui->icon_distance->width(), ui->icon_distance->height(), Qt::KeepAspectRatio));
+
     QString iconLocation(":/icons/icons/Location.png");
     icon.load(iconLocation);
     ui->icon_location->setPixmap(icon.scaled(ui->icon_location->width(), ui->icon_location->height(), Qt::KeepAspectRatio));
