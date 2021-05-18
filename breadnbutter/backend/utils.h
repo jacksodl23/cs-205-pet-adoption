@@ -9,8 +9,7 @@ std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets) {
     petScore.pushback(p, getScore(currentUser, p));
   
   std::sort(petScore.begin(), petScore.end(), 
-    [](const std::pair<Pet, float>& a, const std::pair<Pet, float>& b) -> bool
-    {
+    [](const std::pair<Pet, float>& a, const std::pair<Pet, float>& b) -> bool {
       return a.second > b.second; 
     });
   
