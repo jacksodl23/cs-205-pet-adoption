@@ -1,3 +1,10 @@
+/*
+ * Storing a global current User variable
+ * Allows for keeping track of current User
+ * logged in and for access to operate on that
+ * User
+ */
+
 #ifndef GLOBALS_H
 #define GLOBALS_H
 
