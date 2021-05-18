@@ -69,6 +69,8 @@ private:
 
     QSqlQuery query;
 
+    QStringList dogImageList;
+    QStringList catImageList;
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;

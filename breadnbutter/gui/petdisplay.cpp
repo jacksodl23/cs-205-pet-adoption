@@ -11,6 +11,10 @@ PetDisplay::PetDisplay(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    dogImageList = QDir(":/dogs/Dogs").entryList();
+    catImageList = QDir(":/cats/Cats").entryList();
+    qDebug() << "Cat image list has" << catImageList.size() << "images in it.";
+
     QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
     petPic.load(photoFilePath);
     int width = ui->animalDisplay->width();
@@ -148,21 +152,29 @@ void PetDisplay::on_pushButton_clicked()
 
 void PetDisplay::displayPet(Pet p)
 {
-    int numberOfPhotos = 8;
-
     srand(time(0));
-    int photoNum = rand() % numberOfPhotos;
 
-    QString photoString = QString::number(photoNum);
+    if (p.getIs_cat()) {
+        int imageIndex = rand() % catImageList.size();
 
-    QString tempPath(":/resources/imgs/petPhoto");
-    tempPath.append(photoString);
-    QString filePath = tempPath.append(".jpg");
+        QString imageName = catImageList.at(imageIndex);
+        QString dirName = ":/cats/Cats/";
+        dirName.append(imageName);
 
-    petPic.load(filePath);
-    int width = ui->animalDisplay->width();
-    int height = ui->animalDisplay->height();
-    ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
+    } else {
+        int imageIndex = rand() % dogImageList.size();
+
+        QString imageName = dogImageList.at(imageIndex);
+        QString dirName = ":/dogs/Dogs/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
+    }
 
     ui->label_name->setText(p.getName());
     ui->label_breed->setText(p.getBreed());
