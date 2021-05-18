@@ -12,7 +12,8 @@ shelter.h \
     globals.h \
     shelterowner.h \
     user.h \
-    location.h
+    location.h \
+    utils.h
 
 SOURCES += main.cpp \
            pet.cpp \
@@ -22,5 +23,5 @@ shelter.cpp \
     globals.cpp \
     shelterowner.cpp \
     user.cpp \
-    location.cpp
+    location.cpp \
 

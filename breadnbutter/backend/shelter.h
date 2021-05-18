@@ -9,8 +9,6 @@
 #include "shelterowner.h"
 #include "location.h"
 
-class Location;
-
 class Shelter
 {
 public:
@@ -38,15 +36,17 @@ public:
     int getShelterID() const;
 
     void setShelterID(int value);
-
-    Location *getLocation() const;
     
     double distance(double lat1, double long1, double lat2, double long2);
     
     double distanceToUser(const User& user);
 
+    int getLocID() const;
+
 private:
     int shelterID;
+    int locID;
+
     QString name;
     QString email;
 
@@ -54,7 +54,6 @@ private:
 
     void fetchPets();
     ShelterOwner *owner;
-    Location *location;
     void fetchInfoFromID(int id);
 };
 

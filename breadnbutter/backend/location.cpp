@@ -26,6 +26,11 @@ Location::Location(int id)
     }
 }
 
+Location::~Location()
+{
+
+}
+
 QString Location::getCity() const
 {
     return city;

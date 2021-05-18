@@ -14,7 +14,7 @@ void Shelter::fetchInfoFromID(int id)
             int ownerIndex = query.record().indexOf("owner_id");
 
             this->name = query.value(nameIndex).toString();
-            this->location = new Location(query.value(locIndex).toInt());
+            this->locID = query.value(locIndex).toInt();
             this->email = query.value(emailIndex).toString();
         }
 
@@ -40,7 +40,7 @@ Shelter::Shelter(QString n, QString c, QString e) {
 
     if (query.exec()) {
         if (query.next()) {
-            this->location = new Location(query.value(0).toInt());
+            this->locID = query.value(0).toInt();
         } else {
             qDebug() << "No matching city could be found.";
         }
@@ -80,7 +80,7 @@ bool Shelter::insertIntoDB()
         query.prepare("insert into Shelter (name, location_id, email)"
                       "values (?, ?, ?)");
         query.addBindValue(name);
-        query.addBindValue(location->getLocID());
+        query.addBindValue(locID);
         query.addBindValue(email);
 
         ok = query.exec();
@@ -151,11 +151,6 @@ void Shelter::fetchPets()
     }
 }
 
-Location *Shelter::getLocation() const
-{
-    return location;
-}
-
 ShelterOwner *Shelter::getOwner() const
 {
     return owner;
@@ -191,5 +186,13 @@ double Shelter::distance(double lat1, double long1, double lat2, double long2) {
 }
 
 double Shelter::distanceToUser(const User& user) {
-    return distance(location->getLattitude(), location->getLongitude(), user.getLocation()->getLattitude(), user.getLocation()->getLongitude());
+    Location userLoc(user.getLocID());
+    Location loc(locID);
+
+    return distance(loc.getLattitude(), loc.getLongitude(), userLoc.getLattitude(), userLoc.getLongitude());
+}
+
+int Shelter::getLocID() const
+{
+    return locID;
 }

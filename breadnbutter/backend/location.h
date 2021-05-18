@@ -8,6 +8,8 @@ class Location
 {
 public:
     Location(int id);
+    ~Location();
+
     QString getCity() const;
 
     QString getState() const;

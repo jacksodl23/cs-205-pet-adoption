@@ -83,7 +83,7 @@ PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QSt
 
     if (query.exec()) {
         if (query.next()) {
-            this->location = new Location(query.value(0).toInt());
+            this->locID = query.value(0).toInt();
         } else {
             qDebug() << "Given city could not be found.";
         }
@@ -246,7 +246,7 @@ bool PetOwner::insertInDB()
         query.prepare("insert into User (name, location_id, email, phone, password, is_adopter)"
                       "values (?, ?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location->getLocID());
+        query.addBindValue(locID);
         query.addBindValue(email);
         query.addBindValue(phoneNumber);
         query.addBindValue(password);

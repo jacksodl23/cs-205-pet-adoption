@@ -25,7 +25,7 @@ bool User::insertInDB()
         query.prepare("insert into User (name, location_id, email, password, is_adopter)"
                       "values (?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location->getLocID());
+        query.addBindValue(locID);
         query.addBindValue(email);
         query.addBindValue(password);
         query.addBindValue(1);
@@ -153,9 +153,9 @@ QString User::getPhoneNumber() const
     return phoneNumber;
 }
 
-Location *User::getLocation() const
+int User::getLocID() const
 {
-    return location;
+    return locID;
 }
 
 void User::chooseID()

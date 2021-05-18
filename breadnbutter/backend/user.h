@@ -38,10 +38,12 @@ public:
 
     QString getPhoneNumber() const;
 
-    Location *getLocation() const;
+    int getLocID() const;
 
 protected:
     int id;
+    int locID;
+
     QString firstName;
     QString lastName;
     QString phoneNumber;
@@ -49,8 +51,6 @@ protected:
     QString password;
 
     bool is_adopter;
-
-    Location *location;
 
     void chooseID();
 };

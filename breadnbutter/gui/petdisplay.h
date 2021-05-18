@@ -14,10 +14,10 @@
 #include "../backend/globals.h"
 #include "../backend/petowner.h"
 #include "../backend/pet.h"
+#include "../backend/location.h"
 #include "petprofile.h"
 #include "petliked.h"
 #include "petownerhelp.h"
-
 
 namespace Ui {
 class PetDisplay;
