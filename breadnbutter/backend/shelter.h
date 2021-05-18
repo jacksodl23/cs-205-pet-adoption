@@ -37,6 +37,8 @@ public:
     void setShelterID(int value);
 
     Location *getLocation() const;
+    
+    double distance(double lat1, double long1, double lat2, double long2);
 
 private:
     int shelterID;
