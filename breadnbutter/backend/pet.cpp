@@ -157,7 +157,7 @@ Pet::Pet(bool is_cat, QString name, int age, QString breed, QString color, QStri
 
 /*
  * insertIntoDB() uses an insert SQL statement
- * to insert a Pet objects information/data members into the
+ * to insert a Pet object's information/data members into the
  * application database
  */
 bool Pet::insertIntoDB(int shelterID)
