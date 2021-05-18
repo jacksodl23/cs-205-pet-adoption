@@ -36,8 +36,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    void showPetDisplay();
-    void showShelterDisplay();
+    // setting the welcome photo and our icon
+    // on the MainWindow/main page
+    void setWelcomePhoto();
 
     // default MainWindow constructor
     MainWindow(QWidget *parent = nullptr);
@@ -77,10 +78,6 @@ private:
     // private method for opening the application's
     // database of Users, Pets, Shelters, and more
     void openDB();
-
-    // setting the welcome photo and our icon
-    // on the MainWindow/main page
-    void setWelcomePhoto();
 
     // PetDisplay pointer to reference the pet search
     // page named petDisplay

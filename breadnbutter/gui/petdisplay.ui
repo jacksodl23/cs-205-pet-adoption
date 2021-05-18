@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1139</width>
-    <height>766</height>
+    <width>1203</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -878,13 +878,13 @@ border: 2px solid  white;
        <widget class="QGroupBox" name="groupBox_3">
         <property name="minimumSize">
          <size>
-          <width>200</width>
+          <width>300</width>
           <height>600</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>980</width>
+          <width>1000</width>
           <height>1000</height>
          </size>
         </property>
@@ -938,7 +938,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -996,7 +996,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -1051,7 +1051,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -1106,7 +1106,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -1161,7 +1161,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -1216,7 +1216,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -1271,7 +1271,7 @@ border: 2px solid  white;
              </property>
              <property name="maximumSize">
               <size>
-               <width>100</width>
+               <width>200</width>
                <height>100</height>
               </size>
              </property>
@@ -1303,7 +1303,7 @@ border: 2px solid  white;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1139</width>
+     <width>1203</width>
      <height>27</height>
     </rect>
    </property>
