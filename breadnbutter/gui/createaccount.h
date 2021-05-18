@@ -1,3 +1,17 @@
+/*
+ * The CreateAccount class contains the information needed
+ * for displaying and working with the CreateAccount GUI.
+ * This class handles sign up information for new potential
+ * PetOwners ans ShelterOwners by adding their info to
+ * our database file and their login information to our
+ * User configuration file.
+ * Our configuration file allows for Users who have
+ * accounts to open and login to the program without
+ * needing to repeatedly supply their login information
+ * Shelters and ShelterOwners are linked together
+ */
+
+
 #ifndef CREATEACCOUNT_H
 #define CREATEACCOUNT_H
 
@@ -52,9 +66,17 @@ private:
     // repeated logging in
     void writeUserToFile(User newUser);
 
-    // takes all necessary adopter/PetOwner information and
-    //
+    // takes all necessary adopter/PetOwner information from
+    // the CreateAccount window and adds the adopter's info
+    // to the database and User config file, as well as
+    // setting the currentUser to be this adopter/PetOwner
     void signUpAdopter(QString firstName, QString lastName, QString location, QString email, QString phone, QString password);
+    // takes all necessary provider/ShelterOwner information from
+    // the CreateAccount window and adds the pet provider's info
+    // to the database and User config file, as well as
+    // setting the currentUser to be this ShelterOwner
+    // and linking the provider to the Shelter, s, in the
+    // database by foreign key
     void linkShelterOwnerToShelter(Shelter s, QString location, QString firstName, QString email, QString phone, QString lastName, QString password);
 };
 
