@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <utility>
 #include <QtSql>
 
 #include "gtest/gtest.h"
@@ -184,6 +185,41 @@ TEST(TestRead, GetPetsFromShelter) {
         Shelter s(id);
 
         ASSERT_EQ(s.getPets().size() > 0, true);
+    }
+}
+
+TEST(TestUtil, TestGetScore) {
+
+}
+
+TEST(TestUtil, TestSortPets) {
+    srand(time(0));
+
+    QSqlQuery query;
+    query.prepare("select max(shelter_id) from shelter");
+    if (query.exec()) {
+        if (query.next()) {
+            int randID = rand() % query.value(0).toInt();
+
+            query.prepare("select * from pet where shelter_id = ?");
+            query.addBindValue(randID);
+
+            if (query.exec()) {
+                std::vector<Pet> pets;
+
+                while (query.next()) {
+                    int pID = query.value(0).toInt();
+                    pets.push_back(Pet(pID));
+                }
+
+                std::vector<std::pair<Pet, float>> sorted = sortByMatch(pets);
+                ASSERT_FALSE(sorted.empty());
+            } else {
+                qDebug() << "Error fetching shelter's pets:" << query.lastError().text();
+            }
+        }
+    } else {
+        qDebug() << "Error getting max shelter ID:" << query.lastError().text();
     }
 }
 
