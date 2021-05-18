@@ -16,10 +16,13 @@ PetDisplay::PetDisplay(QWidget *parent) :
     // setup code
     ui->setupUi(this);
 
+<<<<<<< HEAD
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
 
+=======
     // making a lists of dog and cat images
+>>>>>>> refs/heads/gui
     dogImageList = QDir(":/dogs/Dogs").entryList();
     catImageList = QDir(":/cats/Cats").entryList();
     qDebug() << "Cat image list has" << catImageList.size() << "images in it.";
@@ -81,6 +84,13 @@ PetDisplay::PetDisplay(QWidget *parent) :
     // code for handling progress bar
     // progress bar shows you how many Pets you have liked/disliked out of total
     ui->progressBar->setOrientation(Qt::Horizontal);
+<<<<<<< HEAD
+=======
+    // range of progress bar, 1 to total number of Pets in Pet list
+    ui->progressBar->setRange(1, pets.size());
+    // setting current value of progress bar based off of number of likes/dislikes
+    ui->progressBar->setValue(currentPos+1);
+>>>>>>> refs/heads/gui
 }
 
 // PetDisplay destructor that deletes the PetDisplay UI
@@ -406,7 +416,7 @@ void PetDisplay::fetchPets()
             displayPet(pets.front());
 
             ui->progressBar->setValue(currentPos + 1);
-            ui->progressBar->setRange(1, pets.size());
+            ui->progressBar->setRange(0, pets.size());
         }
         else
             QMessageBox::critical(this, "No Pets Found", "No pets could be found with your search parameters. Please change your search and try again.");
