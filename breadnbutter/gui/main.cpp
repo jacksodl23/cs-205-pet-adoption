@@ -7,6 +7,20 @@
 #include <fstream>
 #include <cstring>
 
+/*
+ * the getCurrentUser() method
+ * allows for auto login for verified users
+ * who have selected the Stay Logged In option
+ * on the Login page
+ * This method checks to see what the ID of the
+ * currentUser is for a given instance of the
+ * application on a machine with the User
+ * configuration file
+ * If the method returns -1 then there is no
+ * currentUser logged into the system, and the
+ * main window with Login and CreateAccount options
+ * should open
+ */
 int getCurrentUser() {
     std::string line;
     std::ifstream config("currentuser.config");
@@ -52,7 +66,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
 
-    if(getCurrentUser() == -1)
+    if (getCurrentUser() == -1)
         w.show();
     else {
         if (!currentUser.getIs_adopter())
