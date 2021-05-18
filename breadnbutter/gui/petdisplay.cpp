@@ -11,6 +11,9 @@ PetDisplay::PetDisplay(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    int width = ui->animalDisplay->width();
+    int height = ui->animalDisplay->height();
+
     dogImageList = QDir(":/dogs/Dogs").entryList();
     catImageList = QDir(":/cats/Cats").entryList();
     qDebug() << "Cat image list has" << catImageList.size() << "images in it.";

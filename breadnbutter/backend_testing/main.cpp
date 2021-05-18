@@ -207,16 +207,16 @@ TEST(TestUtil, TestSortPets) {
             if (query.exec()) {
                 std::vector<Pet> pets;
 
-                for (int i = 0; i < 3; i++) {
-
-                }
-
                 while (query.next()) {
                     int pID = query.value(0).toInt();
                     pets.push_back(Pet(pID));
                 }
 
                 std::vector<std::pair<Pet, float>> sorted = sortByMatch(pets);
+
+                for (int i = 0; i < sorted.size(); i++)
+                    qDebug() << sorted[i].first.getName() << "," << sorted[i].second;
+
                 ASSERT_FALSE(sorted.empty());
             } else {
                 qDebug() << "Error fetching shelter's pets:" << query.lastError().text();
