@@ -5,12 +5,18 @@
 #include "createaccount.h"
 #include "mainwindow.h"
 
+/*
+ * PetDisplay contructor with photo, icons, and progress bar addtions
+ * along with setup code
+ */
 PetDisplay::PetDisplay(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::PetDisplay)
 {
+    // setup code
     ui->setupUi(this);
 
+    // making a lists of dog and cat images
     dogImageList = QDir(":/dogs/Dogs").entryList();
     catImageList = QDir(":/cats/Cats").entryList();
     qDebug() << "Cat image list has" << catImageList.size() << "images in it.";
@@ -24,10 +30,15 @@ PetDisplay::PetDisplay(QWidget *parent) :
     // adding icons to the page
     QPixmap icon;
 
+    // file path to name icon in project resources
     QString icon0(":/icons/icons/Name.png");
+    // loading icon from resources
     icon.load(icon0);
+    // gettting the width of the photo display
     width = ui->icon0_display->width();
+    // getting the height of the photo display
     height = ui->icon0_display->height();
+    // setting the photo display to the loaded icon QPixmap
     ui->icon0_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     QString icon1(":/icons/icons/Type.png");
@@ -67,16 +78,20 @@ PetDisplay::PetDisplay(QWidget *parent) :
     ui->icon6_display->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
 
     currentPos = 0;
-    if (!pets.empty())
-        displayPet(pets.front());
 
     getCurrentUser();
 
+    // code for handling progress bar
+    // progress bar shows you how many Pets you have liked/disliked out of total
     ui->progressBar->setOrientation(Qt::Horizontal);
+    // range of progress bar, 1 to total number of Pets in Pet list
     ui->progressBar->setRange(1, pets.size());
+    // setting current value of progress bar based off of number of likes/dislikes
     ui->progressBar->setValue(currentPos+1);
 }
 
+// PetDisplay destructor that deletes the PetDisplay UI
+// and clearing heap space
 PetDisplay::~PetDisplay()
 {
     delete ui;
@@ -85,20 +100,23 @@ PetDisplay::~PetDisplay()
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
+    // if the type chosen is Dog...
     if (arg1 == "Dog") {
         // clearing all of the drop down menus
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
+        // getting breeds from the database
         query.prepare("select distinct breed from pet where is_cat = 0");
 
         if (query.exec()) {
             while (query.next()) {
+                // adding breeds pulled from database into the drop down menu
                 QString breed = query.value(0).toString();
                 ui->breedBox->addItem(breed);
             }
-        } else {
+        } else { // query execution failed
             qDebug() << "Error getting dog breeds:" << query.lastError().text();
         }
     }
