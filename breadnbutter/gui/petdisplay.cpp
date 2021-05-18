@@ -201,7 +201,15 @@ void PetDisplay::displayPet(Pet p)
 
             Shelter s(shelterID);
             ui->label_shelter_name->setText(s.getName());
-            ui->label_location->setText(s.getLocation());
+
+            Location loc(s.getLocID());
+            ui->label_location->setText(loc.getCity());
+
+            double distance = distanceToUser(loc, currentUser);
+            if (distance == 1)
+                ui->label_distance->setText("1 mile");
+            else
+                ui->label_distance->setText(QString::number(distanceToUser(loc, currentUser)) + " miles");
         }
     } else {
         qDebug() << "Error getting pet's shelter:" << query.lastError().text();

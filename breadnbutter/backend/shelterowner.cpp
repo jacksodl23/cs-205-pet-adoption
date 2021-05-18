@@ -48,11 +48,25 @@ ShelterOwner::ShelterOwner(int id)
     }
 }
 
-ShelterOwner::ShelterOwner(QString fn, QString ln, QString loc, QString e, QString ph, QString p)
+ShelterOwner::ShelterOwner(QString fn, QString ln, QString city, QString e, QString ph, QString p)
 {
     this->firstName = fn;
     this->lastName = ln;
-    this->location = loc;
+
+    QSqlQuery query;
+    query.prepare("select location_id from location where city = ?");
+    query.addBindValue(city);
+
+    if (query.exec()) {
+        if (query.next()) {
+            this->locID = query.value(0).toInt();
+        } else {
+            qDebug() << "No matching city could be found.";
+        }
+    } else {
+        qDebug() << "Error fetching location:" << query.lastError().text();
+    }
+
     this->email = e;
     this->phoneNumber = ph;
     this->password = p;
@@ -64,10 +78,10 @@ bool ShelterOwner::insertInDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, phone, password, is_adopter)"
+        query.prepare("insert into User (name, location_id, email, phone, password, is_adopter)"
                       "values (?, ?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location);
+        query.addBindValue(locID);
         query.addBindValue(email);
         query.addBindValue(phoneNumber);
         query.addBindValue(password);

@@ -15,19 +15,9 @@ bool PetOwner::existsInDB()
     return false;
 }
 
-void PetOwner::setLocation(QString loc)
-{
-    location = loc;
-}
-
 void PetOwner::setPhone(QString phone)
 {
     phoneNumber = phone;
-}
-
-QString PetOwner::getLocation()
-{
-    return location;
 }
 
 QString PetOwner::getPhone()
@@ -79,14 +69,28 @@ PetOwner::PetOwner(int id)
     }
 }
 
-PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QString loc)
+PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QString city)
 {
     this->password = p;
     this->firstName = fn;
     this->lastName = ln;
     this->email = e;
     this->phoneNumber = ph;
-    this->location = loc;
+
+    QSqlQuery query;
+    query.prepare("select location_id from location where city = ?");
+    query.addBindValue(city);
+
+    if (query.exec()) {
+        if (query.next()) {
+            this->locID = query.value(0).toInt();
+        } else {
+            qDebug() << "Given city could not be found.";
+        }
+    } else {
+        qDebug() << "Error fetching location:" << query.lastError().text();
+    }
+
     this->is_adopter = true;
 }
 
@@ -239,10 +243,10 @@ bool PetOwner::insertInDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, phone, password, is_adopter)"
+        query.prepare("insert into User (name, location_id, email, phone, password, is_adopter)"
                       "values (?, ?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location);
+        query.addBindValue(locID);
         query.addBindValue(email);
         query.addBindValue(phoneNumber);
         query.addBindValue(password);

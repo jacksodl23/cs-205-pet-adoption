@@ -4,23 +4,23 @@
 #include <QtSql>
 #include <iostream>
 #include <vector>
+#include <cmath>
 #include "pet.h"
 #include "shelterowner.h"
+#include "location.h"
 
 class Shelter
 {
 public:
     Shelter(int id);
-    Shelter(QString n, QString l, QString e);
+    Shelter(QString n, QString c, QString e);
 
     // accessor methods
     QString getName();
-    QString getLocation();
     QString getEmail();
 
     // mutator methods
     void setName(QString n);
-    void setLocation(QString l);
     void setEmail(QString e);
 
     // database methods
@@ -37,10 +37,13 @@ public:
 
     void setShelterID(int value);
 
+    int getLocID() const;
+
 private:
     int shelterID;
+    int locID;
+
     QString name;
-    QString location;
     QString email;
 
     std::vector<Pet> pets;

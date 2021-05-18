@@ -22,10 +22,10 @@ bool User::insertInDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, password, is_adopter)"
+        query.prepare("insert into User (name, location_id, email, password, is_adopter)"
                       "values (?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location);
+        query.addBindValue(locID);
         query.addBindValue(email);
         query.addBindValue(password);
         query.addBindValue(1);
@@ -151,6 +151,11 @@ QString User::getEmail() const
 QString User::getPhoneNumber() const
 {
     return phoneNumber;
+}
+
+int User::getLocID() const
+{
+    return locID;
 }
 
 void User::chooseID()
