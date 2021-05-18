@@ -12,8 +12,10 @@
 #include <QColorDialog>
 #include <QtSql>
 #include "../backend/globals.h"
+#include "../backend/utils.h"
 #include "../backend/petowner.h"
 #include "../backend/pet.h"
+#include "../backend/location.h"
 #include "petprofile.h"
 #include "petliked.h"
 #include "petownerhelp.h"
@@ -43,23 +45,11 @@ private slots:
 
     void on_button_dislike_clicked();
 
-    void on_hypoBox_activated(const QString &arg1);
-
     void on_actionLog_out_triggered();
 
     void on_actionLiked_triggered();
 
     void on_actionHelp_triggered();
-
-    void on_dislikeBoxType_clicked(bool checked);
-
-    void on_dislikeBoxBreed_clicked(bool checked);
-
-    void on_dislikeBoxColor_clicked(bool checked);
-
-    void on_dislikeBoxHairLen_clicked(bool checked);
-
-    void updateBar();
 
     void on_minAgeSlider_valueChanged(int value);
 
@@ -69,33 +59,28 @@ private slots:
 
     void on_maxWeightSlider_valueChanged(int value);
 
-    void on_minAgeSlider_sliderReleased();
-
-    void on_maxAgeSlider_sliderReleased();
-
-    void on_minWeightSlider_sliderReleased();
-
-    void on_maxWeightSlider_sliderReleased();
-
     void on_actionQuit_triggered();
 
-    void on_colorBox_activated(const QString &arg1);
+    void on_searchRangeSlider_valueChanged(int value);
 
-    void on_hairLenBox_activated(const QString &arg1);
+    void on_actionAbout_BreadnButter_triggered();
 
 private:
     Ui::PetDisplay *ui;
     PetProfile *profileUI;
 
+    QSqlQuery query;
+
+    QStringList dogImageList;
+    QStringList catImageList;
     QPixmap petPic;
     std::vector<Pet> pets;
     int currentPos;
-    QString baseQuery;
-    QString prefString;
 
     void fetchPets();
     void displayPet(Pet p);
     void getCurrentUser();
+    void updateBar();
 };
 
 #endif // PETDISPLAY_H

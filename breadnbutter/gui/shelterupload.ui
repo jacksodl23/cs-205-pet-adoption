@@ -39,7 +39,7 @@ color: rgb(239, 207, 187);</string>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
       <item>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -104,21 +104,6 @@ border: 2px solid  white;
             <item>
              <property name="text">
               <string>Cat</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>FIsh</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Hamster</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Snake</string>
              </property>
             </item>
            </widget>
@@ -471,7 +456,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>38</height>
+     <height>27</height>
     </rect>
    </property>
    <property name="font">
@@ -494,6 +479,7 @@ background-color: rgb(239, 207, 187);</string>
     <property name="title">
      <string>Menu</string>
     </property>
+    <addaction name="actionAbout_BreadnButter"/>
     <addaction name="actionProfile"/>
     <addaction name="actionAdopters"/>
     <addaction name="actionHelp"/>
@@ -531,6 +517,11 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout_BreadnButter">
+   <property name="text">
+    <string>About BreadnButter</string>
    </property>
   </action>
  </widget>

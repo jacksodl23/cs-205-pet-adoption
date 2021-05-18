@@ -20,4 +20,6 @@ SOURCES += main.cpp \
            ../backend/petowner.cpp \
            ../backend/pet.cpp \
            ../backend/user.cpp \
-           ../backend/shelter.cpp
+           ../backend/shelter.cpp \
+           ../backend/location.cpp \
+           ../backend/utils.cpp

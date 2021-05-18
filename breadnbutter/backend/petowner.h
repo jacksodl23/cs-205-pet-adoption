@@ -13,13 +13,13 @@ public:
     ~PetOwner();
     PetOwner(QString email, QString password);
     PetOwner(int id);
-    PetOwner(QString p, QString fn, QString ln, QString e, QString loc);
+    PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QString city);
 
     // accessor methods
     QString getPassword();
     QString getLastName();
     QString getEmail();
-    QString getLocation();
+    QString getPhone();
 
     int getAge();
     QString getBreed();
@@ -34,7 +34,7 @@ public:
     void setFirstName(QString fn);
     void setLastName(QString ln);
     void setEmail(QString e);
-    void setLocation(QString loc);
+    void setPhone(QString phone);
 
     void setAge(int age);
     void setBreed(QString breed);
@@ -43,6 +43,8 @@ public:
     void setWeight(int weight);
     void setOrigin(QString origin);
     void setAllergy(bool a);
+
+    bool likePet(Pet p);
 
     // database methods
     bool insertInDB();
@@ -57,6 +59,8 @@ private:
     int p_weight;
     QString p_origin;
     bool p_allergy;
+
+    bool hasLikedPet(Pet p);
 };
 
 #endif // PETOWNER_H

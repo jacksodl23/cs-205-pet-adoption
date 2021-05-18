@@ -5,6 +5,8 @@
 #include "../backend/pet.h"
 #include "../backend/shelter.h"
 #include "../backend/shelterowner.h"
+#include "../backend/utils.h"
+#include "../backend/globals.h"
 
 namespace Ui {
 class PetProfile;
@@ -29,6 +31,9 @@ private:
 
     QPixmap petPic;
     Pet pDisplay;
+
+    QStringList dogImageList;
+    QStringList catImageList;
 
     void fetchPet();
 };

@@ -7,103 +7,91 @@ PetProfile::PetProfile(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    int numberOfPhotos = 8;
-
     srand(time(0));
-    int photoNum = rand() % numberOfPhotos;
 
-    QString photoString = QString::number(photoNum);
+    catImageList = QDir(":/cats/Cats").entryList();
+    dogImageList = QDir(":/dogs/Dogs").entryList();
 
-    QString tempPath(":/resources/imgs/petPhoto");
-    tempPath.append(photoString);
-    QString filePath = tempPath.append(".jpg");
-    qDebug() << filePath;
+    if (pDisplay.getIs_cat()) {
+        int imageIndex = rand() % catImageList.size();
 
-    petPic.load(filePath);
-    int width = ui->animalDisplay->width();
-    int height = ui->animalDisplay->height();
-    ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+        QString imageName = catImageList.at(imageIndex);
+        QString dirName = ":/cats/Cats/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
+    } else {
+        int imageIndex = rand() % dogImageList.size();
+
+        QString imageName = dogImageList.at(imageIndex);
+        QString dirName = ":/dogs/Dogs/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
+    }
 
     // adding icons to the page
     QPixmap icon;
 
     QString iconName(":/icons/icons/Name.png");
     icon.load(iconName);
-    width = ui->icon_name->width();
-    height = ui->icon_name->height();
-    ui->icon_name->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_name->setPixmap(icon.scaled(ui->icon_name->width(), ui->icon_name->height(), Qt::KeepAspectRatio));
 
     QString iconType(":/icons/icons/Type.png");
     icon.load(iconType);
-    width = ui->icon_type->width();
-    height = ui->icon_type->height();
-    ui->icon_type->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_type->setPixmap(icon.scaled(ui->icon_type->width(), ui->icon_type->height(), Qt::KeepAspectRatio));
 
     QString iconBreed(":/icons/icons/Breed.png");
     icon.load(iconBreed);
-    width = ui->icon_breed->width();
-    height = ui->icon_breed->height();
-    ui->icon_breed->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_breed->setPixmap(icon.scaled(ui->icon_breed->width(), ui->icon_breed->height(), Qt::KeepAspectRatio));
 
     QString iconAge(":/icons/icons/Age.png");
     icon.load(iconAge);
-    width = ui->icon_age->width();
-    height = ui->icon_age->height();
-    ui->icon_age->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_age->setPixmap(icon.scaled(ui->icon_age->width(), ui->icon_age->height(), Qt::KeepAspectRatio));
 
     QString iconColor(":/icons/icons/Color.png");
     icon.load(iconColor);
-    width = ui->icon_color->width();
-    height = ui->icon_color->height();
-    ui->icon_color->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_color->setPixmap(icon.scaled(ui->icon_color->width(), ui->icon_color->height(), Qt::KeepAspectRatio));
 
     QString iconHair(":/icons/icons/Hair.png");
     icon.load(iconHair);
-    width = ui->icon_hair->width();
-    height = ui->icon_hair->height();
-    ui->icon_hair->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_hair->setPixmap(icon.scaled(ui->icon_hair->width(), ui->icon_hair->height(), Qt::KeepAspectRatio));
 
     QString iconWeight(":/icons/icons/Weight.png");
     icon.load(iconWeight);
-    width = ui->icon_weight->width();
-    height = ui->icon_weight->height();
-    ui->icon_weight->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_weight->setPixmap(icon.scaled(ui->icon_weight->width(), ui->icon_weight->height(), Qt::KeepAspectRatio));
 
     QString iconHypo(":/icons/icons/Hypoallergenic.png");
     icon.load(iconHypo);
-    width = ui->icon_hypoallergenic->width();
-    height = ui->icon_hypoallergenic->height();
-    ui->icon_hypoallergenic->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_hypoallergenic->setPixmap(icon.scaled(ui->icon_hypoallergenic->width(), ui->icon_hypoallergenic->height(), Qt::KeepAspectRatio));
 
     QString iconOrigin(":/icons/icons/Origin.png");
     icon.load(iconOrigin);
-    width = ui->icon_origin->width();
-    height = ui->icon_origin->height();
-    ui->icon_origin->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_origin->setPixmap(icon.scaled(ui->icon_origin->width(), ui->icon_origin->height(), Qt::KeepAspectRatio));
+
+    QString iconDistance(":/icons/icons/Distance.png");
+    icon.load(iconDistance);
+    ui->icon_distance->setPixmap(icon.scaled(ui->icon_distance->width(), ui->icon_distance->height(), Qt::KeepAspectRatio));
 
     QString iconLocation(":/icons/icons/Location.png");
     icon.load(iconLocation);
-    width = ui->icon_location->width();
-    height = ui->icon_location->height();
-    ui->icon_location->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_location->setPixmap(icon.scaled(ui->icon_location->width(), ui->icon_location->height(), Qt::KeepAspectRatio));
 
     QString iconShelter(":/icons/icons/Shelter.png");
     icon.load(iconShelter);
-    width = ui->icon_shelter->width();
-    height = ui->icon_shelter->height();
-    ui->icon_shelter->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_shelter->setPixmap(icon.scaled(ui->icon_shelter->width(), ui->icon_shelter->height(), Qt::KeepAspectRatio));
 
     QString iconPhone(":/icons/icons/Phone.png");
     icon.load(iconPhone);
-    width = ui->icon_phone->width();
-    height = ui->icon_phone->height();
-    ui->icon_phone->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_phone->setPixmap(icon.scaled(ui->icon_phone->width(), ui->icon_phone->height(), Qt::KeepAspectRatio));
 
     QString iconEmail(":/icons/icons/Email.png");
     icon.load(iconEmail);
-    width = ui->icon_email->width();
-    height = ui->icon_email->height();
-    ui->icon_email->setPixmap(icon.scaled(width, height, Qt::KeepAspectRatio));
+    ui->icon_email->setPixmap(icon.scaled(ui->icon_email->width(), ui->icon_email->height(), Qt::KeepAspectRatio));
 }
 
 PetProfile::~PetProfile()
@@ -127,6 +115,8 @@ void PetProfile::fetchPet()
     ui->label_color->setText(pDisplay.getColor());
     ui->label_weight->setText(QString::number(pDisplay.getWeight()));
     ui->label_origin->setText(pDisplay.getOrigin());
+    ui->label_hair->setText(pDisplay.getHairLength());
+    ui->descriptionBox->setPlainText(pDisplay.getDescription());
 
     if (pDisplay.getIs_cat())
         ui->label_type->setText("Cat");
@@ -139,7 +129,7 @@ void PetProfile::fetchPet()
         ui->label_hypo->setText("No");
 
     QSqlQuery query;
-    query.prepare("select shelter.owner_id, shelter.location "
+    query.prepare("select shelter.owner_id, shelter.location_id "
                   "from pet "
                   "inner join shelter on shelter.shelter_id = pet.shelter_id "
                   "where pet.pet_id = ?");
@@ -150,9 +140,17 @@ void PetProfile::fetchPet()
             int ownerIndex = query.record().indexOf("owner_id");
             int ownerID = query.value(ownerIndex).toInt();
 
-            int locIndex = query.record().indexOf("location");
-            QString loc = query.value(locIndex).toString();
-            ui->label_location->setText(loc);
+            int locIndex = query.record().indexOf("location_id");
+            int locID = query.value(locIndex).toInt();
+
+            Location loc(locID);
+            ui->label_location->setText(loc.getCity());
+
+            double distance = distanceToUser(loc, currentUser);
+            if (distance == 1)
+                ui->label_distance->setText("1 mile");
+            else
+                ui->label_distance->setText(QString::number(distance) + " miles");
 
             ShelterOwner owner(ownerID);
             ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());

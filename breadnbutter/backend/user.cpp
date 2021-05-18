@@ -22,10 +22,10 @@ bool User::insertInDB()
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, password, is_adopter)"
+        query.prepare("insert into User (name, location_id, email, password, is_adopter)"
                       "values (?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location);
+        query.addBindValue(locID);
         query.addBindValue(email);
         query.addBindValue(password);
         query.addBindValue(1);
@@ -76,6 +76,22 @@ bool User::existsInDB()
     return false;
 }
 
+bool User::likePet(Pet p)
+{
+    QSqlQuery query;
+    query.prepare("insert into Liked_By (adopter_id, pet_id)"
+                  "values (?, ?)");
+    query.addBindValue(id);
+    query.addBindValue(p.getPet_id());
+
+    bool ok = query.exec();
+
+    if (!ok)
+        qDebug() << "Error liking pet:" << query.lastError().text();
+
+    return ok;
+}
+
 bool User::attemptLogin()
 {
     QSqlQuery query;
@@ -91,6 +107,8 @@ bool User::attemptLogin()
             qDebug() << "Found user with ID" << dbID;
 
             return true;
+        } else {
+            qDebug() << "No user with the given email and password could be found.";
         }
     } else {
         qDebug() << "Error logging in:" << query.lastError().text();
@@ -133,6 +151,11 @@ QString User::getEmail() const
 QString User::getPhoneNumber() const
 {
     return phoneNumber;
+}
+
+int User::getLocID() const
+{
+    return locID;
 }
 
 void User::chooseID()

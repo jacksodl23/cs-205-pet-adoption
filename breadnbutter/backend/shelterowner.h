@@ -11,7 +11,7 @@ public:
     ~ShelterOwner();
     ShelterOwner(QString email, QString password);
     ShelterOwner(int id);
-    ShelterOwner(QString fn, QString ln, QString loc, QString e, QString p);
+    ShelterOwner(QString fn, QString ln, QString city, QString e, QString ph, QString p);
 
     bool insertInDB();
     bool deleteFromDB();

@@ -7,6 +7,8 @@
 #include <vector>
 #include "../backend/globals.h"
 #include "../backend/pet.h"
+#include "../backend/location.h"
+#include "../backend/utils.h"
 #include "petprofile.h"
 #include "petownerhelp.h"
 #include "petdisplay.h"
@@ -36,11 +38,17 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void on_actionAbout_BreadnButter_triggered();
+
 private:
     Ui::petliked *ui;
     PetProfile *profileUI;
 
     int currentPos;
+
+    QStringList catImageList;
+    QStringList dogImageList;
+    QPixmap petPic;
 
     std::vector<Pet> pets;
     void fetchLikedPets();

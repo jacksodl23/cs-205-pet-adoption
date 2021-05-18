@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>617</height>
+    <height>700</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,25 +32,18 @@ color: rgb(239, 207, 187);</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
-      <property name="maximumSize">
+     <widget class="QLabel" name="icon0_display">
+      <property name="minimumSize">
        <size>
-        <width>16777215</width>
-        <height>65</height>
+        <width>200</width>
+        <height>200</height>
        </size>
       </property>
-      <property name="font">
-       <font>
-        <family>Dyuthi</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(239, 207, 187);
-</string>
-      </property>
       <property name="text">
-       <string>WELCOME TO BREADNBUTTER</string>
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -62,7 +55,7 @@ color: rgb(239, 207, 187);</string>
       <property name="minimumSize">
        <size>
         <width>600</width>
-        <height>400</height>
+        <height>340</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -157,7 +150,6 @@ background-color: rgb(239, 207, 187);</string>
     </property>
     <addaction name="actionAbout_Bread_and_Butter"/>
     <addaction name="separator"/>
-    <addaction name="actionPreferences"/>
     <addaction name="actionQuit"/>
    </widget>
    <addaction name="menuBread_and_Butter"/>
@@ -176,17 +168,6 @@ background-color: rgb(239, 207, 187);</string>
   <action name="actionAbout_Bread_and_Butter">
    <property name="text">
     <string>About BreadnButter</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Dyuthi</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-  </action>
-  <action name="actionPreferences">
-   <property name="text">
-    <string>Preferences</string>
    </property>
    <property name="font">
     <font>

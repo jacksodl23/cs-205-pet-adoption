@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>954</width>
-    <height>950</height>
+    <width>889</width>
+    <height>789</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@ border: 2px solid  white;
         <property name="minimumSize">
          <size>
           <width>500</width>
-          <height>700</height>
+          <height>600</height>
          </size>
         </property>
         <property name="maximumSize">
@@ -673,6 +673,71 @@ border: 2px solid  white;
        </layout>
       </item>
       <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_15">
+        <item>
+         <widget class="QLabel" name="icon_distance">
+          <property name="minimumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">border: 2px solid  black; 
+     border-radius: 3px;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="maximumSize">
+           <size>
+            <width>110</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Dyuthi</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Distance:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_distance">
+          <property name="maximumSize">
+           <size>
+            <width>1000</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Dyuthi</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Distance</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
          <widget class="QLabel" name="icon_location">
@@ -945,6 +1010,12 @@ border: 2px solid  white;
           <width>500</width>
           <height>150</height>
          </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Dyuthi</family>
+          <pointsize>14</pointsize>
+         </font>
         </property>
        </widget>
       </item>

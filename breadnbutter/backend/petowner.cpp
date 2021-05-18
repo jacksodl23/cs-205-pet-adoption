@@ -7,13 +7,7 @@ bool PetOwner::existsInDB()
     query.addBindValue(email);
 
     if (query.exec()) {
-        while (query.next()) {
-            QString dbEmail = query.value(0).toString();
-
-            int compare = QString::compare(email, dbEmail, Qt::CaseInsensitive);
-            if (compare == 0)
-                return true;
-        }
+        return query.next();
     } else {
         qDebug() << "Error searching for adopter in DB:" << query.lastError().text();
     }
@@ -21,14 +15,14 @@ bool PetOwner::existsInDB()
     return false;
 }
 
-void PetOwner::setLocation(QString loc)
+void PetOwner::setPhone(QString phone)
 {
-    location = loc;
+    phoneNumber = phone;
 }
 
-QString PetOwner::getLocation()
+QString PetOwner::getPhone()
 {
-    return location;
+    return phoneNumber;
 }
 
 PetOwner::~PetOwner()
@@ -55,7 +49,8 @@ PetOwner::PetOwner(int id)
         if (query.next()) {
             QString aName = query.value(1).toString();
             QString aEmail = query.value(3).toString();
-            QString aPassword = query.value(4).toString();
+            QString aPhone = query.value(4).toString();
+            QString aPassword = query.value(5).toString();
 
             QStringList pieces = aName.split(" ");
             for (int i = 0; i < pieces.size(); i++) {
@@ -66,6 +61,7 @@ PetOwner::PetOwner(int id)
             }
 
             this->email = aEmail;
+            this->phoneNumber = aPhone;
             this->password = aPassword;
         }
     } else {
@@ -73,13 +69,28 @@ PetOwner::PetOwner(int id)
     }
 }
 
-PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString loc)
+PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QString city)
 {
     this->password = p;
     this->firstName = fn;
     this->lastName = ln;
     this->email = e;
-    this->location = loc;
+    this->phoneNumber = ph;
+
+    QSqlQuery query;
+    query.prepare("select location_id from location where city = ?");
+    query.addBindValue(city);
+
+    if (query.exec()) {
+        if (query.next()) {
+            this->locID = query.value(0).toInt();
+        } else {
+            qDebug() << "Given city could not be found.";
+        }
+    } else {
+        qDebug() << "Error fetching location:" << query.lastError().text();
+    }
+
     this->is_adopter = true;
 }
 
@@ -188,29 +199,68 @@ void PetOwner::setAllergy(bool a)
     this->p_allergy = a;
 }
 
+bool PetOwner::hasLikedPet(Pet p)
+{
+    QSqlQuery query;
+    query.prepare("select * from Liked_By where adopter_id = ? and pet_id = ?");
+    query.addBindValue(id);
+    query.addBindValue(p.getPet_id());
+
+    bool ok = query.exec();
+
+    if (ok) {
+        return query.next();
+    } else {
+        qDebug() << "Error determining if pet was already liked:" << query.lastError().text();
+    }
+
+    return ok;
+}
+
+bool PetOwner::likePet(Pet p)
+{
+    if (!hasLikedPet(p)) {
+        QSqlQuery query;
+        query.prepare("insert into Liked_By (adopter_id, pet_id)"
+                      "values (?, ?)");
+        query.addBindValue(id);
+        query.addBindValue(p.getPet_id());
+
+        bool ok = query.exec();
+
+        if (!ok)
+            qDebug() << "Error liking pet:" << query.lastError().text();
+
+        return ok;
+    }
+
+    return false;
+}
+
 bool PetOwner::insertInDB()
 {
-    bool result;
+    bool ok;
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into User (name, location, email, password, is_adopter)"
-                      "values (?, ?, ?, ?, ?)");
+        query.prepare("insert into User (name, location_id, email, phone, password, is_adopter)"
+                      "values (?, ?, ?, ?, ?, ?)");
         query.addBindValue(firstName + " " + lastName);
-        query.addBindValue(location);
+        query.addBindValue(locID);
         query.addBindValue(email);
+        query.addBindValue(phoneNumber);
         query.addBindValue(password);
         query.addBindValue(1);
 
-        result = query.exec();
+        ok = query.exec();
 
-        if (!result)
+        if (!ok)
             qDebug() << "Error inserting adopter:" << query.lastError().text();
 
         id = query.lastInsertId().toInt();
     }
 
-    return result;
+    return ok;
 }
 
 bool PetOwner::deleteFromDB()

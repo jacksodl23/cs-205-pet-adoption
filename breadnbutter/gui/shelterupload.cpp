@@ -5,11 +5,30 @@
 #include "createaccount.h"
 #include "mainwindow.h"
 
+void shelterUpload::fetchDogBreeds()
+{
+    QSqlQuery query;
+    query.prepare("select distinct breed from pet where is_cat = 0");
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString breed = query.value(0).toString();
+            ui->breedBox->addItem(breed);
+        }
+    } else {
+        qDebug() << "Error fetching dog breeds:" << query.lastError().text();
+    }
+}
+
 shelterUpload::shelterUpload(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::shelterUpload)
 {
     ui->setupUi(this);
+
+    fetchDogBreeds();
+    fetchBreedColors();
+    fetchHairLengths();
 }
 
 shelterUpload::~shelterUpload()
@@ -20,64 +39,65 @@ shelterUpload::~shelterUpload()
 void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
 {
     if(arg1 == "Dog"){
-        this->is_cat = false;
         ui->breedBox->clear();
-        ui->breedBox->addItem("German Shepherd");
-        ui->breedBox->addItem("Golden Retriever");
-        ui->breedBox->addItem("Bulldog");
-        ui->breedBox->addItem("Poodle");
-        ui->breedBox->addItem("Chihuahua");
+
+        fetchDogBreeds();
     }
     else if(arg1 == "Cat"){
-        this->is_cat = true;
         ui->breedBox->clear();
-        ui->breedBox->addItem("Persian cat");
-        ui->breedBox->addItem("Bengal cat");
-        ui->breedBox->addItem("Siamese cat");
-        ui->breedBox->addItem("Sphynx cat");
-        ui->breedBox->addItem("Siberian cat");
-    }
-    else if(arg1 == "Snake"){
-        this->is_cat = false;
-        ui->breedBox->clear();
-        ui->breedBox->addItem("Cobra");
-        ui->breedBox->addItem("Python");
-        ui->breedBox->addItem("Copperhead");
-    }
-    else if(arg1 == "Hamster"){
-        this->is_cat = false;
-        ui->breedBox->clear();
-        ui->breedBox->addItem("Syrian hamster");
-        ui->breedBox->addItem("Winter White hamster");
-        ui->breedBox->addItem("Chinese hamster");
-        ui->breedBox->addItem("Roborowski hamster");
-        ui->breedBox->addItem("Campbell's Dwarf hamster");
+
+        QSqlQuery query;
+        query.prepare("select distinct breed from pet where is_cat = 1");
+
+        if (query.exec()) {
+            while (query.next()) {
+                QString breed = query.value(0).toString();
+                ui->breedBox->addItem(breed);
+            }
+        } else {
+            qDebug() << "Error fetching dog breeds:" << query.lastError().text();
+        }
     }
 }
 
-void shelterUpload::on_colorBox_activated(const QString &arg1)
+void shelterUpload::fetchBreedColors()
 {
-    this->color = arg1;
+    QSqlQuery query;
+    query.prepare("select distinct color from pet where breed = ?");
+    query.addBindValue(ui->breedBox->currentText());
+
+    if (query.exec()) {
+        while (query.next()) {
+            QString color = query.value(0).toString();
+            ui->colorBox->addItem(color);
+        }
+    } else {
+        qDebug() << "Error fetching colors:" << query.lastError().text();
+    }
 }
 
-void shelterUpload::on_hairLenBox_activated(const QString &arg1)
+void shelterUpload::fetchHairLengths()
 {
-    this->hairLength = arg1;
+    ui->hairLenBox->clear();
+
+    QSqlQuery query;
+    query.prepare("select distinct hair_length from pet");
+    if (query.exec()) {
+        while (query.next()) {
+            QString hairLen = query.value(0).toString();
+            ui->hairLenBox->addItem(hairLen);
+        }
+    } else {
+        qDebug() << "Error fetching hair lengths:" << query.lastError().text();
+    }
 }
 
 void shelterUpload::on_breedBox_activated(const QString &arg1)
 {
-    this->breed = arg1;
-}
+    ui->colorBox->clear();
 
-void shelterUpload::on_hypoBox_currentTextChanged(const QString &arg1)
-{
-    if(arg1 == "Yes"){
-        this->hypoallergenic = true;
-    }
-    else{
-        this->hypoallergenic = false;
-    }
+    fetchBreedColors();
+    fetchHairLengths();
 }
 
 void shelterUpload::on_cancelButton_clicked()
@@ -88,20 +108,34 @@ void shelterUpload::on_cancelButton_clicked()
 
 void shelterUpload::on_addButton_clicked()
 {
-    this->name = ui->nameField->text();
-    this->age = ui->ageField->text().toInt();
-    this->weight = ui->weightField->text().toFloat();
-    this->description = ui->descriptionTextEdit->toPlainText();
+    bool is_cat = false;
+    if (ui->typeBox->currentText() == "Cat")
+        is_cat = true;
 
-    Pet newPet(is_cat, name, age, breed, color, hairLength, weight, origin, hypoallergenic, description);
+    QString name = ui->nameField->text();
+    int age = ui->ageField->text().toInt();
+    QString breed = ui->breedBox->currentText();
+    QString color = ui->colorBox->currentText();
+    QString hairLen = ui->hairLenBox->currentText();
+    float weight = ui->weightField->text().toFloat();
+    QString origin = ui->originBox->currentText();
+    QString description = ui->descriptionTextEdit->toPlainText();
 
-    bool check = newPet.insertIntoDB(shelter->getShelterID());
+    bool hypo = false;
+    if (ui->hypoBox->currentText() == "Yes")
+        hypo = true;
 
-    if(check){
+    Pet newPet(is_cat, name, age, breed, color, hairLen, weight, origin, hypo, description);
+
+    bool ok = newPet.insertIntoDB(shelter->getShelterID());
+
+    if(ok) {
         QMessageBox::information(this, "Successful!", "Yay! You've added a new pet!");
 
         hide();
         parentWidget()->show();
+    } else {
+        QMessageBox::critical(this, "Error!", "Something went wrong when attempting to upload your pet. Please try again.");
     }
 }
 
@@ -132,12 +166,14 @@ void shelterUpload::on_actionLog_out_triggered()
     login->show();
 }
 
-void shelterUpload::on_originBox_activated(const QString &arg1)
-{
-    origin = arg1;
-}
-
 void shelterUpload::on_actionQuit_triggered()
 {
    QApplication::quit();
+}
+
+void shelterUpload::on_actionAbout_BreadnButter_triggered()
+{
+    QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"
+           "This application allows quick, efficient and effective services for those looking for pets!\n"
+           "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }

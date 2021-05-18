@@ -13,7 +13,7 @@ CREATE TABLE Shelter (
   shelter_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT, 
   owner_id INTEGER,
   name TEXT, 
-  location_id INTEGER, 
+  location_id INTEGER NOT NULL, 
   email TEXT,
   FOREIGN KEY(owner_id) REFERENCES User(user_id),
   FOREIGN KEY(location_id) REFERENCES Location(location_id)

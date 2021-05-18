@@ -106,6 +106,7 @@ void shelterProfile::on_actionHelp_triggered()
 void shelterProfile::on_actionAdopters_triggered()
 {
     ShelterAdopters *w = new ShelterAdopters(this);
+    w->setShelter(currentShelter);
     w->setAttribute(Qt::WA_DeleteOnClose);
     w->show();
 }
@@ -113,4 +114,21 @@ void shelterProfile::on_actionAdopters_triggered()
 void shelterProfile::on_actionQuit_triggered()
 {
    QApplication::quit();
+}
+
+void shelterProfile::on_deletePetButton_clicked()
+{
+   QModelIndexList indexes = ui->tableView->selectionModel()->selectedRows();
+
+   for (int i = indexes.count(); i > 0; i--) {
+       ShelterProfileSqlModel *model = static_cast<ShelterProfileSqlModel *>(ui->tableView->model());
+       model->removeRow(indexes.at(i - 1).row(), QModelIndex());
+   }
+}
+
+void shelterProfile::on_actionAbout_BreadnButter_triggered()
+{
+    QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"
+           "This application allows quick, efficient and effective services for those looking for pets!\n"
+           "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }
