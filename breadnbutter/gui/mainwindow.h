@@ -1,3 +1,9 @@
+/*
+ * This MainWindow class handles all of the information handling
+ * and functionality needed for the MainWindow GUI, including opening
+ * the Login GUI and CreateAccount GUI when necessary
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
