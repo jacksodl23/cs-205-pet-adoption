@@ -36,9 +36,6 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    void showPetDisplay();
-    void showShelterDisplay();
-
     // default MainWindow constructor
     MainWindow(QWidget *parent = nullptr);
     // MainWindow destructor
