@@ -3,13 +3,15 @@
 void Shelter::fetchInfoFromID(int id)
 {
     QSqlQuery query;
-    query.prepare("select * from shelter where shelter_id = ?");
+    query.prepare("select * from shelter "
+                  "inner join location on location.location_id = shelter.location_id "
+                  "where shelter.shelter_id = ?");
     query.addBindValue(id);
 
     if (query.exec()) {
         if (query.next()) {
             int nameIndex = query.record().indexOf("name");
-            int locIndex = query.record().indexOf("location");
+            int locIndex = query.record().indexOf("city");
             int emailIndex = query.record().indexOf("email");
             int ownerIndex = query.record().indexOf("owner_id");
 

@@ -56,14 +56,7 @@ public:
 };
 
 TEST_F(AdopterTest, TestNewAdopter) {
-    if (!owner->existsInDB())
-        EXPECT_EQ(owner->insertInDB(), true);
-    else
-        EXPECT_EQ(owner->insertInDB(), false);
-}
-
-TEST_F(AdopterTest, DISABLED_TestLogin) {
-    ASSERT_EQ(owner->attemptLogin(), true);
+    ASSERT_EQ(owner->insertInDB(), true);
 }
 
 TEST_F(AdopterTest, TestDeleteAdopter) {
@@ -89,10 +82,7 @@ TEST_F(PetTest, TestLikePet) {
 }
 
 TEST_F(ShelterTest, TestInsertShelter) {
-    if (shelter->existsInDB())
-        ASSERT_EQ(shelter->insertIntoDB(), false);
-    else
-        ASSERT_EQ(shelter->insertIntoDB(), true);
+    ASSERT_EQ(shelter->insertIntoDB(), true);
 }
 
 TEST(TestRead, TestReadShelter) {

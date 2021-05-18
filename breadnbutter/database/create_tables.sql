@@ -1,20 +1,22 @@
 CREATE TABLE User (
   user_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
-  location TEXT NOT NULL,
+  location_id INTEGER NOT NULL,
   email TEXT NOT NULL,
   phone TEXT NOT NULL,
   password TEXT NOT NULL,
-  is_adopter INTEGER NOT NULL
+  is_adopter INTEGER NOT NULL,
+  FOREIGN KEY(location_id) REFERENCES Location(location_id)
   );
 
 CREATE TABLE Shelter (
   shelter_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT, 
   owner_id INTEGER,
   name TEXT, 
-  location TEXT, 
+  location_id INTEGER NOT NULL, 
   email TEXT,
-  FOREIGN KEY(owner_id) REFERENCES User(user_id)
+  FOREIGN KEY(owner_id) REFERENCES User(user_id),
+  FOREIGN KEY(location_id) REFERENCES Location(location_id)
   );
 
 CREATE TABLE Pet (
