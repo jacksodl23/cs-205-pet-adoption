@@ -131,3 +131,5 @@ compile_commands.json
 gtest
 
 *.db
+*.jpg
+*.jpeg

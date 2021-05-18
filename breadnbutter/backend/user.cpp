@@ -107,6 +107,8 @@ bool User::attemptLogin()
             qDebug() << "Found user with ID" << dbID;
 
             return true;
+        } else {
+            qDebug() << "No user with the given email and password could be found.";
         }
     } else {
         qDebug() << "Error logging in:" << query.lastError().text();

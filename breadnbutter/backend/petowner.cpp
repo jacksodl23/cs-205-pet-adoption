@@ -202,11 +202,15 @@ bool PetOwner::hasLikedPet(Pet p)
     query.addBindValue(id);
     query.addBindValue(p.getPet_id());
 
-    if (query.exec()) {
+    bool ok = query.exec();
+
+    if (ok) {
         return query.next();
     } else {
         qDebug() << "Error determining if pet was already liked:" << query.lastError().text();
     }
+
+    return ok;
 }
 
 bool PetOwner::likePet(Pet p)
@@ -231,7 +235,7 @@ bool PetOwner::likePet(Pet p)
 
 bool PetOwner::insertInDB()
 {
-    bool result;
+    bool ok;
 
     if (!existsInDB()) {
         QSqlQuery query;
@@ -244,15 +248,15 @@ bool PetOwner::insertInDB()
         query.addBindValue(password);
         query.addBindValue(1);
 
-        result = query.exec();
+        ok = query.exec();
 
-        if (!result)
+        if (!ok)
             qDebug() << "Error inserting adopter:" << query.lastError().text();
 
         id = query.lastInsertId().toInt();
     }
 
-    return result;
+    return ok;
 }
 
 bool PetOwner::deleteFromDB()

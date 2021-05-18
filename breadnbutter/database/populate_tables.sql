@@ -6,7 +6,6 @@ DELETE from Pet;
 DELETE from Adopter_Preferences;
 DELETE from Liked_By;
 DELETE from Breed_Pref;
-DELETE from Breeds;
 DELETE from Location;
 
 .import ../../data/table_data/User_data.csv User
@@ -15,5 +14,4 @@ DELETE from Location;
 .import ../../data/table_data/Adopter_Preferences_data.csv Adopter_Preferences
 .import ../../data/table_data/Liked_By_data.csv Liked_By
 --.import ../../data/table_data/Breed_Pref_data.csv Breed_Pref
---.import ../../data/table_data/Breeds_data.csv Breeds
---.import ../../data/table_data/Location_data.csv Location
+.import ../../data/table_data/Location_data.csv Location

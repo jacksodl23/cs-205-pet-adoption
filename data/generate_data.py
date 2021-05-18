@@ -42,7 +42,7 @@ class Shelter_Owner:
 	def __init__(self):
 		self.user_id = _user_id.nextID()
 		self.name = genName()
-		self.location = randLine("sample_data/Locations.txt")
+		self.location_id = r.randint(0,825)
 		self.email = genEmail()
 		self.phone = genPhone()
 		self.password = genPassword()
@@ -50,7 +50,7 @@ class Shelter_Owner:
 	def toCSV(self):
 		line = str(self.user_id) + ","
 		line += self.name + ","
-		line += self.location + ","
+		line += str(self.location_id) + ","
 		line += self.email + ","
 		line += self.phone + ","
 		line += self.password + ","
@@ -58,11 +58,16 @@ class Shelter_Owner:
 		line += "\n"
 		return line
 
+	def changeInfo(self, name, email, password):
+		self.name = name
+		self.email = email
+		self.password = password
+
 class Shelter:
 	def __init__(self):
 		self.shelter_id = _shelter_id.nextID()
 		self.name = randLine("sample_data/ShelterNames.txt")
-		self.location = randLine("sample_data/Locations.txt")
+		self.location_id = r.randint(0,825)
 		self.email = genEmail()
 		self.owner = Shelter_Owner()
 
@@ -71,7 +76,7 @@ class Shelter:
 		line = str(self.shelter_id) + ","
 		line += str(self.owner.user_id) + ","
 		line += self.name + ","
-		line += self.location + ","
+		line += str(self.location_id) + ","
 		line += self.email
 		line += "\n"
 		return line
@@ -140,7 +145,7 @@ class Adopter:
 	def __init__(self):
 		self.user_id = _user_id.nextID()
 		self.name = genName()
-		self.location = randLine("sample_data/Locations.txt")
+		self.location_id = r.randint(0,825)
 		self.email = genEmail()
 		self.phone = genPhone()
 		self.password = genPassword()
@@ -149,7 +154,7 @@ class Adopter:
 	def toCSV(self):
 		line = str(self.user_id) + ","
 		line += self.name + ","
-		line += self.location + ","
+		line += str(self.location_id) + ","
 		line += self.email + ","
 		line += self.phone + ","
 		line += self.password + ","
@@ -188,6 +193,10 @@ for _ in range(numShelters):
 	shelters.append(s)
 	csv1.write(s.toCSV())
 	csv2.write(s.owner.toCSV())
+default = Shelter_Owner()
+default.changeInfo("John Smith", "s", "s")
+shelter_owners.append(default)
+csv2.write(default.toCSV())
 csv1.close()
 csv2.close()
 
@@ -212,11 +221,12 @@ for i in range(numAdopters):
 	csv2.write(a.preferences.toCSV())
 # default account to login
 default = Adopter()
-default.changeInfo("John Smith", "johnsmith@gmail.com", "hello")
+default.changeInfo("John Apple", "a", "a")
 adopters.append(default)
 csv1.write(default.toCSV())
 csv2.write(default.preferences.toCSV())
 csv1.close()
+csv2.close()
 
 # Liked_By
 csv = open("table_data/Liked_By_data.csv", "w")

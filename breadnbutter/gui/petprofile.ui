@@ -946,6 +946,12 @@ border: 2px solid  white;
           <height>150</height>
          </size>
         </property>
+        <property name="font">
+         <font>
+          <family>Dyuthi</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
        </widget>
       </item>
      </layout>
