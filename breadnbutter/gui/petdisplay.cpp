@@ -70,8 +70,6 @@ PetDisplay::PetDisplay(QWidget *parent) :
     getCurrentUser();
 
     ui->progressBar->setOrientation(Qt::Horizontal);
-    ui->progressBar->setRange(1, pets.size());
-    ui->progressBar->setValue(currentPos+1);
 }
 
 PetDisplay::~PetDisplay()
@@ -390,6 +388,9 @@ void PetDisplay::fetchPets()
         if (!pets.empty()) {
             currentPos = 0;
             displayPet(pets.front());
+
+            ui->progressBar->setValue(currentPos + 1);
+            ui->progressBar->setRange(0, pets.size());
         }
         else
             QMessageBox::critical(this, "No Pets Found", "No pets could be found with your search parameters. Please change your search and try again.");
