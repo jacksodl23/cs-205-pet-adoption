@@ -79,8 +79,7 @@ PetDisplay::PetDisplay(QWidget *parent) :
 
     getCurrentUser();
 
-    // code for handling progress bar
-    // progress bar shows you how many Pets you have liked/disliked out of total
+    // code for displaying progress bar
     ui->progressBar->setOrientation(Qt::Horizontal);
 }
 
