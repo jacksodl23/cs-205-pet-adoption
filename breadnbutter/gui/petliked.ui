@@ -462,7 +462,7 @@ color: rgb(239, 207, 187);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="petImageLabel">
         <property name="minimumSize">
          <size>
           <width>600</width>

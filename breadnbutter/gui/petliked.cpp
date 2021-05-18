@@ -30,6 +30,30 @@ void PetLiked::fetchLikedPets()
 
 void PetLiked::displayPet(Pet p)
 {
+    srand(time(0));
+
+    if (p.getIs_cat()) {
+        int imageIndex = rand() % catImageList.size();
+
+        QString imageName = catImageList.at(imageIndex);
+        QString dirName = ":/cats/Cats/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->petImageLabel->setPixmap(petPic.scaled(ui->petImageLabel->width(), ui->petImageLabel->height(), Qt::KeepAspectRatio));
+    } else {
+        int imageIndex = rand() % dogImageList.size();
+
+        QString imageName = dogImageList.at(imageIndex);
+        QString dirName = ":/dogs/Dogs/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->petImageLabel->setPixmap(petPic.scaled(ui->petImageLabel->width(), ui->petImageLabel->height(), Qt::KeepAspectRatio));
+    }
+
     ui->label_name->setText(p.getName());
     ui->label_age->setText(QString::number(p.getAge()));
 
@@ -82,6 +106,9 @@ PetLiked::PetLiked(QWidget *parent) :
 {
     ui->setupUi(this);
     currentPos = 0;
+
+    catImageList = QDir(":/cats/Cats").entryList();
+    dogImageList = QDir(":/dogs/Dogs").entryList();
 
     fetchLikedPets();
     displayPet(pets.at(currentPos));
