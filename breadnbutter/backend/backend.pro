@@ -11,7 +11,8 @@ shelter.h \
     simplecrypt.h \
     globals.h \
     shelterowner.h \
-    user.h
+    user.h \
+    location.h
 
 SOURCES += main.cpp \
            pet.cpp \
@@ -20,5 +21,6 @@ shelter.cpp \
     simplecrypt.cpp \
     globals.cpp \
     shelterowner.cpp \
-    user.cpp
+    user.cpp \
+    location.cpp
 

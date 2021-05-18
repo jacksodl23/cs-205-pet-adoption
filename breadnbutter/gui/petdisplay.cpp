@@ -195,7 +195,7 @@ void PetDisplay::displayPet(Pet p)
 
             Shelter s(shelterID);
             ui->label_shelter_name->setText(s.getName());
-            ui->label_location->setText(s.getLocation());
+            ui->label_location->setText(s.getLocation()->getCity());
         }
     } else {
         qDebug() << "Error getting pet's shelter:" << query.lastError().text();

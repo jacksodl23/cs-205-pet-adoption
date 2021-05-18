@@ -3,20 +3,18 @@
 void Shelter::fetchInfoFromID(int id)
 {
     QSqlQuery query;
-    query.prepare("select * from shelter "
-                  "inner join location on location.location_id = shelter.location_id "
-                  "where shelter.shelter_id = ?");
+    query.prepare("select * from shelter where shelter_id = ?");
     query.addBindValue(id);
 
     if (query.exec()) {
         if (query.next()) {
             int nameIndex = query.record().indexOf("name");
-            int locIndex = query.record().indexOf("city");
+            int locIndex = query.record().indexOf("location_id");
             int emailIndex = query.record().indexOf("email");
             int ownerIndex = query.record().indexOf("owner_id");
 
             this->name = query.value(nameIndex).toString();
-            this->location = query.value(locIndex).toString();
+            this->location = new Location(query.value(locIndex).toInt());
             this->email = query.value(emailIndex).toString();
         }
 
@@ -33,20 +31,29 @@ Shelter::Shelter(int id)
     fetchInfoFromID(id);
 }
 
-Shelter::Shelter(QString n, QString l, QString e) {
+Shelter::Shelter(QString n, QString c, QString e) {
     this->name = n;
-    this->location = l;
+
+    QSqlQuery query;
+    query.prepare("select location_id from location where city = ?");
+    query.addBindValue(c);
+
+    if (query.exec()) {
+        if (query.next()) {
+            this->location = new Location(query.value(0).toInt());
+        } else {
+            qDebug() << "No matching city could be found.";
+        }
+    } else {
+        qDebug() << "Error fetching city:" << query.lastError().text();
+    }
+
     this->email = e;
 }
 
 QString Shelter::getName()
 {
     return name;
-}
-
-QString Shelter::getLocation()
-{
-    return location;
 }
 
 QString Shelter::getEmail()
@@ -59,11 +66,6 @@ void Shelter::setName(QString n)
     this->name = n;
 }
 
-void Shelter::setLocation(QString l)
-{
-    this->location = l;
-}
-
 void Shelter::setEmail(QString e)
 {
     this->email = e;
@@ -71,27 +73,27 @@ void Shelter::setEmail(QString e)
 
 bool Shelter::insertIntoDB()
 {
-    bool result;
+    bool ok;
 
     if (!existsInDB()) {
         QSqlQuery query;
-        query.prepare("insert into Shelter (name, location, email)"
+        query.prepare("insert into Shelter (name, location_id, email)"
                       "values (?, ?, ?)");
         query.addBindValue(name);
-        query.addBindValue(location);
+        query.addBindValue(location->getLocID());
         query.addBindValue(email);
 
-        result = query.exec();
+        ok = query.exec();
 
-        if (!result)
+        if (!ok)
             std::cerr << query.lastError().text().toStdString() << std::endl;
 
         this->shelterID = query.lastInsertId().toInt();
     } else {
-        result = false;
+        ok = false;
     }
 
-    return result;
+    return ok;
 }
 
 bool Shelter::deleteFromDB()
@@ -148,6 +150,12 @@ void Shelter::fetchPets()
         qDebug() << "Error getting shelter's pets:" << query.lastError().text();
     }
 }
+
+Location *Shelter::getLocation() const
+{
+    return location;
+}
+
 ShelterOwner *Shelter::getOwner() const
 {
     return owner;

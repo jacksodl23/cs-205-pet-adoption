@@ -21,6 +21,7 @@ SOURCES += \
     ../backend/shelter.cpp \
     ../backend/shelterowner.cpp \
     ../backend/user.cpp \
+    ../backend/location.cpp \
     shelteradopters.cpp \
     shelterupload.cpp \
     petprofile.cpp \
