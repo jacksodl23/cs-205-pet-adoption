@@ -12,6 +12,7 @@
 #include <QColorDialog>
 #include <QtSql>
 #include "../backend/globals.h"
+#include "../backend/utils.h"
 #include "../backend/petowner.h"
 #include "../backend/pet.h"
 #include "../backend/location.h"

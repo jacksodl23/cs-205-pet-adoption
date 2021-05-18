@@ -21,4 +21,5 @@ SOURCES += main.cpp \
            ../backend/pet.cpp \
            ../backend/user.cpp \
            ../backend/shelter.cpp \
-           ../backend/location.cpp
+           ../backend/location.cpp \
+           ../backend/utils.cpp

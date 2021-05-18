@@ -24,4 +24,5 @@ shelter.cpp \
     shelterowner.cpp \
     user.cpp \
     location.cpp \
+    utils.cpp
 

@@ -36,10 +36,6 @@ public:
     int getShelterID() const;
 
     void setShelterID(int value);
-    
-    double distance(double lat1, double long1, double lat2, double long2);
-    
-    double distanceToUser(const User& user);
 
     int getLocID() const;
 
