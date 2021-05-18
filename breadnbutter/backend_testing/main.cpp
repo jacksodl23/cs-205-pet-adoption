@@ -59,10 +59,6 @@ TEST_F(AdopterTest, TestNewAdopter) {
     ASSERT_EQ(owner->insertInDB(), true);
 }
 
-TEST_F(AdopterTest, TestLogin) {
-    ASSERT_EQ(owner->attemptLogin(), true);
-}
-
 TEST_F(AdopterTest, TestDeleteAdopter) {
     ASSERT_EQ(owner->deleteFromDB(), true);
 }

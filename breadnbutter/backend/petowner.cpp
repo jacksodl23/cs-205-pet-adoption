@@ -235,7 +235,7 @@ bool PetOwner::likePet(Pet p)
 
 bool PetOwner::insertInDB()
 {
-    bool result;
+    bool ok;
 
     if (!existsInDB()) {
         QSqlQuery query;
@@ -248,15 +248,15 @@ bool PetOwner::insertInDB()
         query.addBindValue(password);
         query.addBindValue(1);
 
-        result = query.exec();
+        ok = query.exec();
 
-        if (!result)
+        if (!ok)
             qDebug() << "Error inserting adopter:" << query.lastError().text();
 
         id = query.lastInsertId().toInt();
     }
 
-    return result;
+    return ok;
 }
 
 bool PetOwner::deleteFromDB()
