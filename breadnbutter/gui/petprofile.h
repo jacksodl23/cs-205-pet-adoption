@@ -30,6 +30,9 @@ private:
     QPixmap petPic;
     Pet pDisplay;
 
+    QStringList dogImageList;
+    QStringList catImageList;
+
     void fetchPet();
 };
 
