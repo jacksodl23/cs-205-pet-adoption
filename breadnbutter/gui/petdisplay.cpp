@@ -15,12 +15,6 @@ PetDisplay::PetDisplay(QWidget *parent) :
     catImageList = QDir(":/cats/Cats").entryList();
     qDebug() << "Cat image list has" << catImageList.size() << "images in it.";
 
-    QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
-    petPic.load(photoFilePath);
-    int width = ui->animalDisplay->width();
-    int height = ui->animalDisplay->height();
-    ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
-
     // adding icons to the page
     QPixmap icon;
 

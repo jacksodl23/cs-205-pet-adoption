@@ -207,6 +207,10 @@ TEST(TestUtil, TestSortPets) {
             if (query.exec()) {
                 std::vector<Pet> pets;
 
+                for (int i = 0; i < 3; i++) {
+
+                }
+
                 while (query.next()) {
                     int pID = query.value(0).toInt();
                     pets.push_back(Pet(pID));
