@@ -75,7 +75,7 @@ void PetLiked::displayPet(Pet p)
     ui->label_origin->setText(p.getOrigin());
 
     QSqlQuery query;
-    query.prepare("select shelter.owner_id, shelter.location "
+    query.prepare("select shelter.owner_id, shelter.location_id "
                   "from pet "
                   "inner join shelter on shelter.shelter_id = pet.shelter_id "
                   "where pet.pet_id = ?");
@@ -86,9 +86,17 @@ void PetLiked::displayPet(Pet p)
             int ownerIndex = query.record().indexOf("owner_id");
             int ownerID = query.value(ownerIndex).toInt();
 
-            int locIndex = query.record().indexOf("location");
-            QString loc = query.value(locIndex).toString();
-            ui->label_location->setText(loc);
+            int locIndex = query.record().indexOf("location_id");
+            int locID = query.value(locIndex).toInt();
+
+            Location loc(locID);
+            ui->label_location->setText(loc.getCity());
+
+            double distance = distanceToUser(loc, currentUser);
+            if (distance == 1)
+                ui->label_distance->setText("1 mile");
+            else
+                ui->label_distance->setText(QString::number(distance) + " miles");
 
             ShelterOwner owner(ownerID);
             ui->label_owner_name->setText(owner.getFirstName() + " " + owner.getLastName());
