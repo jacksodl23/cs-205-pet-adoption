@@ -202,11 +202,15 @@ bool PetOwner::hasLikedPet(Pet p)
     query.addBindValue(id);
     query.addBindValue(p.getPet_id());
 
-    if (query.exec()) {
+    bool ok = query.exec();
+
+    if (ok) {
         return query.next();
     } else {
         qDebug() << "Error determining if pet was already liked:" << query.lastError().text();
     }
+
+    return ok;
 }
 
 bool PetOwner::likePet(Pet p)

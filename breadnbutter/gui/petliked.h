@@ -44,6 +44,10 @@ private:
 
     int currentPos;
 
+    QStringList catImageList;
+    QStringList dogImageList;
+    QPixmap petPic;
+
     std::vector<Pet> pets;
     void fetchLikedPets();
 

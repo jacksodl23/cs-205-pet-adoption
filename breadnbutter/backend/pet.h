@@ -34,6 +34,8 @@ public:
 
     float getWeight() const;
 
+    QString getHairLength() const;
+
 private:
     int pet_id;
     bool is_cat;

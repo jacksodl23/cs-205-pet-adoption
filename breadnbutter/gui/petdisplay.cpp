@@ -11,6 +11,10 @@ PetDisplay::PetDisplay(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    dogImageList = QDir(":/dogs/Dogs").entryList();
+    catImageList = QDir(":/cats/Cats").entryList();
+    qDebug() << "Cat image list has" << catImageList.size() << "images in it.";
+
     QString photoFilePath(":/resources/imgs/petPhoto0.jpg");
     petPic.load(photoFilePath);
     int width = ui->animalDisplay->width();
@@ -75,14 +79,12 @@ PetDisplay::~PetDisplay()
 // changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
-
     if (arg1 == "Dog") {
         // clearing all of the drop down menus
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        QSqlQuery query;
         query.prepare("select distinct breed from pet where is_cat = 0");
 
         if (query.exec()) {
@@ -101,7 +103,6 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        QSqlQuery query;
         query.prepare("select distinct breed from pet where is_cat = 1");
 
         if (query.exec()) {
@@ -117,30 +118,28 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
 
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
-    QSqlQuery colorQuery;
-    colorQuery.prepare("select distinct color from pet where breed = ?");
-    colorQuery.addBindValue(arg1);
+    query.prepare("select distinct color from pet where breed = ?");
+    query.addBindValue(arg1);
 
-    if (colorQuery.exec()) {
+    if (query.exec()) {
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        while (colorQuery.next()) {
-            QString color = colorQuery.value(0).toString();
+        while (query.next()) {
+            QString color = query.value(0).toString();
             ui->colorBox->addItem(color);
         }
     } else {
-        qDebug() << "Error getting breed colors:" << colorQuery.lastError().text();
+        qDebug() << "Error getting breed colors:" << query.lastError().text();
     }
 
-    QSqlQuery hairLenQuery;
-    hairLenQuery.prepare("select distinct hair_length from pet where breed = ?");
-    hairLenQuery.addBindValue(arg1);
+    query.prepare("select distinct hair_length from pet where breed = ?");
+    query.addBindValue(arg1);
 
-    if (hairLenQuery.exec()) {
-        qDebug() << "Executed query" << hairLenQuery.executedQuery();
-        while (hairLenQuery.next()) {
-            QString hairLen = hairLenQuery.value(0).toString();
+    if (query.exec()) {
+        qDebug() << "Executed query" << query.executedQuery();
+        while (query.next()) {
+            QString hairLen = query.value(0).toString();
             ui->hairLenBox->addItem(hairLen);
         }
     }
@@ -153,21 +152,29 @@ void PetDisplay::on_pushButton_clicked()
 
 void PetDisplay::displayPet(Pet p)
 {
-    int numberOfPhotos = 8;
-
     srand(time(0));
-    int photoNum = rand() % numberOfPhotos;
 
-    QString photoString = QString::number(photoNum);
+    if (p.getIs_cat()) {
+        int imageIndex = rand() % catImageList.size();
 
-    QString tempPath(":/resources/imgs/petPhoto");
-    tempPath.append(photoString);
-    QString filePath = tempPath.append(".jpg");
+        QString imageName = catImageList.at(imageIndex);
+        QString dirName = ":/cats/Cats/";
+        dirName.append(imageName);
 
-    petPic.load(filePath);
-    int width = ui->animalDisplay->width();
-    int height = ui->animalDisplay->height();
-    ui->animalDisplay->setPixmap(petPic.scaled(width, height, Qt::KeepAspectRatio));
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
+    } else {
+        int imageIndex = rand() % dogImageList.size();
+
+        QString imageName = dogImageList.at(imageIndex);
+        QString dirName = ":/dogs/Dogs/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
+    }
 
     ui->label_name->setText(p.getName());
     ui->label_breed->setText(p.getBreed());
@@ -178,7 +185,6 @@ void PetDisplay::displayPet(Pet p)
     else
         ui->label_type->setText("Cat");
 
-    QSqlQuery query;
     query.prepare("select shelter_id from pet where pet_id = ?");
     query.addBindValue(p.getPet_id());
 
@@ -201,7 +207,6 @@ void PetDisplay::getCurrentUser()
     QString name = currentUser.getFirstName();
     ui->label_user_name->setText("Welcome " + name + "!");
 
-    QSqlQuery query;
     query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
     query.addBindValue(currentUser.getID());
 
@@ -221,38 +226,47 @@ void PetDisplay::getCurrentUser()
 
 void PetDisplay::on_profileButton_clicked()
 {
-   profileUI = new PetProfile(this);
-   profileUI->setPDisplay(pets.at(currentPos));
-   profileUI->setModal(true);
-   profileUI->exec();
+    if (!pets.empty()) {
+        profileUI = new PetProfile(this);
+        profileUI->setPDisplay(pets.at(currentPos));
+        profileUI->setModal(true);
+        profileUI->exec();
+    }
 }
 
 void PetDisplay::on_button_like_clicked()
 {
-    Pet currPet = pets.at(currentPos);
+    if (!pets.empty()) {
+        Pet currPet = pets.at(currentPos);
 
-    if (currentUser.likePet(currPet)) {
-        if (currentPos + 1 > pets.size() - 1) {
-            QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
+        if (currentUser.likePet(currPet)) {
+            if (currentPos + 1 > pets.size() - 1) {
+                QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
+            } else {
+                currentPos++;
+                displayPet(pets.at(currentPos));
+            }
         } else {
-            currentPos++;
-            displayPet(pets.at(currentPos));
+            QMessageBox::critical(this, "Unable to Like Pet!", "Something went wrong while trying to like this pet. "
+                                  "You may have already liked it.");
         }
-    }
 
-    updateBar();
+        updateBar();
+    }
 }
 
 void PetDisplay::on_button_dislike_clicked()
 {
-    if (currentPos + 1 > pets.size() - 1) {
-        QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
-    } else {
-        currentPos++;
-        displayPet(pets.at(currentPos));
-    }
+    if (!pets.empty()) {
+        if (currentPos + 1 > pets.size() - 1) {
+            QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
+        } else {
+            currentPos++;
+            displayPet(pets.at(currentPos));
+        }
 
-    updateBar();
+        updateBar();
+    }
 }
 
 void PetDisplay::fetchPets()
@@ -349,7 +363,6 @@ void PetDisplay::fetchPets()
     queryString.append("and weight >= " + QString::number(minWeight) + " ");
     queryString.append("and weight <= " + QString::number(maxWeight) + " ");
 
-    QSqlQuery query;
     qDebug() << "Running query" << queryString;
 
     if (query.exec(queryString)) {

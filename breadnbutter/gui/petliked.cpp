@@ -11,10 +11,6 @@ void PetLiked::fetchLikedPets()
     query.prepare("select pet_id from liked_by where adopter_id = ?");
     query.addBindValue(currentUser.getID());
 
-
-    // TODO add num of liked pets to this page as well
-    ui->statusbar->showMessage("You have liked 1 pet.");
-
     if (query.exec()) {
         while (query.next()) {
             int pID = query.value(0).toInt();
@@ -22,6 +18,11 @@ void PetLiked::fetchLikedPets()
             Pet p(pID);
             pets.push_back(p);
         }
+
+        if (pets.size() == 1)
+            ui->statusbar->showMessage("You have liked 1 pet.");
+        else
+            ui->statusbar->showMessage("You have liked " + QString::number(pets.size()) + " pets.");
     } else {
         qDebug() << "Error getting liked pets:" << query.lastError().text();
     }
@@ -29,10 +30,29 @@ void PetLiked::fetchLikedPets()
 
 void PetLiked::displayPet(Pet p)
 {
-    if (currentPos == 0)
-        ui->button_prev->setEnabled(false);
-    if (currentPos == pets.size())
-        ui->button_next->setEnabled(false);
+    srand(time(0));
+
+    if (p.getIs_cat()) {
+        int imageIndex = rand() % catImageList.size();
+
+        QString imageName = catImageList.at(imageIndex);
+        QString dirName = ":/cats/Cats/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->petImageLabel->setPixmap(petPic.scaled(ui->petImageLabel->width(), ui->petImageLabel->height(), Qt::KeepAspectRatio));
+    } else {
+        int imageIndex = rand() % dogImageList.size();
+
+        QString imageName = dogImageList.at(imageIndex);
+        QString dirName = ":/dogs/Dogs/";
+        dirName.append(imageName);
+
+        qDebug() << "Loading" << dirName;
+        petPic.load(dirName);
+        ui->petImageLabel->setPixmap(petPic.scaled(ui->petImageLabel->width(), ui->petImageLabel->height(), Qt::KeepAspectRatio));
+    }
 
     ui->label_name->setText(p.getName());
     ui->label_age->setText(QString::number(p.getAge()));
@@ -44,6 +64,8 @@ void PetLiked::displayPet(Pet p)
 
     ui->label_color->setText(p.getColor());
     ui->label_breed->setText(p.getBreed());
+    ui->label_hair->setText(p.getHairLength());
+    ui->label_weight->setText(QString::number(p.getWeight()));
 
     if (!p.getHypoallergenic())
         ui->label_hypo->setText("No");
@@ -53,19 +75,25 @@ void PetLiked::displayPet(Pet p)
     ui->label_origin->setText(p.getOrigin());
 
     QSqlQuery query;
-    query.prepare("select location from Shelter "
-                  "inner join Pet on Pet.shelter_id = Shelter.shelter_id "
-                  "where Pet.pet_id = ?");
+    query.prepare("select shelter.owner_id, shelter.location "
+                  "from pet "
+                  "inner join shelter on shelter.shelter_id = pet.shelter_id "
+                  "where pet.pet_id = ?");
     query.addBindValue(p.getPet_id());
 
     if (query.exec()) {
         if (query.next()) {
-            QString loc = query.value(0).toString();
+            int ownerIndex = query.record().indexOf("owner_id");
+            int ownerID = query.value(ownerIndex).toInt();
 
+            int locIndex = query.record().indexOf("location");
+            QString loc = query.value(locIndex).toString();
             ui->label_location->setText(loc);
-        } else {
-            ui->button_next->setEnabled(false);
-            ui->button_prev->setEnabled(false);
+
+            ShelterOwner owner(ownerID);
+            ui->label_owner_name->setText(owner.getFirstName() + " " + owner.getLastName());
+            ui->label_owner_email->setText(owner.getEmail());
+            ui->label_owner_phone->setText(owner.getPhoneNumber());
         }
     }
 
@@ -78,7 +106,9 @@ PetLiked::PetLiked(QWidget *parent) :
 {
     ui->setupUi(this);
     currentPos = 0;
-    ui->button_prev->setEnabled(false);
+
+    catImageList = QDir(":/cats/Cats").entryList();
+    dogImageList = QDir(":/dogs/Dogs").entryList();
 
     fetchLikedPets();
     displayPet(pets.at(currentPos));
@@ -173,25 +203,21 @@ PetLiked::~PetLiked()
 
 void PetLiked::on_button_next_clicked()
 {
-    if (!(currentPos + 1 > pets.size() - 1)) {
+    if (currentPos < pets.size() - 1) {
         currentPos++;
         displayPet(pets.at(currentPos));
-
-        if (!ui->button_prev->isEnabled())
-            ui->button_prev->setEnabled(true);
     } else {
-        ui->button_next->setEnabled(false);
+        QMessageBox::warning(this, "No More Pets!", "There are no more pets that you have liked beyond this point.");
     }
 }
 
 void PetLiked::on_button_prev_clicked()
 {
-    if (!(currentPos - 1 < 0)) {
+    if (currentPos > 0) {
         currentPos--;
         displayPet(pets.at(currentPos));
-
-        if (!ui->button_next->isEnabled())
-            ui->button_next->setEnabled(true);
+    } else {
+        QMessageBox::warning(this, "No More Pets!", "There are no more pets that you have liked beyond this point.");
     }
 }
 

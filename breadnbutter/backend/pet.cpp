@@ -45,6 +45,11 @@ float Pet::getWeight() const
     return weight;
 }
 
+QString Pet::getHairLength() const
+{
+    return hairLength;
+}
+
 Pet::Pet()
 {
     

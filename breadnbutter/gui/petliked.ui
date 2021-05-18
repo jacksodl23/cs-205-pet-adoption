@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1047</width>
-    <height>781</height>
+    <height>787</height>
    </rect>
   </property>
   <property name="palette">
@@ -462,7 +462,7 @@ color: rgb(239, 207, 187);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
+       <widget class="QLabel" name="petImageLabel">
         <property name="minimumSize">
          <size>
           <width>600</width>
@@ -1174,7 +1174,7 @@ color: rgb(239, 207, 187);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_location_2">
+         <widget class="QLabel" name="label_owner_name">
           <property name="font">
            <font>
             <family>Dyuthi</family>
@@ -1234,7 +1234,7 @@ color: rgb(239, 207, 187);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_location_3">
+         <widget class="QLabel" name="label_owner_phone">
           <property name="font">
            <font>
             <family>Dyuthi</family>
@@ -1294,7 +1294,7 @@ color: rgb(239, 207, 187);</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_location_4">
+         <widget class="QLabel" name="label_owner_email">
           <property name="font">
            <font>
             <family>Dyuthi</family>
