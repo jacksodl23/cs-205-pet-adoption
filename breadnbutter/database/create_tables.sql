@@ -1,11 +1,12 @@
 CREATE TABLE User (
   user_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
-  location TEXT NOT NULL,
+  location_id TEXT NOT NULL,
   email TEXT NOT NULL,
   phone TEXT NOT NULL,
   password TEXT NOT NULL,
-  is_adopter INTEGER NOT NULL
+  is_adopter INTEGER NOT NULL,
+  FOREIGN KEY(location_id) REFERENCES Location(location_id)
   );
 
 CREATE TABLE Shelter (
@@ -58,20 +59,16 @@ CREATE TABLE Liked_By (
 CREATE TABLE Breed_Pref (
   breed_pref_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
   adopter_pref_id INTEGER NOT NULL,
-  breed_id INTEGER NOT NULL,
-  FOREIGN KEY(breed_id) REFERENCES Breeds(breed_id),
+  breed_name TEXT NOT NULL,
   FOREIGN KEY(adopter_pref_id) REFERENCES Adopter_Preferences(adopter_pref_id)
-  );
-
-CREATE TABLE Breeds (
-  breed_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
-  breed_name TEXT NOT NULL
   );
 
 CREATE TABLE Location (
   location_id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
-  location TEXT NOT NULL,
-  lattitude REAL, 
-  longitude REAL
+  city TEXT NOT NULL,
+  state TEXT NOT NULL,
+  country TEXT NOT NULL,
+  lattitude FLOAT NOT NULL, 
+  longitude FLOAT NOT NULL
   );
 
