@@ -860,7 +860,7 @@ border: 2px solid  white;
              <item>
               <widget class="QProgressBar" name="progressBar">
                <property name="value">
-                <number>24</number>
+                <number>0</number>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1304,7 +1304,7 @@ border: 2px solid  white;
      <x>0</x>
      <y>0</y>
      <width>1203</width>
-     <height>27</height>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
