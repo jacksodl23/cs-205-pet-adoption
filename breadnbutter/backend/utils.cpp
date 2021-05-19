@@ -7,9 +7,10 @@ float getScore(User user, Pet pet) {
 
 std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets) {
     std::vector<std::pair<Pet, float>> petScore;
+    srand(time(0));
 
     for (auto& p : pets)
-        petScore.push_back(std::make_pair(p, getScore(currentUser, p)));
+        petScore.push_back(std::make_pair(p, rand() % 50));
 
     std::sort(petScore.begin(), petScore.end(),
               [](const std::pair<Pet, float>& a, const std::pair<Pet, float>& b) -> bool {

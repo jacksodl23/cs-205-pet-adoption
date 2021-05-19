@@ -16,11 +16,13 @@ PetDisplay::PetDisplay(QWidget *parent) :
     // setup code
     ui->setupUi(this);
 
-    // making a lists of dog and cat images
+<<<<<<< HEAD
     int width = ui->animalDisplay->width();
     int height = ui->animalDisplay->height();
 
+=======
     // making a lists of dog and cat images
+>>>>>>> refs/heads/gui
     dogImageList = QDir(":/dogs/Dogs").entryList();
     catImageList = QDir(":/cats/Cats").entryList();
     qDebug() << "Cat image list has" << catImageList.size() << "images in it.";
@@ -79,8 +81,16 @@ PetDisplay::PetDisplay(QWidget *parent) :
 
     getCurrentUser();
 
-    // code for displaying progress bar
+    // code for handling progress bar
+    // progress bar shows you how many Pets you have liked/disliked out of total
     ui->progressBar->setOrientation(Qt::Horizontal);
+<<<<<<< HEAD
+=======
+    // range of progress bar, 1 to total number of Pets in Pet list
+    ui->progressBar->setRange(1, pets.size());
+    // setting current value of progress bar based off of number of likes/dislikes
+    ui->progressBar->setValue(currentPos+1);
+>>>>>>> refs/heads/gui
 }
 
 // PetDisplay destructor that deletes the PetDisplay UI
@@ -90,12 +100,7 @@ PetDisplay::~PetDisplay()
     delete ui;
 }
 
-/*
- * changes available breeds based on pet type
- * handles different Pet Types from the Type drop down menu
- * pulls from the database to get different Pet breeds
- * determines breeds based off of Pet type
- */
+// changes available breeds based on pet type
 void PetDisplay::on_typeBox_activated(const QString &arg1)
 {
     // if the type chosen is Dog...
@@ -105,12 +110,12 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        // getting Dog breeds from the database
+        // getting breeds from the database
         query.prepare("select distinct breed from pet where is_cat = 0");
 
         if (query.exec()) {
             while (query.next()) {
-                // adding breeds pulled from database to the drop down menu
+                // adding breeds pulled from database into the drop down menu
                 QString breed = query.value(0).toString();
                 ui->breedBox->addItem(breed);
             }
@@ -125,155 +130,109 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        // getting Cat breeds from database
         query.prepare("select distinct breed from pet where is_cat = 1");
 
         if (query.exec()) {
             while (query.next()) {
-                // adding breeds pulled from database to the drop down menu
                 QString breed = query.value(0).toString();
                 ui->breedBox->addItem(breed);
             }
-        } else { // query execution failed
+        } else {
             qDebug() << "Error getting cat breeds:" << query.lastError().text();
         }
     }
 }
 
-/*
- * Handles different Pet breeds based off of the input in the
- * Pet breed drop down menu
- * Fills the color drop down menu based off of the Pet breed selected
- * Fills the hair length drop down menu based off of the Pet breed selected
- */
 void PetDisplay::on_breedBox_activated(const QString &arg1)
 {
-    // select query for pulling Pet colors based off breed from database
     query.prepare("select distinct color from pet where breed = ?");
     query.addBindValue(arg1);
 
-    // attempting to execute the select query
     if (query.exec()) {
-        // clearing color and hair length drop down menus
-        // needed for changes in breed
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
-        // attempting to pull data from the query
         while (query.next()) {
-            // getting all possible breed colors
             QString color = query.value(0).toString();
-            // adding query color to the color drop down menu
             ui->colorBox->addItem(color);
         }
-    } else { // unable to execute the select query
+    } else {
         qDebug() << "Error getting breed colors:" << query.lastError().text();
     }
 
-    // select query for pulling Pet hair length based off breed from database
     query.prepare("select distinct hair_length from pet where breed = ?");
     query.addBindValue(arg1);
 
-    // attempting to execute query
     if (query.exec()) {
         qDebug() << "Executed query" << query.executedQuery();
         while (query.next()) {
-            // adding appropriate breed hair lengths to drop down menu
             QString hairLen = query.value(0).toString();
             ui->hairLenBox->addItem(hairLen);
         }
     }
 }
 
-// slot method for when search button is selected
 void PetDisplay::on_pushButton_clicked()
 {
-    // TODO
     fetchPets();
 }
 
-/*
- * displayPet() takes a Pet, p, as an argument and
- * displays an appropriate picture in the PetDisplay
- * window based off of the Pet's type - Dog or Cat
- */
 void PetDisplay::displayPet(Pet p)
 {
-    // seed for random function
     srand(time(0));
 
-    // is this Pet, p, a Cat?
     if (p.getIs_cat()) {
-        // getting a random image from the list of Cat images
         int imageIndex = rand() % catImageList.size();
 
-        // making a file path to our Cat photo
         QString imageName = catImageList.at(imageIndex);
         QString dirName = ":/cats/Cats/";
         dirName.append(imageName);
 
         qDebug() << "Loading" << dirName;
-        // loading Pet photo from the project resources
         petPic.load(dirName);
-        // displaying Pet photo in the animalDisplay on the PetDisplay page
         ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
-    } else { // Pet is not a Cat, the Pet, p, is a Dog
+    } else {
         int imageIndex = rand() % dogImageList.size();
 
-        // file path to Dog photo
         QString imageName = dogImageList.at(imageIndex);
         QString dirName = ":/dogs/Dogs/";
         dirName.append(imageName);
 
         qDebug() << "Loading" << dirName;
-        // loading Pet photo
         petPic.load(dirName);
-        // displaying the Pet photo on the PetDisplay page
         ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
     }
 
-    // filling the PetDisplay page with Pet information
     ui->label_name->setText(p.getName());
     ui->label_breed->setText(p.getBreed());
     ui->label_age->setText(QString::number(p.getAge()));
 
-    // the Pet, p, is a Dog
     if (!p.getIs_cat())
         ui->label_type->setText("Dog");
-    else // the Pet is a Cat
+    else
         ui->label_type->setText("Cat");
 
-    // select query for getting Shelter information based off
-    // of the Pet's Shelter
     query.prepare("select shelter_id from pet where pet_id = ?");
     query.addBindValue(p.getPet_id());
 
-    // TODO is this true? --> This does not update the label text when the dislike button is selected.
-    // attempting to execute Shelter select query
+    // This does not update the label text when the dislike button is selected.
     if (query.exec()) {
         if (query.next()) {
-            // getting the Pet's Shelter ID
             int shelterID = query.value(0).toInt();
 
-            // creating Shelter object with Shelter ID
             Shelter s(shelterID);
-            // filling in Shelter name on PetDisplay page
             ui->label_shelter_name->setText(s.getName());
 
-            // creating Location object with Shelter's Location
             Location loc(s.getLocID());
-            // filling in the Location name on PetDisplay
             ui->label_location->setText(loc.getCity());
 
-            // filling in distance information on PetDisplay
-            // distance is measured between the adopter/PetOwner and TODO
             double distance = distanceToUser(loc, currentUser);
             if (distance == 1)
                 ui->label_distance->setText("1 mile");
             else
                 ui->label_distance->setText(QString::number(distanceToUser(loc, currentUser)) + " miles");
         }
-    } else { // unable to execute Shelter query
+    } else {
         qDebug() << "Error getting pet's shelter:" << query.lastError().text();
     }
 }
@@ -457,7 +416,7 @@ void PetDisplay::fetchPets()
             displayPet(pets.front());
 
             ui->progressBar->setValue(currentPos + 1);
-            ui->progressBar->setRange(1, pets.size());
+            ui->progressBar->setRange(0, pets.size());
         }
         else
             QMessageBox::critical(this, "No Pets Found", "No pets could be found with your search parameters. Please change your search and try again.");

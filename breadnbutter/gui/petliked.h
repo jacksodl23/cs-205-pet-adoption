@@ -7,6 +7,8 @@
 #include <vector>
 #include "../backend/globals.h"
 #include "../backend/pet.h"
+#include "../backend/location.h"
+#include "../backend/utils.h"
 #include "petprofile.h"
 #include "petownerhelp.h"
 #include "petdisplay.h"
