@@ -7,6 +7,7 @@
 #include "user.h"
 #include "pet.h"
 #include "location.h"
+#include "petowner.h"
 
 float getScore(User user, Pet pet);
 std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets);
