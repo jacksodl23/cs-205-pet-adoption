@@ -135,29 +135,16 @@ private:
     // pointer to a PetProfile instance
     PetProfile *profileUI;
 
-    // QSqlQuery variable used for all queries
     QSqlQuery query;
 
-    // image lists for Dog and Cat pictures
     QStringList dogImageList;
     QStringList catImageList;
-
-    // QPixmap for displaying Pet photos
     QPixmap petPic;
-
-    // Pet vector of pets from each search query
     std::vector<std::pair<Pet, float>> pets;
-
     int currentPos;
 
-    // method for fetching Pets from the database with
-    // a specified set of attributes
     void fetchPets();
-
-    // method for displaying a given Pet, p
     void displayPet(Pet p);
-
-    //
     void getCurrentUser();
     void updateBar();
 };

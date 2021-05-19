@@ -146,8 +146,7 @@ private:
     QPixmap petPic;
 
     // Pet vector of pets from each search query
-    std::vector<std::pair<Pet, float>> pets;
-
+    std::vector<Pet> pets;
     int currentPos;
 
     // method for fetching Pets from the database with

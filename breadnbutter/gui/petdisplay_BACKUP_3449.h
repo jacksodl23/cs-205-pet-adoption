@@ -144,10 +144,13 @@ private:
 
     // QPixmap for displaying Pet photos
     QPixmap petPic;
+<<<<<<< HEAD
+    std::vector<std::pair<Pet, float>> pets;
+=======
 
     // Pet vector of pets from each search query
-    std::vector<std::pair<Pet, float>> pets;
-
+    std::vector<Pet> pets;
+>>>>>>> refs/heads/gui
     int currentPos;
 
     // method for fetching Pets from the database with

@@ -1,11 +1,15 @@
 #include "shelter.h"
 
+/* Method that fetches information about the shelter based on its ID
+ */
 void Shelter::fetchInfoFromID(int id)
 {
+    // query statement that selects shelter from Shelter table based on its ID
     QSqlQuery query;
     query.prepare("select * from shelter where shelter_id = ?");
     query.addBindValue(id);
 
+    // execute the query
     if (query.exec()) {
         if (query.next()) {
             int nameIndex = query.record().indexOf("name");
@@ -18,12 +22,14 @@ void Shelter::fetchInfoFromID(int id)
             this->email = query.value(emailIndex).toString();
         }
 
-        fetchPets();
+        fetchPets(); // fetch all pets
     } else {
         qDebug() << "Error getting shelter info:" << query.lastError().text();
     }
 }
 
+/* Constructor of the Shelter class that accepts ID
+ */
 Shelter::Shelter(int id)
 {
     this->shelterID = id;
@@ -31,13 +37,17 @@ Shelter::Shelter(int id)
     fetchInfoFromID(id);
 }
 
+/* Constructor of the Shelter class that accepts name, city, and email
+ */
 Shelter::Shelter(QString n, QString c, QString e) {
     this->name = n;
 
+    // query statement to select location_id from Location table based on city
     QSqlQuery query;
     query.prepare("select location_id from location where city = ?");
     query.addBindValue(c);
 
+    // execute query
     if (query.exec()) {
         if (query.next()) {
             this->locID = query.value(0).toInt();
@@ -51,26 +61,36 @@ Shelter::Shelter(QString n, QString c, QString e) {
     this->email = e;
 }
 
+/* Accessor name to get name of the shelter
+ */
 QString Shelter::getName()
 {
     return name;
 }
 
+/* Accessor name to get email of the shelter
+ */
 QString Shelter::getEmail()
 {
     return email;
 }
 
+/* Mutator name to set name of the shelter
+ */
 void Shelter::setName(QString n)
 {
     this->name = n;
 }
 
+/* Mutator method to set email of the shelter
+ */
 void Shelter::setEmail(QString e)
 {
     this->email = e;
 }
 
+/* Database method to insert shelter to Shelter table
+ */
 bool Shelter::insertIntoDB()
 {
     bool ok;
@@ -96,6 +116,9 @@ bool Shelter::insertIntoDB()
     return ok;
 }
 
+
+/* Database method to delete shelter to Shelter table
+ */
 bool Shelter::deleteFromDB()
 {
     QSqlQuery query;
@@ -105,6 +128,9 @@ bool Shelter::deleteFromDB()
     return query.exec();
 }
 
+
+/* Database method to check if shelter exists in the Shelter table
+ */
 bool Shelter::existsInDB()
 {
     QSqlQuery query;
@@ -126,11 +152,16 @@ bool Shelter::existsInDB()
     return false;
 }
 
+
+/* Mutator method that gets shelter's pets vector
+ */
 std::vector<Pet> Shelter::getPets()
 {
     return pets;
 }
 
+/* Method that fetches information about all pets of the shelter
+ */
 void Shelter::fetchPets()
 {
     QSqlQuery query;
@@ -151,28 +182,36 @@ void Shelter::fetchPets()
     }
 }
 
+/* Accessor method that gets owner of the shelter
+ */
 ShelterOwner *Shelter::getOwner() const
 {
     return owner;
 }
 
+/* Mutator method that sets shelter's owner
+ */
 void Shelter::setOwner(ShelterOwner *value)
 {
     owner = value;
 }
 
+/* Accessor method that gets shelter's ID
+ */
 int Shelter::getShelterID() const
 {
     return shelterID;
 }
 
+/* Mutator method that sets shelter's ID
+ */
 void Shelter::setShelterID(int value)
 {
     shelterID = value;
 }
 
-
-
+/* Accessor method that gets location's ID
+ */
 int Shelter::getLocID() const
 {
     return locID;
