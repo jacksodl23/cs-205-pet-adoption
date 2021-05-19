@@ -1,15 +1,21 @@
 #include "utils.h"
 #include "globals.cpp"
 
-float getScore(User user, Pet pet) {
-    return 1;
+float getScore(PetOwner po, Pet p) {
+    if (po.getWantsCat() != p.getIs_cat() || po.getAllergy() != p.getHypoallergenic()) {
+        return 0;
+    } else {
+        return 100;
+    }
 }
 
 std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets) {
     std::vector<std::pair<Pet, float>> petScore;
+    srand(time(0));
 
+    PetOwner owner(currentUser.getID());
     for (auto& p : pets)
-        petScore.push_back(std::make_pair(p, getScore(currentUser, p)));
+        petScore.push_back(std::make_pair(p, getScore(owner, p)));
 
     std::sort(petScore.begin(), petScore.end(),
               [](const std::pair<Pet, float>& a, const std::pair<Pet, float>& b) -> bool {

@@ -23,19 +23,19 @@ public:
     void setPDisplay(const Pet &value);
 
 private slots:
-    void on_backToSearchButton_clicked();
+    void on_backToSearchButton_clicked(); // method to jump back to Search page
 
 
 private:
     Ui::PetProfile *ui;
 
     QPixmap petPic;
-    Pet pDisplay;
+    Pet pDisplay; // instance of Pet class
 
-    QStringList dogImageList;
-    QStringList catImageList;
+    QStringList dogImageList; // list of dog images
+    QStringList catImageList; // list of cat images
 
-    void fetchPet();
+    void fetchPet(); // method to get the pet
 };
 
 #endif // PETPROFILE_H

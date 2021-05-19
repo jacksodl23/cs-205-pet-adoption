@@ -28,29 +28,29 @@ public:
     bool deleteFromDB();
     bool existsInDB();
 
-    std::vector<Pet> getPets();
+    std::vector<Pet> getPets(); // accessor method that fetches all pets in the shelter
 
-    ShelterOwner *getOwner() const;
-    void setOwner(ShelterOwner *value);
+    ShelterOwner *getOwner() const; // accessor method that fetches shelter's owner
+    void setOwner(ShelterOwner *value); // mutator method that sets shelter's owner
 
-    int getShelterID() const;
+    int getShelterID() const; // accessor method that fetches shelter's ID
 
-    void setShelterID(int value);
+    void setShelterID(int value); // mutator method that sets shelter's ID
 
-    int getLocID() const;
+    int getLocID() const; // accessor method that fetches shelter's location ID
 
 private:
-    int shelterID;
-    int locID;
+    int shelterID; // shelter ID
+    int locID; // location ID
 
-    QString name;
-    QString email;
+    QString name; // shelter's name
+    QString email; // shelter's email
 
-    std::vector<Pet> pets;
+    std::vector<Pet> pets; // shelter's pets vector
 
-    void fetchPets();
+    void fetchPets(); // method to fetch all shelter's pets
     ShelterOwner *owner;
-    void fetchInfoFromID(int id);
+    void fetchInfoFromID(int id); // method to fetch information about shelter based on its ID
 };
 
 #endif // SHELTER_H

@@ -5,6 +5,7 @@
 #include "createaccount.h"
 #include "mainwindow.h"
 
+// gets a list of dog breeds by selecting each distinct dog breed in the pet table.
 void shelterUpload::fetchDogBreeds()
 {
     QSqlQuery query;
@@ -13,7 +14,7 @@ void shelterUpload::fetchDogBreeds()
     if (query.exec()) {
         while (query.next()) {
             QString breed = query.value(0).toString();
-            ui->breedBox->addItem(breed);
+            ui->breedBox->addItem(breed); // adds this breed to the drop down menu.
         }
     } else {
         qDebug() << "Error fetching dog breeds:" << query.lastError().text();
@@ -26,9 +27,10 @@ shelterUpload::shelterUpload(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    fetchDogBreeds();
-    fetchBreedColors();
-    fetchHairLengths();
+    // Used to initially populate drop down menus.
+    fetchDogBreeds(); // gets list of dog breeds.
+    fetchBreedColors(); // gets list of colors.
+    fetchHairLengths(); // gets list of hair lengths.
 }
 
 shelterUpload::~shelterUpload()
@@ -36,6 +38,9 @@ shelterUpload::~shelterUpload()
     delete ui;
 }
 
+/* Handles changes in the type drop down menu.
+ * Fetches dog breeds if dog is selected and cat breeds if cat is selected.
+ */
 void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
 {
     if(arg1 == "Dog"){
@@ -60,6 +65,9 @@ void shelterUpload::on_typeBox_currentTextChanged(const QString &arg1)
     }
 }
 
+/* Fetches list of colors from database.
+ * Populates color drop down menu after fetching.
+ */
 void shelterUpload::fetchBreedColors()
 {
     QSqlQuery query;
@@ -76,6 +84,9 @@ void shelterUpload::fetchBreedColors()
     }
 }
 
+/* Fetches hair lengths from database.
+ * Populates drop down menu after fetching.
+ */
 void shelterUpload::fetchHairLengths()
 {
     ui->hairLenBox->clear();
@@ -92,6 +103,9 @@ void shelterUpload::fetchHairLengths()
     }
 }
 
+/* Handles when breed is changed.
+ * Fetches colors and hair lengths after selection.
+ */
 void shelterUpload::on_breedBox_activated(const QString &arg1)
 {
     ui->colorBox->clear();
@@ -100,12 +114,17 @@ void shelterUpload::on_breedBox_activated(const QString &arg1)
     fetchHairLengths();
 }
 
+// Hides the current window and shows the shelter profile interface.
 void shelterUpload::on_cancelButton_clicked()
 {
     hide();
     parentWidget()->show();
 }
 
+/* Uploads the pet to the database.
+ * Fetches values of all fields.
+ * Creates a new Pet instance out of these values and inserts it into the database.
+ */
 void shelterUpload::on_addButton_clicked()
 {
     bool is_cat = false;
@@ -139,11 +158,13 @@ void shelterUpload::on_addButton_clicked()
     }
 }
 
+// sets the current shelter.
 void shelterUpload::setShelter(Shelter *value)
 {
     shelter = value;
 }
 
+// shows the shelter profile screen when the profile menu item is clicked.
 void shelterUpload::on_actionProfile_triggered()
 {
     shelterProfile *w = new shelterProfile(this);
@@ -151,6 +172,7 @@ void shelterUpload::on_actionProfile_triggered()
     w->show();
 }
 
+// shows the help screen when the help menu item is clicked.
 void shelterUpload::on_actionHelp_triggered()
 {
     shelterhelp *w = new shelterhelp(this);
@@ -158,6 +180,7 @@ void shelterUpload::on_actionHelp_triggered()
     w->show();
 }
 
+// logs out the current user and presents the login window.
 void shelterUpload::on_actionLog_out_triggered()
 {
     hide();
@@ -166,11 +189,13 @@ void shelterUpload::on_actionLog_out_triggered()
     login->show();
 }
 
+// quits the program when the quit menu item is clicked.
 void shelterUpload::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
 
+// shows a dialog explaining the program.
 void shelterUpload::on_actionAbout_BreadnButter_triggered()
 {
     QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"

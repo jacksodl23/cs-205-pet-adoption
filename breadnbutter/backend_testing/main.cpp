@@ -213,6 +213,10 @@ TEST(TestUtil, TestSortPets) {
                 }
 
                 std::vector<std::pair<Pet, float>> sorted = sortByMatch(pets);
+
+                for (int i = 0; i < sorted.size(); i++)
+                    qDebug() << sorted[i].first.getName() << "," << sorted[i].second;
+
                 ASSERT_FALSE(sorted.empty());
             } else {
                 qDebug() << "Error fetching shelter's pets:" << query.lastError().text();
