@@ -16,15 +16,15 @@ public:
     ~petownerhelp();
 
 private slots:
-    void on_actionLiked_triggered();
+    void on_actionLiked_triggered(); // method to jump to Liked page
 
-    void on_actionSearch_triggered();
+    void on_actionSearch_triggered(); // method to jump to Search page
 
-    void on_actionLog_out_triggered();
+    void on_actionLog_out_triggered(); // method to log out of the system
 
-    void on_actionQuit_triggered();
+    void on_actionQuit_triggered(); // method to quit the system
 
-    void on_actionAbout_BreadnButter_triggered();
+    void on_actionAbout_BreadnButter_triggered(); // method to show a short info about the system
 
 private:
     Ui::petownerhelp *ui;
