@@ -4,6 +4,8 @@
 float getScore(PetOwner po, Pet p) {
     if (po.getWantsCat() != p.is_cat || po.allegy != p.hypoallergenic) {
         return 0;
+    } else {
+        return 100;
     }
 }
 
