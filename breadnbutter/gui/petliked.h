@@ -51,9 +51,9 @@ private:
 
     // the liked pets by the current user
     std::vector<Pet> pets;
-    // Grap pets liked by current user from the database
+    // Grab pets liked by current user from the database
     void fetchLikedPets();
-
+    // show the pet display page for a given pet
     void displayPet(Pet p);
 };
 
