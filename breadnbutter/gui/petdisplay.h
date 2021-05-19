@@ -140,7 +140,7 @@ private:
     QStringList dogImageList;
     QStringList catImageList;
     QPixmap petPic;
-    std::vector<Pet> pets;
+    std::vector<std::pair<Pet, float>> pets;
     int currentPos;
 
     void fetchPets();

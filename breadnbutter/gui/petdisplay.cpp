@@ -323,7 +323,7 @@ void PetDisplay::on_profileButton_clicked()
         // making PetProfile object with PetDisplay as the parent
         profileUI = new PetProfile(this);
         // opening with current Pet displayed
-        profileUI->setPDisplay(pets.at(currentPos));
+        profileUI->setPDisplay(pets.at(currentPos).first);
         // making sure PetProfile can only be interacted with
         // while still open
         profileUI->setModal(true);
@@ -345,7 +345,7 @@ void PetDisplay::on_button_like_clicked()
         // getting the current Pet from the Pet vector
         // currentPos is incremented each time a Pet is
         // either liked or disliked
-        Pet currPet = pets.at(currentPos);
+        Pet currPet = pets.at(currentPos).first;
 
         // currentUser attempting to like the current Pet displayed
         if (currentUser.likePet(currPet)) {
@@ -354,7 +354,7 @@ void PetDisplay::on_button_like_clicked()
                 QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
             } else {
                 currentPos++; // incrementing Pet count -> moving to next Pet
-                displayPet(pets.at(currentPos)); // display the next Pet
+                displayPet(pets.at(currentPos).first); // display the next Pet
             }
         } else { // currentUser was unable to like the Pet
             QMessageBox::critical(this, "Unable to Like Pet!", "Something went wrong while trying to like this pet. "
@@ -381,7 +381,7 @@ void PetDisplay::on_button_dislike_clicked()
             QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
         } else {
             currentPos++; // incrementing Pet count -> moving to next Pet
-            displayPet(pets.at(currentPos)); // display the next Pet
+            displayPet(pets.at(currentPos).first); // display the next Pet
         }
         updateBar(); // updating progress bar -- adding one more Pet
     }
@@ -515,12 +515,14 @@ void PetDisplay::fetchPets()
 
     qDebug() << "Running query" << queryString;
 
+    std::vector<Pet> tempPets;
+
     // attempting to execute the built select query
     if (query.exec(queryString)) {
         // checking to see if the vector of searched Pets is not empty
-        if (!pets.empty())
+        if (!tempPets.empty())
             // if so, clear the vector for new Pets
-            pets.clear();
+            tempPets.clear();
 
         // adding Pet objects to the vector Pets that fulfill
         // the search conditions
@@ -531,15 +533,17 @@ void PetDisplay::fetchPets()
             // creating new Pet object by Pet ID
             Pet p(pID);
             // adding Pet to vector
-            pets.push_back(p);
+            tempPets.push_back(p);
         }
 
         // checking to see if the searched Pet vector is not empty
-        if (!pets.empty()) {
+        if (!tempPets.empty()) {
+           pets = sortByMatch(tempPets);
+
             // if not empty, start the Pet counter at 0
             currentPos = 0;
             // display the first Pet in the vector, pets
-            displayPet(pets.front());
+            displayPet(pets.front().first);
 
             // reset the Pet liked/disliked progress bar
             ui->progressBar->setValue(currentPos + 1);
