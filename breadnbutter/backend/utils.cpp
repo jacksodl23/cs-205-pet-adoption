@@ -1,8 +1,10 @@
 #include "utils.h"
 #include "globals.cpp"
 
-float getScore(User user, Pet pet) {
-    return 1;
+float getScore(PetOwner po, Pet p) {
+    if (po.getWantsCat() != p.is_cat || po.allegy != p.hypoallergenic) {
+        return 0;
+    }
 }
 
 std::vector<std::pair<Pet, float>> sortByMatch(std::vector<Pet> pets) {
