@@ -24,7 +24,7 @@ CREATE TABLE Pet (
   name TEXT NOT NULL, 
   shelter_id INTEGER NOT NULL,
   color TEXT,
-  hair_length TEXT,
+  hair_type TEXT,
   is_cat INTEGER,
   age INTEGER,
   breed TEXT,
@@ -32,7 +32,7 @@ CREATE TABLE Pet (
   origin TEXT,
   hypoallergenic INTEGER,
   description TEXT,
-  --Image BLOB,
+  -- image_filename TEXT,
   FOREIGN KEY(shelter_id) REFERENCES Shelter(shelter_id)
   );
 
@@ -41,6 +41,9 @@ CREATE TABLE Adopter_Preferences (
   adopter_id INTEGER NOT NULL,
   age_min INTEGER,
   age_max INTEGER,
+  breed TEXT, 
+  color TEXT,
+  hair_type TEXT,
   weight_min INTEGER,
   weight_max INTEGER,
   origin TEXT,

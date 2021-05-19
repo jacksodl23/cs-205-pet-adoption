@@ -8,11 +8,11 @@ shelterProfile::shelterProfile(QWidget *parent) :
     ui(new Ui::shelterProfile)
 {
     ui->setupUi(this);
-    ui->welcomeLabel->setText("Welcome " + currentUser.getFirstName() + "!");
+    ui->welcomeLabel->setText("Welcome " + currentUser.getFirstName() + "!"); // sets welcome text.
 
-    fetchShelter();
+    fetchShelter(); // gets the info of the current shelter.
     if (currentShelter != nullptr)
-        populatePetsTable();
+        populatePetsTable(); // if the current shelter is valid, populate the pets table.
 }
 
 shelterProfile::~shelterProfile()
@@ -24,9 +24,12 @@ void shelterProfile::showEvent(QShowEvent *event)
 {
     QMainWindow::showEvent(event);
     if (currentShelter != nullptr)
-        populatePetsTable();
+        populatePetsTable(); // refreshes the table as soon as this window is shown.
 }
 
+/* Gets info from the current shelter.
+ * Finds a shelter whose owner is the current user.
+ */
 void shelterProfile::fetchShelter()
 {
     QSqlQuery query;
@@ -50,6 +53,11 @@ void shelterProfile::fetchShelter()
     }
 }
 
+/* Populates the table of pets.
+ * Queries the database for pets with a shelter ID matching the current shelter.
+ * Updates the table if pets are found and hides columns irrelevant to the user.
+ * Uses a subclass of QSqlQueryModel so that the table is editable.
+*/
 void shelterProfile::populatePetsTable()
 {
     ShelterProfileSqlModel *model = new ShelterProfileSqlModel();
@@ -73,6 +81,7 @@ void shelterProfile::populatePetsTable()
     }
 }
 
+// presents the pet upload interface when the upload menu item is clicked.
 void shelterProfile::on_actionUpload_triggered()
 {
     shelterUpload *w = new shelterUpload(this);
@@ -83,11 +92,13 @@ void shelterProfile::on_actionUpload_triggered()
     w->show();
 }
 
+// handles when the log out menu item is clicked.
 void shelterProfile::on_actionLog_out_triggered()
 {
     logOutShelterOwner();
 }
 
+// hides the current window, logs out the user, and presents the main window allowing the user to log in or sign up.
 void shelterProfile::logOutShelterOwner()
 {
     hide();
@@ -96,6 +107,7 @@ void shelterProfile::logOutShelterOwner()
     parentWidget()->show();
 }
 
+// presents the help screen when the help menu item is clicked.
 void shelterProfile::on_actionHelp_triggered()
 {
     shelterhelp *w = new shelterhelp(this);
@@ -103,6 +115,7 @@ void shelterProfile::on_actionHelp_triggered()
     w->show();
 }
 
+// presents the interface showing which adopters have liked the current shelter's pets.
 void shelterProfile::on_actionAdopters_triggered()
 {
     ShelterAdopters *w = new ShelterAdopters(this);
@@ -111,11 +124,16 @@ void shelterProfile::on_actionAdopters_triggered()
     w->show();
 }
 
+// quits the program when the quit menu item is clicked.
 void shelterProfile::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
 
+/* Deletes the currently selected pet when the delete pet button is clicked.
+ * Checks which rows are currently selected.
+ * Tells the model to remove any rows corresponding to those already selected in the table.
+ */
 void shelterProfile::on_deletePetButton_clicked()
 {
    QModelIndexList indexes = ui->tableView->selectionModel()->selectedRows();
@@ -126,6 +144,7 @@ void shelterProfile::on_deletePetButton_clicked()
    }
 }
 
+// shows a dialog explaining the program.
 void shelterProfile::on_actionAbout_BreadnButter_triggered()
 {
     QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"

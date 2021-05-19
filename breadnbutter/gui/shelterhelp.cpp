@@ -17,6 +17,7 @@ shelterhelp::~shelterhelp()
     delete ui;
 }
 
+// hides the current window and presents the shelter profile page.
 void shelterhelp::on_actionProfile_triggered()
 {
     hide();
@@ -25,6 +26,7 @@ void shelterhelp::on_actionProfile_triggered()
     profileUI->show();
 }
 
+// hides the current window and presents the pet upload page.
 void shelterhelp::on_actionUpload_triggered()
 {
     hide();
@@ -33,6 +35,7 @@ void shelterhelp::on_actionUpload_triggered()
     uploadUI->show();
 }
 
+// hides the current window and logs the user out.
 void shelterhelp::on_actionLog_out_triggered()
 {
     hide();
@@ -41,11 +44,13 @@ void shelterhelp::on_actionLog_out_triggered()
     login->show();
 }
 
+// quits the program when the quit menu item is clicked.
 void shelterhelp::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
 
+// shows a dialog explaining the program.
 void shelterhelp::on_actionAbout_BreadnButter_triggered()
 {
     QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"

@@ -5,6 +5,12 @@ ShelterProfileSqlModel::ShelterProfileSqlModel()
 
 }
 
+/* Handles editing the contents of the table.
+ * Retrives both the ID of the pet and of its shelter.
+ * Conducts a check as to which column is being edited.
+ * Calls the appropriate update statement to edit the table.
+ * Refreshes if an edit has successfully been made.
+ */
 bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &index, const QVariant &value, int role)
 {
     QModelIndex primaryKeyIndex = QSqlQueryModel::index(index.row(), 0);
@@ -13,7 +19,7 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
     QModelIndex shelterKeyIndex = QSqlQueryModel::index(index.row(), 2);
     int shelterID = data(shelterKeyIndex).toInt();
 
-    QString queryStr = query().executedQuery();
+    QString queryStr = query().executedQuery(); // Retains the previously executed query to allow for refreshing the table.
     queryStr.replace("?", QString::number(shelterID));
     qDebug() << "Executed query" << queryStr;
 
@@ -90,6 +96,7 @@ bool ShelterProfileSqlModel::removeRow(int row, const QModelIndex &parent)
     return ok;
 }
 
+// sets the name of a pet.
 bool ShelterProfileSqlModel::setName(int petID, const QString &pName)
 {
     QSqlQuery query;
@@ -99,6 +106,7 @@ bool ShelterProfileSqlModel::setName(int petID, const QString &pName)
     return query.exec();
 }
 
+// sets the color of a pet.
 bool ShelterProfileSqlModel::setColor(int petID, const QString &pColor)
 {
     QSqlQuery query;
@@ -108,6 +116,7 @@ bool ShelterProfileSqlModel::setColor(int petID, const QString &pColor)
     return query.exec();
 }
 
+// sets the hair length of a pet.
 bool ShelterProfileSqlModel::setHairLength(int petID, const QString &pHairLen)
 {
     QSqlQuery query;
@@ -117,6 +126,7 @@ bool ShelterProfileSqlModel::setHairLength(int petID, const QString &pHairLen)
     return query.exec();
 }
 
+// sets the description of a pet.
 bool ShelterProfileSqlModel::setDescription(int petID, const QString &pDesc)
 {
     QSqlQuery query;
@@ -126,6 +136,7 @@ bool ShelterProfileSqlModel::setDescription(int petID, const QString &pDesc)
     return query.exec();
 }
 
+// sets whehter or not the pet is a cat.
 bool ShelterProfileSqlModel::setIsCat(int petID, const int &pIsCat)
 {
     QSqlQuery query;
@@ -135,6 +146,7 @@ bool ShelterProfileSqlModel::setIsCat(int petID, const int &pIsCat)
     return query.exec();
 }
 
+// sets the age of a pet.
 bool ShelterProfileSqlModel::setAge(int petID, const int &pAge)
 {
     QSqlQuery query;
@@ -144,6 +156,7 @@ bool ShelterProfileSqlModel::setAge(int petID, const int &pAge)
     return query.exec();
 }
 
+// sets the breed of a pet.
 bool ShelterProfileSqlModel::setBreed(int petID, const QString &pBreed)
 {
     QSqlQuery query;
@@ -153,6 +166,7 @@ bool ShelterProfileSqlModel::setBreed(int petID, const QString &pBreed)
     return query.exec();
 }
 
+// sets the weight of a pet.
 bool ShelterProfileSqlModel::setWeight(int petID, const float &pWeight)
 {
     QSqlQuery query;
@@ -162,6 +176,7 @@ bool ShelterProfileSqlModel::setWeight(int petID, const float &pWeight)
     return query.exec();
 }
 
+// sets the origin of a pet.
 bool ShelterProfileSqlModel::setOrigin(int petID, const QString &pOrigin)
 {
     QSqlQuery query;
@@ -171,6 +186,7 @@ bool ShelterProfileSqlModel::setOrigin(int petID, const QString &pOrigin)
     return query.exec();
 }
 
+// sets the hypoallergenic status of a pet.
 bool ShelterProfileSqlModel::setHypo(int petID, const int &pHypo)
 {
     QSqlQuery query;
@@ -180,6 +196,7 @@ bool ShelterProfileSqlModel::setHypo(int petID, const int &pHypo)
     return query.exec();
 }
 
+// makes every column in the table editable.
 Qt::ItemFlags ShelterProfileSqlModel::ShelterProfileSqlModel::flags(const QModelIndex &index) const
 {
     Qt::ItemFlags flags = QSqlQueryModel::flags(index);

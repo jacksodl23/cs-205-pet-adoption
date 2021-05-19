@@ -55,7 +55,7 @@ public:
     QString getOrigin() const;
     // simple getter that returns this Pet's description
     QString getDescription() const;
-    // simple getter method that returns thi Pet's weight
+    // simple getter method that returns this Pet's weight
     float getWeight() const;
     // simple getter that returns this Pet's hair length
     // no hair, short, medium, long
@@ -68,16 +68,28 @@ private:
     // this Pet's cat status - true or false
     bool is_cat;
 
+    // this Pet's name as a QString
     QString name;
+    // this Pet's age as an integer
     int age;
+    // this Pet's breed as a QString
     QString breed;
 
+    // this Pet's hair color as a QString
     QString color;
+    // this Pet's hair length as a QString
     QString hairLength;
-
-    float weight;
-    QString origin;
+    // this Pet's hypoallergenic status - true or false
     bool hypoallergenic;
+
+    // this Pet's weight as a float/decimal
+    float weight;
+
+    // this Pet's origin as a QString
+    // Shelter, Breeder, Rescue
+    QString origin;
+
+    // this Pet's description as a QString
     QString description;
 };
 
