@@ -118,11 +118,6 @@ private slots:
     // and quits the BreadnButter application
     void on_actionQuit_triggered();
 
-    // triggered when the search range slider's value
-    // is changed and updates the label closest to the
-    // slider with the current value - in miles
-    void on_searchRangeSlider_valueChanged(int value);
-
     // triggered when the About BreadnButter menu
     // option is selected and opens a dialog window
     // with some basic information about BreadnButter

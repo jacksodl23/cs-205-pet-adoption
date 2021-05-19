@@ -675,20 +675,6 @@ void PetDisplay::on_maxWeightSlider_valueChanged(int value)
 }
 
 /*
- * slot method for keeping track of the value of the maximum
- * search range slider for Pet attribute selection
- * updates the label for the slider with the current value of
- * the slider - in miles
- */
-void PetDisplay::on_searchRangeSlider_valueChanged(int value)
-{
-    QString labelText = "Search Range: ";
-    QString numText = QString::number(value);
-    labelText.append(numText);
-    ui->label_search_range->setText(labelText);
-}
-
-/*
  * slot method for handling the quit menu option
  * on the PetDisplay page
  * quits the application
