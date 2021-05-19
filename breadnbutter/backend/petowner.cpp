@@ -96,22 +96,27 @@ PetOwner::PetOwner(QString p, QString fn, QString ln, QString e, QString ph, QSt
 
 QString PetOwner::getPassword()
 {
-    return password;
+    return this->password;
 }
 
 QString PetOwner::getLastName()
 {
-    return lastName;
+    return this->lastName;
 }
 
 QString PetOwner::getEmail()
 {
-    return email;
+    return this->email;
 }
 
-int PetOwner::getAge()
+int PetOwner::getAgeMin()
 {
-    return this->p_age;
+    return this->p_age_min;
+}
+
+int PetOwner::getAgeMax()
+{
+    return this->p_age_max;
 }
 
 QString PetOwner::getBreed()
@@ -129,9 +134,14 @@ QString PetOwner::getHair()
     return this->p_hair_type;
 }
 
-int PetOwner::getWeight()
+int PetOwner::getWeightMin()
 {
-    return this->p_weight;
+    return this->p_weight_min;
+}
+
+int PetOwner::getWeightMax()
+{
+    return this->p_weight_max;
 }
 
 QString PetOwner::getOrigin()
@@ -142,6 +152,11 @@ QString PetOwner::getOrigin()
 bool PetOwner::getAllergy()
 {
     return this->p_allergy;
+}
+
+bool PetOwner::getWantsCat()
+{
+    return this->wants_cat;
 }
 
 void PetOwner::setPassword(QString p)
@@ -164,9 +179,14 @@ void PetOwner::setEmail(QString e)
     this->email = e;
 }
 
-void PetOwner::setAge(int age)
+void PetOwner::setAgeMin(int age)
 {
-    this->p_age = age;
+    this->p_age_min = age;
+}
+
+void PetOwner::setAgeMax(int age)
+{
+    this->p_age_max = age;
 }
 
 void PetOwner::setBreed(QString breed)
@@ -184,9 +204,14 @@ void PetOwner::setHair(QString hair)
     this->p_hair_type = hair;
 }
 
-void PetOwner::setWeight(int weight)
+void PetOwner::setWeightMin(int weight)
 {
-    this->p_weight = weight;
+    this->p_weight_min = weight;
+}
+
+void PetOwner::setWeightMax(int weight)
+{
+    this->p_weight_max = weight;
 }
 
 void PetOwner::setOrigin(QString origin)
@@ -197,6 +222,11 @@ void PetOwner::setOrigin(QString origin)
 void PetOwner::setAllergy(bool a)
 {
     this->p_allergy = a;
+}
+
+void PetOwner::setWantsCat(bool w)
+{
+    this->wants_cat = w;
 }
 
 bool PetOwner::hasLikedPet(Pet p)
