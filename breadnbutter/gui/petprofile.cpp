@@ -1,6 +1,9 @@
 #include "petprofile.h"
 #include "ui_petprofile.h"
 
+/* Constructor of the PetProfile class with photo, icons, and progress bar addtions
+ * along with setup code
+ */
 PetProfile::PetProfile(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PetProfile)
@@ -94,6 +97,8 @@ PetProfile::PetProfile(QWidget *parent) :
     ui->icon_email->setPixmap(icon.scaled(ui->icon_email->width(), ui->icon_email->height(), Qt::KeepAspectRatio));
 }
 
+/* Default destructor
+ */
 PetProfile::~PetProfile()
 {
     delete ui;
@@ -107,8 +112,12 @@ void PetProfile::setPDisplay(const Pet &value)
     fetchPet();
 }
 
+/* Method that fetches all the details about the pet and displays them
+ * on pet's profile popup window
+ */
 void PetProfile::fetchPet()
 {
+    // Populates labels with the pet's information
     ui->label_name->setText(pDisplay.getName());
     ui->label_breed->setText(pDisplay.getBreed());
     ui->label_age->setText(QString::number(pDisplay.getAge()));
@@ -118,11 +127,13 @@ void PetProfile::fetchPet()
     ui->label_hair->setText(pDisplay.getHairLength());
     ui->descriptionBox->setPlainText(pDisplay.getDescription());
 
+    // Checks if the pet is cat and displays its type
     if (pDisplay.getIs_cat())
         ui->label_type->setText("Cat");
     else
         ui->label_type->setText("Dog");
 
+    // Checks if the pet is hypoallergenic and displays it
     if (pDisplay.getHypoallergenic())
         ui->label_hypo->setText("Yes");
     else
@@ -146,13 +157,14 @@ void PetProfile::fetchPet()
             Location loc(locID);
             ui->label_location->setText(loc.getCity());
 
-            double distance = distanceToUser(loc, currentUser);
+            double distance = distanceToUser(loc, currentUser); // distance between the user's and the pet's locations
+            // Display the distance
             if (distance == 1)
                 ui->label_distance->setText("1 mile");
             else
                 ui->label_distance->setText(QString::number(distance) + " miles");
 
-            ShelterOwner owner(ownerID);
+            ShelterOwner owner(ownerID); // creates an instance of ShelterOwner class
             ui->label_shelter->setText(owner.getFirstName() + " " + owner.getLastName());
             ui->label_email->setText(owner.getEmail());
             ui->label_phone->setText(owner.getPhoneNumber());
@@ -160,6 +172,9 @@ void PetProfile::fetchPet()
     }
 }
 
+/* Method to jump back to Search page and close the pet profile
+ * popup window
+ */
 void PetProfile::on_backToSearchButton_clicked()
 {
     close();
