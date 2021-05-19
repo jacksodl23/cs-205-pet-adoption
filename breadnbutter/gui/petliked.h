@@ -45,12 +45,13 @@ private:
     PetProfile *profileUI;
 
     int currentPos;
-
     QStringList catImageList;
     QStringList dogImageList;
     QPixmap petPic;
 
+    // the liked pets by the current user
     std::vector<Pet> pets;
+    // Grap pets liked by current user from the database
     void fetchLikedPets();
 
     void displayPet(Pet p);
