@@ -5,6 +5,7 @@ User::User()
 
 }
 
+// constructs a user given an email and password.
 User::User(QString email, QString password)
 {
     this->email = email;
@@ -16,6 +17,7 @@ User::~User()
 
 }
 
+// inserts a user into the database.
 bool User::insertInDB()
 {
     bool result;
@@ -39,6 +41,7 @@ bool User::insertInDB()
     return result;
 }
 
+// deletes a user from the database.
 bool User::deleteFromDB()
 {
     bool result;
@@ -55,6 +58,7 @@ bool User::deleteFromDB()
     return result;
 }
 
+// checks if the user already exists in the database by checking if a user with an email exists.
 bool User::existsInDB()
 {
     QSqlQuery query;
@@ -76,6 +80,9 @@ bool User::existsInDB()
     return false;
 }
 
+/* Likes a given pet.
+ * Inserts a record into the Liked_By table containing the current adopter's ID and the pet's ID.
+ */
 bool User::likePet(Pet p)
 {
     QSqlQuery query;
@@ -92,6 +99,10 @@ bool User::likePet(Pet p)
     return ok;
 }
 
+/* Logs the user in.
+ * Queries the database for a user with the given email and password.
+ * If found, the user is logged in.
+ */
 bool User::attemptLogin()
 {
     QSqlQuery query;
@@ -117,6 +128,7 @@ bool User::attemptLogin()
     return false;
 }
 
+// logs out the current user by wiping the contents of the config file.
 void User::logOut()
 {
     std::ofstream config("currentuser.config");
@@ -158,6 +170,7 @@ int User::getLocID() const
     return locID;
 }
 
+// used to determine which ID should be used prior to insertion.
 void User::chooseID()
 {
     QSqlQuery query;

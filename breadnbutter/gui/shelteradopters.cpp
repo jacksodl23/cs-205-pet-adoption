@@ -25,6 +25,12 @@ void ShelterAdopters::setShelter(Shelter *value)
     populateTable();
 }
 
+/* Populates the table of
+ * adopters who have liked the logged in shelter owner's pets.
+ * Uses a query to select records from the liked by table.
+ * Joins pet table to check that the pet's shelter is the current owner's shelter.
+ * Sets the query the table view is to use.
+ */
 void ShelterAdopters::populateTable()
 {
     QSqlQueryModel *model = new QSqlQueryModel();
@@ -75,6 +81,9 @@ void ShelterAdopters::populateTable()
     }
 }
 
+/*
+ * Shows a message box explaining the program.
+ */
 void ShelterAdopters::on_actionAbout_BreadnButter_triggered()
 {
     QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"

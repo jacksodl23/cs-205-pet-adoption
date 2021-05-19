@@ -5,12 +5,14 @@ ShelterOwner::~ShelterOwner()
 
 }
 
+// creates a new instance with a given email and password.
 ShelterOwner::ShelterOwner(QString email, QString password)
 {
     this->email = email;
     this->password = password;
 }
 
+// constructor which grabs everything from the database provided an id.
 ShelterOwner::ShelterOwner(int id)
 {
     this->id = id;
@@ -48,6 +50,7 @@ ShelterOwner::ShelterOwner(int id)
     }
 }
 
+// creates a new instance without pulling from the database.
 ShelterOwner::ShelterOwner(QString fn, QString ln, QString city, QString e, QString ph, QString p)
 {
     this->firstName = fn;
@@ -72,6 +75,7 @@ ShelterOwner::ShelterOwner(QString fn, QString ln, QString city, QString e, QStr
     this->password = p;
 }
 
+// creates a new User record using the fields of this instance and adds it to the database.
 bool ShelterOwner::insertInDB()
 {
     bool result;
@@ -98,6 +102,7 @@ bool ShelterOwner::insertInDB()
     return result;
 }
 
+// deletes this instance from the database using this instance's id.
 bool ShelterOwner::deleteFromDB()
 {
     bool result;
@@ -114,6 +119,7 @@ bool ShelterOwner::deleteFromDB()
     return result;
 }
 
+// checks if a shelter owner with the same email as this exists. if so, sign up should be prevented.
 bool ShelterOwner::existsInDB()
 {
     QSqlQuery query;
