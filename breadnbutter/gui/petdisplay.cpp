@@ -248,7 +248,6 @@ void PetDisplay::displayPet(Pet p)
     query.prepare("select shelter_id from pet where pet_id = ?");
     query.addBindValue(p.getPet_id());
 
-    // TODO is this true? --> This does not update the label text when the dislike button is selected.
     // attempting to execute Shelter select query
     if (query.exec()) {
         if (query.next()) {
@@ -266,7 +265,7 @@ void PetDisplay::displayPet(Pet p)
             ui->label_location->setText(loc.getCity());
 
             // filling in distance information on PetDisplay
-            // distance is measured between the adopter/PetOwner and TODO
+            // distance is measured between the adopter/PetOwner and Shelter
             double distance = distanceToUser(loc, currentUser);
             if (distance == 1)
                 ui->label_distance->setText("1 mile");
@@ -278,75 +277,126 @@ void PetDisplay::displayPet(Pet p)
     }
 }
 
+/*
+ * getCurrentUser() gets the first name of the User logged in
+ * and uses it to display a welcome message on the PetDisplay page
+ * this method also keeps track of and updates the liked pets on
+ * the PetDisplay status bar at the bottom left corner of the window
+ */
 void PetDisplay::getCurrentUser()
 {
+    // getting first name of current user
     QString name = currentUser.getFirstName();
+    // welcome message displayed
     ui->label_user_name->setText("Welcome " + name + "!");
 
+    // getting the number of liked Pets for currentUser
     query.prepare("select count(pet_id) from Liked_By where adopter_id = ?");
     query.addBindValue(currentUser.getID());
 
+    // attempting to execute number of liked Pets select query
     if (query.exec()) {
         if (query.next()) {
+            // storing number of liked Pets from database into numLiked
             int numLiked = query.value(0).toInt();
 
+            // handling different cases based off of number of liked Pets
             if (numLiked == 1)
                 ui->statusbar->showMessage("You have liked 1 pet.");
             else
                 ui->statusbar->showMessage("You have liked " + QString::number(numLiked) + " pets.");
         }
-    } else {
+    } else { // issue executing number of liked Pets select query
         qDebug() << "Error getting number of pets liked:" << query.lastError().text();
     }
 }
 
+/*
+ * slot method for opening the PetProfile page containing
+ * more detailed information about the currently displayed
+ * Pet in the animalDisplay of the PetDisplay page
+ */
 void PetDisplay::on_profileButton_clicked()
 {
+    // making sure there are Pets to display
     if (!pets.empty()) {
+        // making PetProfile object with PetDisplay as the parent
         profileUI = new PetProfile(this);
+        // opening with current Pet displayed
         profileUI->setPDisplay(pets.at(currentPos));
+        // making sure PetProfile can only be interacted with
+        // while still open
         profileUI->setModal(true);
+        // opening page
         profileUI->exec();
     }
 }
 
+/*
+ * slot method for handling liking Pets with the like button
+ * on the PetDisplay page
+ */
 void PetDisplay::on_button_like_clicked()
 {
+    // checking to see if the Pet vector, pets,
+    // is empty -> there are no (more) Pets pulled from
+    // the database based off of the last search
     if (!pets.empty()) {
+        // getting the current Pet from the Pet vector
+        // currentPos is incremented each time a Pet is
+        // either liked or disliked
         Pet currPet = pets.at(currentPos);
 
+        // currentUser attempting to like the current Pet displayed
         if (currentUser.likePet(currPet)) {
+            // checking to see if there's a next pet available
             if (currentPos + 1 > pets.size() - 1) {
                 QMessageBox::warning(this, "No More Pets!", "You've successfully liked this pet, but no more pets can be found. Please try expanding your search to find more pets.");
             } else {
-                currentPos++;
-                displayPet(pets.at(currentPos));
+                currentPos++; // incrementing Pet count -> moving to next Pet
+                displayPet(pets.at(currentPos)); // display the next Pet
             }
-        } else {
+        } else { // currentUser was unable to like the Pet
             QMessageBox::critical(this, "Unable to Like Pet!", "Something went wrong while trying to like this pet. "
                                   "You may have already liked it.");
         }
-
-        updateBar();
+        updateBar(); // updating progress bar -- adding one more Pet
     }
 }
 
+/*
+ * slot method for handling disliking Pets with the dislike
+ * button on the PetDisplay page
+ */
 void PetDisplay::on_button_dislike_clicked()
 {
+    // checking to see if the Pet vector, pets,
+    // is empty -> there are no (more) Pets pulled from
+    // the database based off of the last search
     if (!pets.empty()) {
+        // currentPos is incremented each time a Pet is
+        // either liked or disliked
+        // checking to see if there's a next pet available
         if (currentPos + 1 > pets.size() - 1) {
             QMessageBox::critical(this, "No More Pets!", "No more pets could be found! Please try expanding your search to find more pets.");
         } else {
-            currentPos++;
-            displayPet(pets.at(currentPos));
+            currentPos++; // incrementing Pet count -> moving to next Pet
+            displayPet(pets.at(currentPos)); // display the next Pet
         }
-
-        updateBar();
+        updateBar(); // updating progress bar -- adding one more Pet
     }
 }
 
+/*
+ * fetchPets() gets Pet search information from the
+ * PetDisplay GUI and creates a select query based
+ * off of the chosen attributes selected
+ * Once the User has completed selecting attributes,
+ * the query is complete and the search is attempted
+ */
 void PetDisplay::fetchPets()
 {
+    // getting Pet search info from the PetDisplay UI
     QString type = ui->typeBox->currentText();
     QString breed = ui->breedBox->currentText();
     QString color = ui->colorBox->currentText();
@@ -357,33 +407,46 @@ void PetDisplay::fetchPets()
     int minWeight = ui->minWeightSlider->value();
     int maxWeight = ui->maxWeightSlider->value();
 
+    // base of the select query being built
     QString queryString = "select * from pet ";
 
+    // checking to see if the User selected a Pet type
     if (type != "Any") {
+        // checking to see if the User has clicked the dislike box
+        // dislike box reverses the select query to get everything
+        // that ISN'T the type selected
         if (ui->dislikeBoxType->checkState() != Qt::Checked) {
+            // searching for a Dog
             if (type == "Dog") {
                 queryString.append("where is_cat = 0 ");
+            // searching for a Cat
             } else if (type == "Cat") {
                 queryString.append("where is_cat = 1 ");
             }
         } else {
+            // searching for a Cat
             if (type == "Dog") {
                 queryString.append("where is_cat != 0 ");
+            // searching for a Dog
             } else if (type == "Cat") {
                 queryString.append("where is_cat != 1 ");
             }
         }
     }
 
+    // checking to see if the User selected a breed
     if (breed != "Any") {
+        // checking to see if the dislike box was not checked
         if (ui->dislikeBoxType->checkState() != Qt::Checked) {
             if (ui->dislikeBoxBreed->checkState() != Qt::Checked) {
+                // appending breed condition to select query
                 queryString.append("and breed = ");
                 queryString.append('\'');
                 queryString.append(breed);
                 queryString.append('\'');
                 queryString.append(" ");
             } else {
+                // find every that is not this breed
                 queryString.append("and breed != ");
                 queryString.append('\'');
                 queryString.append(breed);
@@ -393,14 +456,18 @@ void PetDisplay::fetchPets()
         }
     }
 
+    // checking to see if the User selected a color
     if (!color.isEmpty()) {
+        // checking to see if the dislike box was not selected
         if (ui->dislikeBoxColor->checkState() != Qt::Checked) {
+            // appending color condition to the select query
             queryString.append("and color = ");
             queryString.append('\'');
             queryString.append(color);
             queryString.append('\'');
             queryString.append(" ");
         } else {
+            // find every that is not this color
             queryString.append("and color != ");
             queryString.append('\'');
             queryString.append(color);
@@ -409,14 +476,18 @@ void PetDisplay::fetchPets()
         }
     }
 
+    // checking to see if the User selected a hair length
     if (!hairLength.isEmpty()) {
+        // checking to see that the dislike box was not checked
         if (ui->dislikeBoxHairLen->checkState() != Qt::Checked) {
+            // appending hair length condition to the query
             queryString.append("and hair_length = ");
             queryString.append('\'');
             queryString.append(hairLength);
             queryString.append('\'');
             queryString.append(" ");
         } else {
+            // find every that is not this hair length
             queryString.append("and hair_length != ");
             queryString.append('\'');
             queryString.append(hairLength);
@@ -425,75 +496,130 @@ void PetDisplay::fetchPets()
         }
     }
 
+    // checking to see if hypoallergenic status was selected
     if (hypo != "Any") {
-        if (hypo == "Yes") {
+        if (hypo == "Yes") { // hypo status selected yes
             queryString.append("and hypoallergenic = 1 ");
-        } else if (hypo == "No") {
+        } else if (hypo == "No") { // not hypoallergenic
             queryString.append("and hypoallergenic = 0 ");
         }
     }
 
-    queryString.append("and age >= " + QString::number(minAge) + " ");
-    queryString.append("and age <= " + QString::number(maxAge) + " ");
+    // adding Pet age information to the query - range with minimum and maximum
+    queryString.append("and age >= " + QString::number(minAge) + " "); // minimum age
+    queryString.append("and age <= " + QString::number(maxAge) + " "); // maximum age
 
-    queryString.append("and weight >= " + QString::number(minWeight) + " ");
-    queryString.append("and weight <= " + QString::number(maxWeight) + " ");
+    // adding Pet weight information - min and max range
+    queryString.append("and weight >= " + QString::number(minWeight) + " "); // min
+    queryString.append("and weight <= " + QString::number(maxWeight) + " "); // max
 
     qDebug() << "Running query" << queryString;
 
+    // attempting to execute the built select query
     if (query.exec(queryString)) {
+        // checking to see if the vector of searched Pets is not empty
         if (!pets.empty())
+            // if so, clear the vector for new Pets
             pets.clear();
 
+        // adding Pet objects to the vector Pets that fulfill
+        // the search conditions
         while (query.next()) {
+            // getting Pet ID from database
             int pID = query.value(0).toInt();
 
+            // creating new Pet object by Pet ID
             Pet p(pID);
+            // adding Pet to vector
             pets.push_back(p);
         }
 
+        // checking to see if the searched Pet vector is not empty
         if (!pets.empty()) {
+            // if not empty, start the Pet counter at 0
             currentPos = 0;
+            // display the first Pet in the vector, pets
             displayPet(pets.front());
 
+            // reset the Pet liked/disliked progress bar
             ui->progressBar->setValue(currentPos + 1);
             ui->progressBar->setRange(1, pets.size());
         }
-        else
+        else // no Pets found based off of the search attributes -> Pet vector pets is empty
             QMessageBox::critical(this, "No Pets Found", "No pets could be found with your search parameters. Please change your search and try again.");
-    } else {
+    } else { // unable to execute built select query for getting Pet info
         qDebug() << "Error fetching pets:" << query.lastError().text();
     }
 }
 
+/*
+ * slot method for Logout menu item
+ * closes/hides the PetDisplay page and
+ * logs the currentUser out of the app
+ * shows the MainWindow page with the Login
+ * and CreateAccount options
+ */
 void PetDisplay::on_actionLog_out_triggered()
 {
+    // hide PetDisplay
     hide();
+    // Log out currentUser
     currentUser.logOut();
+    // show MainWindow
     parentWidget()->show();
 }
 
+/*
+ * slot method for triggering the Liked menu
+ * item from the menu on the PetDisplay page
+ * closes/hides the PetDisplay and creates an
+ * instance of the PetLiked page
+ * Opens the PetLiked page
+ */
 void PetDisplay::on_actionLiked_triggered()
 {
+    // hide PetDisplay
     hide();
+    // create PetLiked object pointer with
+    // PetDisplay as the parent
     PetLiked *likedUI = new PetLiked(this);
+    // deletes PetLiked object when the window is closed
     likedUI->setAttribute(Qt::WA_DeleteOnClose);
+    // show the PetLiked page with show() method
     likedUI->show();
 }
 
+/*
+ * slot method for when the Help menu item is
+ * selected from the PetDisplay page
+ * closes/hides the PetDisplay page
+ * creates and instance of the petownerhelp page
+ * shows the petownerliked page
+ */
 void PetDisplay::on_actionHelp_triggered()
 {
+    // hiding PetDisplay
     hide();
+    // creating a petownerhelp object pointer, helpUI
     petownerhelp *helpUI = new petownerhelp(this);
+    // delte petownerhelp page when the window is closed
     helpUI->setAttribute(Qt::WA_DeleteOnClose);
+    // show the petownerhelp page
     helpUI->show();
 }
 
+// simple method that updates the Pet progress bar by one Pet
 void PetDisplay::updateBar()
 {
     ui->progressBar->setValue(currentPos+1);
 }
 
+/*
+ * slot method for keeping track of the value of the minimum
+ * age slider for Pet attribute selection
+ * updates the label for the slider with the current value of
+ * the slider - in years
+ */
 void PetDisplay::on_minAgeSlider_valueChanged(int value)
 {
     QString labelText = "Minimum Age: ";
@@ -502,6 +628,12 @@ void PetDisplay::on_minAgeSlider_valueChanged(int value)
     ui->label_search_minage->setText(labelText);
 }
 
+/*
+ * slot method for keeping track of the value of the maximum
+ * age slider for Pet attribute selection
+ * updates the label for the slider with the current value of
+ * the slider - in years
+ */
 void PetDisplay::on_maxAgeSlider_valueChanged(int value)
 {
     QString labelText = "Maximum Age: ";
@@ -510,6 +642,12 @@ void PetDisplay::on_maxAgeSlider_valueChanged(int value)
     ui->label_search_maxage->setText(labelText);
 }
 
+/*
+ * slot method for keeping track of the value of the minimum
+ * weight slider for Pet attribute selection
+ * updates the label for the slider with the current value of
+ * the slider - in pounds
+ */
 void PetDisplay::on_minWeightSlider_valueChanged(int value)
 {
     QString labelText = "Minimum Weight: ";
@@ -518,6 +656,12 @@ void PetDisplay::on_minWeightSlider_valueChanged(int value)
     ui->label_search_minweight->setText(labelText);
 }
 
+/*
+ * slot method for keeping track of the value of the maximum
+ * weight slider for Pet attribute selection
+ * updates the label for the slider with the current value of
+ * the slider - in pounds
+ */
 void PetDisplay::on_maxWeightSlider_valueChanged(int value)
 {
     QString labelText = "Maximum Weight: ";
@@ -526,6 +670,12 @@ void PetDisplay::on_maxWeightSlider_valueChanged(int value)
     ui->label_search_maxweight->setText(labelText);
 }
 
+/*
+ * slot method for keeping track of the value of the maximum
+ * search range slider for Pet attribute selection
+ * updates the label for the slider with the current value of
+ * the slider - in miles
+ */
 void PetDisplay::on_searchRangeSlider_valueChanged(int value)
 {
     QString labelText = "Search Range: ";
@@ -534,11 +684,21 @@ void PetDisplay::on_searchRangeSlider_valueChanged(int value)
     ui->label_search_range->setText(labelText);
 }
 
+/*
+ * slot method for handling the quit menu option
+ * on the PetDisplay page
+ * quits the application
+ */
 void PetDisplay::on_actionQuit_triggered()
 {
    QApplication::quit();
 }
 
+/*
+ * slot method for handling the About BreadnButter
+ * menu option
+ * opens the about dialog
+ */
 void PetDisplay::on_actionAbout_BreadnButter_triggered()
 {
     QMessageBox::about(this, "About BreadnButter", "Welcome to BreadnButter!\n"
