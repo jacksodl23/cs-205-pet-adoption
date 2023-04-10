@@ -26,13 +26,11 @@ void CreateAccount::writeUserToFile(User newUser)
 {
     std::ofstream config("currentuser.config");
 
-    // simple encryption for the user's information
-    SimpleCrypt crypto(CRYPTO_KEY);
+    // Prepare the ID to be written to the config file
     QString id = QString::number(newUser.getID());
-    QString encoded = crypto.encryptToString(id);
 
     // writing encrypted user ID to the config file
-    config << encoded.toStdString();
+    config << id.toStdString();
     // close file
     config.close();
 }

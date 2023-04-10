@@ -24,7 +24,6 @@ bool ShelterProfileSqlModel::ShelterProfileSqlModel::setData(const QModelIndex &
     qDebug() << "Executed query" << queryStr;
 
     clear();
-    query().clear();
 
     bool ok;
     switch (index.column()) {
@@ -81,7 +80,6 @@ bool ShelterProfileSqlModel::removeRow(int row, const QModelIndex &parent)
     queryStr.replace("?", QString::number(shelterID));
 
     clear();
-    query().clear();
 
     QSqlQuery deleteQuery;
     deleteQuery.prepare("delete from pet where pet_id = ?");

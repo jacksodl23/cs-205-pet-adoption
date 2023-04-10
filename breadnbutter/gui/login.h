@@ -15,7 +15,6 @@
 #include <QtSql>
 #include <QPushButton>
 #include "petdisplay.h"
-#include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 #include "../backend/petowner.h"
 #include "../backend/shelterowner.h"

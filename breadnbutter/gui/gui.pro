@@ -15,7 +15,6 @@ SOURCES += \
     mainwindow.cpp \
     petdisplay.cpp \
     ../backend/globals.cpp \
-    ../backend/simplecrypt.cpp \
     ../backend/pet.cpp \
     ../backend/petowner.cpp \
     ../backend/shelter.cpp \

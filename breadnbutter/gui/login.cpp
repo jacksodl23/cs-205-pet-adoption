@@ -98,13 +98,11 @@ void Login::writeUserToFile(User user)
     // opening file stream to the User config file
     std::ofstream config("currentuser.config");
 
-    // simple encryption for User ID
-    SimpleCrypt crypto(CRYPTO_KEY);
+    // Set up the ID to be written to the User config file.
     QString id = QString::number(user.getID());
-    QString encoded = crypto.encryptToString(id);
 
     // writing User ID to config file
-    config << encoded.toStdString();
+    config << id.toStdString();
     // closing file stream
     config.close();
 }

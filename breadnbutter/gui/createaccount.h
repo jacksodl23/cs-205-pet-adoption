@@ -20,7 +20,6 @@
 #include <QPushButton>
 #include <fstream>
 #include "../backend/petowner.h"
-#include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 #include "../backend/shelterowner.h"
 #include "../backend/shelter.h"

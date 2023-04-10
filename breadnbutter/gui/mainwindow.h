@@ -24,7 +24,6 @@
 #include "createaccount.h"
 #include "petdisplay.h"
 #include "shelterprofile.h"
-#include "../backend/simplecrypt.h"
 #include "../backend/globals.h"
 
 QT_BEGIN_NAMESPACE

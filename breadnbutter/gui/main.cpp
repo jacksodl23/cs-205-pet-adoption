@@ -33,15 +33,10 @@ int getCurrentUser() {
     if (config.is_open()) {
         // looping through all lines of the file
         while (getline(config, line)) {
-            // setting up simple ID cryptography
-            SimpleCrypt crypto(CRYPTO_KEY);
-
             // taking line from file and storing in QString
             QString lineString = QString::fromStdString(line);
-            // decrypting line string from the file
-            QString decrypted = crypto.decryptToString(lineString);
             // getting User ID from decrypting
-            int theID = decrypted.toInt();
+            int theID = lineString.toInt();
 
             // creating a select query to get information about the User
             // with our decrypted ID
