@@ -96,7 +96,7 @@ PetDisplay::~PetDisplay()
  * pulls from the database to get different Pet breeds
  * determines breeds based off of Pet type
  */
-void PetDisplay::on_typeBox_activated(const QString &arg1)
+void PetDisplay::on_typeBox_currentTextChanged(const QString &arg1)
 {
     // if the type chosen is Dog...
     if (arg1 == "Dog") {
@@ -146,7 +146,8 @@ void PetDisplay::on_typeBox_activated(const QString &arg1)
  * Fills the color drop down menu based off of the Pet breed selected
  * Fills the hair length drop down menu based off of the Pet breed selected
  */
-void PetDisplay::on_breedBox_activated(const QString &arg1)
+
+void PetDisplay::on_breedBox_currentTextChanged(const QString &arg1)
 {
     // select query for pulling Pet colors based off breed from database
     query.prepare("select distinct color from pet where breed = ?");
@@ -171,7 +172,7 @@ void PetDisplay::on_breedBox_activated(const QString &arg1)
     }
 
     // select query for pulling Pet hair length based off breed from database
-    query.prepare("select distinct hair_length from pet where breed = ?");
+    query.prepare("select distinct hair_type from pet where breed = ?");
     query.addBindValue(arg1);
 
     // attempting to execute query
@@ -481,14 +482,14 @@ void PetDisplay::fetchPets()
         // checking to see that the dislike box was not checked
         if (ui->dislikeBoxHairLen->checkState() != Qt::Checked) {
             // appending hair length condition to the query
-            queryString.append("and hair_length = ");
+            queryString.append("and hair_type = ");
             queryString.append('\'');
             queryString.append(hairLength);
             queryString.append('\'');
             queryString.append(" ");
         } else {
             // find every that is not this hair length
-            queryString.append("and hair_length != ");
+            queryString.append("and hair_type != ");
             queryString.append('\'');
             queryString.append(hairLength);
             queryString.append('\'');
@@ -695,3 +696,9 @@ void PetDisplay::on_actionAbout_BreadnButter_triggered()
                    "This application allows quick, efficient and effective services for those looking for pets!\n"
                    "If you are looking for people to adopt your pets, please don't hesistate to make a shelter account!");
 }
+
+
+
+
+
+

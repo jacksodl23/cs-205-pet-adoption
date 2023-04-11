@@ -44,12 +44,12 @@ private slots:
     // slot method for handling selecting the type of
     // Pet - Dog or Cat
     // determines what breeds are available
-    void on_typeBox_activated(const QString &arg1);
+    void on_typeBox_currentTextChanged(const QString &arg1);
 
     // for selecting the breed of the Pet
     // determines what color and hair lengths are
     // available
-    void on_breedBox_activated(const QString &arg1);
+    void on_breedBox_currentTextChanged(const QString &arg1);
 
     // triggered by the search button in the PetDisplay
     // fetches Pets based off of search attributes

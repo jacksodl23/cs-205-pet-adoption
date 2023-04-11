@@ -58,6 +58,7 @@ void MainWindow::showPetDisplay()
     petDisplay = new PetDisplay(this);
     // deleting PetDisplay page when it's closed
     petDisplay->setAttribute(Qt::WA_DeleteOnClose);
+    petDisplay->setWindowTitle("Search");
     // showing PetDisplay page
     petDisplay->show();
 }
