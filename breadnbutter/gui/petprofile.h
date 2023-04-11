@@ -29,7 +29,6 @@ private slots:
 private:
     Ui::PetProfile *ui;
 
-    QPixmap petPic;
     Pet pDisplay; // instance of Pet class
 
     QStringList dogImageList; // list of dog images

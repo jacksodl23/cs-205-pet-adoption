@@ -40,6 +40,8 @@ public:
     // PetDisplay destructor
     ~PetDisplay();
 
+    QPixmap getPetPic() const;
+
 private slots:
     // slot method for handling selecting the type of
     // Pet - Dog or Cat

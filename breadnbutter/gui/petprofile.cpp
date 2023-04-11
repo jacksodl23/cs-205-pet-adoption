@@ -1,5 +1,6 @@
 #include "petprofile.h"
 #include "ui_petprofile.h"
+#include "petdisplay.h"
 
 /* Constructor of the PetProfile class with photo, icons, and progress bar addtions
  * along with setup code
@@ -12,30 +13,11 @@ PetProfile::PetProfile(QWidget *parent) :
 
     srand(time(0));
 
-    catImageList = QDir(":/cats/Cats").entryList();
-    dogImageList = QDir(":/dogs/Dogs").entryList();
+    // Get the currently selected pet's image from the parent pet display screen.
+    PetDisplay *parentWidget = (PetDisplay *)parent;
+    QPixmap petPic = parentWidget->getPetPic();
 
-    if (pDisplay.getIs_cat()) {
-        int imageIndex = rand() % catImageList.size();
-
-        QString imageName = catImageList.at(imageIndex);
-        QString dirName = ":/cats/Cats/";
-        dirName.append(imageName);
-
-        qDebug() << "Loading" << dirName;
-        petPic.load(dirName);
-        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
-    } else {
-        int imageIndex = rand() % dogImageList.size();
-
-        QString imageName = dogImageList.at(imageIndex);
-        QString dirName = ":/dogs/Dogs/";
-        dirName.append(imageName);
-
-        qDebug() << "Loading" << dirName;
-        petPic.load(dirName);
-        ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
-    }
+    ui->animalDisplay->setPixmap(petPic.scaled(ui->animalDisplay->width(), ui->animalDisplay->height(), Qt::KeepAspectRatio));
 
     // adding icons to the page
     QPixmap icon;
