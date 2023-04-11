@@ -98,7 +98,7 @@ Pet::Pet(int id)
             int nameIndex = query.record().indexOf("name");
             int breedIndex = query.record().indexOf("breed");
             int colorIndex = query.record().indexOf("color");
-            int hairLenIndex = query.record().indexOf("hair_length");
+            int hairLenIndex = query.record().indexOf("hair_type");
             int descIndex = query.record().indexOf("description");
             int isCatIndex = query.record().indexOf("is_cat");
             int ageIndex = query.record().indexOf("age");
@@ -167,7 +167,7 @@ bool Pet::insertIntoDB(int shelterID)
 
     // insert query
     QSqlQuery query;
-    query.prepare("insert into Pet (name, shelter_id, color, hair_length, description, is_cat, age, breed, weight, origin, hypoallergenic)"
+    query.prepare("insert into Pet (name, shelter_id, color, hair_type, description, is_cat, age, breed, weight, origin, hypoallergenic)"
                   "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
     // adding all Pet data to the query
