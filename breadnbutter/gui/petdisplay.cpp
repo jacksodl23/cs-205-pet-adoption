@@ -98,15 +98,21 @@ PetDisplay::~PetDisplay()
  */
 void PetDisplay::on_typeBox_currentTextChanged(const QString &arg1)
 {
-    // if the type chosen is Dog...
-    if (arg1 == "Dog") {
+    // Clear the drop down menus only if the desired type of pet was changed.
+    if (!selectedPetType.isEmpty() && QString::compare(arg1, selectedPetType, Qt::CaseInsensitive) != 0) {
         // clearing all of the drop down menus
         ui->breedBox->clear();
         ui->colorBox->clear();
         ui->hairLenBox->clear();
 
+        ui->breedBox->addItem("Any");
+    }
+    selectedPetType = arg1;
+
+    // if the type chosen is Dog...
+    if (arg1 == "Dog") {
         // getting Dog breeds from the database
-        query.prepare("select distinct breed from pet where is_cat = 0");
+        query.prepare("select distinct breed from pet where is_cat = 0 order by breed asc");
 
         if (query.exec()) {
             while (query.next()) {
@@ -120,13 +126,8 @@ void PetDisplay::on_typeBox_currentTextChanged(const QString &arg1)
     }
 
     if (arg1 == "Cat") {
-        // clearing all of the drop down menus
-        ui->breedBox->clear();
-        ui->colorBox->clear();
-        ui->hairLenBox->clear();
-
         // getting Cat breeds from database
-        query.prepare("select distinct breed from pet where is_cat = 1");
+        query.prepare("select distinct breed from pet where is_cat = 1 order by breed asc");
 
         if (query.exec()) {
             while (query.next()) {
@@ -146,42 +147,45 @@ void PetDisplay::on_typeBox_currentTextChanged(const QString &arg1)
  * Fills the color drop down menu based off of the Pet breed selected
  * Fills the hair length drop down menu based off of the Pet breed selected
  */
-
-void PetDisplay::on_breedBox_currentTextChanged(const QString &arg1)
+void PetDisplay::on_breedBox_activated(int index)
 {
-    // select query for pulling Pet colors based off breed from database
-    query.prepare("select distinct color from pet where breed = ?");
-    query.addBindValue(arg1);
+    QString breed = ui->breedBox->currentText();
 
-    // attempting to execute the select query
-    if (query.exec()) {
-        // clearing color and hair length drop down menus
-        // needed for changes in breed
-        ui->colorBox->clear();
-        ui->hairLenBox->clear();
+    if (!breed.isEmpty()) {
+        // select query for pulling Pet colors based off breed from database
+        query.prepare("select distinct color from pet where breed = ? order by color asc");
+        query.addBindValue(breed);
 
-        // attempting to pull data from the query
-        while (query.next()) {
-            // getting all possible breed colors
-            QString color = query.value(0).toString();
-            // adding query color to the color drop down menu
-            ui->colorBox->addItem(color);
+        // attempting to execute the select query
+        if (query.exec()) {
+            // clearing color and hair length drop down menus
+            // needed for changes in breed
+            ui->colorBox->clear();
+            ui->hairLenBox->clear();
+
+            // attempting to pull data from the query
+            while (query.next()) {
+                // getting all possible breed colors
+                QString color = query.value(0).toString();
+                // adding query color to the color drop down menu
+                ui->colorBox->addItem(color);
+            }
+        } else { // unable to execute the select query
+            qDebug() << "Error getting breed colors:" << query.lastError().text();
         }
-    } else { // unable to execute the select query
-        qDebug() << "Error getting breed colors:" << query.lastError().text();
-    }
 
-    // select query for pulling Pet hair length based off breed from database
-    query.prepare("select distinct hair_type from pet where breed = ?");
-    query.addBindValue(arg1);
+        // select query for pulling Pet hair length based off breed from database
+        query.prepare("select distinct hair_type from pet where breed = ? order by hair_type asc");
+        query.addBindValue(breed);
 
-    // attempting to execute query
-    if (query.exec()) {
-        qDebug() << "Executed query" << query.executedQuery();
-        while (query.next()) {
-            // adding appropriate breed hair lengths to drop down menu
-            QString hairLen = query.value(0).toString();
-            ui->hairLenBox->addItem(hairLen);
+        // attempting to execute query
+        if (query.exec()) {
+            qDebug() << "Executed query" << query.executedQuery();
+            while (query.next()) {
+                // adding appropriate breed hair lengths to drop down menu
+                QString hairLen = query.value(0).toString();
+                ui->hairLenBox->addItem(hairLen);
+            }
         }
     }
 }
@@ -705,6 +709,9 @@ QPixmap PetDisplay::getPetPic() const
 {
    return petPic;
 }
+
+
+
 
 
 
