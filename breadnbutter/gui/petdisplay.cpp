@@ -507,12 +507,16 @@ void PetDisplay::fetchPets()
     }
 
     // adding Pet age information to the query - range with minimum and maximum
-    queryString.append("and age >= " + QString::number(minAge) + " "); // minimum age
-    queryString.append("and age <= " + QString::number(maxAge) + " "); // maximum age
+    if (minAge > 0)
+        queryString.append("and age >= " + QString::number(minAge) + " "); // minimum age
+    if (maxAge > 0)
+        queryString.append("and age <= " + QString::number(maxAge) + " "); // maximum age
 
     // adding Pet weight information - min and max range
-    queryString.append("and weight >= " + QString::number(minWeight) + " "); // min
-    queryString.append("and weight <= " + QString::number(maxWeight) + " "); // max
+    if (minWeight > 0)
+        queryString.append("and weight >= " + QString::number(minWeight) + " "); // min
+    if (maxWeight > 0)
+        queryString.append("and weight <= " + QString::number(maxWeight) + " "); // max
 
     qDebug() << "Running query" << queryString;
 

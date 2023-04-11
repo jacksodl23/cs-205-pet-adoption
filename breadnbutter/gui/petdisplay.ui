@@ -318,6 +318,11 @@ border: 2px solid  white;
                 <string notr="true">background-color:rgb(239, 207, 187);
 color: rgb(0, 0, 0);</string>
                </property>
+               <item>
+                <property name="text">
+                 <string>Any</string>
+                </property>
+               </item>
               </widget>
              </item>
             </layout>
