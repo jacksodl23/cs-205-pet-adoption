@@ -43,7 +43,7 @@ public:
 private slots:
     // slot method for handling selecting the type of
     // Pet - Dog or Cat
-    // determins what breeds are available
+    // determines what breeds are available
     void on_typeBox_activated(const QString &arg1);
 
     // for selecting the breed of the Pet
