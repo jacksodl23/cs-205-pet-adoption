@@ -149,12 +149,12 @@ color: rgb(0, 0, 0);</string>
                </item>
                <item>
                 <property name="text">
-                 <string>Dog</string>
+                 <string>Cat</string>
                 </property>
                </item>
                <item>
                 <property name="text">
-                 <string>Cat</string>
+                 <string>Dog</string>
                 </property>
                </item>
               </widget>
