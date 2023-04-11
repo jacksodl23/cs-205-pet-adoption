@@ -10,9 +10,11 @@ CONFIG += c++11
 
 TARGET = Breadnbutter
 
-sql_database.files = ../database/db.sqlite
-sql_database.path = Contents/MacOS
-QMAKE_BUNDLE_DATA += sql_database
+macx {
+    sql_database.files = ../database/db.sqlite
+    sql_database.path = Contents/MacOS
+    QMAKE_BUNDLE_DATA += sql_database
+}
 
 SOURCES += \
     createaccount.cpp \
