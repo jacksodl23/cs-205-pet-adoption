@@ -16,6 +16,8 @@ macx {
     QMAKE_BUNDLE_DATA += sql_database
 }
 
+ICON = Icon-Breadnbutter.icns
+
 SOURCES += \
     createaccount.cpp \
     login.cpp \
