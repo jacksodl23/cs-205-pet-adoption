@@ -146,7 +146,7 @@ void MainWindow::openDB()
     if (db.open()) {
         qDebug() << "Database opened successfully.";
     } else { // unable to open database
-        qFatal("Error opening database.");
+        QMessageBox::critical(this, "Database Error", "An error occurred while trying to open the database: " + db.lastError().text());
     }
 }
 
