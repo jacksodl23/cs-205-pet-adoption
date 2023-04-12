@@ -29,5 +29,5 @@ This software is meant to be used by two kinds of people: prospective pet adopte
 
 You can create your own account to start using the system. Alternatively, to use the system with sample data already loaded, you can use a sample account. Log in with the following credentials to access a sample adopter account:
 
-> Email: a
+> Email: a \
 > Password: a
