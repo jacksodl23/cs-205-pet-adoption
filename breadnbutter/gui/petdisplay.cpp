@@ -577,7 +577,7 @@ void PetDisplay::on_actionLog_out_triggered()
     // hide PetDisplay
     hide();
     // Log out currentUser
-    currentUser.logOut();
+    currentUser.logOut(QApplication::applicationDirPath().toStdString());
     // show MainWindow
     parentWidget()->show();
 }

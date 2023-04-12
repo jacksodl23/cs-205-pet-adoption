@@ -103,7 +103,7 @@ void shelterProfile::logOutShelterOwner()
 {
     hide();
 
-    currentUser.logOut();
+    currentUser.logOut(QApplication::applicationDirPath().toStdString());
     parentWidget()->show();
 }
 

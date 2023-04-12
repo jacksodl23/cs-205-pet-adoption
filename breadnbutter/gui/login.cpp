@@ -96,7 +96,7 @@ void Login::on_loginOkay_accepted()
 void Login::writeUserToFile(User user)
 {
     // opening file stream to the User config file
-    std::ofstream config("currentuser.config");
+    std::ofstream config(QApplication::applicationDirPath().toStdString() + "/currentuser.config");
 
     // Set up the ID to be written to the User config file.
     QString id = QString::number(user.getID());

@@ -140,7 +140,7 @@ void MainWindow::openDB()
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     // tells the QSqlDatabase object where the database is held
     // in a file named db.sqlite
-    db.setDatabaseName("db.sqlite");
+    db.setDatabaseName(QApplication::applicationDirPath() + "/db.sqlite");
 
     // attempting to open the database
     if (db.open()) {

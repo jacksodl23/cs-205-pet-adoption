@@ -129,9 +129,9 @@ bool User::attemptLogin()
 }
 
 // logs out the current user by wiping the contents of the config file.
-void User::logOut()
+void User::logOut(std::string rootPath)
 {
-    std::ofstream config("currentuser.config");
+    std::ofstream config(rootPath + "/currentuser.config");
     config.close();
 }
 

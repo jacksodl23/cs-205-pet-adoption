@@ -36,7 +36,7 @@ public:
     bool attemptLogin();
 
     // logs out the user.
-    void logOut();
+    void logOut(std::string rootPath);
 
     // returns the user's ID.
     int getID();

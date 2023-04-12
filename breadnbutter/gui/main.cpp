@@ -27,7 +27,7 @@ int getCurrentUser() {
     // file line variable
     std::string line;
     // creating file stream, config
-    std::ifstream config("currentuser.config");
+    std::ifstream config(QApplication::applicationDirPath().toStdString() + "/currentuser.config");
 
     // attempting to open the config file
     if (config.is_open()) {

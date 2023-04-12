@@ -24,7 +24,7 @@ CreateAccount::~CreateAccount()
  */
 void CreateAccount::writeUserToFile(User newUser)
 {
-    std::ofstream config("currentuser.config");
+    std::ofstream config(QApplication::applicationDirPath().toStdString() + "/currentuser.config");
 
     // Prepare the ID to be written to the config file
     QString id = QString::number(newUser.getID());
