@@ -34,6 +34,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     // standard setup code of the GUI
     ui->setupUi(this);
+    setWindowTitle("Breadnbutter");
     // setting up design on the MainWindow
     setWelcomePhoto();
     // opening the database for our app
@@ -71,6 +72,7 @@ void MainWindow::showShelterDisplay()
     shelterDisplay = new shelterProfile(this);
     // deleting shelterProfile page when it's closed
     shelterDisplay->setAttribute(Qt::WA_DeleteOnClose);
+    shelterDisplay->setWindowTitle("Breadnbutter");
     // showing the shelterProfile page
     shelterDisplay->show();
 }

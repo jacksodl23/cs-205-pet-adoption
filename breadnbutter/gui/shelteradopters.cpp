@@ -6,6 +6,8 @@ ShelterAdopters::ShelterAdopters(QWidget *parent) :
     ui(new Ui::ShelterAdopters)
 {
     ui->setupUi(this);
+
+    setWindowTitle("Adopters");
 }
 
 ShelterAdopters::~ShelterAdopters()
